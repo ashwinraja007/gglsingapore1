@@ -5,7 +5,7 @@ export const Hero = () => {
   return (
     <section className="relative">
       <img 
-        src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=2000&q=80" 
+        src="https://cdn.pixabay.com/photo/2021/11/14/12/53/ship-6794508_1280.jpg" 
         alt="Hero background" 
         className="w-full h-[700px] object-cover object-center" 
         loading="lazy" 
