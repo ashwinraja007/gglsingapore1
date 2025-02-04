@@ -5,7 +5,7 @@ export const Hero = () => {
   return (
     <section className="relative">
       <img 
-        src="public/og-image.png" 
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/0d564740b070a89f62cdebb12ae5e7dcda48b805aed08acac5ffb9d67e85f0d7" 
         alt="Hero background" 
         className="w-full h-[700px] object-cover object-center" 
         loading="lazy" 
