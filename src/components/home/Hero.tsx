@@ -10,7 +10,6 @@ export const Hero = () => {
         className="w-full h-[700px] object-cover object-center" 
         loading="lazy" 
       />
-      
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50">
         <div className="container mx-auto px-4 h-full flex flex-col justify-center pt-20">
           <h1 className="text-5xl font-bold text-white mb-6 max-w-2xl">
