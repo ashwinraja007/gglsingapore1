@@ -4,7 +4,7 @@ export const Header = () => {
   return (
     <header className="absolute top-0 left-0 right-0 z-20">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <img src="public/moltech logo.png" alt="Moltech Logo" className="h-12" />
+        <img src="moltech logo.png" alt="Moltech Logo" className="h-12" />
         <nav className="hidden md:flex gap-8">
           <Link to="/" className="text-white hover:text-gray-200">Home</Link>
           <Link to="/about" className="text-white hover:text-gray-200">About Us</Link>
