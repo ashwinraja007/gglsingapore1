@@ -13,9 +13,10 @@ export const Hero = () => {
       
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50">
         <div className="container mx-auto px-4 h-full flex flex-col justify-center pt-20">
-          <h1 className="text-5xl font-bold text-white mb-6 max-w-2xl">
-            We can provide effective and excellent logistics solutions for your company
-          </h1>
+          <h1 className="text-5xl font-semibold text-white mb-6 max-w-2xl font-blinker">
+  We can provide effective and excellent logistics solutions for your company
+</h1>
+>
           <p className="text-xl text-white mb-8 max-w-2xl">
             MOLTECH (UK) LTD, headquartered in London, is a global freight forwarder and logistics provider 
             with over 25 years of expertise in international and domestic transportation.
