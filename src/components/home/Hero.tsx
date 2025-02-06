@@ -8,7 +8,7 @@ export const Hero = () => {
 
   const portalLinks = [
     {
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/0d564740b070a89f62cdebb12ae5e7dcda48b805aed08acac5ffb9d67e85f0d7",
+      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/10ea87f043601fd974383dd77aafe3a63a9e4225cffeda820fb7c97e06ab41e7",
       title: "Customer Portal"
     },
     {
