@@ -1,11 +1,38 @@
 import { Button } from "@/components/ui/button";
 import { PortalLink } from "../common/PortalLink";
+import { Menu } from "lucide-react";
+import { useState } from "react";
 
 export const Hero = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const portalLinks = [
+    {
+      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/10ea87f043601fd974383dd77aafe3a63a9e4225cffeda820fb7c97e06ab41e7",
+      title: "Customer Portal"
+    },
+    {
+      icon: "URL_4",
+      title: "Partner Portal"
+    },
+    {
+      icon: "URL_5",
+      title: "Tracking"
+    },
+    {
+      icon: "URL_6",
+      title: "Sailing Schedule"
+    },
+    {
+      icon: "URL_7",
+      title: "Container Sizes & Dimensions"
+    }
+  ];
+
   return (
     <section className="relative">
       <img 
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/0d564740b070a89f62cdebb12ae5e7dcda48b805aed08acac5ffb9d67e85f0d7" 
+        src="/lovable-uploads/406a8a54-3187-4e26-a9fe-4f4c310c4c2d.png" 
         alt="Hero background" 
         className="w-full h-[700px] object-cover object-center" 
         loading="lazy" 
@@ -20,7 +47,7 @@ export const Hero = () => {
               MOLTECH (UK) LTD brings over 25 years of expertise in international logistics, 
               offering comprehensive solutions tailored to your business needs.
             </p>
-            <div className="flex gap-4 pt-2 pb-4">
+            <div className="flex gap-4 pt-2">
               <a href="https://demo.logistics-quote.com" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-gray-200 hover:bg-gray-300 text-gray-800">
                   Get A Quote
@@ -36,13 +63,29 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 -mt-20 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-          <PortalLink icon="https://cdn.builder.io/api/v1/image/assets/TEMP/10ea87f043601fd974383dd77aafe3a63a9e4225cffeda820fb7c97e06ab41e7" title="Customer Portal" />
-          <PortalLink icon="URL_4" title="Partner Portal" />
-          <PortalLink icon="URL_5" title="Tracking" />
-          <PortalLink icon="URL_6" title="Sailing Schedule" />
-          <PortalLink icon="URL_7" title="Container Sizes & Dimensions" />
+      {/* Portal Links Section */}
+      <div className="container mx-auto px-4 -mt-32 relative z-10">
+        {/* Mobile Menu Button */}
+        <button 
+          className="md:hidden w-full bg-white p-4 rounded-lg shadow-sm mb-4 flex items-center justify-between"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <span className="font-medium text-gray-800">Select Option</span>
+          <Menu className="h-5 w-5 text-gray-600" />
+        </button>
+
+        {/* Mobile Menu */}
+        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} space-y-2 mb-4`}>
+          {portalLinks.map((link, index) => (
+            <PortalLink key={index} {...link} />
+          ))}
+        </div>
+
+        {/* Desktop Grid */}
+        <div className="hidden md:grid grid-cols-5 gap-4">
+          {portalLinks.map((link, index) => (
+            <PortalLink key={index} {...link} />
+          ))}
         </div>
       </div>
     </section>
