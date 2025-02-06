@@ -62,7 +62,7 @@ export const Hero = () => {
       <div className="container mx-auto px-4 -mt-32 relative z-10">
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden w-full bg-white p-4 rounded-lg shadow-sm mb-4 flex items-center justify-between"
+          className="md:hidden w-full bg-gray p-4 rounded-lg shadow-sm mb-4 flex items-center justify-between"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span className="font-medium text-gray-800">Select Option</span>
