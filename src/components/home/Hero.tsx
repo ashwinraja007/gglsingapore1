@@ -31,6 +31,7 @@ export const Hero = () => {
 
   return (
     <section className="relative">
+      {/* Background Image */}
       <img 
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/0d564740b070a89f62cdebb12ae5e7dcda48b805aed08acac5ffb9d67e85f0d7" 
         alt="Hero background" 
@@ -62,7 +63,7 @@ export const Hero = () => {
       <div className="container mx-auto px-4 -mt-32 relative z-10">
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden w-full bg-gray p-4 rounded-lg shadow-sm mb-4 flex items-center justify-between"
+          className="md:hidden w-full bg-white p-4 rounded-lg shadow-sm mb-4 flex items-center justify-between"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span className="font-medium text-gray-800">Select Option</span>
@@ -70,14 +71,14 @@ export const Hero = () => {
         </button>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} space-y-2 mb-4`}>
+        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-gray-200 p-4 rounded-lg shadow space-y-2 mb-4`}>
           {portalLinks.map((link, index) => (
             <PortalLink key={index} {...link} />
           ))}
         </div>
 
         {/* Desktop Grid */}
-        <div className="hidden md:grid grid-cols-5 gap-4">
+        <div className="hidden md:grid grid-cols-5 gap-4 bg-gray-200 p-4 rounded-lg shadow">
           {portalLinks.map((link, index) => (
             <PortalLink key={index} {...link} />
           ))}
