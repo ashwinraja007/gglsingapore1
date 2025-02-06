@@ -53,10 +53,6 @@ export const Hero = () => {
                   Get A Quote
                 </Button>
               </a>
-              <a href="https://demo.logistics-services.com" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
-                  Learn More
-                </Button>
               </a>
             </div>
           </div>
