@@ -31,7 +31,6 @@ export const Hero = () => {
 
   return (
     <section className="relative">
-      {/* Background Image */}
       <img 
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/0d564740b070a89f62cdebb12ae5e7dcda48b805aed08acac5ffb9d67e85f0d7" 
         alt="Hero background" 
@@ -71,14 +70,14 @@ export const Hero = () => {
         </button>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-gray-200 p-4 rounded-lg shadow space-y-2 mb-4`}>
+        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} space-y-2 mb-4`}>
           {portalLinks.map((link, index) => (
             <PortalLink key={index} {...link} />
           ))}
         </div>
 
         {/* Desktop Grid */}
-        <div className="hidden md:grid grid-cols-5 gap-4 bg-gray-200 p-4 rounded-lg shadow">
+        <div className="hidden md:grid grid-cols-5 gap-4">
           {portalLinks.map((link, index) => (
             <PortalLink key={index} {...link} />
           ))}
