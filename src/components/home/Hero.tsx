@@ -12,19 +12,19 @@ export const Hero = () => {
       title: "Customer Portal"
     },
     {
-      icon: "URL_4",
+      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/10ea87f043601fd974383dd77aafe3a63a9e4225cffeda820fb7c97e06ab41e7",
       title: "Partner Portal"
     },
     {
-      icon: "URL_5",
+      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/10ea87f043601fd974383dd77aafe3a63a9e4225cffeda820fb7c97e06ab41e7",
       title: "Tracking"
     },
     {
-      icon: "URL_6",
+      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/10ea87f043601fd974383dd77aafe3a63a9e4225cffeda820fb7c97e06ab41e7",
       title: "Sailing Schedule"
     },
     {
-      icon: "URL_7",
+      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/10ea87f043601fd974383dd77aafe3a63a9e4225cffeda820fb7c97e06ab41e7",
       title: "Container Sizes & Dimensions"
     }
   ];
@@ -52,7 +52,6 @@ export const Hero = () => {
                 <Button size="lg" className="bg-gray-200 hover:bg-gray-300 text-gray-800">
                   Get A Quote
                 </Button>
-              </a>
               </a>
             </div>
           </div>
