@@ -32,7 +32,7 @@ export const Hero = () => {
   return (
     <section className="relative">
       <img 
-        src="/lovable-uploads/406a8a54-3187-4e26-a9fe-4f4c310c4c2d.png" 
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/0d564740b070a89f62cdebb12ae5e7dcda48b805aed08acac5ffb9d67e85f0d7" 
         alt="Hero background" 
         className="w-full h-[700px] object-cover object-center" 
         loading="lazy" 
