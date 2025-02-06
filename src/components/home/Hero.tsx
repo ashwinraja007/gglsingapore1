@@ -11,15 +11,24 @@ export const Hero = () => {
         loading="lazy" 
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50">
-        <div className="container mx-auto px-4 h-full flex flex-col justify-center pt-20">
-          <h1 className="text-4xl font-bold text-white mb-6 max-w-2xl">
-            We can provide effective and excellent logistics solutions for your company
-          </h1>
-          <p className="text-xl text-white mb-8 max-w-2xl">
-            MOLTECH (UK) LTD, headquartered in London, is a global freight forwarder and logistics provider 
-            with over 25 years of expertise in international and domestic transportation.
-          </p>
-          <Button size="lg" className="w-fit">Get A Quote</Button>
+        <div className="container mx-auto px-4 h-full flex flex-col justify-center">
+          <div className="max-w-2xl space-y-6 mb-20">
+            <h1 className="text-5xl font-bold text-white leading-tight">
+              Delivering Excellence in Global Logistics Solutions
+            </h1>
+            <p className="text-xl text-white/90 leading-relaxed">
+              MOLTECH (UK) LTD brings over 25 years of expertise in international logistics, 
+              offering comprehensive solutions tailored to your business needs.
+            </p>
+            <div className="flex gap-4 pt-4">
+              <Button size="lg" className="bg-gray-100 hover:bg-gray-200 text-gray-800">
+                Get A Quote
+              </Button>
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
+                Learn More
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
 
