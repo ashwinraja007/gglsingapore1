@@ -30,11 +30,11 @@ export const Hero = () => {
   ];
 
   return (
-    <section className="relative">
+    <section className="relative min-h-screen">
       <img 
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/0d564740b070a89f62cdebb12ae5e7dcda48b805aed08acac5ffb9d67e85f0d7" 
         alt="Hero background" 
-        className="w-full h-[700px] object-cover object-center" 
+        className="absolute inset-0 w-full h-full object-cover object-center" 
         loading="lazy" 
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50">
@@ -58,8 +58,8 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Portal Links Section */}
-      <div className="container mx-auto px-4 -mt-32 relative z-10">
+      {/* Portal Links Section - Moved up by adjusting margin */}
+      <div className="container mx-auto px-4 absolute bottom-32 left-0 right-0 z-10">
         {/* Mobile Menu Button */}
         <button 
           className="md:hidden w-full bg-gray p-4 rounded-lg shadow-sm mb-4 flex items-center justify-between"
