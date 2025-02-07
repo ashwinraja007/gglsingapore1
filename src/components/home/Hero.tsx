@@ -40,10 +40,10 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50">
         <div className="container mx-auto px-4 h-full flex flex-col justify-center">
           <div className="max-w-2xl space-y-4">
-            <h1 className="text-5xl font-bold text-white leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
               Delivering Excellence in Global Logistics Solutions
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/90 leading-relaxed">
               MOLTECH (UK) LTD brings over 25 years of expertise in international logistics, 
               offering comprehensive solutions tailored to your business needs.
             </p>
@@ -58,15 +58,15 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Portal Links Section - Moved up by adjusting margin */}
-      <div className="container mx-auto px-4 absolute bottom-32 left-0 right-0 z-10">
+      {/* Portal Links Section - Adjusted positioning */}
+      <div className="container mx-auto px-4 absolute bottom-48 md:bottom-32 left-0 right-0 z-10">
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden w-full bg-gray p-4 rounded-lg shadow-sm mb-4 flex items-center justify-between"
+          className="md:hidden w-full bg-gray-600/40 backdrop-blur-sm p-3 rounded-lg shadow-sm mb-4 flex items-center justify-between text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <span className="font-medium text-gray-800">Select Option</span>
-          <Menu className="h-5 w-5 text-gray-600" />
+          <span className="text-sm font-medium">Select Option</span>
+          <Menu className="h-5 w-5" />
         </button>
 
         {/* Mobile Menu */}
@@ -77,7 +77,7 @@ export const Hero = () => {
         </div>
 
         {/* Desktop Grid */}
-        <div className="hidden md:grid grid-cols-5 gap-4">
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-5 gap-4">
           {portalLinks.map((link, index) => (
             <PortalLink key={index} {...link} />
           ))}
