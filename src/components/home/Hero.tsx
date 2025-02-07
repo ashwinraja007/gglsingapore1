@@ -59,7 +59,7 @@ export const Hero = () => {
       </div>
 
       {/* Portal Links Section - Adjusted positioning */}
-      <div className="container mx-auto px-4 absolute bottom-48 md:bottom-32 left-0 right-0 z-10">
+      <div className="container mx-auto px-4 absolute bottom-24 md:bottom-16 left-0 right-0 z-10">
         {/* Mobile Menu Button */}
         <button 
           className="md:hidden w-full bg-gray-600/40 backdrop-blur-sm p-3 rounded-lg shadow-sm mb-4 flex items-center justify-between text-white"
