@@ -8,23 +8,23 @@ export const Hero = () => {
 
   const portalLinks = [
     {
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/10ea87f043601fd974383dd77aafe3a63a9e4225cffeda820fb7c97e06ab41e7",
+      icon: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=50&h=50&fit=crop",
       title: "Customer Portal"
     },
     {
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/10ea87f043601fd974383dd77aafe3a63a9e4225cffeda820fb7c97e06ab41e7",
+      icon: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=50&h=50&fit=crop",
       title: "Partner Portal"
     },
     {
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/10ea87f043601fd974383dd77aafe3a63a9e4225cffeda820fb7c97e06ab41e7",
+      icon: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=50&h=50&fit=crop",
       title: "Tracking"
     },
     {
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/10ea87f043601fd974383dd77aafe3a63a9e4225cffeda820fb7c97e06ab41e7",
+      icon: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=50&h=50&fit=crop",
       title: "Sailing Schedule"
     },
     {
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/10ea87f043601fd974383dd77aafe3a63a9e4225cffeda820fb7c97e06ab41e7",
+      icon: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=50&h=50&fit=crop",
       title: "Container Sizes & Dimensions"
     }
   ];
@@ -32,7 +32,7 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen">
       <img 
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/0d564740b070a89f62cdebb12ae5e7dcda48b805aed08acac5ffb9d67e85f0d7" 
+        src="https://images.unsplash.com/photo-1506506447188-78e2a1051d9e?w=1600&h=900&fit=crop" 
         alt="Hero background" 
         className="absolute inset-0 w-full h-full object-cover object-center" 
         loading="lazy" 
@@ -40,16 +40,16 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50">
         <div className="container mx-auto px-4 h-full flex flex-col justify-center">
           <div className="max-w-2xl space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+            <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
               Delivering Excellence in Global Logistics Solutions
             </h1>
-            <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+            <p className="text-base md:text-xl text-white/90 leading-relaxed">
               MOLTECH (UK) LTD brings over 25 years of expertise in international logistics, 
               offering comprehensive solutions tailored to your business needs.
             </p>
             <div className="flex gap-4 pt-2">
               <a href="https://demo.logistics-quote.com" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-gray-200 hover:bg-gray-300 text-gray-800">
+                <Button size="lg" className="h-14 px-8 bg-gray-200 hover:bg-gray-300 text-gray-800 text-base">
                   Get A Quote
                 </Button>
               </a>
@@ -58,9 +58,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Portal Links Section - Adjusted positioning */}
-      <div className="container mx-auto px-4 absolute bottom-24 md:bottom-16 left-0 right-0 z-10">
-        {/* Mobile Menu Button */}
+      <div className="container mx-auto px-4 absolute bottom-16 md:bottom-12 left-0 right-0 z-10">
         <button 
           className="md:hidden w-full bg-gray-600/40 backdrop-blur-sm p-3 rounded-lg shadow-sm mb-4 flex items-center justify-between text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -69,15 +67,13 @@ export const Hero = () => {
           <Menu className="h-5 w-5" />
         </button>
 
-        {/* Mobile Menu */}
         <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} space-y-2 mb-4`}>
           {portalLinks.map((link, index) => (
             <PortalLink key={index} {...link} />
           ))}
         </div>
 
-        {/* Desktop Grid */}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-5 gap-3">
           {portalLinks.map((link, index) => (
             <PortalLink key={index} {...link} />
           ))}
