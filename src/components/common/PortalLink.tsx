@@ -5,9 +5,9 @@ interface PortalLinkProps {
 
 export const PortalLink = ({ icon, title }: PortalLinkProps) => {
   return (
-    <div className="flex items-center gap-3 p-3 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+    <div className="flex items-center gap-3 p-3 bg-gray-600/40 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
       <img src={icon} alt="" className="w-6 h-6" loading="lazy" />
-      <span className="font-medium text-gray-800 text-sm">{title}</span>
+      <span className="font-medium text-white text-sm">{title}</span>
     </div>
   );
 };
