@@ -1,6 +1,12 @@
 
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { useState } from "react";
 
 const Services = () => {
@@ -52,11 +58,11 @@ const Services = () => {
             <div className="space-y-8">
               {services.map((service, index) => (
                 <div key={index} className="rounded-lg overflow-hidden">
-                  <div className={`relative transition-all duration-500 ease-in-out ${openItems[index] ? 'min-h-[600px]' : 'min-h-[400px]'} group`}>
+                  <div className="relative min-h-[400px] group">
                     <img
                       src={service.image}
                       alt={service.title}
-                      className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out ${openItems[index] ? 'scale-105' : 'scale-100'}`}
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40">
                       <div className="p-8 h-full flex flex-col justify-between relative z-10">
@@ -67,11 +73,11 @@ const Services = () => {
                           <p className="text-white/90 text-lg mb-4">
                             {service.description}
                           </p>
-                          <div className={`transition-all duration-500 ease-in-out overflow-hidden ${openItems[index] ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                            <p className="text-white/90 text-lg">
+                          {openItems[index] && (
+                            <p className="text-white/90 text-lg mt-4">
                               {service.details}
                             </p>
-                          </div>
+                          )}
                         </div>
                         <button
                           onClick={() => toggleAccordion(index)}
