@@ -1,7 +1,4 @@
 
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-
 export const Services = () => {
   const services = [
     { image: "/lovable-uploads/airfreight.jpg", title: "Air Freight" },

@@ -1,6 +1,4 @@
 
-import { useState } from 'react';
-
 export const Memberships = () => {
   const certifications = [
     {
@@ -47,8 +45,8 @@ export const Memberships = () => {
           <div 
             className={`flex gap-16 items-center ${!isHovered ? 'animate-scroll' : 'pause-animation'}`}
             style={{
-              animationDuration: '30s',
-              transform: isHovered ? 'none' : undefined
+              '--scroll-duration': '30s',
+              '--scroll-distance': `${-50}%`
             }}
           >
             {allCertifications.map((cert, index) => (
@@ -69,26 +67,24 @@ export const Memberships = () => {
         </div>
       </div>
 
-      <style>
-        {`
-          @keyframes scroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
           }
+          100% {
+            transform: translateX(var(--scroll-distance));
+          }
+        }
 
-          .animate-scroll {
-            animation: scroll 30s linear infinite;
-          }
+        .animate-scroll {
+          animation: scroll var(--scroll-duration) linear infinite;
+        }
 
-          .pause-animation {
-            animation-play-state: paused;
-          }
-        `}
-      </style>
+        .pause-animation {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 };
