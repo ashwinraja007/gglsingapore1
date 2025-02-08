@@ -1,6 +1,6 @@
+
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Button } from "@/components/ui/button";
 import {
   Accordion,
   AccordionContent,
@@ -12,33 +12,27 @@ const Services = () => {
   const services = [
     {
       title: "Air Freight Services",
-      description: "We offer a full suite of air transportation services to meet your specific needs. Our global network ensures reliable and efficient air freight solutions.",
-      image: "/lovable-uploads/edc263ae-b375-4eda-917c-3a8a627c6350-1.png",
-      details: "Our air freight services include express delivery, consolidated shipments, and charter services. We handle all types of cargo with specialized care and attention to detail."
+      description: "We offer a full suite of air freight solutions tailored to meet your shipping requirements. Our expert team ensures smooth handling of air imports, exports, and express shipments, all with the convenience of door-to-door service.",
+      details: "Our company sets itself apart with competitive pricing and exceptional operational support, guaranteeing customer satisfaction with every shipment. Whether you prioritize speed, reliability, or cost-effectiveness, our air freight services provide the perfect balance, making us a trusted partner in global logistics.",
+      image: "/lovable-uploads/airfreight.jpg"
     },
     {
       title: "Transportation and Distribution Services",
-      description: "Efficient transportation and distribution solutions across global routes. We ensure reliable and scalable shipping solutions.",
-      image: "/lovable-uploads/edc263ae-b375-4eda-917c-3a8a627c6350-2.png",
-      details: "We provide end-to-end transportation and distribution services including road freight, intermodal solutions, and last-mile delivery with real-time tracking capabilities."
+      description: "Moltech ensures efficient domestic distribution and timely deliveries. Our robust logistics infrastructure enhances productivity, offering frequent and reliable transportation services.",
+      details: "Our comprehensive distribution network spans across major cities, supported by advanced tracking systems and professional teams. We specialize in both standard and temperature-controlled transportation, ensuring your cargo reaches its destination safely and on time.",
+      image: "/lovable-uploads/edc263ae-b375-4eda-917c-3a8a627c6350-2.png"
     },
     {
-      title: "Warehousing",
-      description: "Get a flexible range of storage solutions across our global network. Modern facilities with advanced inventory management systems.",
-      image: "/lovable-uploads/edc263ae-b375-4eda-917c-3a8a627c6350-3.png",
-      details: "Our warehousing services include temperature-controlled storage, inventory management, order fulfillment, and distribution center operations."
+      title: "Warehousing Solutions",
+      description: "State-of-the-art warehousing facilities equipped with modern inventory management systems and security measures.",
+      details: "Our warehousing solutions include temperature-controlled storage, inventory management, order fulfillment, and distribution center operations with 24/7 security monitoring.",
+      image: "/lovable-uploads/edc263ae-b375-4eda-917c-3a8a627c6350-3.png"
     },
     {
-      title: "FCL Services",
-      description: "Complete container load solutions for your shipping needs. We handle documentation and customs clearance for seamless delivery.",
-      image: "/lovable-uploads/edc263ae-b375-4eda-917c-3a8a627c6350-4.png",
-      details: "We offer door-to-door FCL services, customs clearance, cargo insurance, and specialized container solutions for various cargo types."
-    },
-    {
-      title: "LCL Consolidation",
-      description: "Cost-effective consolidation services for smaller shipments. Optimize your logistics with our global network of consolidation points.",
-      image: "/lovable-uploads/edc263ae-b375-4eda-917c-3a8a627c6350-5.png",
-      details: "Our LCL services include cargo consolidation, deconsolidation, multi-country consolidation, and flexible scheduling options."
+      title: "Ocean Freight Services",
+      description: "Comprehensive ocean freight solutions including FCL and LCL services with global coverage and competitive rates.",
+      details: "We handle all aspects of ocean freight from documentation to customs clearance, offering reliable tracking and specialized container solutions for various cargo types.",
+      image: "/lovable-uploads/ocean.jpg"
     }
   ];
 
@@ -47,39 +41,39 @@ const Services = () => {
       <Header />
       
       <main className="flex-grow pt-20">
-        <section className="py-12 bg-white">
+        <section className="py-12">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl font-bold text-center mb-12">Our Services</h1>
             
-            <div className="space-y-6">
+            <div className="space-y-8">
               {services.map((service, index) => (
-                <div key={index} className="relative overflow-hidden rounded-lg">
-                  <div className="relative h-[200px] w-full">
+                <div key={index} className="rounded-lg overflow-hidden">
+                  <div className="relative min-h-[400px] group">
                     <img
                       src={service.image}
                       alt={service.title}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/50">
-                      <div className="p-6 h-full flex flex-col justify-between">
-                        <div>
-                          <h3 className="text-2xl font-bold text-white mb-2">
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40">
+                      <div className="p-8 h-full flex flex-col justify-between relative z-10">
+                        <div className="max-w-2xl">
+                          <h3 className="text-3xl font-bold text-white mb-4">
                             {service.title}
                           </h3>
-                          <p className="text-white/90">
+                          <p className="text-white/90 text-lg mb-6">
                             {service.description}
                           </p>
+                          <Accordion type="single" collapsible>
+                            <AccordionItem value={`item-${index}`} className="border-none">
+                              <AccordionTrigger className="py-2 px-4 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors">
+                                Learn More
+                              </AccordionTrigger>
+                              <AccordionContent className="bg-white/90 mt-4 p-6 rounded-lg text-gray-800">
+                                {service.details}
+                              </AccordionContent>
+                            </AccordionItem>
+                          </Accordion>
                         </div>
-                        <Accordion type="single" collapsible>
-                          <AccordionItem value={`item-${index}`}>
-                            <AccordionTrigger className="bg-gray-200/20 text-white hover:bg-gray-200/30 px-4 py-2 rounded-lg">
-                              Learn More
-                            </AccordionTrigger>
-                            <AccordionContent className="bg-white/90 text-gray-800 p-4 rounded-lg mt-2">
-                              {service.details}
-                            </AccordionContent>
-                          </AccordionItem>
-                        </Accordion>
                       </div>
                     </div>
                   </div>
