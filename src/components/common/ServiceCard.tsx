@@ -6,16 +6,21 @@ interface ServiceCardProps {
 
 export const ServiceCard = ({ image, title }: ServiceCardProps) => {
   return (
-    <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-      <div className="w-32 h-32 mb-4">
+    <div className="group flex flex-col h-[300px] bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+      <div className="flex-grow relative h-[220px] p-6 bg-gray-50">
         <img 
           src={image} 
           alt={title} 
-          className="w-full h-full object-contain" 
+          className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105" 
           loading="lazy" 
         />
       </div>
-      <h3 className="text-lg font-semibold text-center text-gray-800">{title}</h3>
+      <div className="p-4 bg-white">
+        <h3 className="text-lg font-semibold text-center text-gray-800 group-hover:text-blue-600 transition-colors">
+          {title}
+        </h3>
+      </div>
     </div>
   );
 };
+
