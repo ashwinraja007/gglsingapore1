@@ -63,10 +63,10 @@ const Services = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-center px-4 relative z-10"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 font-serif">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 font-inter">
               Our Services
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-inter font-light">
               Comprehensive logistics solutions tailored to your needs
             </p>
           </motion.div>
@@ -74,8 +74,8 @@ const Services = () => {
 
         {/* Services Section */}
         <section className="py-12">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="space-y-6">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="space-y-8">
               {services.map((service, index) => (
                 <motion.div
                   key={index}
@@ -86,9 +86,9 @@ const Services = () => {
                   className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
                 >
                   <motion.div
-                    animate={{ height: openItems[index] ? '400px' : '250px' }}
+                    animate={{ height: openItems[index] ? '500px' : '400px' }}
                     transition={{ duration: 0.4 }}
-                    className="relative overflow-hidden"
+                    className="relative w-full overflow-hidden"
                   >
                     <motion.img
                       src={service.image}
@@ -100,18 +100,18 @@ const Services = () => {
                       transition={{ duration: 0.4 }}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/60">
-                      <div className="p-6 h-full flex flex-col justify-between relative z-10">
-                        <div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/60 flex items-center">
+                      <div className="container mx-auto px-4">
+                        <div className="max-w-2xl mx-auto lg:ml-auto lg:mr-0 p-6 lg:p-8">
                           <motion.div className="flex items-center gap-3 mb-4">
                             <span className="text-3xl">{service.icon}</span>
-                            <h3 className="text-2xl font-bold text-white font-serif">
+                            <h3 className="text-2xl lg:text-3xl font-bold text-white font-inter">
                               {service.title}
                             </h3>
                           </motion.div>
                           
                           <motion.p 
-                            className="text-white/90 text-lg leading-relaxed mb-4"
+                            className="text-white/90 text-base lg:text-lg font-inter leading-relaxed mb-4"
                           >
                             {service.description}
                           </motion.p>
@@ -123,28 +123,28 @@ const Services = () => {
                                 animate={{ opacity: 1, height: 'auto' }}
                                 exit={{ opacity: 0, height: 0 }}
                                 transition={{ duration: 0.3 }}
-                                className="text-white/90 text-lg leading-relaxed"
+                                className="text-white/90 text-base lg:text-lg font-inter leading-relaxed mb-4"
                               >
                                 {service.details}
                               </motion.p>
                             )}
                           </AnimatePresence>
-                        </div>
 
-                        <motion.button
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          onClick={() => toggleAccordion(index)}
-                          className="self-start py-2 px-4 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-all duration-300 flex items-center gap-2 backdrop-blur-sm"
-                        >
-                          {openItems[index] ? "Show Less" : "Learn More"}
-                          <motion.div
-                            animate={{ rotate: openItems[index] ? 180 : 0 }}
-                            transition={{ duration: 0.3 }}
+                          <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={() => toggleAccordion(index)}
+                            className="mt-4 py-2.5 px-5 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-all duration-300 flex items-center gap-2 backdrop-blur-sm font-inter"
                           >
-                            <ChevronDown size={16} />
-                          </motion.div>
-                        </motion.button>
+                            {openItems[index] ? "Show Less" : "Learn More"}
+                            <motion.div
+                              animate={{ rotate: openItems[index] ? 180 : 0 }}
+                              transition={{ duration: 0.3 }}
+                            >
+                              <ChevronDown size={16} />
+                            </motion.div>
+                          </motion.button>
+                        </div>
                       </div>
                     </div>
                   </motion.div>
