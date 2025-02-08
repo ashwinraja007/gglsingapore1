@@ -23,7 +23,7 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
               <div>
                 <img 
-                  src="/lovable-uploads/fb542743-6702-40e8-889d-bc644ed0beea-1.png" 
+                  src="/lovable-uploads/gp.jpg" 
                   alt="Global Business Partnership" 
                   className="rounded-lg shadow-xl w-full h-auto mb-6"
                 />
@@ -40,7 +40,7 @@ const About = () => {
                   We maintain strong collaborative relationships with our clients, striving to build lasting partnerships that drive shared success. Through continuous improvement and innovation, we help our clients navigate complex logistics challenges. Our dedication to customer satisfaction and operational excellence sets us apart, making us a trusted partner supported by a highly skilled team.
                 </p>
                 <img 
-                  src="/lovable-uploads/fb542743-6702-40e8-889d-bc644ed0beea-2.png" 
+                  src="/lovable-uploads/earth.jpg" 
                   alt="Global Logistics Network" 
                   className="rounded-lg shadow-xl w-full h-auto"
                 />
