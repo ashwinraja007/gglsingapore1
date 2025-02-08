@@ -1,8 +1,7 @@
-import { ServiceCard } from "../common/ServiceCard";
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-// Enhanced ServiceCard component with animations and hover effects
 const EnhancedServiceCard = ({ image, title }) => {
   return (
     <div className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
@@ -12,10 +11,10 @@ const EnhancedServiceCard = ({ image, title }) => {
           style={{ backgroundImage: `url(${image})` }}
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-      <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-6 transition-transform duration-300 group-hover:translate-y-0">
-        <h3 className="text-xl font-bold mb-2">{title}</h3>
-        <p className="text-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 transition-transform duration-300 group-hover:translate-y-0">
+        <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
+        <p className="text-sm text-white/90 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           Learn more about our {title.toLowerCase()} services and solutions
         </p>
       </div>
@@ -32,7 +31,7 @@ export const Services = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-24 bg-gradient-to-b from-white to-gray-50 font-sans">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 space-y-4 md:space-y-0">
           <div>
