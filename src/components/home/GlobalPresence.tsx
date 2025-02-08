@@ -1,16 +1,16 @@
 
 export const GlobalPresence = () => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 gap-8">
+        <div className="grid grid-cols-1 gap-6">
           <div className="w-full">
-            <h2 className="text-3xl font-bold mb-8">Global Presence</h2>
-            <div className="w-full h-[600px] rounded-lg overflow-hidden">
+            <h2 className="text-3xl font-bold mb-6">Global Presence</h2>
+            <div className="w-full h-[500px] rounded-lg overflow-hidden">
               <img 
                 src="/lovable-uploads/globalpresence1.png" 
                 alt="Global Map" 
-                className="w-full h-full object-contain rounded-lg" 
+                className="w-full h-full object-cover rounded-lg" 
                 loading="eager"
                 fetchPriority="high"
               />
