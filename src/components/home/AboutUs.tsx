@@ -8,7 +8,7 @@ export const AboutUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="h-[300px] w-full overflow-hidden rounded-lg shadow-lg">
             <img 
-              src="/lovable-uploads/delievery.png" 
+              src="/lovable-uploads/delievery.jpg" 
               alt="About Us" 
               className="w-full h-full object-cover" 
               loading="eager"
