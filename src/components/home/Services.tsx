@@ -39,7 +39,6 @@ export const Services = () => {
               Core Services
             </h2>
             <p className="mt-2 text-gray-600 max-w-xl">
-              Discover our comprehensive range of logistics solutions designed to meet your shipping needs
             </p>
           </div>
           <Button 
