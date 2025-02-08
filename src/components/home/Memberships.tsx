@@ -4,19 +4,19 @@ export const Memberships = () => {
   // Duplicate the images to create a seamless loop
   const certifications = [
     {
-      src: "https://cdn.builder.io/api/v1/image/assets/TEMP/545680efee8ad2b46047acda62e66025b4c5648a4a5369508eadfd794c06465c",
+      src: "/lovable-uploads/bifa.png",
       alt: "Industry Certification 1"
     },
     {
-      src: "https://cdn.builder.io/api/v1/image/assets/TEMP/8b372b6e457e47a0a6850c7c00d1991e613eb4bbc85b05bdc7a6e1963ce616d4",
+      src: "/lovable-uploads/fiata.png",
       alt: "Industry Certification 2"
     },
     {
-      src: "https://cdn.builder.io/api/v1/image/assets/TEMP/8d50cc616b000ac9c6875b1ad112428570513b137ae6d030098324229cfccf88",
+      src: "/lovable-uploads/iscc.png",
       alt: "Industry Certification 3"
     },
     {
-      src: "https://cdn.builder.io/api/v1/image/assets/TEMP/b02a0121879c0cf2ff359e2e7fb21e6c99b64759ac4b95e216fd12217eaadcf7",
+      src: "/lovable-uploads/wca.png",
       alt: "Industry Certification 4"
     }
   ];
