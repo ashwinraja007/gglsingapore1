@@ -12,10 +12,10 @@ export const Services = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <ServiceCard image="/lovable-uploads/edc263ae-b375-4eda-917c-3a8a627c6350-1.png" title="Air Freight" />
-          <ServiceCard image="/lovable-uploads/edc263ae-b375-4eda-917c-3a8a627c6350-2.png" title="Ocean Freight (LCL & FCL)" />
-          <ServiceCard image="/lovable-uploads/edc263ae-b375-4eda-917c-3a8a627c6350-3.png" title="Customs Clearance" />
-          <ServiceCard image="/lovable-uploads/edc263ae-b375-4eda-917c-3a8a627c6350-4.png" title="Liquid Transportation" />
+          <ServiceCard image="/lovable-uploads/airfreight.jpg" title="Air Freight" />
+          <ServiceCard image="/lovable-uploads/ocean.jpg" title="Ocean Freight (LCL & FCL)" />
+          <ServiceCard image="/lovable-uploads/cc.jpg" title="Customs Clearance" />
+          <ServiceCard image="/lovable-uploads/liquid.jpg" title="Liquid Transportation" />
         </div>
       </div>
     </section>
