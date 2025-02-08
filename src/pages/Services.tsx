@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const Services = () => {
   const [openItems, setOpenItems] = useState<{ [key: string]: boolean }>({});
@@ -12,29 +12,25 @@ const Services = () => {
       title: "Air Freight Services",
       description: "We offer a full suite of air freight solutions tailored to meet your shipping requirements. Our expert team ensures smooth handling of air imports, exports, and express shipments, all with the convenience of door-to-door service.",
       details: "Our company sets itself apart with competitive pricing and exceptional operational support, guaranteeing customer satisfaction with every shipment. Whether you prioritize speed, reliability, or cost-effectiveness, our air freight services provide the perfect balance, making us a trusted partner in global logistics.",
-      image: "/public/airfrieght1.jpg",
-      icon: "✈️"
+      image: "/public/airfrieght1.jpg"
     },
     {
       title: "Transportation and Distribution Services",
       description: "Moltech ensures efficient domestic distribution and timely deliveries. Our robust logistics infrastructure enhances productivity, offering frequent and reliable transportation services.",
       details: "Our comprehensive distribution network spans across major cities, supported by advanced tracking systems and professional teams. We specialize in both standard and temperature-controlled transportation, ensuring your cargo reaches its destination safely and on time.",
-      image: "/lovable-uploads/transport.jpg",
-      icon: "🚛"
+      image: "/lovable-uploads/transport.jpg"
     },
     {
       title: "Warehousing Solutions",
       description: "State-of-the-art warehousing facilities equipped with modern inventory management systems and security measures.",
       details: "Our warehousing solutions include temperature-controlled storage, inventory management, order fulfillment, and distribution center operations with 24/7 security monitoring.",
-      image: "/lovable-uploads/warehouse.jpg",
-      icon: "🏭"
+      image: "/lovable-uploads/warehouse.jpg"
     },
     {
       title: "Ocean Freight Services",
       description: "Comprehensive ocean freight solutions including FCL and LCL services with global coverage and competitive rates.",
       details: "We handle all aspects of ocean freight from documentation to customs clearance, offering reliable tracking and specialized container solutions for various cargo types.",
-      image: "/lovable-uploads/oceanfrieght.jpg",
-      icon: "🚢"
+      image: "/lovable-uploads/oceanfrieght.jpg"
     }
   ];
 
@@ -100,11 +96,10 @@ const Services = () => {
                       transition={{ duration: 0.4 }}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/60 flex items-center">
+                    <div className="absolute inset-0 bg-gradient-to-l from-black/90 via-black/80 to-transparent flex items-center">
                       <div className="container mx-auto px-4">
-                        <div className="max-w-2xl mx-auto lg:ml-auto lg:mr-0 p-6 lg:p-8">
-                          <motion.div className="flex items-center gap-3 mb-4">
-                            <span className="text-3xl">{service.icon}</span>
+                        <div className="max-w-xl ml-auto mr-8 p-6 lg:p-8">
+                          <motion.div className="mb-6">
                             <h3 className="text-2xl lg:text-3xl font-bold text-white font-inter">
                               {service.title}
                             </h3>
