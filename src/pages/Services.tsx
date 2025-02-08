@@ -7,8 +7,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useState } from "react";
 
 const Services = () => {
+  const [openItems, setOpenItems] = useState<{ [key: string]: boolean }>({});
+  
   const services = [
     {
       title: "Air Freight Services",
@@ -36,6 +39,13 @@ const Services = () => {
     }
   ];
 
+  const toggleAccordion = (index: number) => {
+    setOpenItems(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -60,20 +70,16 @@ const Services = () => {
                           <h3 className="text-3xl font-bold text-white mb-4">
                             {service.title}
                           </h3>
-                          <p className="text-white/90 text-lg mb-6">
-                            {service.description}
+                          <p className="text-white/90 text-lg">
+                            {openItems[index] ? service.details : service.description}
                           </p>
-                          <Accordion type="single" collapsible>
-                            <AccordionItem value={`item-${index}`} className="border-none">
-                              <AccordionTrigger className="py-2 px-4 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors">
-                                Learn More
-                              </AccordionTrigger>
-                              <AccordionContent className="bg-white/90 mt-4 p-6 rounded-lg text-gray-800">
-                                {service.details}
-                              </AccordionContent>
-                            </AccordionItem>
-                          </Accordion>
                         </div>
+                        <button
+                          onClick={() => toggleAccordion(index)}
+                          className="self-start py-2 px-4 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors mt-4"
+                        >
+                          {openItems[index] ? "Learn Less" : "Learn More"}
+                        </button>
                       </div>
                     </div>
                   </div>
