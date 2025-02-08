@@ -70,9 +70,14 @@ const Services = () => {
                           <h3 className="text-3xl font-bold text-white mb-4">
                             {service.title}
                           </h3>
-                          <p className="text-white/90 text-lg">
-                            {openItems[index] ? service.details : service.description}
+                          <p className="text-white/90 text-lg mb-4">
+                            {service.description}
                           </p>
+                          {openItems[index] && (
+                            <p className="text-white/90 text-lg mt-4">
+                              {service.details}
+                            </p>
+                          )}
                         </div>
                         <button
                           onClick={() => toggleAccordion(index)}
