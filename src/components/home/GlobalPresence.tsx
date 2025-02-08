@@ -8,7 +8,7 @@ export const GlobalPresence = () => {
             <h2 className="text-3xl font-bold mb-8">Global Presence</h2>
             <div className="w-full h-[600px] rounded-lg overflow-hidden">
               <img 
-                src="/lovable-uploads/edc263ae-b375-4eda-917c-3a8a627c6350-4.png" 
+                src="/lovable-uploads/globalpresence1.png" 
                 alt="Global Map" 
                 className="w-full h-full object-contain rounded-lg" 
                 loading="eager"
