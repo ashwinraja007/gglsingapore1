@@ -12,7 +12,7 @@ const Services = () => {
       title: "Air Freight Services",
       description: "We offer a full suite of air freight solutions tailored to meet your shipping requirements. Our expert team ensures smooth handling of air imports, exports, and express shipments, all with the convenience of door-to-door service.",
       details: "Our company sets itself apart with competitive pricing and exceptional operational support, guaranteeing customer satisfaction with every shipment. Whether you prioritize speed, reliability, or cost-effectiveness, our air freight services provide the perfect balance, making us a trusted partner in global logistics.",
-      image: "/public/airfreight1.jpg",
+      image: "/airfreight1.jpg",
       icon: "✈️"
     },
     {
