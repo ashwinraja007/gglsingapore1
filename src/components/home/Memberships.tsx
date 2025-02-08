@@ -1,5 +1,7 @@
+import React, { useEffect, useState } from 'react';
 
 export const Memberships = () => {
+  // Duplicate the images to create a seamless loop
   const certifications = [
     {
       src: "/lovable-uploads/bifa.png",
@@ -19,7 +21,9 @@ export const Memberships = () => {
     }
   ];
 
+  // Duplicate array for seamless loop
   const allCertifications = [...certifications, ...certifications];
+  
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -39,9 +43,11 @@ export const Memberships = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
+          {/* Gradient Overlays */}
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
 
+          {/* Scrolling Container */}
           <div 
             className={`flex gap-16 items-center ${!isHovered ? 'animate-scroll' : 'pause-animation'}`}
             style={{
@@ -52,12 +58,12 @@ export const Memberships = () => {
             {allCertifications.map((cert, index) => (
               <div 
                 key={index}
-                className="flex-shrink-0 group relative w-40 h-40 flex items-center justify-center"
+                className="flex-shrink-0 group relative"
               >
                 <img
                   src={cert.src}
                   alt={cert.alt}
-                  className="w-32 h-32 object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110"
+                  className="h-24 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors duration-300 rounded-lg" />
@@ -88,3 +94,5 @@ export const Memberships = () => {
     </section>
   );
 };
+
+export default Memberships;
