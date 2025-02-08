@@ -1,27 +1,3 @@
-import { ServiceCard } from "../common/ServiceCard";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-
-// Enhanced ServiceCard component with animations and hover effects
-const EnhancedServiceCard = ({ image, title }) => {
-  return (
-    <div className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
-      <div className="aspect-square overflow-hidden">
-        <div 
-          className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-          style={{ backgroundImage: `url(${image})` }}
-        />
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-      <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-6 transition-transform duration-300 group-hover:translate-y-0">
-        <h3 className="text-xl font-bold mb-2">{title}</h3>
-        <p className="text-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          Learn more about our {title.toLowerCase()} services and solutions
-        </p>
-      </div>
-    </div>
-  );
-};
 
 export const Services = () => {
   const services = [
@@ -54,16 +30,24 @@ export const Services = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <EnhancedServiceCard 
-              key={index}
-              image={service.image}
-              title={service.title}
-            />
+            <div key={index} className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
+              <div className="aspect-square overflow-hidden">
+                <div 
+                  className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  style={{ backgroundImage: `url(${service.image})` }}
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p className="text-sm text-white/90">
+                  Learn more about our {service.title.toLowerCase()} services and solutions
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
     </section>
   );
 };
-
-export default Services;

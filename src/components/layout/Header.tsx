@@ -1,3 +1,4 @@
+
 import { Link, useLocation } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { useState } from "react";
@@ -11,7 +12,9 @@ export const Header = () => {
     <header className="absolute top-0 left-0 right-0 z-20">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <img src="moltechlogo.png" alt="Moltech Logo" className="h-8 md:h-9" />
+          <Link to="/">
+            <img src="/moltechlogo.png" alt="Moltech Logo" className="h-8 md:h-9" />
+          </Link>
           
           {/* Mobile Menu Button */}
           <button
