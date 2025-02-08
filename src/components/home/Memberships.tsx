@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+
+import React, { useState } from 'react';
 
 export const Memberships = () => {
   // Duplicate the images to create a seamless loop
@@ -52,8 +53,8 @@ export const Memberships = () => {
             className={`flex gap-16 items-center ${!isHovered ? 'animate-scroll' : 'pause-animation'}`}
             style={{
               '--scroll-duration': '30s',
-              '--scroll-distance': `${-50}%`
-            }}
+              '--scroll-distance': '-50%'
+            } as React.CSSProperties}
           >
             {allCertifications.map((cert, index) => (
               <div 
@@ -73,24 +74,26 @@ export const Memberships = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
+      <style>
+        {`
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(var(--scroll-distance));
+            }
           }
-          100% {
-            transform: translateX(var(--scroll-distance));
+
+          .animate-scroll {
+            animation: scroll var(--scroll-duration) linear infinite;
           }
-        }
 
-        .animate-scroll {
-          animation: scroll var(--scroll-duration) linear infinite;
-        }
-
-        .pause-animation {
-          animation-play-state: paused;
-        }
-      `}</style>
+          .pause-animation {
+            animation-play-state: paused;
+          }
+        `}
+      </style>
     </section>
   );
 };
