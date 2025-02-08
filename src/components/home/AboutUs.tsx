@@ -6,7 +6,7 @@ export const AboutUs = () => {
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="h-[400px] w-full overflow-hidden rounded-lg shadow-lg">
+          <div className="h-[300px] w-full overflow-hidden rounded-lg shadow-lg">
             <img 
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e8e24544ffabd2fb589e802059078d9771a458651502a5ede6475f2b3cca849" 
               alt="About Us" 
