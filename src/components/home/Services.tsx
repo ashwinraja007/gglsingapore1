@@ -33,7 +33,7 @@ export const Services = () => {
   return (
     <section className="py-24 bg-gradient-to-b from-white to-gray-50 font-sans">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 space-y-4 md:space-y-0">
+        <div className="text-center mb-16">
           <div>
             <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
               Core Services
