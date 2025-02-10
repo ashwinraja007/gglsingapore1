@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 
 export const Memberships = () => {
-  // Duplicate the images to create a seamless loop
   const certifications = [
     {
       src: "/lovable-uploads/bifa.png",
@@ -22,7 +21,6 @@ export const Memberships = () => {
     }
   ];
 
-  // Duplicate array for seamless loop
   const allCertifications = [...certifications, ...certifications];
   
   const [isHovered, setIsHovered] = useState(false);
@@ -44,13 +42,11 @@ export const Memberships = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          {/* Gradient Overlays */}
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
 
-          {/* Scrolling Container */}
           <div 
-            className={`flex gap-16 items-center ${!isHovered ? 'animate-scroll' : 'pause-animation'}`}
+            className={`flex gap-8 md:gap-16 items-center justify-center ${!isHovered ? 'animate-scroll' : 'pause-animation'}`}
             style={{
               '--scroll-duration': '30s',
               '--scroll-distance': '-50%'
@@ -64,10 +60,10 @@ export const Memberships = () => {
                 <img
                   src={cert.src}
                   alt={cert.alt}
-                  className="h-24 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110"
+                  className="h-16 md:h-24 w-auto object-contain transition-all duration-300 transform group-hover:scale-110"
                   loading="lazy"
+                  style={{ maxWidth: '150px' }}
                 />
-                <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors duration-300 rounded-lg" />
               </div>
             ))}
           </div>

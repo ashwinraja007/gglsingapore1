@@ -11,9 +11,8 @@ const EnhancedServiceCard = ({ image, title }) => {
           style={{ backgroundImage: `url(${image})` }}
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-      <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 transition-transform duration-300 group-hover:translate-y-0">
-        <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+        <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
         <p className="text-sm text-white/90 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           Learn more about our {title.toLowerCase()} services and solutions
         </p>
