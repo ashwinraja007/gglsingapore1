@@ -9,6 +9,8 @@ const EnhancedServiceCard = ({ image, title }) => {
         <div 
           className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
           style={{ backgroundImage: `url(${image})` }}
+          role="img"
+          aria-label={title}
         />
       </div>
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">

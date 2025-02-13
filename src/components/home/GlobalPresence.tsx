@@ -12,7 +12,9 @@ export const GlobalPresence = () => {
                 alt="Global Map" 
                 className="w-full h-full object-cover object-center rounded-lg" 
                 loading="eager"
+                decoding="async"
                 fetchPriority="high"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
               />
             </div>
           </div>

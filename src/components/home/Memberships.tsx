@@ -61,7 +61,9 @@ export const Memberships = () => {
                   src={cert.src}
                   alt={cert.alt}
                   className="h-16 md:h-24 w-auto object-contain transition-all duration-300 transform group-hover:scale-110"
-                  loading="lazy"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
                   style={{ maxWidth: '150px' }}
                 />
               </div>
