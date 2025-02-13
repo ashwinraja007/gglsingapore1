@@ -1,23 +1,52 @@
+
+import { Suspense, lazy } from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Hero } from "@/components/home/Hero";
-import { AboutUs } from "@/components/home/AboutUs";
-import { Memberships } from "@/components/home/Memberships";
-import { Services } from "@/components/home/Services";
-import { GlobalPresence } from "@/components/home/GlobalPresence";
-import { QuickEnquiry } from "@/components/home/QuickEnquiry";
+import { Loader2 } from "lucide-react";
+
+// Lazy load components
+const Hero = lazy(() => import("@/components/home/Hero"));
+const AboutUs = lazy(() => import("@/components/home/AboutUs"));
+const Memberships = lazy(() => import("@/components/home/Memberships"));
+const Services = lazy(() => import("@/components/home/Services"));
+const GlobalPresence = lazy(() => import("@/components/home/GlobalPresence"));
+const QuickEnquiry = lazy(() => import("@/components/home/QuickEnquiry"));
+
+// Loading component
+const LoadingComponent = () => (
+  <div className="flex items-center justify-center min-h-[200px]">
+    <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+  </div>
+);
 
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       <main>
-        <Hero />
-        <AboutUs />
-        <Memberships />
-        <Services />
-        <GlobalPresence />
-        <QuickEnquiry />
+        <Suspense fallback={<LoadingComponent />}>
+          <Hero />
+        </Suspense>
+        
+        <Suspense fallback={<LoadingComponent />}>
+          <AboutUs />
+        </Suspense>
+        
+        <Suspense fallback={<LoadingComponent />}>
+          <Memberships />
+        </Suspense>
+        
+        <Suspense fallback={<LoadingComponent />}>
+          <Services />
+        </Suspense>
+        
+        <Suspense fallback={<LoadingComponent />}>
+          <GlobalPresence />
+        </Suspense>
+        
+        <Suspense fallback={<LoadingComponent />}>
+          <QuickEnquiry />
+        </Suspense>
       </main>
       <Footer />
     </div>

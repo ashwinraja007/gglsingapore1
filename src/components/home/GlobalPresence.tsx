@@ -1,5 +1,5 @@
 
-export const GlobalPresence = () => {
+const GlobalPresence = () => {
   return (
     <section className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -23,3 +23,5 @@ export const GlobalPresence = () => {
     </section>
   );
 };
+
+export default GlobalPresence;
