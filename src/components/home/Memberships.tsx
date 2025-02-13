@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 
-export const Memberships = () => {
+const Memberships = () => {
   const certifications = [
     {
       src: "/lovable-uploads/bifa.png",
