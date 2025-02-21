@@ -79,18 +79,6 @@ const About = () => {
                   </div>
                 </motion.div>
               </div>
-
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="bg-white p-8 rounded-2xl shadow-lg max-w-4xl mx-auto"
-              >
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  To enhance transparency, we offer state-of-the-art online shipment tracking capabilities, providing our customers with complete visibility. Our digitized workflows streamline operations and improve efficiency, ensuring seamless communication while keeping costs optimized.
-                </p>
-              </motion.div>
             </div>
           </div>
         </section>
