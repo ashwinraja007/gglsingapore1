@@ -30,15 +30,7 @@ const About = () => {
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               A global leader in logistics and supply chain solutions
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="mt-8 px-8 py-3 bg-blue-600 text-white rounded-lg text-lg font-medium hover:bg-blue-700 transition-colors"
-            >
-              Our Solutions
-            </motion.button>
-          </motion.div>
-          
+            
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
