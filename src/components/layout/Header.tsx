@@ -22,16 +22,15 @@ export const Header = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex gap-8">
-            <Link to="/" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-200`}>Home</Link>
-            <Link to="/about" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-200`}>About Us</Link>
-            <Link to="/services" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-200`}>Services</Link>
-            <Link to="/contact" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-200`}>Contact Us</Link>
-            <Link to="/quote" className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
-              Get A Quote
-            </Link>
-          </nav>
-        </div>
+<nav className="hidden md:flex gap-8 items-center">
+  <Link to="/" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-500`}>Home</Link>
+  <Link to="/about" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-500`}>About Us</Link>
+  <Link to="/services" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-500`}>Services</Link>
+  <Link to="/contact" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-500`}>Contact Us</Link>
+  <Link to="/quote" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-500`}>
+    Get A Quote
+  </Link>
+</nav>
 
         {/* Mobile Navigation */}
         <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden mt-4 bg-black/80 backdrop-blur-sm rounded-lg p-4`}>
