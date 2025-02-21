@@ -42,11 +42,9 @@ const About = () => {
                     Our Story
                   </h3>
                   <p className="text-gray-700 text-lg leading-relaxed">
-                    Moltech, a proud subsidiary of 1 Global Enterprises, stands at the forefront of innovation in freight forwarding, supply chain management, and logistics technology.
-                  </p>
+Moltech is a proud subsidiary of 1 Global Enterprises, a dynamic investment company with a diverse portfolio in freight forwarding, supply chain management, and logistics technology, as part of this global network, Moltech benefits from strategic investments across multiple brands specializing in transportation, warehousing, and supply chain solutions, as well as cutting-edge freight and warehouse management software.                    </p>
                   <p className="text-gray-700 text-lg leading-relaxed">
-                    Our commitment to 24/7 customer support and full transparency ensures your peace of mind.
-                  </p>
+Backed by 1 Global Enterprises' industry expertise and innovation-driven approach, Moltech leverages synergies across its affiliated companies to provide integrated, technology-driven logistics solutions. This connection ensures operational excellence, financial stability, and access to world-class supply chain infrastructure, positioning Moltech as a leader in end-to-end global logistics services.                  </p>
                 </motion.div>
 
                 <motion.div
