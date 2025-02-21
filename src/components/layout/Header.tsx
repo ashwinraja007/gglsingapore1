@@ -31,6 +31,7 @@ export const Header = () => {
     Get A Quote
   </Link>
 </nav>
+</div>
 
         {/* Mobile Navigation */}
         <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden mt-4 bg-black/80 backdrop-blur-sm rounded-lg p-4`}>
