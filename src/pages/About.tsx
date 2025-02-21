@@ -9,22 +9,27 @@ const About = () => {
       <Header />
 
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-r from-blue-50 to-gray-50">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center px-4 max-w-4xl"
+       {/* Hero Section */}
+        <motion.section 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="relative h-[40vh] flex items-center justify-center bg-blue-50 overflow-hidden"
+        >
+          <motion.div 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="text-center px-4 relative z-10"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-              Who We Are
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 font-inter">
+             Who We Are
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              A global leader in logistics and supply chain solutions.
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-inter font-light">
+             A global leader in logistics and supply chain solutions
             </p>
           </motion.div>
-        </section>
+        </motion.section>
 
         {/* Main Content Section */}
         <section className="py-20">
