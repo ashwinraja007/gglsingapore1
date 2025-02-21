@@ -30,14 +30,6 @@ const About = () => {
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               A global leader in logistics and supply chain solutions
             </p>
-            
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="absolute bottom-8"
-          >
-            <ChevronDown size={32} className="text-gray-400" />
-          </motion.div>
         </section>
 
         {/* Main Content Section */}
