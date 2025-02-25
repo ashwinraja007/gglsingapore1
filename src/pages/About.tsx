@@ -22,7 +22,7 @@ const About = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-center px-4 relative z-10"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 font-inter">
+            <h1 className="text-3xl md:text-6xl font-bold text-gray-800 mb-6 font-inter">
              Who We Are
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto font-inter font-light">
