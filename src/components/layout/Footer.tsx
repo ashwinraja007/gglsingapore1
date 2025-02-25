@@ -5,7 +5,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <img 
-              src="/moltech1.png" 
+              src="/moltech2.png" 
               alt="Moltech Logo" 
               className="h-14 md:h-16 mb-6" 
               loading="lazy" 
