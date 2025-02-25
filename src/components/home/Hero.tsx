@@ -85,7 +85,7 @@ export const Hero = () => {
               transition={{ duration: 0.8, delay: 0.9 }}
               className="text-lg md:text-xl text-white/90 leading-relaxed"
             >
-              MOLTECH (UK) LTD brings over 25 years of expertise in international logistics, 
+              MOLTECH  LTD brings over 25 years of expertise in international logistics, 
               offering comprehensive solutions tailored to your business needs.
             </motion.p>
             
