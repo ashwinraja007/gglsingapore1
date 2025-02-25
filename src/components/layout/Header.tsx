@@ -16,7 +16,7 @@ export const Header = () => {
             <img 
               src="moltech1.png" 
               alt="Moltech Logo" 
-              className="h-13 md:h-19 w-auto object-contain" 
+              className="h-12 md:h-19 w-auto object-contain" 
             />
           </div>
           
