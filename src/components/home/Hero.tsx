@@ -120,7 +120,7 @@ export const Hero = () => {
       >
         {/* Mobile dropdown button */}
         <motion.button 
-          className="md:hidden w-full bg-white/10 backdrop-blur-md p-4 rounded-lg shadow-lg mb-4 flex items-center justify-between text-white border border-white/20"
+          className="md:hidden w-full bg-blue-600/90 backdrop-blur-md p-4 rounded-lg shadow-lg mb-4 flex items-center justify-between text-white border border-white/20"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -8,13 +9,13 @@ const About = () => {
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-white font-sans">
       <Header />
 
-      <main className="flex-grow">
+      <main className="flex-grow mt-20">
        {/* Hero Section */}
         <motion.section 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="relative h-[40vh] flex items-center justify-center bg-blue-50 overflow-hidden"
+          className="relative h-[30vh] flex items-center justify-center bg-blue-50 overflow-hidden"
         >
           <motion.div 
             initial={{ y: 20, opacity: 0 }}
@@ -22,10 +23,10 @@ const About = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-center px-4 relative z-10"
           >
-            <h1 className="text-3xl md:text-6xl font-bold text-gray-800 mb-6 font-inter">
+            <h1 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4 font-inter">
              Who We Are
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-inter font-light">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-inter font-light">
              A global leader in logistics and supply chain solutions
             </p>
           </motion.div>

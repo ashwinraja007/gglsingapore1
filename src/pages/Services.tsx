@@ -45,13 +45,13 @@ const Services = () => {
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-white">
       <Header />
       
-      <main className="flex-grow pt-16">
+      <main className="flex-grow mt-20">
         {/* Hero Section */}
         <motion.section 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="relative h-[40vh] flex items-center justify-center bg-blue-50 overflow-hidden"
+          className="relative h-[30vh] flex items-center justify-center bg-blue-50 overflow-hidden"
         >
           <motion.div 
             initial={{ y: 20, opacity: 0 }}
@@ -59,10 +59,10 @@ const Services = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-center px-4 relative z-10"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 font-inter">
+            <h1 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4 font-inter">
               Our Services
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-inter font-light">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-inter font-light">
               Comprehensive logistics solutions tailored to your needs
             </p>
           </motion.div>

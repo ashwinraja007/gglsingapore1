@@ -1,3 +1,4 @@
+
 import { Link, useLocation } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { useState } from "react";
@@ -13,16 +14,16 @@ export const Header = () => {
           </div>
           
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-white p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <button className="md:hidden text-gray-800 p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             <Menu className="h-6 w-6" />
           </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex gap-8 items-center">
-            <Link to="/" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-200`}>Home</Link>
-            <Link to="/about" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-200`}>About Us</Link>
-            <Link to="/services" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-200`}>Services</Link>
-            <Link to="/contact" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-200`}>Contact Us</Link>
+            <Link to="/" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-600`}>Home</Link>
+            <Link to="/about" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-600`}>About Us</Link>
+            <Link to="/services" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-600`}>Services</Link>
+            <Link to="/contact" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-600`}>Contact Us</Link>
             <Link to="/quote" className="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition text-center">
               Get A Quote
             </Link>
@@ -30,12 +31,12 @@ export const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden mt-4 bg-black/80 backdrop-blur-sm rounded-lg p-4`}>
+        <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden mt-4 bg-white shadow-lg rounded-lg p-4`}>
           <nav className="flex flex-col gap-4">
-            <Link to="/" className="text-white hover:text-gray-200">Home</Link>
-            <Link to="/about" className="text-white hover:text-gray-200">About Us</Link>
-            <Link to="/services" className="text-white hover:text-gray-200">Services</Link>
-            <Link to="/contact" className="text-white hover:text-gray-200">Contact Us</Link>
+            <Link to="/" className="text-gray-800 hover:text-gray-600">Home</Link>
+            <Link to="/about" className="text-gray-800 hover:text-gray-600">About Us</Link>
+            <Link to="/services" className="text-gray-800 hover:text-gray-600">Services</Link>
+            <Link to="/contact" className="text-gray-800 hover:text-gray-600">Contact Us</Link>
             <Link to="/quote" className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-center">
               Get A Quote
             </Link>
