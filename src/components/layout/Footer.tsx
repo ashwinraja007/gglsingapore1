@@ -50,12 +50,12 @@ export const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 pt-6 flex justify-center items-center">
-          <img 
-            src="/lovable-uploads/65180320-fa21-4a42-a9c9-2888c73ef7f8.png"
-            alt="1 Global Enterprises, Singapore"
-            className="h-8 md:h-10"
-            loading="lazy"
-          />
+         <img 
+  src="/lovable-uploads/65180320-fa21-4a42-a9c9-2888c73ef7f8.png"
+  alt="1 Global Enterprises, Singapore"
+  className="h-16 md:h-20 w-auto"
+  loading="lazy"
+/>
         </div>
       </div>
     </footer>
