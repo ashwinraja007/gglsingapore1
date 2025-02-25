@@ -1,3 +1,4 @@
+
 import { Link, useLocation } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { useState } from "react";
@@ -11,7 +12,13 @@ export const Header = () => {
     <header className="absolute top-0 left-0 right-0 z-20">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-         <img src="moltech1.png" alt="Moltech Logo" className="h-13 md:h-14" />
+          <div className="flex items-center">
+            <img 
+              src="moltech1.png" 
+              alt="Moltech Logo" 
+              className="h-8 md:h-14 w-auto object-contain" 
+            />
+          </div>
           
           {/* Mobile Menu Button */}
           <button
@@ -21,16 +28,16 @@ export const Header = () => {
             <Menu className="h-6 w-6" />
           </button>
 
-  {/* Desktop Navigation */}
-<nav className="hidden md:flex gap-8 items-center">
-  <Link to="/" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-200`}>Home</Link>
-  <Link to="/about" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-200`}>About Us</Link>
-  <Link to="/services" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-200`}>Services</Link>
-  <Link to="/contact" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-200`}>Contact Us</Link>
-  <Link to="/quote" className="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition text-center">
-    Get A Quote
-  </Link>
-</nav>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex gap-8 items-center">
+            <Link to="/" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-200`}>Home</Link>
+            <Link to="/about" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-200`}>About Us</Link>
+            <Link to="/services" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-200`}>Services</Link>
+            <Link to="/contact" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-200`}>Contact Us</Link>
+            <Link to="/quote" className="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition text-center">
+              Get A Quote
+            </Link>
+          </nav>
         </div>
 
         {/* Mobile Navigation */}
