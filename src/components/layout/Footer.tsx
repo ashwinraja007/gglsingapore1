@@ -6,7 +6,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <img 
-              src="/images/moltechlogo.png" 
+              src="/images/moltech1.png" 
               alt="Moltech Logo" 
               className="h-10 md:h-12 mb-6" 
               loading="lazy" 
@@ -43,7 +43,7 @@ export const Footer = () => {
               <p className="mb-4">167-169 Great Portland Street,<br />5th Floor, London W1W 5PF, UK</p>
               <p className="mb-2">+44 (0) 203 393 9508</p>
               <p className="mb-2">+44 (0) 203 393 1998</p>
-              <p className="mb-2">operations@moltech.uk</p>
+              <p className="mb-2">operations@moltech</p>
               <p>+44 (0) 730 585 6612</p>
             </div>
           </div>
