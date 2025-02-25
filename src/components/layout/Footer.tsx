@@ -12,7 +12,7 @@ export const Footer = () => {
               loading="lazy" 
             />
             <p className="text-sm md:text-base text-gray-400">
-              MOLTECH (UK) LTD, based in London, is a global freight forwarder offering premium logistics services, 
+              MOLTECH LTD, based in London, is a global freight forwarder offering premium logistics services, 
               backed by a team with over 25 years of expertise in international and domestic transportation.
             </p>
           </div>
@@ -49,13 +49,14 @@ export const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-800 pt-6 flex justify-center items-center">
-         <img 
-  src="/lovable-uploads/65180320-fa21-4a42-a9c9-2888c73ef7f8.png"
-  alt="1 Global Enterprises, Singapore"
-  className="h-12 md:h-16 w-auto"
-  loading="lazy"
-/>
+     <div className="border-t border-gray-800 pt-6 flex justify-center items-center bg-white">
+  <img 
+    src="/lovable-uploads/65180320-fa21-4a42-a9c9-2888c73ef7f8.png"
+    alt="1 Global Enterprises, Singapore"
+    className="h-12 md:h-16 w-auto"
+    loading="lazy"
+  />
+</div>
         </div>
       </div>
     </footer>
