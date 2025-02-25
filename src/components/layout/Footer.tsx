@@ -6,9 +6,9 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <img 
-              src="/images/moltech1.png" 
+              src="/moltech1.png" 
               alt="Moltech Logo" 
-              className="h-10 md:h-12 mb-6" 
+              className="h-14 md:h-16 mb-6" 
               loading="lazy" 
             />
             <p className="text-sm md:text-base text-gray-400">
