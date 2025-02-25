@@ -4,7 +4,12 @@ export const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <img src="moltechlogo.png" alt="Moltech Logo" className="h-10 md:h-12 mb-6" loading="lazy" />
+            <img 
+              src="/images/moltechlogo.png" 
+              alt="Moltech Logo" 
+              className="h-10 md:h-12 mb-6" 
+              loading="lazy" 
+            />
             <p className="text-sm md:text-base text-gray-400">
               MOLTECH (UK) LTD, based in London, is a global freight forwarder offering premium logistics services, 
               backed by a team with over 25 years of expertise in international and domestic transportation.
@@ -20,7 +25,6 @@ export const Footer = () => {
               <a href="/contact" className="text-sm md:text-base text-gray-400 hover:text-white">Contact us</a>
             </div>
           </div>
-
           <div>
             <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Useful Links</h3>
             <div className="flex flex-col gap-3 md:gap-4">
@@ -32,7 +36,6 @@ export const Footer = () => {
               <a href="/dimensions" className="text-sm md:text-base text-gray-400 hover:text-white">Dimensions</a>
             </div>
           </div>
-
           <div>
             <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Contact Us</h3>
             <div className="text-sm md:text-base text-gray-400">
@@ -46,7 +49,7 @@ export const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 pt-6 text-center text-sm md:text-base text-gray-400">
-          © 2022 MOLTECH (UK) LTD. All rights reserved.
+          © {new Date().getFullYear()} MOLTECH (UK) LTD. All rights reserved.
         </div>
       </div>
     </footer>
