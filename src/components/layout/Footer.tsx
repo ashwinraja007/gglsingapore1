@@ -1,4 +1,3 @@
-
 export const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white pt-12 md:pt-16 pb-6">
@@ -47,15 +46,18 @@ export const Footer = () => {
               <p>+44 (0) 730 585 6612</p>
             </div>
           </div>
-        </div>     
-     <div className="border-t border-gray-800 pt-6 flex justify-center items-center bg-white">
-   <div className="border-t border-gray-800 pt-6 flex justify-center items-center">
-         <img 
-  src="/lovable-uploads/65180320-fa21-4a42-a9c9-2888c73ef7f8.png"
-  alt="1 Global Enterprises, Singapore"
-  className="h-12 md:h-16 w-auto"
-  loading="lazy"
-/>
+        </div>
+        
+        {/* White background area for the last image */}
+        <div className="bg-white py-6 rounded-t">
+          <div className="flex justify-center items-center">
+            <img 
+              src="/lovable-uploads/65180320-fa21-4a42-a9c9-2888c73ef7f8.png"
+              alt="1 Global Enterprises, Singapore"
+              className="h-12 md:h-16 w-auto"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </footer>
