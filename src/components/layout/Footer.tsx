@@ -3,9 +3,9 @@ export const Footer = () => {
     <footer className="bg-gray-900 text-white pt-12 md:pt-16 pb-6">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div>
+          <div className="flex flex-col items-start">
             <img 
-              src="/moltech2.png" 
+              src="/moltech1.png" 
               alt="Moltech Logo" 
               className="h-14 md:h-16 mb-6" 
               loading="lazy" 
@@ -48,16 +48,14 @@ export const Footer = () => {
           </div>
         </div>
         
-        {/* White background area for the last image */}
-        <div className="bg-white py-6 rounded-t">
-          <div className="flex justify-center items-center">
-            <img 
-              src="/lovable-uploads/65180320-fa21-4a42-a9c9-2888c73ef7f8.png"
-              alt="1 Global Enterprises, Singapore"
-              className="h-12 md:h-16 w-auto"
-              loading="lazy"
-            />
-          </div>
+        {/* White background container for the Global Enterprises logo */}
+        <div className="mt-6 w-full bg-white py-4 px-6 rounded-md flex justify-center">
+          <img 
+            src="/lovable-uploads/65180320-fa21-4a42-a9c9-2888c73ef7f8.png"
+            alt="1 Global Enterprises, Singapore"
+            className="h-12 md:h-16 w-auto object-contain"
+            loading="lazy"
+          />
         </div>
       </div>
     </footer>
