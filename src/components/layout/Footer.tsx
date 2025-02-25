@@ -47,8 +47,7 @@ export const Footer = () => {
               <p>+44 (0) 730 585 6612</p>
             </div>
           </div>
-        </div>
-        
+        </div>     
      <div className="border-t border-gray-800 pt-6 flex justify-center items-center bg-white">
   <img 
     src="/lovable-uploads/65180320-fa21-4a42-a9c9-2888c73ef7f8.png"
