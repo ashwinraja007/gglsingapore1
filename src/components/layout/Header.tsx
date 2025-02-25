@@ -1,30 +1,19 @@
-
 import { Link, useLocation } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { useState } from "react";
-
 export const Header = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  return (
-    <header className="absolute top-0 left-0 right-0 z-20">
+  return <header className="absolute top-0 left-0 right-0 z-20">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <img 
-              src="moltech1.png" 
-              alt="Moltech Logo" 
-              className="h-15 md:h-19 w-auto object-fill" 
-            />
+            <img src="moltech1.png" alt="Moltech Logo" className="h-14 md:h-19 w-auto object-fill" />
           </div>
           
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
+          <button className="md:hidden text-white p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             <Menu className="h-6 w-6" />
           </button>
 
@@ -53,6 +42,5 @@ export const Header = () => {
           </nav>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 };
