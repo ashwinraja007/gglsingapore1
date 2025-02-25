@@ -9,7 +9,7 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <img src="moltech2.png" alt="Moltech Logo" className="h-19 md:h-19 w-auto object-fill" />
+            <img src="moltech2.png" alt="Moltech Logo" className="h-14 md:h-19 w-auto object-fill" />
           </div>
           
           {/* Mobile Menu Button */}
