@@ -53,7 +53,7 @@ export const Footer = () => {
          <img 
   src="/lovable-uploads/65180320-fa21-4a42-a9c9-2888c73ef7f8.png"
   alt="1 Global Enterprises, Singapore"
-  className="h-16 md:h-20 w-auto"
+  className="h-12 md:h-16 w-auto"
   loading="lazy"
 />
         </div>
