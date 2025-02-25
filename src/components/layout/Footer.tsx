@@ -43,11 +43,10 @@ export const Footer = () => {
               <p>+44 (0) 730 585 6612</p>
             </div>
           </div>
+        </div> 
+       <div className="border-t border-gray-800 pt-6 text-center text-sm md:text-base text-gray-400">
+          © 2022 MOLTECH (UK) LTD. All rights reserved.
         </div>
-        
-        <div className="border-t border-gray-800 pt-6 text-center text-sm md:text-base text-gray-400">
-  <img src="/path-to-your-image.png" alt="Company Logo" className="mx-auto w-32 h-auto" />
-</div>
       </div>
     </footer>
   );
