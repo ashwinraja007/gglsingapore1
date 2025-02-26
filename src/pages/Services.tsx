@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { FixedLogo } from "@/components/layout/FixedLogo";
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
@@ -151,7 +150,6 @@ const Services = () => {
         </section>
       </main>
 
-      <FixedLogo />
       <Footer />
     </div>
   );
