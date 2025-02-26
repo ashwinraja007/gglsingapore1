@@ -6,7 +6,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="flex flex-col items-start">
             <img 
-              src="/moltech3.png" 
+              src="/moltech logo.png" 
               alt="Moltech Logo" 
               className="h-14 md:h-16 mb-3" 
               loading="lazy" 
