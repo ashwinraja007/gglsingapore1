@@ -17,7 +17,7 @@ export const Header = () => {
             <img 
               src="/1GlobalEnterprises.png" 
               alt="1 Global Enterprises Logo" 
-              className="h-14 md:h-19 w-auto object-contain"
+              className="h-10 md:h-19 w-auto object-contain"
             />
           </div>
           
