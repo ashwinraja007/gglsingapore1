@@ -13,7 +13,7 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <img src="moltech logo.png" alt="Moltech Logo" className="h-14 md:h-19 w-auto object-fill" />
+            <img src="moltech logo.png" alt="Moltech Logo" className={`h-14 md:h-19 w-auto object-fill ${isHomePage ? 'brightness-0 invert' : ''}`} />
             <img 
               src="/1GlobalEnterprises.png" 
               alt="1 Global Enterprises Logo" 
