@@ -1,4 +1,3 @@
-
 import { Link, useLocation } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { useState } from "react";
@@ -7,7 +6,7 @@ export const Header = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  
   return (
     <header className="absolute top-0 left-0 right-0 z-20">
       <div className="container mx-auto px-4 py-4">
@@ -17,7 +16,7 @@ export const Header = () => {
             <img 
               src="/1GlobalEnterprises.png" 
               alt="1 Global Enterprises Logo" 
-              className="h-14 md:h-19 w-auto object-contain"
+              className={`h-14 md:h-19 w-auto object-contain ${isHomePage ? 'bg-white/80 p-1 rounded' : ''}`}
             />
           </div>
           
@@ -25,7 +24,6 @@ export const Header = () => {
           <button className="md:hidden text-gray-800 p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             <Menu className="h-6 w-6" />
           </button>
-
           {/* Desktop Navigation */}
           <nav className="hidden md:flex gap-8 items-center">
             <Link to="/" className={`${isHomePage ? 'text-white' : 'text-gray-800'} hover:text-gray-600`}>Home</Link>
@@ -37,7 +35,6 @@ export const Header = () => {
             </Link>
           </nav>
         </div>
-
         {/* Mobile Navigation */}
         <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden mt-4 bg-white shadow-lg rounded-lg p-4`}>
           <nav className="flex flex-col gap-4">
