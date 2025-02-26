@@ -17,12 +17,12 @@ export const Header = () => {
             <img 
               src="/1GlobalEnterprises.png" 
               alt="1 Global Enterprises Logo" 
-              className={`h-14 md:h-19 w-auto object-contain ${isHomePage ? 'mix-blend-difference' : ''}`}
+              className="h-14 md:h-19 w-auto object-contain"
             />
           </div>
           
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-gray-800" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <button className="md:hidden text-gray-800 p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             <Menu className="h-6 w-6" />
           </button>
 
