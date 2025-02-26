@@ -1,3 +1,4 @@
+
 export const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white pt-12 md:pt-16 pb-6">
@@ -7,9 +8,10 @@ export const Footer = () => {
             <img 
               src="/moltech3.png" 
               alt="Moltech Logo" 
-              className="h-14 md:h-16 mb-6" 
+              className="h-14 md:h-16 mb-3" 
               loading="lazy" 
             />
+            <p className="text-sm text-gray-400 mb-4">A venture of 1 Global Enterprises, Singapore</p>
             <p className="text-sm md:text-base text-gray-400">
               MOLTECH LTD, based in London, is a global freight forwarder offering premium logistics services, 
               backed by a team with over 25 years of expertise in international and domestic transportation.
