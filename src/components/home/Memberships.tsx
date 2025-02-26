@@ -12,10 +12,6 @@ const Memberships = () => {
       alt: "Industry Certification 2"
     },
     {
-      src: "/lovable-uploads/iscc.png",
-      alt: "Industry Certification 3"
-    },
-    {
       src: "/lovable-uploads/wca.png",
       alt: "Industry Certification 4"
     }
