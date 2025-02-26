@@ -1,7 +1,6 @@
 import React from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { FixedLogo } from "@/components/layout/FixedLogo";
 import { motion } from 'framer-motion';
 
 const About = () => {
@@ -135,7 +134,6 @@ Backed by 1 Global Enterprises' industry expertise and innovation-driven approac
         </section>
       </main>
 
-      <FixedLogo />
       <Footer />
     </div>
   );
