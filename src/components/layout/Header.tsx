@@ -15,7 +15,7 @@ export const Header = () => {
           <div className="flex items-center gap-4">
             <img src="moltech logo.png" alt="Moltech Logo" className="h-14 md:h-19 w-auto object-fill" />
             <img 
-              src="/lovable-uploads/1GlobalEnterprises.png" 
+              src="/1GlobalEnterprises.png" 
               alt="1 Global Enterprises Logo" 
               className="h-14 md:h-19 w-auto object-contain"
             />
