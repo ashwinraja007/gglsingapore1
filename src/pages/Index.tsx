@@ -3,6 +3,7 @@ import { Suspense, lazy } from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Loader2 } from "lucide-react";
+import { FixedLogo } from '@/components/layout/FixedLogo';
 
 // Lazy load components
 const Hero = lazy(() => import("@/components/home/Hero"));
@@ -21,7 +22,7 @@ const LoadingComponent = () => (
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative">
       <Header />
       <main>
         <Suspense fallback={<LoadingComponent />}>
@@ -48,6 +49,7 @@ const Index = () => {
           <QuickEnquiry />
         </Suspense>
       </main>
+      <FixedLogo />
       <Footer />
     </div>
   );

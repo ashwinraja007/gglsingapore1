@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { FixedLogo } from "@/components/layout/FixedLogo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -23,7 +24,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white font-sans">
+    <div className="min-h-screen flex flex-col relative">
       <Header />
       
       <main className="flex-grow pt-16">
@@ -221,6 +222,7 @@ const Contact = () => {
         </section>
       </main>
 
+      <FixedLogo />
       <Footer />
     </div>
   );

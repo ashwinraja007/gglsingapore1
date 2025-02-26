@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { FixedLogo } from "@/components/layout/FixedLogo";
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
@@ -42,7 +43,7 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen flex flex-col relative">
       <Header />
       
       <main className="flex-grow mt-20">
@@ -150,6 +151,7 @@ const Services = () => {
         </section>
       </main>
 
+      <FixedLogo />
       <Footer />
     </div>
   );
