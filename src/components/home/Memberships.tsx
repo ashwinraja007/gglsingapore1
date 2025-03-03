@@ -11,6 +11,10 @@ const Memberships = () => {
       src: "/lovable-uploads/fiata.png",
       alt: "Industry Certification 2"
     },
+     {
+      src: "/lovable-uploads/GGL.png",
+      alt: "Industry Certification 2"
+    },
     {
       src: "/lovable-uploads/wca.png",
       alt: "Industry Certification 4"
