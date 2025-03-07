@@ -53,7 +53,7 @@ export const Hero = () => {
         className="absolute inset-0"
       >
         <img 
-          src="imagehome.jpg" 
+          src="homeimage.jpg" 
           alt="Hero background" 
           className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-[3000ms]" 
           loading="lazy" 
