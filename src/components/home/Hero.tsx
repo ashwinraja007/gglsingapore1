@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { PortalLink } from "../common/PortalLink";
@@ -45,34 +44,37 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Background image with enhanced animation */}
+      {/* Background image and overlay remain the same */}
       <motion.div
-        initial={{ scale: 1.1, opacity: 0.8 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 2 }}
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.5 }}
         className="absolute inset-0"
       >
         <img 
-          src="homeimage.jpg" 
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/0d564740b070a89f62cdebb12ae5e7dcda48b805aed08acac5ffb9d67e85f0d7" 
           alt="Hero background" 
-          className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-[3000ms]" 
+          className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-3000" 
           loading="lazy" 
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/70" />
       </motion.div>
 
-      {/* Main content with improved animations */}
+      {/* Main content remains the same */}
       <div className="absolute inset-0">
         <div className="container mx-auto px-4 h-full flex flex-col justify-center">
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="max-w-2xl space-y-8"
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="max-w-2xl space-y-6"
           >
-            {/* Enhanced hero heading with text shadow */}
+            {/* Hero content remains the same */}
             <motion.h1 
-              className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight text-shadow"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="text-4xl md:text-5xl font-bold text-white leading-tight"
             >
               Delivering Excellence in Global Logistics Solutions
             </motion.h1>
@@ -81,9 +83,9 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="text-lg md:text-xl text-white/90 leading-relaxed font-raleway"
+              className="text-lg md:text-xl text-white/90 leading-relaxed"
             >
-              MOLTECH LTD brings over 25 years of expertise in international logistics, 
+              MOLTECH  LTD brings over 25 years of expertise in international logistics, 
               offering comprehensive solutions tailored to your business needs.
             </motion.p>
             
@@ -109,16 +111,16 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Enhanced Portal Links Section with glass effect */}
+      {/* Enhanced Portal Links Section */}
       <motion.div 
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.3 }}
         className="container mx-auto px-4 absolute bottom-24 md:bottom-16 left-0 right-0 z-10"
       >
-        {/* Mobile dropdown button with enhanced styling */}
+        {/* Mobile dropdown button */}
         <motion.button 
-          className="md:hidden w-full glass-effect p-4 rounded-lg shadow-lg mb-4 flex items-center justify-between text-white"
+          className="md:hidden w-full bg-blue-600/90 backdrop-blur-md p-4 rounded-lg shadow-lg mb-4 flex items-center justify-between text-white border border-white/20"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
@@ -132,7 +134,7 @@ export const Hero = () => {
           </motion.div>
         </motion.button>
 
-        {/* Mobile menu with improved animations */}
+        {/* Mobile menu */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div 
@@ -148,7 +150,7 @@ export const Hero = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="glass-effect rounded-lg hover:bg-white/20 transition-all duration-300"
+                  className="bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-colors"
                 >
                   <button className="w-full p-4 flex items-center space-x-4 text-white">
                     <span className="text-white/80">{link.icon}</span>
@@ -163,7 +165,7 @@ export const Hero = () => {
           )}
         </AnimatePresence>
 
-        {/* Desktop grid with enhanced styling */}
+        {/* Desktop grid */}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-5 gap-4">
           {portalLinks.map((link, index) => (
             <motion.div
@@ -171,16 +173,12 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 + 1.3 }}
-              className="glass-effect rounded-lg hover:bg-white/30 transition-all duration-300 group transform hover:-translate-y-1"
+              className="bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-colors group"
             >
               <button className="w-full h-full p-4 flex flex-col items-center justify-center space-y-3 text-white">
-                <motion.span 
-                  className="text-white/80"
-                  whileHover={{ scale: 1.2, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
+                <span className="text-white/80 transform group-hover:scale-110 transition-transform">
                   {link.icon}
-                </motion.span>
+                </span>
                 <div className="text-center">
                   <div className="font-medium whitespace-nowrap">{link.title}</div>
                   <div className="text-sm text-white/70 mt-1">{link.description}</div>
@@ -191,7 +189,7 @@ export const Hero = () => {
         </div>
       </motion.div>
 
-      {/* Enhanced scroll indicator */}
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -202,7 +200,7 @@ export const Hero = () => {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <ChevronDown className="h-8 w-8 text-white/70 animate-bounce" />
+          <ChevronDown className="h-8 w-8 text-white/50" />
         </motion.div>
       </motion.div>
     </section>
