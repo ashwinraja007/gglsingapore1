@@ -1,65 +1,38 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 
 const Memberships = () => {
   const certifications = [
     {
       src: "/lovable-uploads/bifa.png",
-      alt: "BIFA Certification"
+      alt: "Industry Certification 1"
     },
     {
       src: "/lovable-uploads/fiata.png",
-      alt: "FIATA Certification"
+      alt: "Industry Certification 2"
     },
-    {
+     {
       src: "/lovable-uploads/GGL.png",
-      alt: "GGL Certification"
+      alt: "Industry Certification 2"
     },
     {
       src: "/lovable-uploads/wca.png",
-      alt: "WCA Certification"
+      alt: "Industry Certification 4"
     }
   ];
 
   const allCertifications = [...certifications, ...certifications];
   
   const [isHovered, setIsHovered] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
 
   return (
-    <section 
-      ref={sectionRef} 
-      className={`py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}
-    >
+    <section className="py-16 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="section-title">
+          <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 mb-4">
             Industry Certifications & Memberships
           </h2>
-          <p className="section-description">
+          <p className="text-gray-600 max-w-2xl mx-auto">
             Trusted by leading industry organizations and certified to meet the highest standards
           </p>
         </div>
@@ -87,13 +60,12 @@ const Memberships = () => {
                 <img
                   src={cert.src}
                   alt={cert.alt}
-                  className="h-16 md:h-24 w-auto object-contain transition-all duration-500 transform group-hover:scale-110 filter group-hover:brightness-110 group-hover:drop-shadow-md"
+                  className="h-16 md:h-24 w-auto object-contain transition-all duration-300 transform group-hover:scale-110"
                   loading="eager"
                   decoding="async"
                   fetchPriority="high"
                   style={{ maxWidth: '150px' }}
                 />
-                <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300 rounded-lg"></div>
               </div>
             ))}
           </div>
