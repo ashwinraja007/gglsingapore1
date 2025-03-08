@@ -1,3 +1,4 @@
+
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -44,10 +45,10 @@ export const QuickEnquiry = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 max-w-3xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 mb-4">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl font-bold text-gray-800 mb-3">
             Quick Enquiry
           </h2>
           <p className="text-gray-600">
@@ -75,8 +76,8 @@ export const QuickEnquiry = () => {
           </Alert>
         )}
         
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-white p-8 rounded-xl shadow-lg">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 bg-white p-6 rounded-xl shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="space-y-2">
               <Label htmlFor="fullName" className="text-gray-700">Full Name*</Label>
               <Input 
@@ -108,7 +109,7 @@ export const QuickEnquiry = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="space-y-2">
               <Label htmlFor="email" className="text-gray-700">Email*</Label>
               <Input 

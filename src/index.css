@@ -9,11 +9,11 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
+    @apply font-semibold tracking-tight text-gray-800;
   }
 
   p {
-    @apply leading-relaxed;
+    @apply leading-relaxed text-gray-600;
   }
 
   :root {
@@ -115,10 +115,10 @@
 
 @layer components {
   .section-title {
-    @apply text-3xl font-bold text-brand-darkBlue;
+    @apply text-2xl font-bold text-gray-800;
   }
   
   .section-spacing {
-    @apply py-10 md:py-14;
+    @apply py-10;
   }
 }

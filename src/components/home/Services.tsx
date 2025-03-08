@@ -1,10 +1,11 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const EnhancedServiceCard = ({ image, title }) => {
+const EnhancedServiceCard = ({ image, title, description }) => {
   return (
-    <div className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
+    <div className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl h-full">
       <div className="aspect-square overflow-hidden">
         <div 
           className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
@@ -13,10 +14,10 @@ const EnhancedServiceCard = ({ image, title }) => {
           aria-label={title}
         />
       </div>
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-        <h3 className="text-lg md:text-xl font-bold text-white mb-2">{title}</h3>
-        <p className="text-xs md:text-sm text-white/90 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          Learn more about our {title.toLowerCase()} services and solutions
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+        <h3 className="text-base font-bold text-white mb-1">{title}</h3>
+        <p className="text-xs text-white/90 opacity-0 transition-opacity duration-300 group-hover:opacity-100 line-clamp-2">
+          {description}
         </p>
       </div>
     </div>
@@ -25,42 +26,61 @@ const EnhancedServiceCard = ({ image, title }) => {
 
 export const Services = () => {
   const services = [
-    { image: "/lovable-uploads/airfreight.jpg", title: "Air Freight" },
-    { image: "/lovable-uploads/ocean.jpg", title: "Ocean Freight (LCL & FCL)" },
-    { image: "/lovable-uploads/cc.jpg", title: "Customs Clearance" },
-    { image: "/lovable-uploads/liquid.jpg", title: "Liquid Transportation" }
+    { 
+      image: "/lovable-uploads/airfreight.jpg", 
+      title: "Air Freight",
+      description: "Tailored Air Freight Solutions to Meet Your Unique Requirements. We offer flexible air freight solutions for time-sensitive documents or large-scale cargo." 
+    },
+    { 
+      image: "/lovable-uploads/ocean.jpg", 
+      title: "Ocean Freight (LCL & FCL)",
+      description: "Connecting you globally with comprehensive ocean freight services. We offer both LCL for smaller shipments and FCL for dedicated container needs." 
+    },
+    { 
+      image: "/lovable-uploads/cc.jpg", 
+      title: "Customs Clearance",
+      description: "Expert customs clearance services ensuring your shipments move smoothly across borders with accurate documentation and regulatory compliance." 
+    },
+    { 
+      image: "/lovable-uploads/liquid.jpg", 
+      title: "Liquid Transportation",
+      description: "Specialized solutions for transporting liquids safely and efficiently, utilizing ISO tanks, flexitanks, and specialized tankers managed by expert teams." 
+    }
   ];
 
   return (
-    <section className="section-spacing bg-gradient-to-b from-white to-gray-50">
+    <section className="py-10 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
-          <h2 className="section-title mb-3">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">
             Core Services
           </h2>
-          <p className="text-gray-600 max-w-xl mx-auto text-sm md:text-base">
+          <p className="text-gray-600 max-w-xl mx-auto text-sm">
             Discover our comprehensive range of logistics solutions designed to meet your shipping needs
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {services.map((service, index) => (
             <EnhancedServiceCard 
               key={index}
               image={service.image}
               title={service.title}
+              description={service.description}
             />
           ))}
         </div>
         
-        <div className="flex justify-center mt-8 md:mt-10">
-          <Button 
-            variant="outline" 
-            className="group hover:bg-blue-600 hover:text-white transition-all duration-300 text-sm"
-          >
-            All Services
-            <ArrowRight className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
-          </Button>
+        <div className="flex justify-center mt-8">
+          <Link to="/services">
+            <Button 
+              variant="outline" 
+              className="group hover:bg-blue-600 hover:text-white transition-all duration-300 text-sm"
+            >
+              All Services
+              <ArrowRight className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
