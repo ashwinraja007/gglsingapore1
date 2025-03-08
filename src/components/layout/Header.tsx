@@ -23,17 +23,17 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-20 transition-all duration-300 bg-white shadow-md py-2">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <img 
               src="/moltech logo.png" 
               alt="Moltech Logo" 
-              className="h-6 md:h-8 w-auto object-contain transition-all duration-300" 
+              className="h-5 md:h-6 w-auto object-contain transition-all duration-300" 
             />
-            <div className="h-6 w-px bg-gray-300 hidden md:block"></div>
+            <div className="h-5 w-px bg-gray-300 hidden md:block"></div>
             <img 
               src="/1GlobalEnterprises.png" 
               alt="1 Global Enterprises Logo" 
-              className="h-6 md:h-8 w-auto object-contain"
+              className="h-5 md:h-6 w-auto object-contain"
             />
           </div>
           
@@ -43,41 +43,41 @@ export const Header = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className="h-6 w-6" /> 
+              <X className="h-5 w-5" /> 
             ) : (
-              <Menu className="h-6 w-6 text-gray-800" />
+              <Menu className="h-5 w-5 text-gray-800" />
             )}
           </button>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex gap-6 items-center">
+          <nav className="hidden md:flex gap-4 lg:gap-6 items-center">
             <Link 
               to="/" 
-              className="font-medium transition-colors text-gray-800 hover:text-blue-600"
+              className="text-sm font-medium transition-colors text-gray-800 hover:text-blue-600"
             >
               Home
             </Link>
             <Link 
               to="/about" 
-              className="font-medium transition-colors text-gray-800 hover:text-blue-600"
+              className="text-sm font-medium transition-colors text-gray-800 hover:text-blue-600"
             >
               About Us
             </Link>
             <Link 
               to="/services" 
-              className="font-medium transition-colors text-gray-800 hover:text-blue-600"
+              className="text-sm font-medium transition-colors text-gray-800 hover:text-blue-600"
             >
               Services
             </Link>
             <Link 
               to="/contact" 
-              className="font-medium transition-colors text-gray-800 hover:text-blue-600"
+              className="text-sm font-medium transition-colors text-gray-800 hover:text-blue-600"
             >
               Contact Us
             </Link>
             <Link 
               to="/quote" 
-              className="px-5 py-2 rounded-full hover:shadow transition font-medium bg-blue-600 text-white hover:bg-blue-700"
+              className="px-4 py-1.5 rounded-full hover:shadow transition font-medium text-sm bg-blue-600 text-white hover:bg-blue-700"
             >
               Get A Quote
             </Link>
