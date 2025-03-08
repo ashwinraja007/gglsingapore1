@@ -1,441 +1,353 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ArrowRight, Map, Package, Truck, Ship } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, ChevronDown, Package, Truck, Map, Ship } from 'lucide-react';
+
 const Services = () => {
-  const [activeService, setActiveService] = useState(0);
-  const [isInView, setIsInView] = useState(false);
-  useEffect(() => {
-    setIsInView(true);
-  }, []);
-  const services = [{
-    title: "Air Freight Services",
-    description: "Global air freight solutions with express shipping and door-to-door service.",
-    details: "With our extensive network of airline partners, we offer premium air freight services that prioritize speed and reliability. Our expert team handles all aspects from documentation to customs clearance, ensuring your shipments arrive safely and on time regardless of destination.",
-    image: "/airfrieght1.jpg",
-    icon: <Package className="w-6 h-6" />,
-    stats: [{
-      value: "98%",
-      label: "On-time delivery"
-    }, {
-      value: "200+",
-      label: "Destinations"
-    }, {
-      value: "24/7",
-      label: "Support"
-    }]
-  }, {
-    title: "Transportation & Distribution",
-    description: "Nationwide distribution network ensuring timely and reliable deliveries.",
-    details: "Our comprehensive distribution infrastructure covers major metropolitan areas and beyond, supported by cutting-edge tracking technology. We specialize in both standard and temperature-controlled transportation, with flexible scheduling options to meet your specific business requirements.",
-    image: "/lovable-uploads/transport.jpg",
-    icon: <Truck className="w-6 h-6" />,
-    stats: [{
-      value: "1500+",
-      label: "Vehicles"
-    }, {
-      value: "45+",
-      label: "Distribution centers"
-    }, {
-      value: "99.7%",
-      label: "Delivery accuracy"
-    }]
-  }, {
-    title: "Warehousing Solutions",
-    description: "State-of-the-art facilities with advanced inventory management systems.",
-    details: "Our warehousing solutions include climate-controlled storage, real-time inventory tracking, order fulfillment, and value-added services. With 24/7 security monitoring and strategically located facilities, we ensure your inventory is stored safely and efficiently distributed when needed.",
-    image: "/lovable-uploads/warehouse.jpg",
-    icon: <Map className="w-6 h-6" />,
-    stats: [{
-      value: "1.2M+",
-      label: "Sq ft of space"
-    }, {
-      value: "99.9%",
-      label: "Inventory accuracy"
-    }, {
-      value: "60 min",
-      label: "Average processing"
-    }]
-  }, {
-    title: "Ocean Freight Services",
-    description: "Comprehensive shipping solutions with global coverage and competitive rates.",
-    details: "Our ocean freight services include both FCL and LCL options, backed by strategic partnerships with major carriers. We handle all documentation, customs clearance, and provide specialized container solutions for various cargo types, delivering cost-effective global shipping solutions.",
-    image: "/lovable-uploads/oceanfrieght.jpg",
-    icon: <Ship className="w-6 h-6" />,
-    stats: [{
-      value: "150+",
-      label: "Global ports"
-    }, {
-      value: "25K+",
-      label: "Annual shipments"
-    }, {
-      value: "15+",
-      label: "Carrier partners"
-    }]
-  }];
-  return <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-gray-100">
+  const [expandedService, setExpandedService] = useState(null);
+
+  const services = [
+    {
+      id: "air-freight",
+      title: "Air Freight Services",
+      shortDescription: "Fast and reliable global air freight solutions",
+      fullDescription: "We offer comprehensive air freight solutions tailored to meet your shipping requirements. Our expert team ensures smooth handling of air imports, exports, and express shipments, all with door-to-door service options.",
+      benefits: [
+        "Time-sensitive deliveries worldwide",
+        "Competitive rates with premium carriers",
+        "Complete documentation and customs clearance",
+        "Specialized handling for fragile or high-value items"
+      ],
+      icon: <Package className="w-5 h-5 md:w-6 md:h-6" />,
+      image: "/airfrieght1.jpg"
+    },
+    {
+      id: "transportation",
+      title: "Transportation & Distribution",
+      shortDescription: "Nationwide distribution network with reliable delivery",
+      fullDescription: "Moltech ensures efficient domestic distribution and timely deliveries. Our robust logistics infrastructure enhances productivity, offering frequent and reliable transportation services for businesses of all sizes.",
+      benefits: [
+        "Nationwide coverage with strategic distribution centers",
+        "Temperature-controlled transportation options",
+        "Real-time tracking and delivery confirmation",
+        "Flexible scheduling for your business needs"
+      ],
+      icon: <Truck className="w-5 h-5 md:w-6 md:h-6" />,
+      image: "/lovable-uploads/transport.jpg"
+    },
+    {
+      id: "warehousing",
+      title: "Warehousing Solutions",
+      shortDescription: "Modern facilities with advanced inventory management",
+      fullDescription: "Our state-of-the-art warehousing facilities are equipped with modern inventory management systems and comprehensive security measures to ensure your products are stored safely and efficiently.",
+      benefits: [
+        "Climate-controlled storage options",
+        "Inventory management with real-time reporting",
+        "Order fulfillment and distribution services",
+        "24/7 security monitoring and controlled access"
+      ],
+      icon: <Map className="w-5 h-5 md:w-6 md:h-6" />,
+      image: "/lovable-uploads/warehouse.jpg"
+    },
+    {
+      id: "ocean-freight",
+      title: "Ocean Freight Services",
+      shortDescription: "Global shipping with competitive rates",
+      fullDescription: "We provide comprehensive ocean freight solutions including FCL and LCL services with global coverage and competitive rates for businesses looking to ship internationally via sea routes.",
+      benefits: [
+        "FCL and LCL shipping options worldwide",
+        "Strategic carrier partnerships for best rates",
+        "Specialized container solutions for various cargo",
+        "Complete documentation and customs clearance"
+      ],
+      icon: <Ship className="w-5 h-5 md:w-6 md:h-6" />,
+      image: "/lovable-uploads/oceanfrieght.jpg"
+    }
+  ];
+
+  const toggleService = (id) => {
+    if (expandedService === id) {
+      setExpandedService(null);
+    } else {
+      setExpandedService(id);
+    }
+  };
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.1 
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
       
-      <main className="flex-grow pt-20">
-        {/* Hero Section */}
-        <section className="relative py-24 overflow-hidden">
-          <div className="absolute inset-0 bg-blue-900 opacity-5 pattern-grid-lg"></div>
-          
-          <div className="container mx-auto px-4">
-            <motion.div initial={{
-            opacity: 0,
-            y: 30
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.8
-          }} className="max-w-4xl mx-auto text-center">
-              <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-800 font-medium text-sm mb-6">
-                LOGISTICS EXCELLENCE
+      <main className="flex-grow pt-16">
+        {/* Hero Section - Simple and mobile-friendly */}
+        <section className="py-10 md:py-16 px-4 bg-white">
+          <div className="container mx-auto max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              <span className="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-medium mb-4">
+                OUR SERVICES
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6">
-                <span className="relative inline-block">
-                  <span>Streamlined Solutions for</span>
-                  <motion.span className="absolute -bottom-2 left-0 w-full h-1 bg-blue-500" initial={{
-                  width: "0%"
-                }} animate={{
-                  width: "100%"
-                }} transition={{
-                  delay: 0.5,
-                  duration: 0.8
-                }}></motion.span>
-                </span>
-                <br />
-                <span className="text-blue-700">Global Logistics</span>
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 leading-tight">
+                Comprehensive Logistics Solutions
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
-                Our comprehensive suite of services is designed to optimize your supply chain, reduce costs, and deliver reliable results across every touchpoint.
+              <div className="h-1 w-16 bg-blue-600 mx-auto mb-6"></div>
+              <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-sm md:text-base">
+                We offer a complete range of logistics services designed to streamline your supply chain,
+                reduce costs, and deliver reliable results for your business.
               </p>
-              <motion.button whileHover={{
-              scale: 1.05
-            }} whileTap={{
-              scale: 0.95
-            }} className="px-8 py-4 bg-blue-600 text-white rounded-lg font-medium shadow-lg hover:bg-blue-700 transition-all duration-300 flex items-center gap-2 mx-auto">
-                Request a Quote
-                <ArrowRight size={18} />
-              </motion.button>
+              <button className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg text-sm md:text-base font-medium shadow-md transition duration-300 flex items-center gap-2 mx-auto">
+                Get a Quote <ArrowRight size={16} />
+              </button>
             </motion.div>
           </div>
-          
-          <motion.div initial={{
-          opacity: 0
-        }} animate={{
-          opacity: 0.1
-        }} transition={{
-          delay: 0.5,
-          duration: 1
-        }} className="absolute -bottom-12 -right-12 w-64 h-64 bg-blue-500 rounded-full blur-3xl"></motion.div>
-          <motion.div initial={{
-          opacity: 0
-        }} animate={{
-          opacity: 0.1
-        }} transition={{
-          delay: 0.7,
-          duration: 1
-        }} className="absolute -top-24 -left-24 w-80 h-80 bg-purple-500 rounded-full blur-3xl"></motion.div>
         </section>
-
-        {/* Services Navigation */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <motion.div initial={{
-            opacity: 0,
-            y: 20
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.6
-          }} className="flex flex-col items-center mb-12">
-              <span className="text-blue-600 font-medium mb-2">OUR OFFERINGS</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
-                Comprehensive Logistics Services
-              </h2>
-              <div className="w-20 h-1 bg-blue-500"></div>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              {services.map((service, index) => <motion.div key={index} initial={{
-              opacity: 0,
-              y: 20
-            }} animate={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              delay: index * 0.1,
-              duration: 0.5
-            }} className={`rounded-xl p-6 cursor-pointer transition-all duration-300 ${activeService === index ? "bg-blue-700 text-white shadow-xl" : "bg-gray-100 text-gray-800 hover:bg-gray-200"}`} onClick={() => setActiveService(index)}>
-                  <div className={`p-3 rounded-full inline-flex mb-4 ${activeService === index ? "bg-white/20" : "bg-blue-100"}`}>
-                    {service.icon}
+        
+        {/* Services Section - Mobile-first cards */}
+        <section className="py-12 px-4">
+          <div className="container mx-auto max-w-4xl">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={containerVariants}
+              className="space-y-6"
+            >
+              {services.map((service) => (
+                <motion.div 
+                  key={service.id}
+                  variants={itemVariants}
+                  className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white"
+                >
+                  <div className="relative">
+                    <img 
+                      src={service.image} 
+                      alt={service.title} 
+                      className="w-full h-48 md:h-64 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                      <div className="p-4 md:p-6 w-full">
+                        <div className="flex items-center justify-between">
+                          <h2 className="text-xl md:text-2xl font-bold text-white">{service.title}</h2>
+                          <div className="bg-white/20 p-2 rounded-full backdrop-blur-sm">
+                            {service.icon}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                  <p className={`text-sm ${activeService === index ? "text-white/80" : "text-gray-600"}`}>
-                    {service.description}
-                  </p>
-                </motion.div>)}
-            </div>
-          </div>
-        </section>
-
-        {/* Active Service Detail */}
-        <AnimatePresence mode="wait">
-          <motion.section key={activeService} initial={{
-          opacity: 0
-        }} animate={{
-          opacity: 1
-        }} exit={{
-          opacity: 0
-        }} transition={{
-          duration: 0.5
-        }} className="py-16 relative overflow-hidden">
-            <div className="absolute inset-0 z-0">
-              <motion.div initial={{
-              scale: 1.1,
-              opacity: 0
-            }} animate={{
-              scale: 1,
-              opacity: 1
-            }} transition={{
-              duration: 0.8
-            }} className="h-full w-full">
-                <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
-                <img src={services[activeService].image} alt={services[activeService].title} className="w-full h-full object-cover" />
-              </motion.div>
-            </div>
-
-            <div className="container mx-auto px-4 relative z-10">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <motion.div initial={{
-                x: -50,
-                opacity: 0
-              }} animate={{
-                x: 0,
-                opacity: 1
-              }} transition={{
-                delay: 0.2,
-                duration: 0.6
-              }} className="text-white">
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-slate-50">
-                    {services[activeService].title}
-                  </h2>
-                  <p className="text-lg text-white/85 mb-8 leading-relaxed">
-                    {services[activeService].details}
-                  </p>
-                  <div className="flex flex-wrap gap-6 mb-8">
-                    {services[activeService].stats.map((stat, idx) => <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                        <p className="text-2xl font-bold text-slate-50">{stat.value}</p>
-                        <p className="text-white/70 text-sm">{stat.label}</p>
-                      </div>)}
-                  </div>
-                  <motion.button whileHover={{
-                  scale: 1.05
-                }} whileTap={{
-                  scale: 0.95
-                }} className="px-6 py-3 bg-white text-blue-800 rounded-lg font-medium hover:bg-blue-50 transition-all duration-300 flex items-center gap-2">
-                    Learn More About Our {services[activeService].title}
-                    <ArrowRight size={16} />
-                  </motion.button>
-                </motion.div>
-
-                <motion.div initial={{
-                x: 50,
-                opacity: 0
-              }} animate={{
-                x: 0,
-                opacity: 1
-              }} transition={{
-                delay: 0.4,
-                duration: 0.6
-              }} className="bg-white/10 backdrop-blur-sm p-8 rounded-xl hidden lg:block">
-                  <div className="bg-white rounded-lg p-6 shadow-xl">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">Request Specific Information</h3>
-                    <p className="text-gray-600 mb-6">
-                      Interested in our {services[activeService].title.toLowerCase()}? Fill out the form below for detailed information.
-                    </p>
-                    <form className="space-y-4">
-                      <div>
-                        <input type="text" placeholder="Your Name" className="w-full p-3 border border-gray-300 rounded-lg" />
-                      </div>
-                      <div>
-                        <input type="email" placeholder="Email Address" className="w-full p-3 border border-gray-300 rounded-lg" />
-                      </div>
-                      <div>
-                        <input type="tel" placeholder="Phone Number" className="w-full p-3 border border-gray-300 rounded-lg" />
-                      </div>
-                      <div>
-                        <textarea placeholder="Tell us about your specific needs" className="w-full p-3 border border-gray-300 rounded-lg h-24"></textarea>
-                      </div>
-                      <motion.button whileHover={{
-                      scale: 1.02
-                    }} whileTap={{
-                      scale: 0.98
-                    }} className="w-full py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all duration-300">
-                        Submit Request
-                      </motion.button>
-                    </form>
+                  
+                  <div className="p-4 md:p-6">
+                    <p className="text-gray-700 mb-4 text-sm md:text-base">{service.shortDescription}</p>
+                    
+                    <button 
+                      onClick={() => toggleService(service.id)}
+                      className="flex items-center gap-2 text-blue-600 font-medium text-sm md:text-base"
+                    >
+                      {expandedService === service.id ? "View Less" : "View Details"}
+                      <motion.div
+                        animate={{ rotate: expandedService === service.id ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <ChevronDown size={16} />
+                      </motion.div>
+                    </button>
+                    
+                    {expandedService === service.id && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="mt-4 space-y-4"
+                      >
+                        <p className="text-gray-600 text-sm md:text-base">{service.fullDescription}</p>
+                        
+                        <div className="pt-2">
+                          <h3 className="font-medium text-gray-800 mb-2 text-sm md:text-base">Key Benefits:</h3>
+                          <ul className="space-y-2">
+                            {service.benefits.map((benefit, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-sm md:text-base">
+                                <div className="text-blue-600 mt-1 flex-shrink-0">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                  </svg>
+                                </div>
+                                <span className="text-gray-600">{benefit}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        
+                        <button className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm md:text-base font-medium transition duration-300 mt-4">
+                          Learn More About {service.title}
+                        </button>
+                      </motion.div>
+                    )}
                   </div>
                 </motion.div>
-              </div>
-            </div>
-          </motion.section>
-        </AnimatePresence>
-
-        {/* Why Choose Us */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <motion.div initial={{
-            opacity: 0,
-            y: 20
-          }} animate={isInView ? {
-            opacity: 1,
-            y: 0
-          } : {}} transition={{
-            duration: 0.6
-          }} className="text-center mb-16">
-              <span className="text-blue-600 font-medium">WHY CHOOSE US</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
-                Logistics Excellence at Every Step
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Our dedication to quality service sets us apart in the competitive logistics industry
-              </p>
+              ))}
             </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[{
-              title: "Global Network",
-              description: "Access to worldwide shipping routes and partners",
-              icon: "🌐"
-            }, {
-              title: "24/7 Support",
-              description: "Round-the-clock customer service and tracking",
-              icon: "⏰"
-            }, {
-              title: "Custom Solutions",
-              description: "Tailored logistics strategies for your unique needs",
-              icon: "🔧"
-            }, {
-              title: "Cost Efficiency",
-              description: "Optimized routes and processes to minimize expenses",
-              icon: "💰"
-            }, {
-              title: "Advanced Technology",
-              description: "Real-time tracking and inventory management",
-              icon: "📱"
-            }, {
-              title: "Experienced Team",
-              description: "Industry veterans with specialized knowledge",
-              icon: "👥"
-            }, {
-              title: "Sustainability",
-              description: "Eco-friendly practices and reduced carbon footprint",
-              icon: "🌱"
-            }, {
-              title: "Compliance Expertise",
-              description: "Navigate complex international regulations with ease",
-              icon: "📋"
-            }].map((item, index) => <motion.div key={index} initial={{
-              opacity: 0,
-              y: 20
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              delay: index * 0.1,
-              duration: 0.5
-            }} viewport={{
-              once: true
-            }} className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 border border-gray-100">
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
-                </motion.div>)}
+          </div>
+        </section>
+        
+        {/* Benefits Section - Simplified for mobile */}
+        <section className="py-12 px-4 bg-white">
+          <div className="container mx-auto max-w-4xl">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">Why Choose Our Services</h2>
+              <div className="h-1 w-16 bg-blue-600 mx-auto mb-4"></div>
+              <p className="text-gray-600 text-sm md:text-base">Discover the advantages that set us apart in the logistics industry</p>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "Global Network",
+                  description: "Access to worldwide shipping routes and partners",
+                  icon: "🌐"
+                },
+                {
+                  title: "24/7 Support",
+                  description: "Round-the-clock customer service and tracking",
+                  icon: "⏰"
+                },
+                {
+                  title: "Custom Solutions",
+                  description: "Tailored logistics strategies for your unique needs",
+                  icon: "🔧"
+                },
+                {
+                  title: "Cost Efficiency",
+                  description: "Optimized routes and processes to minimize expenses",
+                  icon: "💰"
+                }
+              ].map((benefit, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-50 p-4 md:p-6 rounded-lg border border-gray-100"
+                >
+                  <div className="text-3xl mb-3">{benefit.icon}</div>
+                  <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2">{benefit.title}</h3>
+                  <p className="text-gray-600 text-sm md:text-base">{benefit.description}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
-
-        {/* CTA Section */}
-        <section className="py-20 bg-blue-700 relative overflow-hidden">
-          <motion.div initial={{
-          opacity: 0
-        }} animate={{
-          opacity: 0.1
-        }} className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></motion.div>
-          <motion.div initial={{
-          opacity: 0
-        }} animate={{
-          opacity: 0.1
-        }} className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></motion.div>
-          
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-4xl mx-auto text-center text-white">
-              <motion.h2 initial={{
-              opacity: 0,
-              y: 20
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.6
-            }} viewport={{
-              once: true
-            }} className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Optimize Your Supply Chain?
-              </motion.h2>
-              <motion.p initial={{
-              opacity: 0,
-              y: 20
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              delay: 0.2,
-              duration: 0.6
-            }} viewport={{
-              once: true
-            }} className="text-xl mb-10 text-white/90">
-                Get in touch with our experts today to discover how our logistics solutions can transform your business operations.
-              </motion.p>
-              <motion.div initial={{
-              opacity: 0,
-              y: 20
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              delay: 0.4,
-              duration: 0.6
-            }} viewport={{
-              once: true
-            }} className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.button whileHover={{
-                scale: 1.05
-              }} whileTap={{
-                scale: 0.95
-              }} className="px-8 py-4 bg-white text-blue-700 rounded-lg font-medium shadow-lg hover:bg-gray-100 transition-all duration-300">
-                  Contact Sales Team
-                </motion.button>
-                <motion.button whileHover={{
-                scale: 1.05
-              }} whileTap={{
-                scale: 0.95
-              }} className="px-8 py-4 bg-transparent text-white rounded-lg font-medium border-2 border-white hover:bg-white/10 transition-all duration-300">
-                  View Case Studies
-                </motion.button>
-              </motion.div>
+        
+        {/* CTA Section - Mobile-optimized */}
+        <section className="py-12 px-4 bg-blue-600 text-white">
+          <div className="container mx-auto max-w-4xl text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Get Started?</h2>
+            <p className="mb-8 text-white/90 text-sm md:text-base max-w-2xl mx-auto">
+              Contact our team today to discuss how our logistics solutions can help your business grow and succeed.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-white text-blue-600 py-3 px-6 rounded-lg font-medium shadow-md hover:bg-gray-100 transition duration-300 text-sm md:text-base">
+                Contact Us
+              </button>
+              <button className="bg-transparent border-2 border-white text-white py-3 px-6 rounded-lg font-medium hover:bg-white/10 transition duration-300 text-sm md:text-base">
+                View Services
+              </button>
+            </div>
+          </div>
+        </section>
+        
+        {/* FAQ Section - Simplified mobile accordions */}
+        <section className="py-12 px-4">
+          <div className="container mx-auto max-w-4xl">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">Frequently Asked Questions</h2>
+              <div className="h-1 w-16 bg-blue-600 mx-auto mb-4"></div>
+              <p className="text-gray-600 text-sm md:text-base">Find answers to common questions about our logistics services</p>
+            </div>
+            
+            <div className="space-y-4">
+              {[
+                {
+                  question: "What areas do your services cover?",
+                  answer: "Our logistics services cover global destinations with particular strength in Asia, Europe, and the Americas. Our extensive network allows us to deliver to virtually any location worldwide."
+                },
+                {
+                  question: "How do I track my shipment?",
+                  answer: "We provide real-time tracking through our online portal. Once your shipment is processed, you'll receive a tracking number that you can use to monitor your shipment's progress at any time."
+                },
+                {
+                  question: "What's the difference between FCL and LCL shipping?",
+                  answer: "FCL (Full Container Load) means you're shipping enough goods to fill an entire container. LCL (Less than Container Load) means your goods share container space with other shipments. FCL is typically faster and involves less handling of your goods."
+                },
+                {
+                  question: "How do you handle customs clearance?",
+                  answer: "Our dedicated customs team manages all documentation and clearance procedures. We have expertise in international trade regulations and can advise on the most efficient ways to clear your goods through customs."
+                }
+              ].map((faq, index) => (
+                <FaqItem key={index} question={faq.question} answer={faq.answer} />
+              ))}
             </div>
           </div>
         </section>
       </main>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
+// FAQ Item component for better mobile experience
+const FaqItem = ({ question, answer }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    <div className="border border-gray-200 rounded-lg overflow-hidden">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full p-4 md:p-5 flex justify-between items-center bg-white text-left"
+      >
+        <span className="font-medium text-gray-800 text-sm md:text-base">{question}</span>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <ChevronDown size={18} className="text-gray-500" />
+        </motion.div>
+      </button>
+      
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
+          className="p-4 md:p-5 bg-gray-50 border-t border-gray-200"
+        >
+          <p className="text-gray-600 text-sm md:text-base">{answer}</p>
+        </motion.div>
+      )}
+    </div>
+  );
+};
+
 export default Services;
