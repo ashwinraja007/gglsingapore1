@@ -39,20 +39,6 @@ const Services = () => {
       image: "/lovable-uploads/oceanfrieght.jpg"
     },
     {
-      id: "transportation",
-      title: "Transportation & Distribution",
-      shortDescription: "Nationwide distribution network with reliable delivery",
-      fullDescription: "Moltech ensures efficient domestic distribution and timely deliveries. Our robust logistics infrastructure enhances productivity, offering frequent and reliable transportation services for businesses of all sizes.",
-      benefits: [
-        "Nationwide coverage with strategic distribution centers",
-        "Temperature-controlled transportation options",
-        "Real-time tracking and delivery confirmation",
-        "Flexible scheduling for your business needs"
-      ],
-      icon: <Truck className="w-5 h-5 md:w-6 md:h-6" />,
-      image: "/lovable-uploads/transport.jpg"
-    },
-    {
       id: "warehousing",
       title: "Warehousing Solutions",
       shortDescription: "Modern facilities with advanced inventory management",
@@ -79,7 +65,7 @@ const Services = () => {
         "Real-time updates on clearance status"
       ],
       icon: <FileText className="w-5 h-5 md:w-6 md:h-6" />,
-      image: "/lovable-uploads/customs.jpg"
+      image: "/lovable-uploads/transport.jpg"
     },
     {
       id: "liquid-transportation",
