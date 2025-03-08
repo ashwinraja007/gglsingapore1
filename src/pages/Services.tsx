@@ -230,7 +230,7 @@ const Services = () => {
                   </p>
                   <div className="flex flex-wrap gap-6 mb-8">
                     {services[activeService].stats.map((stat, idx) => <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                        <p className="text-2xl font-bold">{stat.value}</p>
+                        <p className="text-2xl font-bold text-slate-50">{stat.value}</p>
                         <p className="text-white/70 text-sm">{stat.label}</p>
                       </div>)}
                   </div>
