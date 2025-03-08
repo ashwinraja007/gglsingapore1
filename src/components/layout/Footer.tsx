@@ -13,7 +13,7 @@ export const Footer = () => {
             />
             <p className="font-medium text-white mb-2"></p>
             <p className="text-sm md:text-base text-gray-400">
-              MOLTECH LTD, based in London, is a global freight forwarder offering premium logistics services, 
+              MOLTECH LTD,is a global freight forwarder offering premium logistics services, 
               backed by a team with over 25 years of expertise in international and domestic transportation.
             </p>
           </div>
