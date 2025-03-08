@@ -27,13 +27,13 @@ export const Header = () => {
             <img 
               src="/moltech logo.png" 
               alt="Moltech Logo" 
-              className="h-5 md:h-6 w-auto object-contain transition-all duration-300" 
+              className="h-5 md:h-8 w-auto object-contain transition-all duration-300" 
             />
             <div className="h-5 w-px bg-gray-300 hidden md:block"></div>
             <img 
               src="/1GlobalEnterprises.png" 
               alt="1 Global Enterprises Logo" 
-              className="h-5 md:h-6 w-auto object-contain"
+              className="h-5 md:h-8 w-auto object-contain"
             />
           </div>
           
