@@ -39,20 +39,6 @@ const Services = () => {
       image: "/lovable-uploads/oceanfrieght.jpg"
     },
     {
-      id: "warehousing",
-      title: "Warehousing Solutions",
-      shortDescription: "Modern facilities with advanced inventory management",
-      fullDescription: "Our state-of-the-art warehousing facilities are equipped with modern inventory management systems and comprehensive security measures to ensure your products are stored safely and efficiently.",
-      benefits: [
-        "Climate-controlled storage options",
-        "Inventory management with real-time reporting",
-        "Order fulfillment and distribution services",
-        "24/7 security monitoring and controlled access"
-      ],
-      icon: <Map className="w-5 h-5 md:w-6 md:h-6" />,
-      image: "/lovable-uploads/warehouse.jpg"
-    },
-    {
       id: "customs-clearance",
       title: "Customs Clearance",
       shortDescription: "Expert navigation of global trade complexities",
