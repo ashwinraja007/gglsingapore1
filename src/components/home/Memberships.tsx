@@ -21,7 +21,8 @@ const Memberships = () => {
     }
   ];
 
-  const allCertifications = [...certifications, ...certifications];
+  // Duplicate the certifications to create a continuous scrolling effect
+  const allCertifications = [...certifications, ...certifications, ...certifications];
   
   const [isHovered, setIsHovered] = useState(false);
 
@@ -46,10 +47,10 @@ const Memberships = () => {
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
 
           <div 
-            className={`flex gap-8 md:gap-16 items-center justify-center ${!isHovered ? 'animate-scroll' : 'pause-animation'}`}
+            className={`flex gap-8 md:gap-16 items-center ${!isHovered ? 'animate-scroll' : 'pause-animation'}`}
             style={{
               '--scroll-duration': '30s',
-              '--scroll-distance': '-50%'
+              '--scroll-distance': '-100%'
             } as React.CSSProperties}
           >
             {allCertifications.map((cert, index) => (
