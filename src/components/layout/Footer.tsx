@@ -11,7 +11,7 @@ export const Footer = () => {
               className="h-12 mb-3" 
               loading="lazy" 
             />
-            <p className="text-sm text-gray-400 mb-4">A venture of 1 Global Enterprises, Singapore</p>
+            <p className="font-bold text-white mb-2">A venture of 1 Global Enterprises, Singapore</p>
             <p className="text-sm md:text-base text-gray-400">
               MOLTECH LTD, based in London, is a global freight forwarder offering premium logistics services, 
               backed by a team with over 25 years of expertise in international and domestic transportation.
@@ -19,7 +19,7 @@ export const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-bold mb-4">Navigation</h3>
+            <h3 className="font-bold text-white mb-2">Navigation</h3>
             <div className="flex flex-col gap-3">
               <a href="/" className="text-sm text-gray-400 hover:text-white">Home</a>
               <a href="/about" className="text-sm text-gray-400 hover:text-white">About</a>
@@ -28,7 +28,7 @@ export const Footer = () => {
             </div>
           </div>
           <div>
-            <h3 className="text-lg font-bold mb-4">Useful Links</h3>
+            <h3 className="font-bold text-white mb-2">Useful Links</h3>
             <div className="flex flex-col gap-3">
               <a href="/customer-login" className="text-sm text-gray-400 hover:text-white">Customer Login</a>
               <a href="/agent-login" className="text-sm text-gray-400 hover:text-white">Agent Login</a>
@@ -39,17 +39,8 @@ export const Footer = () => {
             </div>
           </div>
           <div>
-            <h3 className="text-lg font-bold mb-4">Contact Us</h3>
+            <h3 className="font-bold text-white mb-2">Contact Us</h3>
             <div className="space-y-6">
-              <div className="text-sm text-gray-400">
-                <p className="font-medium text-white mb-2">UK Office</p>
-                <p className="mb-3">167-169 Great Portland Street,<br />5th Floor, London W1W 5PF, UK</p>
-                <p className="mb-1">+44 (0) 203 393 9508</p>
-                <p className="mb-1">+44 (0) 203 393 1998</p>
-                <p className="mb-1">operations@moltech</p>
-                <p>+44 (0) 730 585 6612</p>
-              </div>
-              
               <div className="text-sm text-gray-400">
                 <p className="font-medium text-white mb-2">Australia Office</p>
                 <p className="mb-3">Suite 5, 7-9 Mallet Road,<br />Tullamarine, Victoria, 3043</p>
