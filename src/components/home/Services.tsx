@@ -3,26 +3,24 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const EnhancedServiceCard = ({ image, title, description, link }) => {
+const EnhancedServiceCard = ({ image, title, description }) => {
   return (
-    <Link to={link} className="block h-full">
-      <div className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl h-full">
-        <div className="aspect-square overflow-hidden">
-          <div 
-            className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-            style={{ backgroundImage: `url(${image})` }}
-            role="img"
-            aria-label={title}
-          />
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-          <h3 className="text-base font-bold text-white mb-1">{title}</h3>
-          <p className="text-xs text-white/90 opacity-0 transition-opacity duration-300 group-hover:opacity-100 line-clamp-2">
-            {description}
-          </p>
-        </div>
+    <div className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl h-full">
+      <div className="aspect-square overflow-hidden">
+        <div 
+          className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+          style={{ backgroundImage: `url(${image})` }}
+          role="img"
+          aria-label={title}
+        />
       </div>
-    </Link>
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+        <h3 className="text-base font-bold text-white mb-1">{title}</h3>
+        <p className="text-xs text-white/90 opacity-0 transition-opacity duration-300 group-hover:opacity-100 line-clamp-2">
+          {description}
+        </p>
+      </div>
+    </div>
   );
 };
 
@@ -31,26 +29,22 @@ export const Services = () => {
     { 
       image: "/lovable-uploads/airfreight.jpg", 
       title: "Air Freight",
-      description: "Tailored Air Freight Solutions to Meet Your Unique Requirements. We offer flexible air freight solutions for time-sensitive documents or large-scale cargo.",
-      link: "/services/air-freight"
+      description: "Tailored Air Freight Solutions to Meet Your Unique Requirements. We offer flexible air freight solutions for time-sensitive documents or large-scale cargo." 
     },
     { 
       image: "/lovable-uploads/ocean.jpg", 
       title: "Ocean Freight (LCL & FCL)",
-      description: "Connecting you globally with comprehensive ocean freight services. We offer both LCL for smaller shipments and FCL for dedicated container needs.",
-      link: "/services/ocean-freight"
+      description: "Connecting you globally with comprehensive ocean freight services. We offer both LCL for smaller shipments and FCL for dedicated container needs." 
     },
     { 
       image: "/lovable-uploads/cc.jpg", 
       title: "Customs Clearance",
-      description: "Expert customs clearance services ensuring your shipments move smoothly across borders with accurate documentation and regulatory compliance.",
-      link: "/services/customs-clearance"
+      description: "Expert customs clearance services ensuring your shipments move smoothly across borders with accurate documentation and regulatory compliance." 
     },
     { 
       image: "/lovable-uploads/liquid.jpg", 
       title: "Liquid Transportation",
-      description: "Specialized solutions for transporting liquids safely and efficiently, utilizing ISO tanks, flexitanks, and specialized tankers managed by expert teams.",
-      link: "/services/liquid-transportation"
+      description: "Specialized solutions for transporting liquids safely and efficiently, utilizing ISO tanks, flexitanks, and specialized tankers managed by expert teams." 
     }
   ];
 
@@ -73,7 +67,6 @@ export const Services = () => {
               image={service.image}
               title={service.title}
               description={service.description}
-              link={service.link}
             />
           ))}
         </div>

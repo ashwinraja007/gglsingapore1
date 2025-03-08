@@ -1,136 +1,149 @@
-
+import React, { useState } from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { ArrowRight, Plane, Ship, FileCheck, Flask } from "lucide-react";
-import { useEffect } from "react";
-
-const ServiceCard = ({ icon, title, description, link, index }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-    >
-      <Link to={link} className="block h-full">
-        <div className="p-6">
-          <div className="flex items-center mb-4">
-            <div className="p-3 bg-blue-50 rounded-full mr-4">
-              {icon}
-            </div>
-            <h3 className="text-xl font-bold text-gray-800">{title}</h3>
-          </div>
-          <p className="text-gray-600 mb-4 line-clamp-3">{description}</p>
-          <div className="flex items-center text-blue-600 font-medium group">
-            Learn more
-            <ArrowRight className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
-          </div>
-        </div>
-      </Link>
-    </motion.div>
-  );
-};
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 
 const Services = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const [openItems, setOpenItems] = useState<{ [key: string]: boolean }>({});
 
   const services = [
     {
-      icon: <Plane className="h-6 w-6 text-blue-600" />,
-      title: "Air Freight",
-      description: "Tailored Air Freight Solutions to Meet Your Unique Requirements. We offer flexible air freight solutions for time-sensitive documents or large-scale cargo.",
-      link: "/services/air-freight"
+      title: "Air Freight Services",
+      description: "We offer a full suite of air freight solutions tailored to meet your shipping requirements. Our expert team ensures smooth handling of air imports, exports, and express shipments, all with the convenience of door-to-door service.",
+      details: "Our company sets itself apart with competitive pricing and exceptional operational support, guaranteeing customer satisfaction with every shipment. Whether you prioritize speed, reliability, or cost-effectiveness, our air freight services provide the perfect balance, making us a trusted partner in global logistics.",
+      image: "/airfrieght1.jpg"
     },
     {
-      icon: <Ship className="h-6 w-6 text-blue-600" />,
-      title: "Ocean Freight",
-      description: "Comprehensive ocean freight services including FCL and LCL services with global coverage and competitive rates.",
-      link: "/services/ocean-freight"
+      title: "Transportation and Distribution Services",
+      description: "Moltech ensures efficient domestic distribution and timely deliveries. Our robust logistics infrastructure enhances productivity, offering frequent and reliable transportation services.",
+      details: "Our comprehensive distribution network spans across major cities, supported by advanced tracking systems and professional teams. We specialize in both standard and temperature-controlled transportation, ensuring your cargo reaches its destination safely and on time.",
+      image: "/lovable-uploads/transport.jpg"
     },
     {
-      icon: <FileCheck className="h-6 w-6 text-blue-600" />,
-      title: "Customs Clearance",
-      description: "Expert customs clearance services ensuring your shipments move smoothly across borders with accurate documentation and regulatory compliance.",
-      link: "/services/customs-clearance"
+      title: "Warehousing Solutions",
+      description: "State-of-the-art warehousing facilities equipped with modern inventory management systems and security measures.",
+      details: "Our warehousing solutions include temperature-controlled storage, inventory management, order fulfillment, and distribution center operations with 24/7 security monitoring.",
+      image: "/lovable-uploads/warehouse.jpg"
     },
     {
-      icon: <Flask className="h-6 w-6 text-blue-600" />,
-      title: "Liquid Transportation",
-      description: "Specialized solutions for transporting liquids safely and efficiently, utilizing ISO tanks, flexitanks, and specialized tankers managed by expert teams.",
-      link: "/services/liquid-transportation"
+      title: "Ocean Freight Services",
+      description: "Comprehensive ocean freight solutions including FCL and LCL services with global coverage and competitive rates.",
+      details: "We handle all aspects of ocean freight from documentation to customs clearance, offering reliable tracking and specialized container solutions for various cargo types.",
+      image: "/lovable-uploads/oceanfrieght.jpg"
     }
   ];
 
+  const toggleAccordion = (index: number) => {
+    setOpenItems(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col relative">
       <Header />
       
-      <main className="flex-grow pt-20">
+      <main className="flex-grow mt-20">
         {/* Hero Section */}
-        <section className="bg-blue-700 text-white py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity:-1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-3xl mx-auto text-center"
-            >
-              <h1 className="text-3xl md:text-4xl font-bold mb-6">Our Logistics Services</h1>
-              <p className="text-lg text-white/90 leading-relaxed mb-8">
-                Discover our comprehensive range of logistics solutions designed to meet your shipping needs.
-                We offer tailored services to ensure your cargo reaches its destination safely and efficiently.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/contact">
-                  <motion.button 
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-6 py-3 bg-white text-blue-700 rounded-md font-semibold hover:bg-blue-50 transition-colors"
-                  >
-                    Contact Us
-                  </motion.button>
-                </Link>
-                <Link to="/quote">
-                  <motion.button 
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-500 border border-white/20 transition-colors"
-                  >
-                    Get a Quote
-                  </motion.button>
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        <motion.section 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="relative h-[30vh] flex items-center justify-center bg-blue-50 overflow-hidden"
+        >
+          <motion.div 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="text-center px-4 relative z-10"
+          >
+            <h1 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4 font-inter">
+              Our Services
+            </h1>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-inter font-light">
+              Comprehensive logistics solutions tailored to your needs
+            </p>
+          </motion.div>
+        </motion.section>
 
-        {/* Services Grid */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                Our Core Services
-              </h2>
-              <p className="text-gray-600">
-                Explore our range of specialized logistics services designed to meet your specific shipping needs.
-                Click on any service to learn more about our capabilities and how we can support your business.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {/* Services Section */}
+        <section className="py-12">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="space-y-8">
               {services.map((service, index) => (
-                <ServiceCard
+                <motion.div
                   key={index}
-                  icon={service.icon}
-                  title={service.title}
-                  description={service.description}
-                  link={service.link}
-                  index={index}
-                />
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                >
+                  <motion.div
+                    animate={{ height: openItems[index] ? '500px' : '400px' }}
+                    transition={{ duration: 0.4 }}
+                    className="relative w-full overflow-hidden"
+                  >
+                    <motion.img
+                      src={service.image}
+                      alt={service.title}
+                      animate={{ 
+                        scale: openItems[index] ? 1.1 : 1,
+                        y: openItems[index] ? -20 : 0
+                      }}
+                      transition={{ duration: 0.4 }}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent flex items-center">
+                      <div className="container mx-auto px-4">
+                        <div className="max-w-xl ml-8 p-6 lg:p-8">
+                          <motion.div className="mb-6">
+                            <h3 className="text-2xl lg:text-3xl font-bold text-white font-inter">
+                              {service.title}
+                            </h3>
+                          </motion.div>
+                          
+                          <motion.p 
+                            className="text-white/90 text-base lg:text-lg font-inter leading-relaxed mb-4"
+                          >
+                            {service.description}
+                          </motion.p>
+
+                          <AnimatePresence>
+                            {openItems[index] && (
+                              <motion.p
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="text-white/90 text-base lg:text-lg font-inter leading-relaxed mb-4"
+                              >
+                                {service.details}
+                              </motion.p>
+                            )}
+                          </AnimatePresence>
+
+                          <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={() => toggleAccordion(index)}
+                            className="mt-4 py-2.5 px-5 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-all duration-300 flex items-center gap-2 backdrop-blur-sm font-inter"
+                          >
+                            {openItems[index] ? "Show Less" : "Learn More"}
+                            <motion.div
+                              animate={{ rotate: openItems[index] ? 180 : 0 }}
+                              transition={{ duration: 0.3 }}
+                            >
+                              <ChevronDown size={16} />
+                            </motion.div>
+                          </motion.button>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.div>
               ))}
             </div>
           </div>
