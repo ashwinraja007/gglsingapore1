@@ -23,7 +23,7 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col relative">
       <Header />
-      <main className="mt-16">
+      <main>
         <Suspense fallback={<LoadingComponent />}>
           <Hero />
         </Suspense>

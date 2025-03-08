@@ -19,6 +19,11 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   
+  // Add scroll to top on navigation
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+  
   return (
     <header className="fixed top-0 left-0 right-0 z-20 transition-all duration-300 bg-white shadow-md py-2">
       <div className="container mx-auto px-4">
@@ -33,7 +38,7 @@ export const Header = () => {
             <img 
               src="/1GlobalEnterprises.png" 
               alt="1 Global Enterprises Logo" 
-              className="h-8 md:h-10 w-auto object-contain"
+              className="h-8 md:h-10 w-auto object-contain hidden md:block"
             />
           </div>
           

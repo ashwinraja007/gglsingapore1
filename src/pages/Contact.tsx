@@ -27,7 +27,7 @@ const Contact = () => {
     <div className="min-h-screen flex flex-col relative">
       <Header />
       
-      <main className="flex-grow pt-16">
+      <main className="flex-grow">
         <motion.section 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -63,43 +63,6 @@ const Contact = () => {
                 <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
                 
                 <div className="space-y-8">
-                  <div className="space-y-6">
-                    <h3 className="text-lg font-semibold">UK Office</h3>
-                    <motion.div 
-                      whileHover={{ x: 10 }}
-                      className="flex items-start gap-4 group"
-                    >
-                      <Phone className="mt-1 text-blue-600 group-hover:scale-110 transition-transform" />
-                      <div>
-                        <p className="font-medium">Phone</p>
-                        <p className="text-gray-600">+44 (0) 203 795 5568</p>
-                        <p className="text-gray-600">+44 (0) 203 795 5569</p>
-                      </div>
-                    </motion.div>
-                    
-                    <motion.div 
-                      whileHover={{ x: 10 }}
-                      className="flex items-start gap-4 group"
-                    >
-                      <Mail className="mt-1 text-blue-600 group-hover:scale-110 transition-transform" />
-                      <div>
-                        <p className="font-medium">Email</p>
-                        <p className="text-gray-600">operations@moltech.uk</p>
-                      </div>
-                    </motion.div>
-                    
-                    <motion.div 
-                      whileHover={{ x: 10 }}
-                      className="flex items-start gap-4 group"
-                    >
-                      <MapPin className="mt-1 text-blue-600 group-hover:scale-110 transition-transform" />
-                      <div>
-                        <p className="font-medium">Address</p>
-                        <p className="text-gray-600">167-169 Great Portland Street,<br />5th Floor, London W1W 5PF, UK</p>
-                      </div>
-                    </motion.div>
-                  </div>
-                  
                   <div className="space-y-6">
                     <h3 className="text-lg font-semibold">Australia Office</h3>
                     <motion.div 
