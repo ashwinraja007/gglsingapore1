@@ -1,6 +1,6 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { PortalLink } from "../common/PortalLink";
 import { 
   Users, 
   UserCircle, 
@@ -44,7 +44,7 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Background image and overlay remain the same */}
+      {/* Background image and overlay */}
       <motion.div
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
@@ -54,29 +54,38 @@ export const Hero = () => {
         <img 
           src="homeimage.jpg" 
           alt="Hero background" 
-          className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-3000" 
+          className="w-full h-full object-cover object-center" 
           loading="lazy" 
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-brand-darkGreen/80" />
       </motion.div>
 
-      {/* Main content remains the same */}
+      {/* Main content */}
       <div className="absolute inset-0">
         <div className="container mx-auto px-4 h-full flex flex-col justify-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="max-w-2xl space-y-6"
+            className="max-w-2xl space-y-8"
           >
-            {/* Hero content remains the same */}
+            {/* Hero content */}
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="inline-block bg-brand-green/20 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-sm font-medium border border-brand-green/30"
+            >
+              Global Logistics Excellence
+            </motion.span>
+            
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="text-4xl md:text-5xl font-bold text-white leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
             >
-              Delivering Excellence in Global Logistics Solutions
+              Delivering Excellence in <span className="text-brand-lightGreen">Global Logistics</span> Solutions
             </motion.h1>
             
             <motion.p 
@@ -85,7 +94,7 @@ export const Hero = () => {
               transition={{ duration: 0.8, delay: 0.9 }}
               className="text-lg md:text-xl text-white/90 leading-relaxed"
             >
-              MOLTECH  LTD brings over 25 years of expertise in international logistics, 
+              GGL brings over 25 years of expertise in international logistics, 
               offering comprehensive solutions tailored to your business needs.
             </motion.p>
             
@@ -102,8 +111,18 @@ export const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button size="lg" className="bg-white hover:bg-gray-100 text-gray-800 font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                <Button size="lg" className="bg-white hover:bg-gray-100 text-brand-gray font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                   Get A Quote
+                </Button>
+              </motion.a>
+              
+              <motion.a 
+                href="/services" 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 shadow-lg">
+                  Our Services
                 </Button>
               </motion.a>
             </motion.div>
@@ -120,7 +139,7 @@ export const Hero = () => {
       >
         {/* Mobile dropdown button */}
         <motion.button 
-          className="md:hidden w-full bg-blue-600/90 backdrop-blur-md p-4 rounded-lg shadow-lg mb-4 flex items-center justify-between text-white border border-white/20"
+          className="md:hidden w-full bg-brand-green/80 backdrop-blur-md p-4 rounded-lg shadow-lg mb-4 flex items-center justify-between text-white border border-white/20"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
@@ -150,10 +169,10 @@ export const Hero = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-colors"
+                  className="bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-colors border border-white/10"
                 >
                   <button className="w-full p-4 flex items-center space-x-4 text-white">
-                    <span className="text-white/80">{link.icon}</span>
+                    <span className="text-brand-lightGreen/90">{link.icon}</span>
                     <div className="text-left">
                       <div className="font-medium">{link.title}</div>
                       <div className="text-sm text-white/70">{link.description}</div>
@@ -173,10 +192,10 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 + 1.3 }}
-              className="bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-colors group"
+              className="bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-colors group border border-white/10"
             >
               <button className="w-full h-full p-4 flex flex-col items-center justify-center space-y-3 text-white">
-                <span className="text-white/80 transform group-hover:scale-110 transition-transform">
+                <span className="text-brand-lightGreen transform group-hover:scale-110 transition-transform">
                   {link.icon}
                 </span>
                 <div className="text-center">

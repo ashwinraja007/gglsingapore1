@@ -1,7 +1,8 @@
 
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Header = () => {
   const location = useLocation();
@@ -24,58 +25,77 @@ export const Header = () => {
   }, [location.pathname]);
   
   return (
-    <header className={`fixed top-0 left-0 right-0 z-20 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 backdrop-blur-md py-3'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'bg-white shadow-md py-2' 
+        : 'bg-white/95 backdrop-blur-md py-3'
+    }`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/GGL.png" 
-              alt="GGL Logo" 
-              className="h-12 md:h-14 w-auto object-contain transition-all duration-300" 
-            />
-          </div>
+          <Link to="/" className="flex items-center space-x-2">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <img 
+                src="/lovable-uploads/GGL.png" 
+                alt="GGL Logo" 
+                className="h-12 md:h-14 w-auto object-contain transition-all duration-300 bg-white p-1 rounded-md" 
+              />
+            </motion.div>
+          </Link>
           
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md p-1" 
+            className="md:hidden text-brand-gray focus:outline-none focus:ring-2 focus:ring-brand-green rounded-md p-1" 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? (
-              <X className="h-5 w-5" /> 
+              <X className="h-6 w-6" /> 
             ) : (
-              <Menu className="h-5 w-5 text-gray-800" />
+              <Menu className="h-6 w-6" />
             )}
           </button>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex gap-4 lg:gap-6 items-center">
+          <nav className="hidden md:flex gap-6 lg:gap-8 items-center">
             <Link 
               to="/" 
-              className="text-sm font-medium transition-colors text-gray-800 hover:text-green-600"
+              className={`text-sm font-medium transition-colors hover:text-brand-green ${
+                location.pathname === '/' ? 'text-brand-green' : 'text-brand-gray'
+              } animated-underline`}
             >
               Home
             </Link>
             <Link 
               to="/about" 
-              className="text-sm font-medium transition-colors text-gray-800 hover:text-green-600"
+              className={`text-sm font-medium transition-colors hover:text-brand-green ${
+                location.pathname === '/about' ? 'text-brand-green' : 'text-brand-gray'
+              } animated-underline`}
             >
               About Us
             </Link>
             <Link 
               to="/services" 
-              className="text-sm font-medium transition-colors text-gray-800 hover:text-green-600"
+              className={`text-sm font-medium transition-colors hover:text-brand-green ${
+                location.pathname.includes('/services') ? 'text-brand-green' : 'text-brand-gray'
+              } animated-underline`}
             >
               Services
             </Link>
             <Link 
               to="/contact" 
-              className="text-sm font-medium transition-colors text-gray-800 hover:text-green-600"
+              className={`text-sm font-medium transition-colors hover:text-brand-green ${
+                location.pathname === '/contact' ? 'text-brand-green' : 'text-brand-gray'
+              } animated-underline`}
             >
               Contact Us
             </Link>
             <Link 
               to="/quote" 
-              className="px-4 py-1.5 rounded-full hover:shadow transition font-medium text-sm bg-green-600 text-white hover:bg-green-700"
+              className="px-5 py-2 rounded-full hover:shadow-md transition-all duration-300 font-medium text-sm bg-brand-green text-white hover:bg-brand-darkGreen"
             >
               Get A Quote
             </Link>
@@ -83,23 +103,63 @@ export const Header = () => {
         </div>
         
         {/* Mobile Navigation */}
-        <div 
-          className={`${isMobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'} md:hidden overflow-hidden transition-all duration-300 ease-in-out`}
-        >
-          <nav className="flex flex-col py-4 gap-4 border-t mt-4 border-gray-100 bg-white">
-            <Link to="/" className="text-gray-800 hover:text-green-600 font-medium" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-            <Link to="/about" className="text-gray-800 hover:text-green-600 font-medium" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
-            <Link to="/services" className="text-gray-800 hover:text-green-600 font-medium" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
-            <Link to="/contact" className="text-gray-800 hover:text-green-600 font-medium" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
-            <Link 
-              to="/quote" 
-              className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 text-center font-medium shadow-sm hover:shadow w-full"
-              onClick={() => setIsMobileMenuOpen(false)}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden overflow-hidden"
             >
-              Get A Quote
-            </Link>
-          </nav>
-        </div>
+              <nav className="flex flex-col py-4 gap-5 mt-4 border-t border-gray-100 bg-white">
+                <Link 
+                  to="/" 
+                  className={`text-base font-medium ${
+                    location.pathname === '/' ? 'text-brand-green' : 'text-brand-gray'
+                  } hover:text-brand-green`} 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link 
+                  to="/about" 
+                  className={`text-base font-medium ${
+                    location.pathname === '/about' ? 'text-brand-green' : 'text-brand-gray'
+                  } hover:text-brand-green`} 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  About Us
+                </Link>
+                <Link 
+                  to="/services" 
+                  className={`text-base font-medium ${
+                    location.pathname.includes('/services') ? 'text-brand-green' : 'text-brand-gray'
+                  } hover:text-brand-green`} 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Services
+                </Link>
+                <Link 
+                  to="/contact" 
+                  className={`text-base font-medium ${
+                    location.pathname === '/contact' ? 'text-brand-green' : 'text-brand-gray'
+                  } hover:text-brand-green`} 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact Us
+                </Link>
+                <Link 
+                  to="/quote" 
+                  className="px-4 py-2.5 bg-brand-green text-white rounded-md hover:bg-brand-darkGreen text-center font-medium shadow-sm hover:shadow-md w-full transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Get A Quote
+                </Link>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );

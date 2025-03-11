@@ -64,9 +64,12 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				brand: {
-					green: '#2c8a4d',
-					darkGreen: '#156632',
-					lightGreen: '#4db770'
+					green: '#26803e',
+					darkGreen: '#145529',
+					lightGreen: '#3ca359',
+					gray: '#3a3f44',
+					darkGray: '#2c3036',
+					lightGray: '#e9ecef'
 				}
 			},
 			borderRadius: {
@@ -98,13 +101,35 @@ export default {
 				'float': {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-10px)' }
+				},
+				'bounce-slow': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-8px)' }
+				},
+				shimmer: {
+					'0%': { backgroundPosition: '-1000px 0' },
+					'100%': { backgroundPosition: '1000px 0' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'scroll': 'scroll 30s linear infinite',
-				'float': 'float 5s ease-in-out infinite'
+				'float': 'float 5s ease-in-out infinite',
+				'bounce-slow': 'bounce-slow 4s ease-in-out infinite',
+				'shimmer': 'shimmer 2s infinite linear'
+			},
+			boxShadow: {
+				'custom': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+				'card': '0 8px 16px rgba(38, 128, 62, 0.1)',
+				'card-hover': '0 10px 20px rgba(38, 128, 62, 0.15)'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+				'hero-pattern': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.7) 100%)',
+				'card-gradient': 'linear-gradient(135deg, #26803e 0%, #3ca359 100%)',
+				'section-gradient': 'linear-gradient(180deg, rgba(233, 236, 239, 0) 0%, rgba(233, 236, 239, 0.7) 100%)'
 			}
 		}
 	},
