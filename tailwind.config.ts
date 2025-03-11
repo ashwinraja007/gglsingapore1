@@ -64,8 +64,9 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				brand: {
-					blue: '#1e3a8a',
-					darkBlue: '#172554'
+					green: '#2c8a4d',
+					darkGreen: '#156632',
+					lightGreen: '#4db770'
 				}
 			},
 			borderRadius: {
@@ -93,12 +94,17 @@ export default {
 				scroll: {
 					'0%': { transform: 'translateX(0)' },
 					'100%': { transform: 'translateX(-50%)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'scroll': 'scroll 30s linear infinite'
+				'scroll': 'scroll 30s linear infinite',
+				'float': 'float 5s ease-in-out infinite'
 			}
 		}
 	},
