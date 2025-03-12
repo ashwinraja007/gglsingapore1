@@ -52,13 +52,7 @@ export const Hero = () => {
   return <section className="relative min-h-screen overflow-hidden pt-16">
       {/* Mobile Navigation Menu */}
       <div className="absolute top-0 right-0 z-50 p-4 md:hidden">
-        <motion.button whileHover={{
-        scale: 1.1
-      }} whileTap={{
-        scale: 0.95
-      }} className="bg-brand-navy/80 backdrop-blur-md p-2 rounded-full shadow-lg border border-brand-gold/30 text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </motion.button>
+        
       </div>
 
       {/* Mobile Navigation Drawer */}
