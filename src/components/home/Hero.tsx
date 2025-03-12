@@ -225,9 +225,7 @@ export const Hero = () => {
             }} whileTap={{
               scale: 0.97
             }} className="w-full sm:w-auto">
-                <Button variant="gold" size="lg" className="w-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 gold-glow bg-[#d4af37]">
-                  Get A Quote
-                </Button>
+                
               </motion.a>
               
               <motion.div whileHover={{
