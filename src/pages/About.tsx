@@ -134,7 +134,7 @@ Backed by 1 Global Enterprises' industry expertise and innovation-driven approac
           }} viewport={{
             once: true
           }} className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-6">
+              <h2 className="text-3xl font-bold mb-6 text-slate-50">
                 Ready to Transform Your Supply Chain?
               </h2>
               <p className="text-xl text-blue-100 mb-8">
