@@ -202,7 +202,19 @@ export const Hero = () => {
               Delivering Excellence in <span className="text-[#f6b100]">Global Logistics</span> Solutions
             </motion.h1>
             
-            
+            <motion.p initial={{
+            opacity: 0,
+            y: 20
+          }} animate={isVisible ? {
+            opacity: 1,
+            y: 0
+          } : {}} transition={{
+            duration: 0.8,
+            delay: 0.9
+          }} className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
+              GGL brings over 25 years of expertise in international logistics, 
+              offering comprehensive solutions tailored to your business needs.
+            </motion.p>
             
             <motion.div initial={{
             opacity: 0,
@@ -246,7 +258,7 @@ export const Hero = () => {
     } : {}} transition={{
       duration: 0.8,
       delay: 1.3
-    }} className="container px-4 sm:px-6 absolute bottom-24 sm:bottom-28 md:bottom-32 left-0 right-0 z-10 mx-0">
+    }} className="container mx-auto px-4 sm:px-6 absolute bottom-24 sm:bottom-28 md:bottom-32 left-0 right-0 z-10">
         {/* Mobile dropdown button */}
         <motion.button onClick={() => setIsMenuOpen(!isMenuOpen)} whileHover={{
         scale: 1.02
