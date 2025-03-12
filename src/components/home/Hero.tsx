@@ -147,7 +147,7 @@ export const Hero = () => {
               scale: 0.95
             }}>
                 <Link to="/services">
-                  <Button size="lg" variant="outline" className="font-semibold shadow-lg hover:shadow-xl transition-all duration-300 gold-glow">
+                  <Button size="lg" variant="outline" className="font-semibold shadow-lg hover:shadow-xl transition-all duration-300 gold-glow bg-[#d4af37]">
                     Our Services
                   </Button>
                 </Link>
