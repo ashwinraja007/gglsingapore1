@@ -250,7 +250,7 @@ export const Hero = () => {
     } : {}} transition={{
       duration: 0.8,
       delay: 1.3
-    }} className="container mx-auto px-4 sm:px-6 absolute bottom-24 sm:bottom-28 md:bottom-32 left-0 right-0 z-10">
+    }} className="container mx-auto sm:px-6 absolute bottom-30 sm:bottom-30 md:bottom-32 left-0 right-0 z-10 px-[17px]">
         {/* Mobile dropdown button */}
         <motion.button onClick={() => setIsMenuOpen(!isMenuOpen)} whileHover={{
         scale: 1.02
