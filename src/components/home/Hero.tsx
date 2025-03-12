@@ -109,7 +109,7 @@ export const Hero = () => {
             duration: 0.8,
             delay: 0.7
           }} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Delivering Excellence in <span className="text-brand-gold">Global Logistics</span> Solutions
+              Delivering Excellence in <span className="text-[#f6b100]">Global Logistics</span> Solutions
             </motion.h1>
             
             <motion.p initial={{
