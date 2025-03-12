@@ -266,7 +266,7 @@ export const Hero = () => {
         scale: 0.98
       }} className="md:hidden w-full backdrop-blur-md p-3 rounded-lg shadow-lg mb-3 flex items-center justify-between text-white border border-brand-gold/30 bg-[#f6b100]">
           <span className="text-sm font-medium flex items-center gap-2">
-            <Globe className="w-4 h-4 text-brand-gold" />
+            <Globe className="w-4 h-4 text-brand-gold bg-slate-50" />
             Quick Access
           </span>
           <motion.div animate={{
