@@ -112,16 +112,9 @@ export const Hero = () => {
                   whileTap={{ scale: 0.95 }}
                   className="block"
                 >
-                  <Button variant="gold" size="lg" className="w-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 gold-glow bg-[#d4af37]">
-                    Get A Quote
-                  </Button>
-                </motion.a>
                 
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Button size="lg" variant="outline" className="w-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-white border-white hover:bg-white/20">
-                      Our Services
-                    </Button>
+                
+                
                   </Link>
                 </motion.div>
               </div>
