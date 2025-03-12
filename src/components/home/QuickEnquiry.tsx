@@ -132,7 +132,7 @@ export const QuickEnquiry = () => {
             {errors.comment && <p className="text-red-500 text-sm mt-1">{errors.comment.message}</p>}
           </div>
 
-          <Button type="submit" disabled={isSubmitting} className="w-full hover:bg-blue-600 transition-colors text-slate-50">
+          <Button type="submit" disabled={isSubmitting} className="w-full transition-colors text-slate-50 bg-[#f6b100]">
             {isSubmitting ? <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 Submitting...
