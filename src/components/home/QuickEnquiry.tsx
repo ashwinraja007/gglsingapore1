@@ -67,7 +67,7 @@ export const QuickEnquiry = () => {
             </AlertDescription>
           </Alert>}
         
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 bg-white p-6 rounded-xl shadow-lg">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 p-6 rounded-xl shadow-lg bg-zinc-50">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="space-y-2">
               <Label htmlFor="fullName" className="text-gray-700">Full Name*</Label>
