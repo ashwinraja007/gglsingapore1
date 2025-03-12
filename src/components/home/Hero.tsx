@@ -136,7 +136,7 @@ export const Hero = () => {
             }} whileTap={{
               scale: 0.95
             }} className="animate-pulse-slow">
-                <Button variant="gold" size="lg" className="font-semibold shadow-lg hover:shadow-xl transition-all duration-300 gold-glow">
+                <Button variant="gold" size="lg" className="font-semibold shadow-lg hover:shadow-xl transition-all duration-300 gold-glow bg-[#d4af37]">
                   Get A Quote
                 </Button>
               </motion.a>
