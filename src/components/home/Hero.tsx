@@ -361,14 +361,7 @@ export const Hero = () => {
       delay: 1.5,
       duration: 1
     }} className="absolute bottom-4 left-1/2 transform -translate-x-1/2 hidden md:block">
-        <motion.div animate={{
-        y: [0, 8, 0]
-      }} transition={{
-        duration: 1.5,
-        repeat: Infinity
-      }} className="bg-white/15 backdrop-blur-sm rounded-full p-2 border border-brand-gold/30">
-          <ChevronDown className="h-6 w-6 text-brand-gold" />
-        </motion.div>
+        
       </motion.div>
     </section>;
 };
