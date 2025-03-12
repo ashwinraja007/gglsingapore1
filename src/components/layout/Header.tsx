@@ -23,9 +23,10 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <img src="/lovable-uploads/GGL.png" alt="GGL Logo" className={`${scrolled ? 'h-10' : 'h-14'} w-auto object-fill transition-all duration-300`} />
+            {/* Fix the logo sizes to be constant regardless of scroll */}
+            <img src="/lovable-uploads/GGL.png" alt="GGL Logo" className="h-10 w-auto object-fill transition-all duration-300" />
             <div className="h-8 w-px bg-gray-200 hidden md:block"></div>
-            <img src="/1GlobalEnterprises.png" alt="1 Global Enterprises Logo" className={`${scrolled ? 'h-8' : 'h-10'} w-auto object-contain transition-all duration-300`} />
+            <img src="/1GlobalEnterprises.png" alt="1 Global Enterprises Logo" className="h-8 w-auto object-contain transition-all duration-300" />
           </div>
           
           {/* Mobile Menu Button */}
