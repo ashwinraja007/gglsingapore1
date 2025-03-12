@@ -132,49 +132,7 @@ const GlobalPresence = () => {
 
         <div className="relative max-w-5xl mx-auto">
           {/* Map background with improved styling */}
-          <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden bg-brand-navy shadow-xl border border-brand-gold/20">
-            
-            
-            
-            {/* Location pins with improved animations */}
-            {locations.map(location => <motion.div key={location.id} className="absolute" style={{
-            top: location.position.top,
-            left: location.position.left
-          }} variants={pinVariants} whileHover={{
-            scale: 1.2,
-            y: -5
-          }}>
-                <div className="relative group cursor-pointer">
-                  <motion.div className="w-3 h-3 bg-brand-gold rounded-full shadow-lg shadow-brand-gold/30" animate={{
-                scale: [1, 1.3, 1]
-              }} transition={{
-                duration: 2,
-                repeat: Infinity
-              }} />
-                  <div className="absolute left-1/2 -translate-x-1/2 -top-1 w-6 h-6 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <MapPin className="w-6 h-6 text-brand-gold" />
-                  </div>
-                  <div className="absolute left-1/2 -translate-x-1/2 top-3 min-w-max px-2 py-1 bg-white/10 backdrop-blur-sm rounded text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none border border-brand-gold/30">
-                    {location.name}, {location.country}
-                  </div>
-                </div>
-              </motion.div>)}
-
-            {/* Enhanced connection lines */}
-            
-
-            {/* World map overlay with glow effect */}
-            <div className="absolute inset-0 pointer-events-none">
-              <motion.div initial={{
-              opacity: 0
-            }} animate={{
-              opacity: [0.3, 0.6, 0.3]
-            }} transition={{
-              duration: 4,
-              repeat: Infinity
-            }} className="absolute inset-0 bg-[url('/lovable-uploads/globalpresence1.png')] bg-contain bg-center bg-no-repeat"></motion.div>
-            </div>
-          </div>
+          
 
           {/* Key stats with improved design */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
