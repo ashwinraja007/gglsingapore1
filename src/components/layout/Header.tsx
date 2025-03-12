@@ -24,27 +24,20 @@ export const Header = () => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
   
-  return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-white shadow-md py-2' 
-        : 'bg-white/95 backdrop-blur-md py-3'
-    }`}>
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+ return (
+    <header className={`fixed top-0 left-0 right-0 z-20 transition-all duration-300 ${scrolled ? 'shadow-md py-2' : 'py-4'}`}>
+      <div className={`bg-white ${scrolled ? '' : 'bg-opacity-95'}`}>
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center gap-4">
+              <img src="moltech logo.png" alt="Moltech Logo" className="h-10 md:h-14 w-auto object-fill transition-all duration-300" />
+              <div className="h-8 w-px bg-gray-200 hidden md:block"></div>
               <img 
-                src="/lovable-uploads/GGL.png" 
-                alt="GGL Logo" 
-                className="h-12 md:h-14 w-auto object-contain transition-all duration-300 bg-white p-1 rounded-md" 
+                src="/1GlobalEnterprises.png" 
+                alt="1 Global Enterprises Logo" 
+                className="h-10 md:h-14 w-auto object-contain"
               />
-            </motion.div>
-          </Link>
+            </div>
           
           {/* Mobile Menu Button */}
           <button 
