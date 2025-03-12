@@ -67,7 +67,7 @@ export const Services = () => {
     link: "/services/air-freight"
   }, {
     image: "/lovable-uploads/ocean.jpg",
-    title: "Ocean Freight (LCL & FCL)",
+    title: "Ocean Freight",
     description: "Connecting you globally with comprehensive ocean freight services. We offer both LCL for smaller shipments and FCL for dedicated container needs.",
     icon: <Anchor size={20} />,
     link: "/services/ocean-freight"
