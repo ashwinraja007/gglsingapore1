@@ -10,11 +10,9 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
 import LiquidTransportation from "./pages/services/LiquidTransportation";
-
-// Create service pages placeholders
-const AirFreight = () => <div className="pt-24">Air Freight Service Page</div>;
-const OceanFreight = () => <div className="pt-24">Ocean Freight Service Page</div>;
-const CustomsClearance = () => <div className="pt-24">Customs Clearance Service Page</div>;
+import AirFreight from "./pages/services/AirFreight";
+import OceanFreight from "./pages/services/OceanFreight";
+import CustomsClearance from "./pages/services/CustomsClearance";
 
 const queryClient = new QueryClient();
 

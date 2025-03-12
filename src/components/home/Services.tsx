@@ -12,38 +12,40 @@ const EnhancedServiceCard = ({ image, title, description, icon, link }) => {
       transition={{ type: "spring", stiffness: 300 }}
       className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl border border-gray-100"
     >
-      <div className="h-52 overflow-hidden">
-        <motion.div 
-          className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-          style={{ backgroundImage: `url(${image})` }}
-          role="img"
-          aria-label={title}
-        />
-      </div>
-      <div className="p-5">
-        <div className="flex items-center space-x-3 mb-3">
-          <div className="bg-brand-gold/90 w-10 h-10 rounded-full flex items-center justify-center text-brand-navy">
-            {icon}
-          </div>
-          <h3 className="text-lg font-bold text-brand-navy">{title}</h3>
+      <Link to={link} className="block h-full">
+        <div className="h-40 overflow-hidden">
+          <motion.div 
+            className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+            style={{ backgroundImage: `url(${image})` }}
+            role="img"
+            aria-label={title}
+          />
         </div>
-        
-        <p className="text-sm text-gray-600 mb-4 line-clamp-2">
-          {description}
-        </p>
-        
-        <Link to={link} className="inline-flex items-center text-brand-gold font-medium text-sm group">
-          Learn More
-          <motion.span 
-            className="ml-1"
-            initial={{ x: 0 }}
-            animate={{ x: [0, 5, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, repeatType: "mirror" }}
-          >
-            <ArrowRight size={16} />
-          </motion.span>
-        </Link>
-      </div>
+        <div className="p-5">
+          <div className="flex items-center space-x-3 mb-3">
+            <div className="bg-brand-gold/90 w-10 h-10 rounded-full flex items-center justify-center text-brand-navy">
+              {icon}
+            </div>
+            <h3 className="text-lg font-bold text-brand-navy">{title}</h3>
+          </div>
+          
+          <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+            {description}
+          </p>
+          
+          <div className="inline-flex items-center text-brand-gold font-medium text-sm group">
+            Learn More
+            <motion.span 
+              className="ml-1"
+              initial={{ x: 0 }}
+              animate={{ x: [0, 5, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, repeatType: "mirror" }}
+            >
+              <ArrowRight size={16} />
+            </motion.span>
+          </div>
+        </div>
+      </Link>
       <motion.div 
         className="absolute top-3 right-3 bg-brand-gold text-brand-navy w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         whileHover={{ rotate: 90 }}
@@ -107,7 +109,7 @@ export const Services = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
       variants={containerVariants}
-      className="py-12 bg-gradient-to-b from-white to-brand-lightGray"
+      className="py-10 bg-gradient-to-b from-white to-brand-lightGray"
     >
       <div className="container mx-auto px-4">
         <motion.div 
