@@ -35,7 +35,7 @@ export const Header = () => {
             <Link to="/about" className="text-gray-800 hover:text-brand-gold font-medium transition-colors relative animated-underline py-1">About Us</Link>
             <Link to="/services" className="text-gray-800 hover:text-brand-gold font-medium transition-colors relative animated-underline py-1">Services</Link>
             <Link to="/contact" className="text-gray-800 hover:text-brand-gold font-medium transition-colors relative animated-underline py-1">Contact Us</Link>
-            <Link to="/quote" className="px-5 py-2 bg-[#FB6B10] text-white rounded-full hover:bg-[#FF8C42] transition font-medium shadow-sm hover:shadow-orange-glow animate-pulse-slow;\n">
+            <Link to="/quote" className="px-5 py-2 bg-[#F6B100] text-black rounded-full hover:bg-[#FFCC33] transition font-medium shadow-sm hover:shadow-gold-glow animate-pulse-slow;\n">
               Get A Quote
             </Link>
           </nav>
