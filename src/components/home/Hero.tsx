@@ -55,7 +55,7 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen overflow-hidden pt-16">
-      {/* Mobile Navigation Menu Button - Fixed position and increased visibility */}
+      {/* Mobile Navigation Menu Button */}
       <div className="fixed top-4 right-4 z-50 md:hidden">
         <motion.button 
           whileHover={{ scale: 1.1 }} 
@@ -67,7 +67,7 @@ export const Hero = () => {
         </motion.button>
       </div>
 
-      {/* Mobile Navigation Drawer - Fixed z-index and improved visibility */}
+      {/* Mobile Navigation Drawer */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
@@ -112,9 +112,16 @@ export const Hero = () => {
                   whileTap={{ scale: 0.95 }}
                   className="block"
                 >
+                  <Button variant="gold" size="lg" className="w-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 gold-glow bg-[#d4af37]">
+                    Get A Quote
+                  </Button>
+                </motion.a>
                 
-                
-                
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Button size="lg" variant="outline" className="w-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-white border-white hover:bg-white/20">
+                      Our Services
+                    </Button>
                   </Link>
                 </motion.div>
               </div>
@@ -221,16 +228,15 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Enhanced Portal Links Section - Improved mobile visibility */}
+      {/* MOBILE ONLY: Quick Access Button */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, delay: 1.3 }}
-        className="container mx-auto px-4 sm:px-6 absolute bottom-12 sm:bottom-16 md:bottom-20 left-0 right-0 z-10"
+        className="container mx-auto px-4 sm:px-6 absolute bottom-12 left-0 right-0 z-10 md:hidden"
       >
-        {/* Mobile quick access button - Enhanced visibility */}
         <motion.button 
-          className="md:hidden w-full bg-brand-navy/90 backdrop-blur-md p-4 rounded-lg shadow-lg mb-4 flex items-center justify-between text-white border-2 border-brand-gold/50" 
+          className="w-full bg-brand-navy/90 backdrop-blur-md p-4 rounded-lg shadow-lg flex items-center justify-between text-white border-2 border-brand-gold/50" 
           onClick={() => setIsMenuOpen(!isMenuOpen)} 
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
@@ -247,7 +253,7 @@ export const Hero = () => {
           </motion.div>
         </motion.button>
 
-        {/* Mobile menu - Improved styling and visibility */}
+        {/* Mobile dropdown menu */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div 
@@ -255,7 +261,7 @@ export const Hero = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden space-y-2 mb-6 overflow-hidden"
+              className="space-y-2 mt-2 mb-4 overflow-hidden bg-brand-navy/80 backdrop-blur-md rounded-lg border border-brand-gold/30 shadow-lg"
             >
               {portalLinks.map((link, index) => (
                 <motion.div 
@@ -263,7 +269,7 @@ export const Hero = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.07 }}
-                  className="bg-white/15 backdrop-blur-md rounded-lg hover:bg-white/25 transition-colors border border-brand-gold/30 shadow-md"
+                  className="hover:bg-white/15 transition-colors"
                 >
                   <Link 
                     to={link.url} 
@@ -271,7 +277,7 @@ export const Hero = () => {
                   >
                     <span className="text-brand-gold bg-white/10 p-2 rounded-full">{link.icon}</span>
                     <div className="text-left">
-                      <div className="font-medium text-sm">{link.title}</div>
+                      <div className="font-medium">{link.title}</div>
                       <div className="text-xs text-white/80">{link.description}</div>
                     </div>
                   </Link>
@@ -280,9 +286,16 @@ export const Hero = () => {
             </motion.div>
           )}
         </AnimatePresence>
+      </motion.div>
 
-        {/* Desktop grid */}
-        <div className="hidden md:grid grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-4">
+      {/* DESKTOP ONLY: Portal Links */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, delay: 1.3 }}
+        className="hidden md:block container mx-auto px-4 sm:px-6 absolute bottom-16 left-0 right-0 z-10"
+      >
+        <div className="grid grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-4">
           {portalLinks.map((link, index) => (
             <motion.div 
               key={index} 
@@ -290,7 +303,7 @@ export const Hero = () => {
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.1 + 1.3 }}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white/15 backdrop-blur-md rounded-lg hover:bg-white/25 transition-all duration-300 group border border-brand-gold/30 shadow-lg"
+              className="bg-white/15 backdrop-blur-md rounded-lg hover:bg-white/25 transition-all duration-300 border border-brand-gold/30 shadow-lg"
             >
               <Link 
                 to={link.url} 
@@ -305,8 +318,8 @@ export const Hero = () => {
                   {link.icon}
                 </motion.span>
                 <div className="text-center">
-                  <div className="font-medium text-sm">{link.title}</div>
-                  <div className="text-xs text-white/80 mt-1 line-clamp-1">{link.description}</div>
+                  <div className="font-medium">{link.title}</div>
+                  <div className="text-xs text-white/80 mt-1">{link.description}</div>
                 </div>
               </Link>
             </motion.div>
@@ -314,12 +327,12 @@ export const Hero = () => {
         </div>
       </motion.div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator - desktop only */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={isVisible ? { opacity: 1 } : {}}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 hidden sm:block"
+        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 hidden md:block"
       >
         <motion.div 
           animate={{ y: [0, 8, 0] }}
