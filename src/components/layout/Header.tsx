@@ -18,12 +18,6 @@ export const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
-  // Add scroll to top on navigation
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
-  
  return (
     <header className={`fixed top-0 left-0 right-0 z-20 transition-all duration-300 ${scrolled ? 'shadow-md py-2' : 'py-4'}`}>
       <div className={`bg-white ${scrolled ? '' : 'bg-opacity-95'}`}>
