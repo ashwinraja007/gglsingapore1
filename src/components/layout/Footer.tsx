@@ -144,7 +144,7 @@ export const Footer = () => {
         {/* Footer bottom with curved top border */}
         <div className="mt-10 relative">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-          <div className="pt-6 text-center py-[9px]">
+          <div className="pt-6 text-center py-[16px]">
             <div className="flex items-center justify-center gap-2 mb-3 text-sm text-gray-500">
               <span>© {currentYear} GGL</span>
               <span>•</span>
