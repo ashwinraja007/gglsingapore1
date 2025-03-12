@@ -96,7 +96,7 @@ const AirFreight = () => {
                   description: "Complete service from pickup to final delivery"
                 },
                 {
-                  icon: <HeadSet className="h-10 w-10 text-brand-gold" />,
+                  icon: <Headset className="h-10 w-10 text-brand-gold" />,
                   title: "24/7 Support",
                   description: "Round-the-clock assistance for your shipments"
                 },
