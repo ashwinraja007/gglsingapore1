@@ -234,9 +234,7 @@ export const Hero = () => {
               scale: 0.97
             }} className="w-full sm:w-auto">
                 <Link to="/services">
-                  <Button size="lg" variant="outline" className="w-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-white border-white hover:bg-white/20">
-                    Our Services
-                  </Button>
+                  
                 </Link>
               </motion.div>
             </motion.div>
