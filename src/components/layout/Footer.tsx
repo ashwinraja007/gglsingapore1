@@ -15,7 +15,7 @@ export const Footer = () => {
       }
     }
   };
-  return <footer className="bg-brand-gray text-white pt-16 pb-8 bg-sky-900">
+  return <footer className="bg-brand-gray text-white pt-16 pb-8 bg-zinc-50">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <motion.div initial="hidden" whileInView="visible" viewport={{
@@ -49,7 +49,7 @@ export const Footer = () => {
         }} variants={footerAnimation} transition={{
           delay: 0.2
         }}>
-            <h3 className="font-bold text-white mb-5 text-lg relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-10 after:h-1 after:bg-brand-green">Navigation</h3>
+            <h3 className="font-bold mb-5 text-lg relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-10 after:h-1 after:bg-brand-green text-gray-950">Navigation</h3>
             <div className="flex flex-col gap-3 mt-6">
               <a href="/" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
                 <ArrowRight size={14} className="text-brand-green group-hover:translate-x-1 transition-transform duration-300" />
