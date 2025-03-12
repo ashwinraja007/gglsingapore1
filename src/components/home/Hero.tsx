@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { 
   Users, 
@@ -8,12 +8,20 @@ import {
   Ship, 
   Box,
   ChevronDown,
-  Globe 
+  Globe, 
 } from "lucide-react";
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    // Delay setting visibility for entrance animation
+    const timer = setTimeout(() => setIsVisible(true), 300);
+    return () => clearTimeout(timer);
+  }, []);
   
   const portalLinks = [
     {
@@ -45,10 +53,10 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Background image and overlay */}
+      {/* Background image with parallax effect */}
       <motion.div
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
+        initial={{ scale: 1.1, y: -20 }}
+        animate={{ scale: 1, y: 0 }}
         transition={{ duration: 1.5 }}
         className="absolute inset-0"
       >
@@ -58,35 +66,35 @@ export const Hero = () => {
           className="w-full h-full object-cover object-center" 
           loading="lazy" 
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/80 via-brand-navy/70 to-brand-navy/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/90 via-brand-navy/70 to-brand-navy/90" />
       </motion.div>
 
       {/* Main content */}
       <div className="absolute inset-0">
         <div className="container mx-auto px-4 h-full flex flex-col justify-center">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="max-w-2xl space-y-8"
           >
             {/* Hero content */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              animate={isVisible ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 1, delay: 0.3 }}
               className="flex items-center gap-3 mb-4"
             >
               <motion.div
                 whileHover={{ rotate: 360 }}
-                transition={{ duration: 4, ease: "linear" }}
+                transition={{ duration: 4, ease: "linear", repeat: Infinity }}
                 className="text-brand-gold"
               >
-                <Globe className="w-10 h-10" />
+                <Globe className="w-10 h-10 drop-shadow-[0_0_8px_rgba(212,175,55,0.8)]" />
               </motion.div>
               <motion.span 
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="inline-block bg-brand-gold/20 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-sm font-medium border border-brand-gold/30"
               >
@@ -96,7 +104,7 @@ export const Hero = () => {
             
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.7 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
             >
@@ -105,7 +113,7 @@ export const Hero = () => {
             
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.9 }}
               className="text-lg md:text-xl text-white/90 leading-relaxed"
             >
@@ -115,7 +123,7 @@ export const Hero = () => {
             
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1.1 }}
               className="flex gap-4 pt-2"
             >
@@ -125,21 +133,23 @@ export const Hero = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="animate-pulse-slow"
               >
-                <Button variant="gold" size="lg" className="font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                <Button variant="gold" size="lg" className="font-semibold shadow-lg hover:shadow-xl transition-all duration-300 gold-glow">
                   Get A Quote
                 </Button>
               </motion.a>
               
-              <motion.a 
-                href="/services" 
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 shadow-lg">
-                  Our Services
-                </Button>
-              </motion.a>
+                <Link to="/services">
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 shadow-lg">
+                    Our Services
+                  </Button>
+                </Link>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
@@ -148,7 +158,7 @@ export const Hero = () => {
       {/* Enhanced Portal Links Section */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, delay: 1.3 }}
         className="container mx-auto px-4 absolute bottom-24 md:bottom-16 left-0 right-0 z-10"
       >
@@ -205,14 +215,19 @@ export const Hero = () => {
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.1 + 1.3 }}
-              className="bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-colors group border border-white/10"
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-all duration-300 group border border-white/10"
             >
               <button className="w-full h-full p-4 flex flex-col items-center justify-center space-y-3 text-white">
-                <span className="text-brand-gold transform group-hover:scale-110 transition-transform">
+                <motion.span 
+                  className="text-brand-gold transform transition-transform"
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, repeatType: "mirror" }}
+                >
                   {link.icon}
-                </span>
+                </motion.span>
                 <div className="text-center">
                   <div className="font-medium whitespace-nowrap">{link.title}</div>
                   <div className="text-sm text-white/70 mt-1">{link.description}</div>
@@ -226,7 +241,7 @@ export const Hero = () => {
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={isVisible ? { opacity: 1 } : {}}
         transition={{ delay: 1.5, duration: 1 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
