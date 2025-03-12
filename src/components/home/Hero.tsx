@@ -7,7 +7,8 @@ import {
   SearchCode, 
   Ship, 
   Box,
-  ChevronDown 
+  ChevronDown,
+  Globe 
 } from "lucide-react";
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -57,7 +58,7 @@ export const Hero = () => {
           className="w-full h-full object-cover object-center" 
           loading="lazy" 
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-brand-darkGreen/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/80 via-brand-navy/70 to-brand-navy/80" />
       </motion.div>
 
       {/* Main content */}
@@ -70,14 +71,28 @@ export const Hero = () => {
             className="max-w-2xl space-y-8"
           >
             {/* Hero content */}
-            <motion.span 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="inline-block bg-brand-green/20 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-sm font-medium border border-brand-green/30"
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="flex items-center gap-3 mb-4"
             >
-              Global Logistics Excellence
-            </motion.span>
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 4, ease: "linear" }}
+                className="text-brand-gold"
+              >
+                <Globe className="w-10 h-10" />
+              </motion.div>
+              <motion.span 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="inline-block bg-brand-gold/20 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-sm font-medium border border-brand-gold/30"
+              >
+                Beyond Logistics, a Complete Solution
+              </motion.span>
+            </motion.div>
             
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
@@ -85,7 +100,7 @@ export const Hero = () => {
               transition={{ duration: 0.8, delay: 0.7 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
             >
-              Delivering Excellence in <span className="text-brand-lightGreen">Global Logistics</span> Solutions
+              Delivering Excellence in <span className="text-brand-gold">Global Logistics</span> Solutions
             </motion.h1>
             
             <motion.p 
@@ -111,7 +126,7 @@ export const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button size="lg" className="bg-white hover:bg-gray-100 text-brand-gray font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                <Button variant="gold" size="lg" className="font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                   Get A Quote
                 </Button>
               </motion.a>
@@ -139,7 +154,7 @@ export const Hero = () => {
       >
         {/* Mobile dropdown button */}
         <motion.button 
-          className="md:hidden w-full bg-brand-green/80 backdrop-blur-md p-4 rounded-lg shadow-lg mb-4 flex items-center justify-between text-white border border-white/20"
+          className="md:hidden w-full bg-brand-navy/80 backdrop-blur-md p-4 rounded-lg shadow-lg mb-4 flex items-center justify-between text-white border border-white/20"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
@@ -172,7 +187,7 @@ export const Hero = () => {
                   className="bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-colors border border-white/10"
                 >
                   <button className="w-full p-4 flex items-center space-x-4 text-white">
-                    <span className="text-brand-lightGreen/90">{link.icon}</span>
+                    <span className="text-brand-gold/90">{link.icon}</span>
                     <div className="text-left">
                       <div className="font-medium">{link.title}</div>
                       <div className="text-sm text-white/70">{link.description}</div>
@@ -195,7 +210,7 @@ export const Hero = () => {
               className="bg-white/10 backdrop-blur-md rounded-lg hover:bg-white/20 transition-colors group border border-white/10"
             >
               <button className="w-full h-full p-4 flex flex-col items-center justify-center space-y-3 text-white">
-                <span className="text-brand-lightGreen transform group-hover:scale-110 transition-transform">
+                <span className="text-brand-gold transform group-hover:scale-110 transition-transform">
                   {link.icon}
                 </span>
                 <div className="text-center">
@@ -219,7 +234,7 @@ export const Hero = () => {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <ChevronDown className="h-8 w-8 text-white/50" />
+          <ChevronDown className="h-8 w-8 text-brand-gold/70" />
         </motion.div>
       </motion.div>
     </section>

@@ -64,12 +64,11 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				brand: {
-					green: '#26803e',
-					darkGreen: '#145529',
-					lightGreen: '#3ca359',
-					gray: '#3a3f44',
-					darkGray: '#2c3036',
-					lightGray: '#e9ecef'
+					gold: '#D4AF37',
+					navy: '#003366',
+					darkGray: '#333333',
+					lightGray: '#F5F5F5',
+					white: '#FFFFFF'
 				}
 			},
 			borderRadius: {
@@ -109,6 +108,18 @@ export default {
 				shimmer: {
 					'0%': { backgroundPosition: '-1000px 0' },
 					'100%': { backgroundPosition: '1000px 0' }
+				},
+				'rotate-globe': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'glow': {
+					'0%, 100%': { filter: 'drop-shadow(0 0 2px rgba(212, 175, 55, 0.7))' },
+					'50%': { filter: 'drop-shadow(0 0 8px rgba(212, 175, 55, 0.9))' }
+				},
+				'fade-in-up': {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
 				}
 			},
 			animation: {
@@ -117,19 +128,25 @@ export default {
 				'scroll': 'scroll 30s linear infinite',
 				'float': 'float 5s ease-in-out infinite',
 				'bounce-slow': 'bounce-slow 4s ease-in-out infinite',
-				'shimmer': 'shimmer 2s infinite linear'
+				'shimmer': 'shimmer 2s infinite linear',
+				'rotate-globe': 'rotate-globe 20s linear infinite',
+				'glow': 'glow 2s ease-in-out infinite',
+				'fade-in-up': 'fade-in-up 0.5s ease-out'
 			},
 			boxShadow: {
 				'custom': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-				'card': '0 8px 16px rgba(38, 128, 62, 0.1)',
-				'card-hover': '0 10px 20px rgba(38, 128, 62, 0.15)'
+				'card': '0 8px 16px rgba(212, 175, 55, 0.1)',
+				'card-hover': '0 10px 20px rgba(212, 175, 55, 0.15)',
+				'navy': '0 8px 16px rgba(0, 51, 102, 0.15)'
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-				'hero-pattern': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.7) 100%)',
-				'card-gradient': 'linear-gradient(135deg, #26803e 0%, #3ca359 100%)',
-				'section-gradient': 'linear-gradient(180deg, rgba(233, 236, 239, 0) 0%, rgba(233, 236, 239, 0.7) 100%)'
+				'hero-pattern': 'linear-gradient(to bottom, rgba(0, 51, 102, 0.8) 0%, rgba(0, 51, 102, 0.6) 50%, rgba(0, 51, 102, 0.8) 100%)',
+				'card-gradient': 'linear-gradient(135deg, #003366 0%, #004080 100%)',
+				'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #E6C25A 100%)',
+				'section-gradient': 'linear-gradient(180deg, rgba(245, 245, 245, 0) 0%, rgba(245, 245, 245, 0.7) 100%)',
+				'navy-gold-gradient': 'linear-gradient(135deg, #003366 0%, #D4AF37 100%)'
 			}
 		}
 	},

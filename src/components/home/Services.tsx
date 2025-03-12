@@ -2,10 +2,15 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 const EnhancedServiceCard = ({ image, title, description }) => {
   return (
-    <div className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl h-full">
+    <motion.div 
+      whileHover={{ y: -10 }}
+      transition={{ type: "spring", stiffness: 300 }}
+      className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-card-hover h-full border border-gray-100"
+    >
       <div className="aspect-square overflow-hidden">
         <div 
           className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
@@ -14,13 +19,19 @@ const EnhancedServiceCard = ({ image, title, description }) => {
           aria-label={title}
         />
       </div>
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-navy/90 to-transparent p-4">
         <h3 className="text-base font-bold text-white mb-1">{title}</h3>
         <p className="text-xs text-white/90 opacity-0 transition-opacity duration-300 group-hover:opacity-100 line-clamp-2">
           {description}
         </p>
       </div>
-    </div>
+      <motion.div 
+        className="absolute top-3 right-3 bg-brand-gold text-brand-navy w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        whileHover={{ rotate: 90 }}
+      >
+        <ArrowRight size={16} />
+      </motion.div>
+    </motion.div>
   );
 };
 
@@ -49,41 +60,74 @@ export const Services = () => {
   ];
 
   return (
-    <section className="py-10 bg-gradient-to-b from-white to-gray-50">
+    <motion.section 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+      className="py-16 bg-gradient-to-b from-white to-brand-lightGray"
+    >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">
-            Core Services
+        <motion.div 
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-3">
+            Our Core Services
           </h2>
-          <p className="text-gray-600 max-w-xl mx-auto text-sm">
-            Discover our comprehensive range of logistics solutions designed to meet your shipping needs
+          <div className="w-24 h-1 bg-brand-gold mx-auto mb-4"></div>
+          <p className="text-gray-600 max-w-xl mx-auto text-sm md:text-base">
+            Discover our comprehensive range of logistics solutions designed to meet your global shipping needs
           </p>
-        </div>
+        </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {services.map((service, index) => (
-            <EnhancedServiceCard 
+            <motion.div
               key={index}
-              image={service.image}
-              title={service.title}
-              description={service.description}
-            />
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Link to={`/services/${service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
+                <EnhancedServiceCard 
+                  image={service.image}
+                  title={service.title}
+                  description={service.description}
+                />
+              </Link>
+            </motion.div>
           ))}
         </div>
         
-        <div className="flex justify-center mt-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="flex justify-center mt-12"
+        >
           <Link to="/services">
             <Button 
-              variant="outline" 
-              className="group hover:bg-blue-600 hover:text-white transition-all duration-300 text-sm"
+              variant="navy" 
+              className="group transition-all duration-300 text-sm flex items-center gap-2"
             >
-              All Services
-              <ArrowRight className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+              Explore All Services
+              <motion.span
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 400 }}
+              >
+                <ArrowRight className="h-4 w-4" />
+              </motion.span>
             </Button>
           </Link>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

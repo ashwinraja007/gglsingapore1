@@ -10,7 +10,7 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight text-brand-gray;
+    @apply font-semibold tracking-tight text-brand-navy;
   }
 
   p {
@@ -19,32 +19,32 @@
 
   :root {
     --background: 0 0% 100%;
-    --foreground: 210 11% 25%;
+    --foreground: 210 100% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 11% 25%;
+    --card-foreground: 210 100% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 11% 25%;
+    --popover-foreground: 210 100% 20%;
 
-    --primary: 142 53% 33%;
+    --primary: 43 65% 52%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 11% 95%;
-    --secondary-foreground: 210 11% 25%;
+    --secondary: 210 100% 20%;
+    --secondary-foreground: 210 40% 98%;
 
     --muted: 210 11% 95%;
     --muted-foreground: 215 13% 46%;
 
-    --accent: 143 43% 44%;
-    --accent-foreground: 210 11% 25%;
+    --accent: 43 65% 52%;
+    --accent-foreground: 210 100% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 142 53% 33%;
+    --ring: 43 65% 52%;
 
     --radius: 0.5rem;
 
@@ -59,42 +59,42 @@
   }
 
   .dark {
-    --background: 224 12% 25%;
+    --background: 224 71% 13%;
     --foreground: 210 40% 98%;
 
-    --card: 224 12% 25%;
+    --card: 224 71% 13%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 224 12% 25%;
+    --popover: 224 71% 13%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 142 53% 33%;
+    --primary: 43 65% 52%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 14% 30%;
+    --secondary: 215 73% 16%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 215 14% 30%;
+    --muted: 215 73% 16%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 143 43% 44%;
+    --accent: 43 65% 52%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 14% 30%;
-    --input: 215 14% 30%;
-    --ring: 142 53% 33%;
+    --border: 215 73% 16%;
+    --input: 215 73% 16%;
+    --ring: 43 65% 52%;
     
-    --sidebar-background: 224 12% 18%;
+    --sidebar-background: 224 71% 8%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 143 43% 44%;
+    --sidebar-primary: 43 65% 52%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 224 12% 25%;
+    --sidebar-accent: 224 71% 13%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 224 12% 25%;
-    --sidebar-ring: 143 43% 44%;
+    --sidebar-border: 224 71% 13%;
+    --sidebar-ring: 43 65% 52%;
   }
 }
 
@@ -110,11 +110,11 @@
 
 @layer components {
   .section-title {
-    @apply text-2xl lg:text-3xl font-bold text-brand-gray relative;
+    @apply text-2xl lg:text-3xl font-bold text-brand-navy relative;
   }
   
   .section-title::after {
-    @apply content-[''] absolute -bottom-2 left-0 w-20 h-1 bg-brand-green;
+    @apply content-[''] absolute -bottom-2 left-0 w-20 h-1 bg-brand-gold;
   }
   
   .section-spacing {
@@ -126,11 +126,11 @@
   }
   
   .button-primary {
-    @apply bg-brand-green hover:bg-brand-darkGreen text-white font-medium py-2 px-4 rounded-md shadow-sm hover:shadow transition-all;
+    @apply bg-brand-gold hover:bg-amber-500 text-brand-navy font-medium py-2 px-4 rounded-md shadow-sm hover:shadow transition-all;
   }
   
   .button-secondary {
-    @apply bg-white hover:bg-gray-50 text-brand-gray font-medium py-2 px-4 rounded-md shadow-sm hover:shadow border border-gray-200 transition-all;
+    @apply bg-white hover:bg-gray-50 text-brand-navy font-medium py-2 px-4 rounded-md shadow-sm hover:shadow border border-gray-200 transition-all;
   }
 
   .glass-card {
@@ -142,10 +142,34 @@
   }
 
   .page-header::after {
-    @apply content-[''] absolute inset-0 bg-brand-green/10 -z-10;
+    @apply content-[''] absolute inset-0 bg-brand-navy/10 -z-10;
   }
 
   .animated-underline {
-    @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-brand-green after:transition-all after:duration-300 hover:after:w-full;
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-all after:duration-300 hover:after:w-full;
+  }
+  
+  .gold-glow {
+    @apply hover:shadow-[0_0_10px_rgba(212,175,55,0.5)];
+  }
+  
+  .navy-glow {
+    @apply hover:shadow-[0_0_10px_rgba(0,51,102,0.5)];
+  }
+  
+  .rotate-on-hover:hover {
+    @apply animate-rotate-globe;
+  }
+  
+  .glow-on-hover:hover {
+    @apply animate-glow;
+  }
+  
+  .rise-on-hover {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+  
+  .scale-on-hover {
+    @apply transition-transform duration-300 hover:scale-105;
   }
 }
