@@ -1,29 +1,31 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Truck, Package, Anchor, Droplets } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
-
-const EnhancedServiceCard = ({ image, title, description, icon, link }) => {
-  return (
-    <motion.div 
-      whileHover={{ y: -5 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ type: "spring", stiffness: 300 }}
-      className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl border border-gray-100"
-    >
+const EnhancedServiceCard = ({
+  image,
+  title,
+  description,
+  icon,
+  link
+}) => {
+  return <motion.div whileHover={{
+    y: -5
+  }} whileTap={{
+    scale: 0.98
+  }} transition={{
+    type: "spring",
+    stiffness: 300
+  }} className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl border border-gray-100">
       <Link to={link} className="block h-full">
         <div className="h-40 overflow-hidden">
-          <motion.div 
-            className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-            style={{ backgroundImage: `url(${image})` }}
-            role="img"
-            aria-label={title}
-          />
+          <motion.div className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{
+          backgroundImage: `url(${image})`
+        }} role="img" aria-label={title} />
         </div>
         <div className="p-5">
           <div className="flex items-center space-x-3 mb-3">
-            <div className="bg-brand-gold/90 w-10 h-10 rounded-full flex items-center justify-center text-brand-navy">
+            <div className="w-10 h-10 rounded-full flex items-center justify-center text-brand-navy bg-[#f6b100]">
               {icon}
             </div>
             <h3 className="text-lg font-bold text-brand-navy">{title}</h3>
@@ -35,87 +37,80 @@ const EnhancedServiceCard = ({ image, title, description, icon, link }) => {
           
           <div className="inline-flex items-center text-brand-gold font-medium text-sm group">
             Learn More
-            <motion.span 
-              className="ml-1"
-              initial={{ x: 0 }}
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, repeatType: "mirror" }}
-            >
+            <motion.span className="ml-1" initial={{
+            x: 0
+          }} animate={{
+            x: [0, 5, 0]
+          }} transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            repeatType: "mirror"
+          }}>
               <ArrowRight size={16} />
             </motion.span>
           </div>
         </div>
       </Link>
-      <motion.div 
-        className="absolute top-3 right-3 bg-brand-gold text-brand-navy w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        whileHover={{ rotate: 90 }}
-      >
+      <motion.div className="absolute top-3 right-3 bg-brand-gold text-brand-navy w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" whileHover={{
+      rotate: 90
+    }}>
         <ArrowRight size={16} />
       </motion.div>
-    </motion.div>
-  );
+    </motion.div>;
 };
-
 export const Services = () => {
-  const services = [
-    { 
-      image: "/lovable-uploads/airfreight.jpg", 
-      title: "Air Freight",
-      description: "Tailored Air Freight Solutions to Meet Your Unique Requirements. We offer flexible air freight solutions for time-sensitive documents or large-scale cargo.",
-      icon: <Package size={20} />,
-      link: "/services/air-freight"
-    },
-    { 
-      image: "/lovable-uploads/ocean.jpg", 
-      title: "Ocean Freight (LCL & FCL)",
-      description: "Connecting you globally with comprehensive ocean freight services. We offer both LCL for smaller shipments and FCL for dedicated container needs.",
-      icon: <Anchor size={20} />,
-      link: "/services/ocean-freight"
-    },
-    { 
-      image: "/lovable-uploads/cc.jpg", 
-      title: "Customs Clearance",
-      description: "Expert customs clearance services ensuring your shipments move smoothly across borders with accurate documentation and regulatory compliance.",
-      icon: <Truck size={20} />,
-      link: "/services/customs-clearance"
-    },
-    { 
-      image: "/lovable-uploads/liquid.jpg", 
-      title: "Liquid Transportation",
-      description: "Specialized solutions for transporting liquids safely and efficiently, utilizing ISO tanks, flexitanks, and specialized tankers managed by expert teams.",
-      icon: <Droplets size={20} />,
-      link: "/services/liquid-transportation"
-    }
-  ];
-
+  const services = [{
+    image: "/lovable-uploads/airfreight.jpg",
+    title: "Air Freight",
+    description: "Tailored Air Freight Solutions to Meet Your Unique Requirements. We offer flexible air freight solutions for time-sensitive documents or large-scale cargo.",
+    icon: <Package size={20} />,
+    link: "/services/air-freight"
+  }, {
+    image: "/lovable-uploads/ocean.jpg",
+    title: "Ocean Freight (LCL & FCL)",
+    description: "Connecting you globally with comprehensive ocean freight services. We offer both LCL for smaller shipments and FCL for dedicated container needs.",
+    icon: <Anchor size={20} />,
+    link: "/services/ocean-freight"
+  }, {
+    image: "/lovable-uploads/cc.jpg",
+    title: "Customs Clearance",
+    description: "Expert customs clearance services ensuring your shipments move smoothly across borders with accurate documentation and regulatory compliance.",
+    icon: <Truck size={20} />,
+    link: "/services/customs-clearance"
+  }, {
+    image: "/lovable-uploads/liquid.jpg",
+    title: "Liquid Transportation",
+    description: "Specialized solutions for transporting liquids safely and efficiently, utilizing ISO tanks, flexitanks, and specialized tankers managed by expert teams.",
+    icon: <Droplets size={20} />,
+    link: "/services/liquid-transportation"
+  }];
   const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { 
+    hidden: {
+      opacity: 0
+    },
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         staggerChildren: 0.1
       }
     }
   };
-
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+    hidden: {
+      opacity: 0,
+      y: 20
+    },
+    visible: {
+      opacity: 1,
+      y: 0
+    }
   };
-
-  return (
-    <motion.section 
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
-      variants={containerVariants}
-      className="py-10 bg-gradient-to-b from-white to-brand-lightGray"
-    >
+  return <motion.section initial="hidden" whileInView="visible" viewport={{
+    once: true,
+    amount: 0.1
+  }} variants={containerVariants} className="py-10 bg-gradient-to-b from-white to-brand-lightGray">
       <div className="container mx-auto px-4">
-        <motion.div 
-          variants={itemVariants}
-          className="text-center mb-8"
-        >
+        <motion.div variants={itemVariants} className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-3">
             Our Core Services
           </h2>
@@ -125,50 +120,35 @@ export const Services = () => {
           </p>
         </motion.div>
         
-        <motion.div 
-          variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <EnhancedServiceCard 
-                image={service.image}
-                title={service.title}
-                description={service.description}
-                icon={service.icon}
-                link={service.link}
-              />
-            </motion.div>
-          ))}
+        <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service, index) => <motion.div key={index} variants={itemVariants} transition={{
+          duration: 0.5,
+          delay: index * 0.1
+        }}>
+              <EnhancedServiceCard image={service.image} title={service.title} description={service.description} icon={service.icon} link={service.link} />
+            </motion.div>)}
         </motion.div>
         
-        <motion.div 
-          variants={itemVariants}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex justify-center mt-8"
-        >
+        <motion.div variants={itemVariants} transition={{
+        duration: 0.6,
+        delay: 0.4
+      }} className="flex justify-center mt-8">
           <Link to="/services">
-            <Button 
-              variant="navy" 
-              className="group transition-all duration-300 text-sm flex items-center gap-2 navy-glow"
-            >
+            <Button variant="navy" className="group transition-all duration-300 text-sm flex items-center gap-2 navy-glow">
               Explore All Services
-              <motion.span
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, repeatType: "mirror" }}
-              >
+              <motion.span animate={{
+              x: [0, 5, 0]
+            }} transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              repeatType: "mirror"
+            }}>
                 <ArrowRight className="h-4 w-4" />
               </motion.span>
             </Button>
           </Link>
         </motion.div>
       </div>
-    </motion.section>
-  );
+    </motion.section>;
 };
-
 export default Services;
