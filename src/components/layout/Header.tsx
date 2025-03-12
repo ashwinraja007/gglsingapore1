@@ -24,12 +24,12 @@ export const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4">
-              <img src="moltech logo.png" alt="Moltech Logo" className="h-10 md:h-14 w-auto object-fill transition-all duration-300" />
+              <img src="/lovable-uploads/GGL.png" alt="GGL Logo" className="h-10 md:h-14 w-auto object-fill transition-all duration-300" />
               <div className="h-8 w-px bg-gray-200 hidden md:block"></div>
               <img 
                 src="/1GlobalEnterprises.png" 
                 alt="1 Global Enterprises Logo" 
-                className="h-10 md:h-14 w-auto object-contain"
+                className="h-8 md:h-10 w-auto object-contain"
               />
             </div>
             
