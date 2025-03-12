@@ -83,7 +83,7 @@ export const Hero = () => {
               ease: "linear",
               repeat: Infinity
             }} className="text-brand-gold">
-                <Globe className="w-10 h-10 drop-shadow-[0_0_8px_rgba(212,175,55,0.8)]" />
+                <Globe className="w-10 h-10 drop-shadow-[0_0_8px_rgba(246,177,0,0.8)];" />
               </motion.div>
               <motion.span initial={{
               opacity: 0,
