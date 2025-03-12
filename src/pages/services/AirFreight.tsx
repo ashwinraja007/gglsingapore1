@@ -3,7 +3,7 @@ import React from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from 'framer-motion';
-import { Plane, Clock, Globe, HeadSet } from "lucide-react";
+import { Plane, Clock, Globe, Headset } from "lucide-react";
 import { Link } from 'react-router-dom';
 
 const AirFreight = () => {
