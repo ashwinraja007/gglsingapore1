@@ -17,7 +17,7 @@ export const Footer = () => {
     }
   };
   const currentYear = new Date().getFullYear();
-  return <footer className="pt-16 pb-8 bg-gradient-to-b from-white to-gray-100 py-[99px]">
+  return <footer className="pt-16 pb-8 bg-gradient-to-b from-white to-gray-100 py-0">
       <div className="container mx-auto px-4">
         {/* Top section with gradient border */}
         <div className="relative mb-8">
