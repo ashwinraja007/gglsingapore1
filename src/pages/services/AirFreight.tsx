@@ -62,7 +62,7 @@ const AirFreight = () => {
               }} transition={{
                 duration: 0.5
               }} className="rounded-xl overflow-hidden shadow-xl">
-                  <img src="/lovable-uploads/airfrieght1.jpg" alt="Air Freight Service" className="w-full h-auto object-cover" />
+                  <img src="/lovable-uploads/airfreight.jpg" alt="Air Freight Service" className="w-full h-auto object-cover" />
                 </motion.div>
               </div>
             </div>
