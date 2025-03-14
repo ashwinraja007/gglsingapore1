@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -16,6 +17,22 @@ const ScrollToTop = () => {
 
 // Service Card Component
 const ServiceCard = ({ icon, title, description, image, link }) => {
+  // Choose more appropriate image based on service type
+  const getServiceImage = () => {
+    switch(title) {
+      case "Air Freight":
+        return "/lovable-uploads/airfreight.jpg";
+      case "Ocean Freight":
+        return "/lovable-uploads/ocean.jpg";
+      case "Customs Clearance":
+        return "/lovable-uploads/cc.jpg";
+      case "Liquid Transportation":
+        return "/lovable-uploads/liquid.jpg";
+      default:
+        return image;
+    }
+  };
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }} 
@@ -24,11 +41,11 @@ const ServiceCard = ({ icon, title, description, image, link }) => {
       viewport={{ once: true }} 
       className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group"
     >
-      <div className="relative h-48 overflow-hidden">
-        <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+      <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
+        <img src={getServiceImage()} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
           <div className="p-6">
-            <div className="bg-green-600 text-white p-2 rounded-full inline-block mb-2">
+            <div className="bg-brand-gold text-brand-navy p-2 rounded-full inline-block mb-2">
               {icon}
             </div>
             <h3 className="text-xl font-bold text-white mb-1">{title}</h3>
@@ -39,7 +56,7 @@ const ServiceCard = ({ icon, title, description, image, link }) => {
         <p className="text-gray-600 mb-4 line-clamp-3">
           {description}
         </p>
-        <Link to={link} className="text-green-600 font-medium hover:text-green-700 inline-flex items-center">
+        <Link to={link} className="text-brand-gold font-medium hover:text-amber-500 inline-flex items-center">
           Learn More
           <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -65,12 +82,13 @@ const Services = () => {
 
       <main className="flex-grow pt-24">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-gray-50 to-green-50 py-16">
+        <section className="bg-gradient-to-br from-gray-50 to-brand-lightGray py-16">
           <div className="container mx-auto px-4">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center max-w-3xl mx-auto">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-brand-navy">
                 Our Comprehensive Services
               </h1>
+              <div className="w-24 h-1 bg-brand-gold mx-auto mb-4"></div>
               <p className="text-lg text-gray-700">
                 From air and ocean freight to specialized liquid transportation, we offer end-to-end logistics solutions tailored to your unique needs.
               </p>
@@ -80,8 +98,8 @@ const Services = () => {
 
         {/* Services Grid */}
         <section className="py-16">
-          <div className="container mx-auto px-[240px]">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="container mx-auto px-4 md:px-8 lg:px-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {services.map(service => <ServiceCard key={service.id} {...service} />)}
             </div>
           </div>
@@ -91,11 +109,12 @@ const Services = () => {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Our Logistics Services?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Why Choose Our Logistics Services?</h2>
+              <div className="w-24 h-1 bg-brand-gold mx-auto mb-4"></div>
               <p className="text-gray-700 text-lg">We combine industry expertise, advanced technology, and personalized care to deliver exceptional logistics solutions.</p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { title: "🌍 Global Network", description: "Leverage our extensive worldwide connections for efficient shipping." },
                 { title: "🎯 Customized Solutions", description: "Tailored logistics plans designed for your business." },
@@ -104,7 +123,7 @@ const Services = () => {
                 { title: "✅ Regulatory Compliance", description: "Ensure smooth operations with up-to-date knowledge." },
                 { title: "📞 24/7 Support", description: "Get help anytime with round-the-clock customer service." }
               ].map((feature, index) => (
-                <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} viewport={{ once: true }} className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-green-600">
+                <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} viewport={{ once: true }} className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-brand-gold">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
                   <p className="text-gray-600">{feature.description}</p>
                 </motion.div>

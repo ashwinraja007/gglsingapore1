@@ -1,3 +1,4 @@
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -32,10 +33,12 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4">
-            {/* ✅ Clicking the logo redirects to Home */}
+            {/* Logo for all views */}
             <img src="/lovable-uploads/GGL.png" alt="GGL Logo" onClick={handleLogoClick} className="h-16 w-auto cursor-pointer transition-all duration-300 object-fill" />
+            
+            {/* Only show separator and 1Global logo on larger screens */}
             <div className="h-8 w-px bg-gray-200 hidden md:block"></div>
-            <img src="/1GlobalEnterprises.png" alt="1 Global Enterprises Logo" className="h-8 w-auto object-contain transition-all duration-300" />
+            <img src="/1GlobalEnterprises.png" alt="1 Global Enterprises Logo" className="hidden md:block h-8 w-auto object-contain transition-all duration-300" />
           </div>
 
           {/* Mobile Menu Button */}

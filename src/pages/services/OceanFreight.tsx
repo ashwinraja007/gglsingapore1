@@ -51,7 +51,7 @@ const OceanFreight = () => {
                   className="rounded-xl overflow-hidden shadow-xl"
                 >
                   <img 
-                    src="/lovable-uploads/ocean.jpg" 
+                    src="/lovable-uploads/oceanfrieght.jpg" 
                     alt="Ocean Freight Service" 
                     className="w-full h-auto object-cover"
                   />
@@ -83,8 +83,8 @@ const OceanFreight = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100"
               >
-                <div className="h-48 relative">
-                  <img src="/lovable-uploads/ocean.jpg" alt="LCL Shipping" className="w-full h-full object-cover" />
+                <div className="h-48 md:h-56 relative">
+                  <img src="/lovable-uploads/oceanfrieght.jpg" alt="LCL Shipping" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
                     <h3 className="text-white text-xl font-bold p-6">Less than Container Load (LCL)</h3>
                   </div>
@@ -110,8 +110,8 @@ const OceanFreight = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100"
               >
-                <div className="h-48 relative">
-                  <img src="/lovable-uploads/ocean.jpg" alt="FCL Shipping" className="w-full h-full object-cover" />
+                <div className="h-48 md:h-56 relative">
+                  <img src="/lovable-uploads/transport.jpg" alt="FCL Shipping" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
                     <h3 className="text-white text-xl font-bold p-6">Full Container Load (FCL)</h3>
                   </div>
@@ -132,7 +132,7 @@ const OceanFreight = () => {
             </div>
             
             {/* Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {[
                 {
                   title: "Global Network",
@@ -182,7 +182,7 @@ const OceanFreight = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl text-white p-8 text-center"
+              className="bg-gradient-to-r from-brand-navy to-blue-700 rounded-xl text-white p-8 text-center"
             >
               <h3 className="text-2xl font-bold mb-4">Ready to Ship Your Cargo?</h3>
               <p className="mb-6 text-blue-50">
@@ -190,7 +190,7 @@ const OceanFreight = () => {
               </p>
               <Link 
                 to="/contact" 
-                className="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors"
+                className="inline-block bg-white text-brand-navy px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors"
               >
                 Get a Quote
               </Link>

@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Truck, Package, Anchor, Droplets } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
@@ -11,6 +12,22 @@ const EnhancedServiceCard = ({ image, title, description, icon, link }: {
   icon: JSX.Element; 
   link: string;
 }) => {
+  // Choose the appropriate image based on service title
+  const getServiceImage = () => {
+    switch(title) {
+      case "Air Freight":
+        return "/lovable-uploads/airfreight.jpg";
+      case "Ocean Freight":
+        return "/lovable-uploads/oceanfrieght.jpg";
+      case "Customs Clearance":
+        return "/lovable-uploads/cc.jpg";
+      case "Liquid Transportation":
+        return "/lovable-uploads/liquid.jpg";
+      default:
+        return image;
+    }
+  };
+
   return (
     <motion.div
       whileHover={{ y: -5 }}
@@ -19,10 +36,10 @@ const EnhancedServiceCard = ({ image, title, description, icon, link }: {
       className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl border border-gray-100"
     >
       <Link to={link} className="block h-full" onClick={() => window.scrollTo(0, 0)}> 
-        <div className="h-40 overflow-hidden">
+        <div className="h-44 sm:h-48 md:h-40 overflow-hidden">
           <motion.div 
             className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" 
-            style={{ backgroundImage: `url(${image})` }} 
+            style={{ backgroundImage: `url(${getServiceImage()})` }} 
             role="img" 
             aria-label={title} 
           />
@@ -125,7 +142,7 @@ export const Services = () => {
           </p>
         </motion.div>
         
-        <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div variants={containerVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <motion.div key={index} variants={itemVariants} transition={{ duration: 0.5, delay: index * 0.1 }}>
               <EnhancedServiceCard 
