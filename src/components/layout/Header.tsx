@@ -1,7 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-
 export const Header = () => {
   const location = useLocation();
   const navigate = useNavigate(); // ✅ Hook to programmatically navigate
@@ -29,32 +28,18 @@ export const Header = () => {
     setIsMobileMenuOpen(false); // Close menu on mobile
     window.scrollTo(0, 0); // Scroll to top
   };
-
-  return (
-    <header className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-white/95 py-2'}`}>
+  return <header className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-white/95 py-2'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4">
             {/* ✅ Clicking the logo redirects to Home */}
-            <img 
-              src="/lovable-uploads/GGL.png" 
-              alt="GGL Logo" 
-              className="h-10 w-auto object-fill cursor-pointer transition-all duration-300" 
-              onClick={handleLogoClick} 
-            />
+            <img src="/lovable-uploads/GGL.png" alt="GGL Logo" onClick={handleLogoClick} className="h-16 w-auto cursor-pointer transition-all duration-300 object-fill" />
             <div className="h-8 w-px bg-gray-200 hidden md:block"></div>
-            <img 
-              src="/1GlobalEnterprises.png" 
-              alt="1 Global Enterprises Logo" 
-              className="h-8 w-auto object-contain transition-all duration-300" 
-            />
+            <img src="/1GlobalEnterprises.png" alt="1 Global Enterprises Logo" className="h-8 w-auto object-contain transition-all duration-300" />
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden text-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-md p-1"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
+          <button className="md:hidden text-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-md p-1" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
 
@@ -99,6 +84,5 @@ export const Header = () => {
           </nav>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 };
