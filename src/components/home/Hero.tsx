@@ -328,7 +328,7 @@ export const Hero = () => {
           y: -5,
           scale: 1.02
         }} className="bg-white/15 backdrop-blur-md rounded-lg hover:bg-white/25 transition-all duration-300 border border-brand-gold/30 shadow-lg">
-              <Link to={link.url} className="w-full h-full p-4 flex flex-col items-center justify-center text-white">
+              <Link to={link.url} className="w-full h-full p-4 flex flex-col items-center justify-center text-white px-0 py-[3px] my-0 mx-0">
                 <motion.span className="text-brand-gold transform transition-transform p-2 bg-white/10 rounded-full mb-2" whileHover={{
               scale: 1.1,
               rotate: 10
