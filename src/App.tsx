@@ -13,6 +13,7 @@ import LiquidTransportation from "./pages/services/LiquidTransportation";
 import AirFreight from "./pages/services/AirFreight";
 import OceanFreight from "./pages/services/OceanFreight";
 import CustomsClearance from "./pages/services/CustomsClearance";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
   <BrowserRouter>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/contact" element={<Contact />} />

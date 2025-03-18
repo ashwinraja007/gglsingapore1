@@ -1,9 +1,11 @@
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+
 export const Header = () => {
   const location = useLocation();
-  const navigate = useNavigate(); // ✅ Hook to programmatically navigate
+  const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
@@ -16,19 +18,20 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ Function to navigate home & scroll to top
+  // Function to navigate home & scroll to top
   const handleLogoClick = () => {
-    navigate("/"); // Redirect to home
-    window.scrollTo(0, 0); // Scroll to top
+    navigate("/");
+    window.scrollTo(0, 0);
   };
 
-  // ✅ Function to navigate & scroll to top on click
+  // Function to navigate & scroll to top on click
   const handleNavClick = (path: string) => {
     navigate(path);
-    setIsMobileMenuOpen(false); // Close menu on mobile
-    window.scrollTo(0, 0); // Scroll to top
+    setIsMobileMenuOpen(false);
+    window.scrollTo(0, 0);
   };
-  return <header className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-white/95 py-2'}`}>
+  
+  return <header className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white py-2' : 'bg-white/95 py-2'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4">
@@ -59,7 +62,7 @@ export const Header = () => {
             <button onClick={() => handleNavClick("/contact")} className={`text-gray-800 hover:text-brand-gold font-medium transition-colors py-1 ${location.pathname === '/contact' ? 'text-brand-gold' : ''}`}>
               Contact Us
             </button>
-            <button onClick={() => handleNavClick("/contact")} className="px-5 py-2 bg-[#F6B100] text-black rounded-full hover:bg-[#FFCC33] transition font-medium shadow-sm hover:shadow-gold-glow">
+            <button onClick={() => handleNavClick("/contact")} className="px-5 py-2 bg-[#F6B100] text-black rounded-full hover:bg-[#FFCC33] transition font-medium">
               Get A Quote
             </button>
           </nav>
@@ -80,7 +83,7 @@ export const Header = () => {
             <button onClick={() => handleNavClick("/contact")} className={`text-gray-800 hover:text-brand-gold font-medium ${location.pathname === '/contact' ? 'text-brand-gold' : ''}`}>
               Contact Us
             </button>
-            <button onClick={() => handleNavClick("/contact")} className="px-4 py-2 bg-brand-gold text-brand-navy rounded-md hover:bg-amber-500 text-center font-medium shadow-sm hover:shadow-gold-glow w-full">
+            <button onClick={() => handleNavClick("/contact")} className="px-4 py-2 bg-brand-gold text-brand-navy rounded-md hover:bg-amber-500 text-center font-medium w-full">
               Get A Quote
             </button>
           </nav>
