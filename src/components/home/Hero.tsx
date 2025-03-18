@@ -138,7 +138,7 @@ export const Hero = () => {
 
       {/* Main content */}
       <div className="absolute inset-0">
-        <div className="container sm:px-6 lg:px-8 h-full flex flex-col justify-center mx-0 px-[23px] my-0">
+        <div className="container sm:px-6 lg:px-8 h-full flex flex-col justify-center mx-0 my-0 px-0">
           <motion.div initial={{
           opacity: 0,
           y: 40
@@ -148,7 +148,7 @@ export const Hero = () => {
         } : {}} transition={{
           duration: 0.8,
           delay: 0.2
-        }} className="max-w-2xl space-y-6 sm:space-y-8">
+        }} className="max-w-2xl space-y-6 sm:space-y-8 px-0 my-0 mx-[51px]">
             <motion.div initial={{
             opacity: 0,
             scale: 0.9
