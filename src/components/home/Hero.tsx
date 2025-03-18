@@ -3,12 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Users, UserCircle, SearchCode, Ship, Box, ChevronDown, Globe, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
 export const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   useEffect(() => {
     // Delay setting visibility for entrance animation
     const timer = setTimeout(() => setIsVisible(true), 300);
@@ -25,7 +23,6 @@ export const Hero = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [isMobileMenuOpen]);
-
   const portalLinks = [{
     icon: <Users className="w-5 h-5" />,
     title: "Customer Portal",
@@ -52,7 +49,6 @@ export const Hero = () => {
     description: "View dimensions",
     url: "/containers"
   }];
-
   return <section className="relative min-h-screen overflow-hidden pt-24">
       {/* Mobile Navigation Menu Button */}
       <div className="fixed top-4 right-4 z-50 md:hidden">
@@ -73,7 +69,7 @@ export const Hero = () => {
         stiffness: 300
       }} className="fixed top-0 right-0 w-4/5 h-screen bg-brand-navy/95 backdrop-blur-lg z-50 shadow-xl border-l border-brand-gold/30 flex flex-col">
             <div className="p-6 mt-12 space-y-6">
-              <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-6">
                 <Globe className="w-8 h-8 text-brand-gold" />
                 <h2 className="text-xl font-bold text-white">Global Logistics</h2>
               </div>
@@ -90,7 +86,7 @@ export const Hero = () => {
             }} className="border-b border-white/20 pb-3">
                     <Link to={link.url} className="flex items-center gap-3 text-white" onClick={() => setIsMobileMenuOpen(false)}>
                       <span className="text-brand-gold">{link.icon}</span>
-                      <div className="text-center w-full">
+                      <div>
                         <div className="font-medium">{link.title}</div>
                         <div className="text-xs text-white/70">{link.description}</div>
                       </div>
@@ -142,7 +138,7 @@ export const Hero = () => {
 
       {/* Main content */}
       <div className="absolute inset-0">
-        <div className="container sm:px-6 lg:px-8 h-full flex flex-col justify-center mx-0 px-[23px] my-0">
+        <div className="container sm:px-6 lg:px-8 h-full flex flex-col justify-center mx-0 my-0 px-0">
           <motion.div initial={{
           opacity: 0,
           y: 40
@@ -152,7 +148,7 @@ export const Hero = () => {
         } : {}} transition={{
           duration: 0.8,
           delay: 0.2
-        }} className="max-w-2xl mx-auto space-y-6 sm:space-y-8 text-center">
+        }} className="max-w-2xl space-y-6 sm:space-y-8 px-0 my-0 mx-[51px]">
             <motion.div initial={{
             opacity: 0,
             scale: 0.9
@@ -162,7 +158,7 @@ export const Hero = () => {
           } : {}} transition={{
             duration: 1,
             delay: 0.3
-          }} className="flex items-center justify-center gap-3 mb-2">
+          }} className="flex items-center gap-3 mb-2">
               <motion.div whileHover={{
               rotate: 360
             }} transition={{
@@ -195,7 +191,7 @@ export const Hero = () => {
           } : {}} transition={{
             duration: 0.8,
             delay: 0.7
-          }} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight text-center">
+          }} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Delivering Excellence in <span className="text-[#f6b100]">Global Logistics</span> Solutions
             </motion.h1>
             
@@ -208,7 +204,7 @@ export const Hero = () => {
           } : {}} transition={{
             duration: 0.8,
             delay: 0.9
-          }} className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed text-center mx-auto">
+          }} className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
               GGL brings over 25 years of expertise in international logistics, 
               offering comprehensive solutions tailored to your business needs.
             </motion.p>
@@ -222,7 +218,7 @@ export const Hero = () => {
           } : {}} transition={{
             duration: 0.8,
             delay: 1.1
-          }} className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 justify-center">
+          }} className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
               <motion.a href="https://demo.logistics-quote.com" target="_blank" rel="noopener noreferrer" whileHover={{
               scale: 1.03
             }} whileTap={{
@@ -298,7 +294,7 @@ export const Hero = () => {
           }} className="hover:bg-white/15 transition-colors">
                   <Link to={link.url} className="w-full p-4 flex items-center space-x-4 text-white">
                     <span className="text-brand-gold bg-white/10 p-2 rounded-full">{link.icon}</span>
-                    <div className="text-center w-full">
+                    <div className="text-left">
                       <div className="font-medium">{link.title}</div>
                       <div className="text-xs text-white/80">{link.description}</div>
                     </div>
@@ -332,7 +328,7 @@ export const Hero = () => {
           y: -5,
           scale: 1.02
         }} className="bg-white/15 backdrop-blur-md rounded-lg hover:bg-white/25 transition-all duration-300 border border-brand-gold/30 shadow-lg">
-              <Link to={link.url} className="w-full h-full p-4 flex flex-col items-center justify-center text-white">
+              <Link to={link.url} className="w-full h-full p-4 flex flex-col items-center justify-center text-white px-0 py-[3px] my-0 mx-0">
                 <motion.span className="text-brand-gold transform transition-transform p-2 bg-white/10 rounded-full mb-2" whileHover={{
               scale: 1.1,
               rotate: 10
@@ -367,5 +363,4 @@ export const Hero = () => {
       </motion.div>
     </section>;
 };
-
 export default Hero;
