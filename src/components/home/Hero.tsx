@@ -314,7 +314,7 @@ export const Hero = () => {
     } : {}} transition={{
       duration: 0.8,
       delay: 1.3
-    }} className="hidden md:block container mx-auto px-4 sm:px-6 absolute bottom-16 left-0 right-0 z-10">
+    }} className="hidden md:block container px-4 sm:px-6 absolute bottom-16 left-0 right-0 z-10 mx-[59px]">
         <div className="grid grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-4">
           {portalLinks.map((link, index) => <motion.div key={index} initial={{
           opacity: 0,
