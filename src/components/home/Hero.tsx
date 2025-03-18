@@ -3,12 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Users, UserCircle, SearchCode, Ship, Box, ChevronDown, Globe, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
 export const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
   useEffect(() => {
     // Delay setting visibility for entrance animation
     const timer = setTimeout(() => setIsVisible(true), 300);
@@ -25,40 +23,32 @@ export const Hero = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [isMobileMenuOpen]);
-  
-  const portalLinks = [
-    {
-      icon: <Users className="w-5 h-5" />,
-      title: "Customer Portal",
-      description: "Access shipping dashboard",
-      url: "/customer-portal"
-    },
-    {
-      icon: <UserCircle className="w-5 h-5" />,
-      title: "Partner Portal",
-      description: "Manage partnership",
-      url: "/partner-portal"
-    },
-    {
-      icon: <SearchCode className="w-5 h-5" />,
-      title: "Tracking",
-      description: "Track your shipment",
-      url: "/tracking"
-    },
-    {
-      icon: <Ship className="w-5 h-5" />,
-      title: "Sailing Schedule",
-      description: "View schedules",
-      url: "/schedule"
-    },
-    {
-      icon: <Box className="w-5 h-5" />,
-      title: "Container Sizes",
-      description: "View dimensions",
-      url: "/containers"
-    }
-  ];
-  
+  const portalLinks = [{
+    icon: <Users className="w-5 h-5" />,
+    title: "Customer Portal",
+    description: "Access shipping dashboard",
+    url: "/customer-portal"
+  }, {
+    icon: <UserCircle className="w-5 h-5" />,
+    title: "Partner Portal",
+    description: "Manage partnership",
+    url: "/partner-portal"
+  }, {
+    icon: <SearchCode className="w-5 h-5" />,
+    title: "Tracking",
+    description: "Track your shipment",
+    url: "/tracking"
+  }, {
+    icon: <Ship className="w-5 h-5" />,
+    title: "Sailing Schedule",
+    description: "View schedules",
+    url: "/schedule"
+  }, {
+    icon: <Box className="w-5 h-5" />,
+    title: "Container Sizes",
+    description: "View dimensions",
+    url: "/containers"
+  }];
   return <section className="relative min-h-screen overflow-hidden pt-24">
       {/* Mobile Navigation Menu Button */}
       <div className="fixed top-4 right-4 z-50 md:hidden">
@@ -148,7 +138,7 @@ export const Hero = () => {
 
       {/* Main content */}
       <div className="absolute inset-0">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
+        <div className="container sm:px-6 lg:px-8 h-full flex flex-col justify-center mx-0 px-[23px] my-[19px]">
           <motion.div initial={{
           opacity: 0,
           y: 40
@@ -373,6 +363,4 @@ export const Hero = () => {
       </motion.div>
     </section>;
 };
-
 export default Hero;
-
