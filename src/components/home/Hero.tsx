@@ -137,8 +137,8 @@ export const Hero = () => {
       </motion.div>
 
       {/* Main content */}
-      <div className="absolute inset-0 mx-[175px]">
-        <div className="container sm:px-6 lg:px-8 h-full flex flex-col justify-center mx-0 my-0 px-0">
+      <div className="absolute inset-0">
+        <div className="container sm:px-6 lg:px-8 h-full flex flex-col justify-center mx-0 px-[23px] my-0">
           <motion.div initial={{
           opacity: 0,
           y: 40
@@ -148,7 +148,7 @@ export const Hero = () => {
         } : {}} transition={{
           duration: 0.8,
           delay: 0.2
-        }} className="max-w-2xl space-y-6 sm:space-y-8 px-0 my-0 mx-[51px]">
+        }} className="max-w-2xl space-y-6 sm:space-y-8">
             <motion.div initial={{
             opacity: 0,
             scale: 0.9
@@ -328,7 +328,7 @@ export const Hero = () => {
           y: -5,
           scale: 1.02
         }} className="bg-white/15 backdrop-blur-md rounded-lg hover:bg-white/25 transition-all duration-300 border border-brand-gold/30 shadow-lg">
-              <Link to={link.url} className="w-full h-full p-4 flex flex-col items-center justify-center text-white px-0 py-[3px] my-0 mx-0">
+              <Link to={link.url} className="w-full h-full p-4 flex flex-col items-center justify-center text-white">
                 <motion.span className="text-brand-gold transform transition-transform p-2 bg-white/10 rounded-full mb-2" whileHover={{
               scale: 1.1,
               rotate: 10
