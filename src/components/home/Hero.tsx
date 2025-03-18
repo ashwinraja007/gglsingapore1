@@ -137,7 +137,7 @@ export const Hero = () => {
       </motion.div>
 
       {/* Main content */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 mx-[175px]">
         <div className="container sm:px-6 lg:px-8 h-full flex flex-col justify-center mx-0 my-0 px-0">
           <motion.div initial={{
           opacity: 0,
