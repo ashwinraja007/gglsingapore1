@@ -11,9 +11,12 @@ const Memberships = () => {
     <section className="section-spacing bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="section-title mb-2 mx-auto">
+          <h2 className="section-title mb-2 mx-auto relative">
             Industry Certifications & Memberships
+            {/* Remove unwanted pseudo-elements */}
+            <span className="hidden"></span>
           </h2>
+          {/* Remove golden line div */}
           <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
             Trusted by leading industry organizations and certified to meet the highest standards.
           </p>
