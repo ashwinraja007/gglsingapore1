@@ -11,9 +11,10 @@ const Memberships = () => {
     <section className="section-spacing bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="section-title mb-2">
+          <h2 className="section-title mb-2 mx-auto">
             Industry Certifications & Memberships
           </h2>
+          <div className="h-1 w-24 bg-amber-500 mx-auto mb-4"></div>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
             Trusted by leading industry organizations and certified to meet the highest standards.
           </p>
