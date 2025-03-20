@@ -4,7 +4,7 @@ const Memberships = () => {
   const certifications = [
     { src: "/lovable-uploads/bifa.png", alt: "Industry Certification 1" },
     { src: "/lovable-uploads/fiata.png", alt: "Industry Certification 2" },
-    { src: "/lovable-uploads/wca.png", alt: "Industry Certification 4" },
+    { src: "/lovable-uploads/wca.png", alt: "Industry Certification 3" },
   ];
 
   return (
@@ -14,13 +14,12 @@ const Memberships = () => {
           <h2 className="section-title mb-2 mx-auto">
             Industry Certifications & Memberships
           </h2>
-          <div className="h-1 w-24 bg-amber-500 mx-auto mb-4"></div>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
             Trusted by leading industry organizations and certified to meet the highest standards.
           </p>
         </div>
         
-        {/* Static display of certifications with better alignment */}
+        {/* Display certifications */}
         <div className="flex justify-center items-center gap-10 md:gap-16">
           {certifications.map((cert, index) => (
             <div key={index} className="flex-shrink-0 group relative">
