@@ -19,19 +19,20 @@ const Memberships = () => {
           </p>
         </div>
         
-        {/* Static display of certifications */}
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+        {/* Static display of certifications with consistent sizing */}
+        <div className="flex flex-wrap justify-center items-center gap-16 md:gap-24 py-6">
           {certifications.map((cert, index) => (
-            <div key={index} className="flex-shrink-0 group relative">
-              <img
-                src={cert.src}
-                alt={cert.alt}
-                className="h-12 md:h-16 w-auto object-contain transition-transform duration-300 transform group-hover:scale-110"
-                loading="eager"
-                decoding="async"
-                fetchPriority="high"
-                style={{ maxWidth: '120px' }}
-              />
+            <div key={index} className="flex-shrink-0 group relative p-4">
+              <div className="h-20 w-36 flex items-center justify-center">
+                <img
+                  src={cert.src}
+                  alt={cert.alt}
+                  className="max-h-16 md:max-h-20 w-auto object-contain transition-transform duration-300 transform group-hover:scale-110"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                />
+              </div>
             </div>
           ))}
         </div>
