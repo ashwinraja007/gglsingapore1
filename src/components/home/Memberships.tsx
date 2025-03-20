@@ -30,7 +30,7 @@ const Memberships = () => {
                 <img
                   src={cert.src}
                   alt={cert.alt}
-                  className="max-h-12 md:max-h-16 w-auto object-contain transition-transform duration-300 transform group-hover:scale-110"
+                  className="max-h-14 md:max-h-16 w-auto object-contain transition-transform duration-300 transform group-hover:scale-110"
                   loading="eager"
                   decoding="async"
                   fetchPriority="high"
