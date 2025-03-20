@@ -2,9 +2,9 @@ import React from 'react';
 
 const Memberships = () => {
   const certifications = [
-    { src: "/lovable-uploads/bifa.png", alt: "Industry Certification 1" },
-    { src: "/lovable-uploads/fiata.png", alt: "Industry Certification 2" },
-    { src: "/lovable-uploads/wca.png", alt: "Industry Certification 3" },
+    { src: "/bifaa1.png", alt: "Industry Certification 1" },
+    { src: "/fiataa1.png", alt: "Industry Certification 2" },
+    { src: "/wcaa1.png", alt: "Industry Certification 3" },
   ];
 
   return (
