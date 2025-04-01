@@ -106,7 +106,7 @@ const LiquidTransportation: React.FC<LiquidTransportationProps> = ({
             }, {
               icon: <ShieldCheck className="h-10 w-10 text-brand-gold" />,
               title: "Safety First",
-              description: "Strict protocols and trained personnel"
+              description: "Strict protocols and trained personnel handle your cargo"
             }].map((feature, index) => <motion.div key={index} initial={{
               opacity: 0,
               y: 20
