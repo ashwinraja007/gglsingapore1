@@ -5,6 +5,8 @@ import { Footer } from "@/components/layout/Footer";
 import { motion } from 'framer-motion';
 import { Ship, Package, Box, Globe, FileCheck, Anchor, Container, MapPin, Timer, Gauge } from "lucide-react";
 import { Link } from 'react-router-dom';
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 const OceanFreight = () => {
   return <div className="min-h-screen flex flex-col">
       <Header />
@@ -63,7 +65,13 @@ const OceanFreight = () => {
               }} transition={{
                 duration: 0.5
               }} className="rounded-xl overflow-hidden shadow-xl">
-                  <img src="/lovable-uploads/oceanfrieght.jpg" alt="Ocean Freight Service" className="w-full h-auto object-cover" />
+                  <AspectRatio ratio={16/9}>
+                    <img 
+                      src="/lovable-uploads/oceanfrieght.jpg" 
+                      alt="Ocean Freight Service" 
+                      className="w-full h-full object-cover" 
+                    />
+                  </AspectRatio>
                 </motion.div>
               </div>
             </div>
@@ -96,8 +104,14 @@ const OceanFreight = () => {
             }} viewport={{
               once: true
             }} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
-                <div className="h-48 md:h-56 relative">
-                  <img src="/lovable-uploads/lcl.png" alt="LCL Shipping" className="w-full h-full object-cover" />
+                <div className="relative">
+                  <AspectRatio ratio={16/9}>
+                    <img 
+                      src="/lovable-uploads/lcl.png" 
+                      alt="LCL Shipping" 
+                      className="w-full h-full object-cover" 
+                    />
+                  </AspectRatio>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
                     <h3 className="text-white text-xl font-bold p-6">Less than Container Load (LCL)</h3>
                   </div>
@@ -125,8 +139,14 @@ const OceanFreight = () => {
             }} viewport={{
               once: true
             }} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
-                <div className="h-48 md:h-56 relative">
-                  <img src="/lovable-uploads/fcl.jpg" alt="FCL Shipping" className="w-full h-full object-cover" />
+                <div className="relative">
+                  <AspectRatio ratio={16/9}>
+                    <img 
+                      src="/lovable-uploads/fcl.jpg" 
+                      alt="FCL Shipping" 
+                      className="w-full h-full object-cover" 
+                    />
+                  </AspectRatio>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
                     <h3 className="text-white text-xl font-bold p-6">Full Container Load (FCL)</h3>
                   </div>
@@ -218,3 +238,4 @@ const OceanFreight = () => {
     </div>;
 };
 export default OceanFreight;
+
