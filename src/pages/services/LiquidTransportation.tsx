@@ -81,10 +81,10 @@ const LiquidTransportation: React.FC<LiquidTransportationProps> = ({
                 Specialized Expertise in {title}
               </h2>
               <div className="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
-              <p className="text-gray-700 mb-6">
+              <p className="text-gray-700 mb-6 text-justify">
                 Transporting liquid cargo demands specialized expertise, and we provide comprehensive solutions ensuring the safe and efficient delivery of your valuable cargo. Understanding the unique challenges of liquid transport, whether chemicals, food-grade products, or other bulk items, we utilize a specialized fleet and equipment, including ISO tanks, flexitanks, and specialized tankers, managed by a team trained in strict safety protocols.
               </p>
-              <p className="text-gray-700">
+              <p className="text-gray-700 text-justify">
                 We offer end-to-end logistics, encompassing pre-shipment planning, route optimization, regulatory compliance, temperature-controlled transportation for sensitive cargo, secure loading/unloading, and real-time tracking. Our commitment to safety and reliability guarantees your cargo arrives in perfect condition and on time, making us a trusted partner for both domestic and international transportation needs.
               </p>
             </div>
