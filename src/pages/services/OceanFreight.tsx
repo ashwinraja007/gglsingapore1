@@ -1,8 +1,9 @@
+
 import React from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from 'framer-motion';
-import { Ship, Package, Box, Globe } from "lucide-react";
+import { Ship, Package, Box, Globe, FileCheck, Anchor, Container, MapPin, Timer, Gauge } from "lucide-react";
 import { Link } from 'react-router-dom';
 const OceanFreight = () => {
   return <div className="min-h-screen flex flex-col">
@@ -147,22 +148,28 @@ const OceanFreight = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {[{
               title: "Global Network",
-              description: "Access to major shipping routes and ports worldwide"
+              description: "Access to major shipping routes and ports worldwide",
+              icon: <Globe className="h-5 w-5 text-brand-gold" />
             }, {
               title: "Container Options",
-              description: "Various container types to suit different cargo needs"
+              description: "Various container types to suit different cargo needs",
+              icon: <Container className="h-5 w-5 text-brand-gold" />
             }, {
               title: "Documentation",
-              description: "Expert handling of all shipping documentation"
+              description: "Expert handling of all shipping documentation",
+              icon: <FileCheck className="h-5 w-5 text-brand-gold" />
             }, {
               title: "Customs Clearance",
-              description: "Seamless processing at international borders"
+              description: "Seamless processing at international borders",
+              icon: <Anchor className="h-5 w-5 text-brand-gold" />
             }, {
               title: "Cargo Tracking",
-              description: "Real-time visibility of your shipment status"
+              description: "Real-time visibility of your shipment status",
+              icon: <MapPin className="h-5 w-5 text-brand-gold" />
             }, {
               title: "Specialized Cargo",
-              description: "Solutions for oversized and project cargo"
+              description: "Solutions for oversized and project cargo",
+              icon: <Gauge className="h-5 w-5 text-brand-gold" />
             }].map((feature, index) => <motion.div key={index} initial={{
               opacity: 0,
               y: 20
@@ -176,7 +183,7 @@ const OceanFreight = () => {
               once: true
             }} className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100">
                   <div className="mb-3 bg-blue-50 p-2 rounded-full inline-block">
-                    <Globe className="h-5 w-5 text-brand-gold" />
+                    {feature.icon}
                   </div>
                   <h3 className="text-lg font-semibold mb-2 text-gray-800">{feature.title}</h3>
                   <p className="text-gray-600">{feature.description}</p>
