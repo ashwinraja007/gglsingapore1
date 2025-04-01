@@ -109,9 +109,7 @@ const OceanFreight = () => {
                   <p className="text-gray-600 mb-4">
                     For shipments that don't require a full container, our LCL service offers a flexible and cost-effective solution. We consolidate your goods with other shipments, allowing you to ship smaller volumes without the expense of a dedicated container.
                   </p>
-                  <p className="text-gray-600">
-                    Our LCL service connects you to destinations worldwide through our robust network. We manage every aspect of your LCL shipment, from detailed documentation and seamless customs clearance to reliable tracking, ensuring a smooth and efficient shipping experience.
-                  </p>
+                  <p className="text-gray-600">Our LCL service connects you to destinations worldwide through our robust network. We manage every aspect of your shipment, from detailed documentation and seamless customs clearance to reliable tracking, ensuring a smooth and efficient shipping experience.</p>
                 </div>
               </motion.div>
               
@@ -140,9 +138,7 @@ const OceanFreight = () => {
                   <p className="text-gray-600 mb-4">
                     When your cargo volume requires a dedicated container, our FCL service provides a direct and efficient shipping solution. We offer a wide range of container types to accommodate various cargo sizes and specialized requirements.
                   </p>
-                  <p className="text-gray-600">
-                    Our team expertly manages all facets of your FCL shipment, including booking, documentation, customs clearance, and precise tracking, ensuring your cargo arrives on time. Benefit from our competitive rates for full container shipments, making your logistics cost-effective.
-                  </p>
+                  <p className="text-gray-600">Our team expertly manages all facets of your shipment, including booking, documentation, customs clearance, and precise tracking, ensuring your cargo arrives on time. Benefit from our competitive rates for full container shipments, making your logistics cost-effective.</p>
                 </div>
               </motion.div>
             </div>
