@@ -77,10 +77,10 @@ const AirFreight = () => {
                 Comprehensive Air Freight Services
               </h2>
               <div className="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
-              <p className="text-gray-700 mb-6">
+              <p className="text-gray-700 mb-6 font-normal text-justify">
                 Tailored Air Freight Solutions to Meet Your Unique Requirements. We understand that every shipment is different. That's why we offer flexible air freight solutions designed to meet your specific needs. Whether you're shipping time-sensitive documents or large-scale cargo, we have the expertise and resources to handle it efficiently.
               </p>
-              <p className="text-gray-700">
+              <p className="text-gray-700 text-justify">
                 Our comprehensive services include air imports, exports, and express deliveries, all with the convenience of door-to-door service. We pride ourselves on our competitive pricing and our unwavering commitment to providing exceptional customer support. Let us optimize your air freight logistics and ensure your shipments reach their destinations seamlessly.
               </p>
             </div>
@@ -141,9 +141,7 @@ const AirFreight = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-gray-600">
-                    Our air import services ensure your international purchases reach you efficiently. We handle all documentation, customs clearance, and final delivery to your doorstep.
-                  </p>
+                  <p className="text-gray-600 text-justify">Our air import services ensure your international purchases reach you efficiently. We handle all documentation, customs clearance, and final delivery to your doorstep.</p>
                 </div>
               </motion.div>
               
@@ -165,7 +163,7 @@ const AirFreight = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-justify">
                     When sending your products worldwide, our air export services provide the speed and reliability you need. We manage the entire process from pickup to delivery at the final destination.
                   </p>
                 </div>
