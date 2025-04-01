@@ -100,9 +100,6 @@ export const Footer = () => {
             }, {
               name: "Sailing Schedule",
               path: "/schedule"
-            }, {
-              name: "Converters",
-              path: "/converters"
             }].map((link, index) => <Link key={index} to={link.path} className="text-gray-600 hover:text-brand-gold transition-colors duration-300 flex items-center gap-2 group">
                   <ArrowRight size={14} className="text-brand-gold group-hover:translate-x-1 transition-transform duration-300" />
                   <span>{link.name}</span>
