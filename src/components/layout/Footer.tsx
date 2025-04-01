@@ -90,7 +90,7 @@ export const Footer = () => {
             <div className="flex flex-col gap-3 mt-6">
               {[{
               name: "Customer Login",
-              path: "/customer-login"
+              path: "https://www.google.com/"
             }, {
               name: "Agent Login",
               path: "/agent-login"
