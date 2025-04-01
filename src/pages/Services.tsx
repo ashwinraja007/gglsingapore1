@@ -59,20 +59,20 @@ const ServiceCard = ({
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-            <div className="p-4 sm:p-6">
+            <div className="p-4">
               <div className="bg-brand-gold text-brand-navy p-2 rounded-full inline-block mb-2">
                 {icon}
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-1">{title}</h3>
+              <h3 className="text-lg font-bold text-white mb-1">{title}</h3>
             </div>
           </div>
         </AspectRatio>
       </div>
-      <div className="p-4 sm:p-6 flex-grow">
-        <p className="text-gray-600 mb-4 line-clamp-3">
+      <div className="p-4 flex-grow">
+        <p className="text-gray-600 mb-4 line-clamp-3 text-sm">
           {description}
         </p>
-        <Link to={link} className="text-brand-gold font-medium hover:text-amber-500 inline-flex items-center">
+        <Link to={link} className="text-brand-gold font-medium hover:text-amber-500 inline-flex items-center text-sm">
           Learn More
           <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -121,21 +121,21 @@ const Services = () => {
       <ScrollToTop />
       <Header />
 
-      <main className="flex-grow pt-16 md:pt-24">
+      <main className="flex-grow pt-16 md:pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-gray-50 to-brand-lightGray py-8 md:py-16">
-          <div className="container mx-auto px-4">
+        <section className="bg-gradient-to-br from-gray-50 to-brand-lightGray py-6 md:py-12">
+          <div className="container mx-auto px-4 max-w-5xl">
             <motion.div 
               initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.5 }} 
-              className="text-center max-w-3xl mx-auto"
+              className="text-center max-w-2xl mx-auto"
             >
-              <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 text-brand-navy">
+              <h1 className="text-2xl md:text-3xl font-bold mb-3 text-brand-navy">
                 Our Comprehensive Services
               </h1>
-              <div className="w-24 h-1 bg-brand-gold mx-auto mb-4"></div>
-              <p className="text-base md:text-lg text-gray-700">
+              <div className="w-20 h-1 bg-brand-gold mx-auto mb-3"></div>
+              <p className="text-sm md:text-base text-gray-700">
                 From air and ocean freight to specialized liquid transportation, we offer end-to-end logistics solutions tailored to your unique needs.
               </p>
             </motion.div>
@@ -143,30 +143,30 @@ const Services = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="py-8 md:py-16">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+        <section className="py-8 md:py-12">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               {services.map(service => <ServiceCard key={service.id} {...service} />)}
             </div>
           </div>
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-8 md:py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
+        <section className="py-8 md:py-12 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-5xl">
             <motion.div 
               initial={{ opacity: 0, y: 20 }} 
               whileInView={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.5 }} 
               viewport={{ once: true }} 
-              className="text-center max-w-3xl mx-auto mb-8 md:mb-12"
+              className="text-center max-w-2xl mx-auto mb-6 md:mb-8"
             >
-              <h2 className="text-2xl md:text-4xl font-bold text-brand-navy mb-4">Why Choose Our Logistics Services?</h2>
-              <div className="w-24 h-1 bg-brand-gold mx-auto mb-4"></div>
-              <p className="text-gray-700 text-base md:text-lg">We combine industry expertise, advanced technology, and personalized care to deliver exceptional logistics solutions.</p>
+              <h2 className="text-xl md:text-2xl font-bold text-brand-navy mb-3">Why Choose Our Logistics Services?</h2>
+              <div className="w-20 h-1 bg-brand-gold mx-auto mb-3"></div>
+              <p className="text-gray-700 text-sm md:text-base">We combine industry expertise, advanced technology, and personalized care to deliver exceptional logistics solutions.</p>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[{
                 title: "🌍 Global Network",
                 description: "Leverage our extensive worldwide connections for efficient shipping."
@@ -192,10 +192,10 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }} 
                   transition={{ duration: 0.5, delay: index * 0.1 }} 
                   viewport={{ once: true }} 
-                  className="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-brand-gold"
+                  className="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-brand-gold"
                 >
-                  <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
-                  <p className="text-gray-600 text-sm md:text-base">{feature.description}</p>
+                  <h3 className="text-base md:text-lg font-semibold text-gray-800 mb-2">{feature.title}</h3>
+                  <p className="text-gray-600 text-xs md:text-sm">{feature.description}</p>
                 </motion.div>
               )}
             </div>
