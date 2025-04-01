@@ -137,7 +137,7 @@ Backed by 1 Global Enterprises' industry expertise and innovation-driven approac
                 Ready to Transform Your Supply Chain?
               </h2>
               <p className="text-xl text-blue-100 mb-8">
-                Join thousands of businesses that trust Moltech with their logistics needs.
+                Join thousands of businesses that trust GGL with their logistics needs.
               </p>
               <motion.button whileHover={{
               scale: 1.05
