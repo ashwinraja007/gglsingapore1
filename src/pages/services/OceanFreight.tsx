@@ -77,7 +77,7 @@ const OceanFreight = () => {
                 Comprehensive Ocean Freight Services
               </h2>
               <div className="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
-              <p className="text-gray-700 mb-6">
+              <p className="text-gray-700 mb-6 text-justify">
                 We provide comprehensive ocean freight services designed to meet your diverse shipping needs. Leveraging our extensive global network and offering competitive rates, we ensure your cargo moves efficiently and reliably.
               </p>
             </div>
@@ -106,10 +106,10 @@ const OceanFreight = () => {
                     <Package className="h-6 w-6 text-brand-gold" />
                     <h4 className="text-lg font-semibold">Cost-effective Solution</h4>
                   </div>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 mb-4 text-justify">
                     For shipments that don't require a full container, our LCL service offers a flexible and cost-effective solution. We consolidate your goods with other shipments, allowing you to ship smaller volumes without the expense of a dedicated container.
                   </p>
-                  <p className="text-gray-600">Our LCL service connects you to destinations worldwide through our robust network. We manage every aspect of your shipment, from detailed documentation and seamless customs clearance to reliable tracking, ensuring a smooth and efficient shipping experience.</p>
+                  <p className="text-gray-600 text-justify">Our LCL service connects you to destinations worldwide through our robust network. We manage every aspect of your shipment, from detailed documentation and seamless customs clearance to reliable tracking, ensuring a smooth and efficient shipping experience.</p>
                 </div>
               </motion.div>
               
@@ -135,10 +135,10 @@ const OceanFreight = () => {
                     <Box className="h-6 w-6 text-brand-gold" />
                     <h4 className="text-lg font-semibold">Dedicated Container Solution</h4>
                   </div>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 mb-4 text-justify">
                     When your cargo volume requires a dedicated container, our FCL service provides a direct and efficient shipping solution. We offer a wide range of container types to accommodate various cargo sizes and specialized requirements.
                   </p>
-                  <p className="text-gray-600">Our team expertly manages all facets of your shipment, including booking, documentation, customs clearance, and precise tracking, ensuring your cargo arrives on time. Benefit from our competitive rates for full container shipments, making your logistics cost-effective.</p>
+                  <p className="text-gray-600 text-justify">Our team expertly manages all facets of your shipment, including booking, documentation, customs clearance, and precise tracking, ensuring your cargo arrives on time. Benefit from our competitive rates for full container shipments, making your logistics cost-effective.</p>
                 </div>
               </motion.div>
             </div>
