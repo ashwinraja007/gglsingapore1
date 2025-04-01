@@ -80,7 +80,7 @@ export const Services = () => {
       image: "/lovable-uploads/airfreight.jpg",
       title: "Air Freight",
       description: "Tailored Air Freight Solutions to Meet Your Unique Requirements. We offer flexible air freight solutions for time-sensitive documents or large-scale cargo.",
-      icon: <Package size={20} />,
+      icon: <Package size={10} />,
       link: "/services/air-freight"
     },
     {
