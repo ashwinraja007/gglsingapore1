@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -5,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Plane, Ship, FileText, Droplets } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // Scroll to Top on Route Change
 const ScrollToTop = () => {
@@ -56,7 +58,7 @@ const ServiceCard = ({
   }} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
       <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
         <AspectRatio ratio={16 / 9} className="h-full">
-          <img src={getServiceImage()} alt={title} className="w-full h-full transition-transform duration-500 group-hover:scale-105 object-fill" />
+          <img src={getServiceImage()} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end mx-0 px-0 my-0">
             <div className="p-6">
               <div className="bg-brand-gold text-brand-navy p-2 rounded-full inline-block mb-2">
@@ -80,7 +82,10 @@ const ServiceCard = ({
       </div>
     </motion.div>;
 };
+
 const Services = () => {
+  const isMobile = useIsMobile();
+  
   const services = [{
     id: 1,
     icon: <Plane className="w-5 h-5" />,
@@ -110,6 +115,7 @@ const Services = () => {
     description: "Safe and efficient transport solutions for liquid cargo.",
     link: "/services/liquid-transportation"
   }];
+  
   return <div className="min-h-screen flex flex-col">
       <ScrollToTop />
       <Header />
@@ -139,8 +145,8 @@ const Services = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="py-16 mx-0">
-          <div className="container mx-auto md:px-8 lg:px-12 py-0 rounded-none px-[240px]">
+        <section className="py-16">
+          <div className="container mx-auto px-4 md:px-8 lg:px-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {services.map(service => <ServiceCard key={service.id} {...service} />)}
             </div>
