@@ -4,7 +4,6 @@ const Memberships = () => {
   const certifications = [
     { src: "/bifaa1.png", alt: "Industry Certification 1" },
     { src: "/fiataa1.png", alt: "Industry Certification 2" },
-    { src: "/wcaa1.png", alt: "Industry Certification 3" },
   ];
   
   return (
