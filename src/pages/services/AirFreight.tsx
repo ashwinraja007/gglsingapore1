@@ -52,7 +52,7 @@ const AirFreight = () => {
                 >
                   <AspectRatio ratio={16/9}>
                     <img 
-                      src="/lovable-uploads/airfreight.jpg" 
+                      src="/airfreight2.jpg" 
                       alt="Air Freight Service" 
                       className="w-full h-full object-cover" 
                     />
