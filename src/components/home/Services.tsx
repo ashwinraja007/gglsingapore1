@@ -4,6 +4,7 @@ import { ArrowRight, Truck, Package, Anchor, Droplets } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { useEffect } from "react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const EnhancedServiceCard = ({ image, title, description, icon, link }: { 
   image: string; 
@@ -37,12 +38,13 @@ const EnhancedServiceCard = ({ image, title, description, icon, link }: {
     >
       <Link to={link} className="block h-full" onClick={() => window.scrollTo(0, 0)}> 
         <div className="h-44 sm:h-48 md:h-40 overflow-hidden">
-          <motion.div 
-            className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" 
-            style={{ backgroundImage: `url(${getServiceImage()})` }} 
-            role="img" 
-            aria-label={title} 
-          />
+          <AspectRatio ratio={16/9} className="h-full">
+            <img 
+              src={getServiceImage()} 
+              alt={title} 
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+          </AspectRatio>
         </div>
         <div className="p-5">
           <div className="flex items-center space-x-3 mb-3">

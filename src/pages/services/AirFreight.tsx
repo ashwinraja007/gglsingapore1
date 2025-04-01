@@ -4,8 +4,11 @@ import { Footer } from "@/components/layout/Footer";
 import { motion } from 'framer-motion';
 import { Plane, Clock, Globe, Headset } from "lucide-react";
 import { Link } from 'react-router-dom';
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 const AirFreight = () => {
-  return <div className="min-h-screen flex flex-col">
+  return (
+    <div className="min-h-screen flex flex-col">
       <Header />
       
       <main className="flex-grow pt-24">
@@ -14,55 +17,46 @@ const AirFreight = () => {
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-1/2">
-                <motion.h1 initial={{
-                opacity: 0,
-                y: 20
-              }} animate={{
-                opacity: 1,
-                y: 0
-              }} transition={{
-                duration: 0.5
-              }} className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                <motion.h1 
+                  initial={{ opacity: 0, y: 20 }} 
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }} 
+                  className="text-3xl md:text-4xl font-bold mb-4 text-gray-900"
+                >
                   Air Freight Solutions
                 </motion.h1>
-                <motion.p initial={{
-                opacity: 0,
-                y: 20
-              }} animate={{
-                opacity: 1,
-                y: 0
-              }} transition={{
-                duration: 0.5,
-                delay: 0.1
-              }} className="text-lg text-gray-700 mb-6">
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }} 
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }} 
+                  className="text-lg text-gray-700 mb-6"
+                >
                   Tailored air freight solutions to meet your unique requirements
                 </motion.p>
-                <motion.div initial={{
-                opacity: 0,
-                y: 20
-              }} animate={{
-                opacity: 1,
-                y: 0
-              }} transition={{
-                duration: 0.5,
-                delay: 0.2
-              }}>
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }} 
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
                   <Link to="/contact" className="px-6 py-3 bg-brand-gold hover:bg-amber-400 text-brand-navy font-medium rounded-md shadow-md transition-all">
                     Get a Quote
                   </Link>
                 </motion.div>
               </div>
               <div className="md:w-1/2">
-                <motion.div initial={{
-                opacity: 0,
-                scale: 0.95
-              }} animate={{
-                opacity: 1,
-                scale: 1
-              }} transition={{
-                duration: 0.5
-              }} className="rounded-xl overflow-hidden shadow-xl">
-                  <img src="/lovable-uploads/airfreight.jpg" alt="Air Freight Service" className="w-full h-auto object-cover" />
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }} 
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }} 
+                  className="rounded-xl overflow-hidden shadow-xl"
+                >
+                  <AspectRatio ratio={16/9}>
+                    <img 
+                      src="/lovable-uploads/airfreight.jpg" 
+                      alt="Air Freight Service" 
+                      className="w-full h-full object-cover" 
+                    />
+                  </AspectRatio>
                 </motion.div>
               </div>
             </div>
@@ -121,44 +115,48 @@ const AirFreight = () => {
             
             {/* Additional Services */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <motion.div initial={{
-              opacity: 0,
-              x: -20
-            }} whileInView={{
-              opacity: 1,
-              x: 0
-            }} transition={{
-              duration: 0.5
-            }} viewport={{
-              once: true
-            }} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }} 
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }} 
+                viewport={{ once: true }} 
+                className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100"
+              >
                 <div className="h-48 sm:h-56 relative">
-                  <img src="/lovable-uploads/warehouse.jpg" alt="Air Import" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                    <h3 className="text-white text-xl font-bold p-6">Air Import</h3>
-                  </div>
+                  <AspectRatio ratio={16/9} className="h-full">
+                    <img 
+                      src="/lovable-uploads/warehouse.jpg" 
+                      alt="Air Import" 
+                      className="w-full h-full object-cover" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+                      <h3 className="text-white text-xl font-bold p-6">Air Import</h3>
+                    </div>
+                  </AspectRatio>
                 </div>
                 <div className="p-6">
-                  <p className="text-gray-600 text-justify">Our air import services ensure your international purchases reach you efficiently. We handle all documentation, customs clearance, and final delivery to your doorstep.</p>
+                  <p className="text-gray-600 text-justify">Our air import services ensure your international purchases reach you efficiently. We handle all documentation, customs clearance, and final delivery to your doorstep.</p>
                 </div>
               </motion.div>
               
-              <motion.div initial={{
-              opacity: 0,
-              x: 20
-            }} whileInView={{
-              opacity: 1,
-              x: 0
-            }} transition={{
-              duration: 0.5
-            }} viewport={{
-              once: true
-            }} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+              <motion.div 
+                initial={{ opacity: 0, x: 20 }} 
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }} 
+                viewport={{ once: true }} 
+                className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100"
+              >
                 <div className="h-48 sm:h-56 relative">
-                  <img src="/lovable-uploads/airimport.png" alt="Air Export" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                    <h3 className="text-white text-xl font-bold p-6">Air Export</h3>
-                  </div>
+                  <AspectRatio ratio={16/9} className="h-full">
+                    <img 
+                      src="/lovable-uploads/airimport.png" 
+                      alt="Air Export" 
+                      className="w-full h-full object-cover" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+                      <h3 className="text-white text-xl font-bold p-6">Air Export</h3>
+                    </div>
+                  </AspectRatio>
                 </div>
                 <div className="p-6">
                   <p className="text-gray-600 text-justify">
@@ -193,6 +191,8 @@ const AirFreight = () => {
       </main>
       
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default AirFreight;

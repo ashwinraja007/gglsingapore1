@@ -1,4 +1,6 @@
+
 import React from 'react';
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Memberships = () => {
   const certifications = [
@@ -19,7 +21,7 @@ const Memberships = () => {
           </p>
         </div>
         
-        {/* Display certifications with larger images */}
+        {/* Display certifications with properly sized images */}
         <div className="flex justify-center items-center gap-12 md:gap-20">
           {certifications.map((cert, index) => (
             <div key={index} className="flex-shrink-0 group relative">
@@ -29,8 +31,6 @@ const Memberships = () => {
                   alt={cert.alt}
                   className="max-h-20 md:max-h-24 w-auto object-contain transition-transform duration-300 transform group-hover:scale-110"
                   loading="eager"
-                  decoding="async"
-                  fetchPriority="high"
                 />
               </div>
             </div>

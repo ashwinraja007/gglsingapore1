@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Plane, Ship, FileText, Droplets } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 // Scroll to Top on Route Change
 const ScrollToTop = () => {
@@ -42,15 +43,21 @@ const ServiceCard = ({ icon, title, description, image, link }) => {
       className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group"
     >
       <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
-        <img src={getServiceImage()} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-          <div className="p-6">
-            <div className="bg-brand-gold text-brand-navy p-2 rounded-full inline-block mb-2">
-              {icon}
+        <AspectRatio ratio={16/9} className="h-full">
+          <img 
+            src={getServiceImage()} 
+            alt={title} 
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+            <div className="p-6">
+              <div className="bg-brand-gold text-brand-navy p-2 rounded-full inline-block mb-2">
+                {icon}
+              </div>
+              <h3 className="text-xl font-bold text-white mb-1">{title}</h3>
             </div>
-            <h3 className="text-xl font-bold text-white mb-1">{title}</h3>
           </div>
-        </div>
+        </AspectRatio>
       </div>
       <div className="p-6">
         <p className="text-gray-600 mb-4 line-clamp-3">
