@@ -77,10 +77,10 @@ const CustomsClearance = () => {
                 Seamless Customs Clearance Solutions
               </h2>
               <div className="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
-              <p className="text-gray-700 mb-6">
+              <p className="text-gray-700 mb-6 text-justify">
                 Navigating the complexities of global trade is simplified with our expert customs clearance services. We ensure your shipments move smoothly across borders, handling all aspects of the process from accurate documentation and tariff classification to regulatory compliance and specialized cargo handling.
               </p>
-              <p className="text-gray-700">
+              <p className="text-gray-700 text-justify">
                 Our experienced team stays abreast of evolving regulations, leverages advanced technology for expedited clearance, and maintains strong relationships with customs authorities worldwide. We prioritize transparency and open communication, providing real-time updates and peace of mind, allowing you to focus on your core business. Trust us to manage your import and export needs, minimizing delays and ensuring your shipments reach their destinations efficiently and compliantly.
               </p>
             </div>
@@ -103,7 +103,7 @@ const CustomsClearance = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-3 text-gray-800">Documentation Expertise</h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-justify">
                     Our team ensures all your customs documentation is accurate, complete, and submitted correctly, preventing delays and ensuring compliance with international regulations.
                   </p>
                 </div>
@@ -126,7 +126,7 @@ const CustomsClearance = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-3 text-gray-800">Regulatory Compliance</h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-justify">
                     Stay compliant with constantly evolving international trade regulations. We keep up-to-date with changes to ensure your shipments meet all legal requirements.
                   </p>
                 </div>
@@ -149,7 +149,7 @@ const CustomsClearance = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-3 text-gray-800">Expert Consultation</h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-justify">
                     Our customs experts provide guidance on duty and tax implications, helping you make informed decisions and optimize your international shipping strategy.
                   </p>
                 </div>
