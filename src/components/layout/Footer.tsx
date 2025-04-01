@@ -131,7 +131,7 @@ export const Footer = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail size={18} className="text-brand-gold flex-shrink-0" />
-                  <p>info@ggl.com</p>
+                  <p>info@gglaustralia.com</p>
                 </div>
               </div>
             </div>
