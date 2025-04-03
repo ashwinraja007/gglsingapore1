@@ -15,29 +15,27 @@ export const Footer = () => {
         <div className="h-1 bg-gradient-to-r from-brand-navy via-brand-gold to-brand-navy rounded-full mb-8"></div>
 
         {/* Grid Layout: Logo (Left) | Navigation & Contact (Right) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
-          {/* Company Info (Left-Aligned) */}
+        <div className="flex flex-col md:flex-row justify-between items-start gap-10">
+          {/* Logo (Left-Aligned) */}
           <motion.div 
             initial="hidden" 
             whileInView="visible" 
             viewport={{ once: true }} 
             variants={footerAnimation} 
-            className="flex flex-col items-start"
+            className="flex flex-col items-start w-full md:w-1/3"
           >
             <div className="mb-5">
-              <div className="flex flex-col space-y-3">
-                <img 
-                  src="/lovable-uploads/GGL.png" 
-                  alt="GGL Logo" 
-                  className="h-14 w-auto object-contain"
-                  loading="lazy" 
-                />
-                <img 
-                  src="/1GlobalEnterprises.png" 
-                  alt="1 Global Enterprises Logo" 
-                  className="h-10 w-auto object-contain" 
-                />
-              </div>
+              <img 
+                src="/lovable-uploads/GGL.png" 
+                alt="GGL Logo" 
+                className="h-14 w-auto object-contain"
+                loading="lazy" 
+              />
+              <img 
+                src="/1GlobalEnterprises.png" 
+                alt="1 Global Enterprises Logo" 
+                className="h-10 w-auto object-contain mt-2" 
+              />
             </div>
             <p className="text-sm md:text-base text-gray-600 max-w-xs">
               GGL is a global freight forwarder offering premium logistics services, backed by a team with over 25 years of expertise in international and domestic transportation.
@@ -64,8 +62,8 @@ export const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Right Section: Navigation & Contact Us */}
-          <div className="col-span-2 flex flex-wrap justify-between">
+          {/* Right Section: Navigation & Contact Us (Side-by-Side) */}
+          <div className="flex flex-col md:flex-row w-full md:w-2/3 justify-between">
             {/* Navigation */}
             <motion.div 
               initial="hidden" 
