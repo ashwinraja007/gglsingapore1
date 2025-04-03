@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -7,20 +6,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
-import { Phone, Mail, MapPin, Building, Send } from 'lucide-react';
+import { FaLinkedin, FaFacebookF } from 'react-icons/fa';
+import { Phone, Mail, MapPin, Send } from 'lucide-react';
 
 const Contact = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data: any) => {
     console.log(data);
-  };
-
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
   };
 
   return (
@@ -33,9 +26,7 @@ const Contact = () => {
           animate={{ opacity: 1 }}
           className="relative h-[40vh] flex items-center justify-center bg-blue-600 overflow-hidden"
         >
-          <div className="absolute inset-0 bg-[url('/path-to-your-pattern.svg')] opacity-10" />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/50 to-blue-800/50" />
-          
           <motion.div 
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -46,7 +37,7 @@ const Contact = () => {
               Get in Touch
             </h1>
             <p className="text-lg text-white/90 max-w-2xl mx-auto font-light">
-              We're here to help and answer any questions you might have
+              We're here to help and answer any questions you might have.
             </p>
           </motion.div>
         </motion.section>
@@ -65,10 +56,8 @@ const Contact = () => {
                 <div className="space-y-8">
                   <div className="space-y-6">
                     <h3 className="text-lg font-semibold">Australia Office</h3>
-                    <motion.div 
-                      whileHover={{ x: 10 }}
-                      className="flex items-start gap-4 group"
-                    >
+                    
+                    <motion.div whileHover={{ x: 10 }} className="flex items-start gap-4 group">
                       <Phone className="mt-1 text-blue-600 group-hover:scale-110 transition-transform" />
                       <div>
                         <p className="font-medium">Phone</p>
@@ -77,41 +66,42 @@ const Contact = () => {
                       </div>
                     </motion.div>
                     
-                    <motion.div 
-                      whileHover={{ x: 10 }}
-                      className="flex items-start gap-4 group"
-                    >
+                    <motion.div whileHover={{ x: 10 }} className="flex items-start gap-4 group">
                       <MapPin className="mt-1 text-blue-600 group-hover:scale-110 transition-transform" />
                       <div>
                         <p className="font-medium">Address</p>
-                        <p className="text-gray-600">Suite 5, 7-9 Mallet Road,<br />Tullamarine, Victoria, 3043</p>
+                        <p className="text-gray-600">
+                          Suite 5, 7-9 Mallet Road,<br />Tullamarine, Victoria, 3043
+                        </p>
                       </div>
                     </motion.div>
                   </div>
-                  
+
+                  {/* Social Links */}
                   <div className="pt-6 border-t">
                     <p className="font-medium mb-4">Connect With Us</p>
                     <div className="flex gap-4">
-                      {[
-                        { Icon: FaLinkedin, color: 'hover:bg-blue-600' },
-                        { Icon: FaTwitter, color: 'hover:bg-blue-400' },
-                        { Icon: FaInstagram, color: 'hover:bg-pink-600' },
-                        { Icon: FaFacebookF, color: 'hover:bg-blue-600' }
-                      ].map((item, index) => (
-                        <motion.a
-                          key={index}
-                          href="#"
-                          whileHover={{ y: -5 }}
-                          className={`${item.color} bg-gray-100 p-3 rounded-full text-gray-600 hover:text-white transition-colors`}
-                        >
-                          <item.Icon size={18} />
-                        </motion.a>
-                      ))}
+                      <motion.a
+                        href="https://www.linkedin.com/company/your-linkedin-page" 
+                        whileHover={{ y: -5 }}
+                        className="bg-gray-100 p-3 rounded-full text-gray-600 hover:bg-blue-600 hover:text-white transition-colors"
+                      >
+                        <FaLinkedin size={18} />
+                      </motion.a>
+
+                      <motion.a
+                        href="https://www.facebook.com/your-facebook-page" 
+                        whileHover={{ y: -5 }}
+                        className="bg-gray-100 p-3 rounded-full text-gray-600 hover:bg-blue-600 hover:text-white transition-colors"
+                      >
+                        <FaFacebookF size={18} />
+                      </motion.a>
                     </div>
                   </div>
                 </div>
               </motion.div>
 
+              {/* Contact Form */}
               <motion.div 
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -123,60 +113,20 @@ const Contact = () => {
                 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <motion.div whileHover={{ y: -2 }}>
-                      <Input 
-                        placeholder="First Name" 
-                        {...register("firstName")} 
-                        className="border-gray-200 focus:ring-blue-500"
-                      />
-                    </motion.div>
-                    <motion.div whileHover={{ y: -2 }}>
-                      <Input 
-                        placeholder="Last Name" 
-                        {...register("lastName")} 
-                        className="border-gray-200 focus:ring-blue-500"
-                      />
-                    </motion.div>
+                    <Input placeholder="First Name" {...register("firstName")} className="border-gray-200 focus:ring-blue-500" />
+                    <Input placeholder="Last Name" {...register("lastName")} className="border-gray-200 focus:ring-blue-500" />
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <motion.div whileHover={{ y: -2 }}>
-                      <Input 
-                        placeholder="Email" 
-                        type="email" 
-                        {...register("email")} 
-                        className="border-gray-200 focus:ring-blue-500"
-                      />
-                    </motion.div>
-                    <motion.div whileHover={{ y: -2 }}>
-                      <Input 
-                        placeholder="Phone" 
-                        {...register("phone")} 
-                        className="border-gray-200 focus:ring-blue-500"
-                      />
-                    </motion.div>
+                    <Input placeholder="Email" type="email" {...register("email")} className="border-gray-200 focus:ring-blue-500" />
+                    <Input placeholder="Phone" {...register("phone")} className="border-gray-200 focus:ring-blue-500" />
                   </div>
                   
-                  <motion.div whileHover={{ y: -2 }}>
-                    <Input 
-                      placeholder="Organization/Company" 
-                      {...register("organization")} 
-                      className="border-gray-200 focus:ring-blue-500"
-                    />
-                  </motion.div>
+                  <Input placeholder="Organization/Company" {...register("organization")} className="border-gray-200 focus:ring-blue-500" />
                   
-                  <motion.div whileHover={{ y: -2 }}>
-                    <Textarea 
-                      placeholder="Your Message" 
-                      className="min-h-[120px] border-gray-200 focus:ring-blue-500" 
-                      {...register("message")} 
-                    />
-                  </motion.div>
+                  <Textarea placeholder="Your Message" className="min-h-[120px] border-gray-200 focus:ring-blue-500" {...register("message")} />
                   
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
+                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                     <Button 
                       type="submit" 
                       className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6 flex items-center justify-center gap-2"
@@ -191,6 +141,7 @@ const Contact = () => {
           </div>
         </section>
 
+        {/* Google Maps */}
         <section className="py-10 bg-white">
           <div className="container mx-auto px-4">
             <motion.div 
@@ -200,7 +151,11 @@ const Contact = () => {
               viewport={{ once: true }}
               className="relative h-[400px] md:h-[500px] rounded-xl shadow-lg overflow-hidden border border-gray-200"
             >
-             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d394.57087783859964!2d144.8498557344691!3d-37.70636636557842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad643892f181575%3A0xbe2ac5cb5a300798!2sOne%20Global%20Logistics!5e0!3m2!1sen!2sin!4v1743708126373!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe 
+                src="https://www.google.com/maps/embed?..."
+                width="600" height="450" style={{ border: 0 }} 
+                allowFullScreen loading="lazy"
+              />
               <div className="absolute inset-0 pointer-events-none border border-gray-200 rounded-xl" />
             </motion.div>
           </div>
