@@ -307,15 +307,7 @@ export const Hero = () => {
       duration: 0.8,
       delay: 1.3
     }} className="hidden md:block container px-4 sm:px-6 absolute bottom-16 left-0 right-0 z-10">
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 grid grid-cols-5 gap-3">
-          {portalLinks.map((link, index) => <Link key={index} to={link.url} className="flex flex-col items-center bg-white/5 hover:bg-white/15 transition-colors p-3 rounded-xl group">
-              <div className="bg-brand-gold/20 p-3 rounded-full text-brand-gold mb-2 group-hover:bg-brand-gold/30 transition-colors">
-                {link.icon}
-              </div>
-              <span className="text-white font-medium text-sm">{link.title}</span>
-              <span className="text-white/70 text-xs">{link.description}</span>
-            </Link>)}
-        </div>
+        
       </motion.div>
 
       {/* Scroll indicator - desktop only */}
