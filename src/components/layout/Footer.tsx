@@ -1,8 +1,6 @@
-
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, ArrowRight, Facebook, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
-
 export const Footer = () => {
   const footerAnimation = {
     hidden: {
@@ -33,7 +31,7 @@ export const Footer = () => {
               <img src="/lovable-uploads/GGL.png" alt="GGL Logo" className="h-14 w-auto object-contain" loading="lazy" />
               <img src="/1GlobalEnterprises.png" alt="1 Global Enterprises Logo" className="h-10 w-auto object-contain mt-2" />
             </div>
-            <p className="text-sm md:text-base text-gray-600 max-w-xs">
+            <p className="text-sm md:text-base text-gray-600 max-w-xs text-justify">
               GGL is a global freight forwarder offering premium logistics services, backed by a team with over 25 years of expertise in international and domestic transportation.
             </p>
             <div className="flex space-x-3 mt-4">
