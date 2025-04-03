@@ -1,8 +1,6 @@
-
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, ArrowRight, Facebook, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
-
 export const Footer = () => {
   const footerAnimation = {
     hidden: {
@@ -18,7 +16,6 @@ export const Footer = () => {
       }
     }
   };
-  
   return <footer className="pt-16 pb-8 bg-gradient-to-b from-white to-gray-100">
       <div className="container mx-auto px-4">
         {/* Decorative Line */}
@@ -62,7 +59,7 @@ export const Footer = () => {
           once: true
         }} variants={footerAnimation} transition={{
           delay: 0.2
-        }} className="flex flex-col items-start">
+        }} className="flex flex-col items-start px-[95px]">
             <h3 className="font-bold text-lg text-brand-navy mb-4">Navigation</h3>
             <div className="flex flex-col gap-2">
               {[{
