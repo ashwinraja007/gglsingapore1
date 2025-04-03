@@ -14,15 +14,15 @@ export const Footer = () => {
         {/* Decorative Line */}
         <div className="h-1 bg-gradient-to-r from-brand-navy via-brand-gold to-brand-navy rounded-full mb-8"></div>
 
-        {/* Footer Content */}
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-10 md:gap-16">
+        {/* Footer Layout: Logo (Left) | Navigation & Contact (Right) */}
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
           {/* Logo Section (Left-Aligned) */}
           <motion.div 
             initial="hidden" 
             whileInView="visible" 
             viewport={{ once: true }} 
             variants={footerAnimation} 
-            className="flex flex-col items-start w-full md:w-1/3"
+            className="flex flex-col items-start"
           >
             <div className="mb-4">
               <img 
@@ -62,8 +62,8 @@ export const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Navigation & Contact Us Section (Tighter Spacing) */}
-          <div className="flex flex-col md:flex-row w-full md:w-2/3 gap-8 md:gap-12">
+          {/* Navigation & Contact Us (Right-Aligned) */}
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-12 md:gap-16">
             {/* Navigation */}
             <motion.div 
               initial="hidden" 
