@@ -124,7 +124,7 @@ export const Hero = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Button size="lg" variant="outline" className="w-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-white border-white hover:bg-white/20">
+                    <Button size="lg" variant="gold" className="w-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-[#d4af37] text-brand-navy hover:bg-amber-500">
                       Our Services
                     </Button>
                   </Link>
@@ -153,14 +153,21 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-2xl ml-auto space-y-4 md:space-y-5 text-left"
+            className="max-w-2xl space-y-4 md:space-y-5 text-left"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isVisible ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 1, delay: 0.3 }}
-              className="flex items-center justify-end gap-3 mb-2"
+              className="flex items-center gap-3 mb-2"
             >
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 4, ease: "linear", repeat: Infinity }}
+                className="text-brand-gold"
+              >
+                <Globe className="w-8 h-8 sm:w-10 sm:h-10 drop-shadow-[0_0_8px_rgba(246,177,0,0.8)]" />
+              </motion.div>
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -169,13 +176,6 @@ export const Hero = () => {
               >
                 Beyond Logistics, a Complete Solution
               </motion.span>
-              <motion.div
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 4, ease: "linear", repeat: Infinity }}
-                className="text-brand-gold"
-              >
-                <Globe className="w-8 h-8 sm:w-10 sm:h-10 drop-shadow-[0_0_8px_rgba(246,177,0,0.8)]" />
-              </motion.div>
             </motion.div>
             
             <motion.h1
@@ -191,7 +191,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed ml-auto max-w-xl"
+              className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-xl"
             >
               GGL brings over 25 years of expertise in international logistics, 
               offering comprehensive solutions tailored to your business needs.
@@ -201,7 +201,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 justify-end"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2"
             >
               <motion.div
                 whileHover={{ scale: 1.03 }}
