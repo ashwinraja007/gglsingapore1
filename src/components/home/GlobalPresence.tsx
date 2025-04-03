@@ -100,7 +100,7 @@ const GlobalPresence = () => {
   return <motion.section initial="hidden" whileInView="visible" viewport={{
     once: true,
     amount: 0.2
-  }} variants={containerVariants} className="bg-gradient-to-b from-brand-navy to-brand-navy/90 text-white px-0 py-[33px]">
+  }} variants={containerVariants} className="bg-gradient-to-b from-brand-navy to-brand-navy/90 text-white py-[33px] px-0">
       <div className="container mx-auto px-[19px]">
         <div className="text-center mb-10">
           <motion.div initial={{
@@ -131,7 +131,7 @@ const GlobalPresence = () => {
           </p>
         </div>
 
-        <div className="relative max-w-3xl mx-auto px-0">
+        <div className="relative max-w-3xl mx-auto px-0 py-0">
           {/* Key stats with improved design */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             {[{
