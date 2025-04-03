@@ -165,7 +165,7 @@ const GlobalPresence = () => {
             scale: 1.05
           }} whileTap={{
             scale: 0.98
-          }} className="inline-flex items-center gap-2 px-6 py-3 bg-brand-gold text-brand-navy font-semibold rounded-lg shadow-lg hover:shadow-gold-glow transition-all duration-300">
+          }} className="inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-bold rounded-lg shadow-lg hover:shadow-gold-glow transition-all duration-300 py-[13px] px-[18px]">
               Explore Our Global Network <ExternalLink size={16} />
             </motion.a>
           </motion.div>
