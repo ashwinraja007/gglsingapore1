@@ -1,13 +1,21 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 const AboutUs = () => {
-  return <section className="py-10 bg-gray-50">
+  return (
+    <section className="py-10 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-          <div className="h-[250px] md:h-[300px] w-full overflow-hidden rounded-lg shadow-lg">
-            <AspectRatio ratio={16 / 9} className="h-full">
-              <img alt="About Us" loading="lazy" src="/lovable-uploads/f3f17147-a926-4619-b17e-7ae2fa9a2a3c.jpg" className="w-full h-full object-fill" />
+          <div className="w-full overflow-hidden rounded-lg shadow-lg">
+            <AspectRatio ratio={16 / 9} className="bg-gray-200">
+              <img 
+                alt="About Us" 
+                src="/lovable-uploads/f3f17147-a926-4619-b17e-7ae2fa9a2a3c.jpg" 
+                className="w-full h-full object-cover" 
+                loading="lazy" 
+              />
             </AspectRatio>
           </div>
           
@@ -20,6 +28,8 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default AboutUs;

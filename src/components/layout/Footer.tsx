@@ -1,6 +1,8 @@
+
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, ArrowRight, Facebook, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
+
 export const Footer = () => {
   const footerAnimation = {
     hidden: {
@@ -16,13 +18,14 @@ export const Footer = () => {
       }
     }
   };
+  
   return <footer className="pt-16 pb-8 bg-gradient-to-b from-white to-gray-100">
       <div className="container mx-auto px-4">
         {/* Decorative Line */}
         <div className="h-1 bg-gradient-to-r from-brand-navy via-brand-gold to-brand-navy rounded-full mb-8"></div>
 
-        {/* 3-Column Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        {/* Revised Column Layout - Better spacing */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
           {/* Column 1: Logo & About Section */}
           <motion.div initial="hidden" whileInView="visible" viewport={{
           once: true

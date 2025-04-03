@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
@@ -65,7 +67,7 @@ const About = () => {
                     <img 
                       src="/mnt/data/Gemini_Generated_Image_sebltbsebltbsebl.jpg" 
                       alt="Global Business Partnership" 
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </motion.div>
@@ -75,7 +77,7 @@ const About = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="bg-blue-600 text-white py-[93px] my-[21px]">
+        <section className="bg-blue-600 text-white py-16 my-6">
           <div className="container mx-auto px-4">
             <motion.div 
               initial={{ opacity: 0 }} 
@@ -88,13 +90,15 @@ const About = () => {
                 Ready to Transform Your Supply Chain?
               </h2>
               <p className="text-xl text-blue-100 mb-8">Trust GGL for your logistics needs</p>
-              <motion.button 
-                whileHover={{ scale: 1.05 }} 
-                whileTap={{ scale: 0.98 }} 
-                className="px-8 py-3 bg-white text-blue-600 rounded-lg text-lg font-medium"
-              >
-                Contact Us Today
-              </motion.button>
+              <Link to="/contact">
+                <motion.button 
+                  whileHover={{ scale: 1.05 }} 
+                  whileTap={{ scale: 0.98 }} 
+                  className="px-8 py-3 bg-white text-blue-600 rounded-lg text-lg font-medium"
+                >
+                  Contact Us Today
+                </motion.button>
+              </Link>
             </motion.div>
           </div>
         </section>
