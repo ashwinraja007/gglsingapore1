@@ -82,7 +82,7 @@ const Contact = () => {
                     <p className="font-medium mb-4">Connect With Us</p>
                     <div className="flex gap-4">
                       <motion.a
-                        href="https://www.linkedin.com/company/your-linkedin-page" 
+                        href="https://www.linkedin.com/company/gglus/" 
                         whileHover={{ y: -5 }}
                         className="bg-gray-100 p-3 rounded-full text-gray-600 hover:bg-blue-600 hover:text-white transition-colors"
                       >
@@ -90,7 +90,7 @@ const Contact = () => {
                       </motion.a>
 
                       <motion.a
-                        href="https://www.facebook.com/your-facebook-page" 
+                        href="https://www.facebook.com/gglusa" 
                         whileHover={{ y: -5 }}
                         className="bg-gray-100 p-3 rounded-full text-gray-600 hover:bg-blue-600 hover:text-white transition-colors"
                       >
@@ -152,11 +152,11 @@ const Contact = () => {
               className="relative h-[400px] md:h-[500px] rounded-xl shadow-lg overflow-hidden border border-gray-200"
             >
               <iframe 
-                src="https://www.google.com/maps/embed?..."
-                width="600" height="450" style={{ border: 0 }} 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d394.57087783859964!2d144.8498557344691!3d-37.70636636557842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad643892f181575%3A0xbe2ac5cb5a300798!2sOne%20Global%20Logistics!5e0!3m2!1sen!2sin!4v1743708126373!5m2!1sen!2sin"
+                width="100%" height="100%" style={{ border: 0 }} 
                 allowFullScreen loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               />
-              <div className="absolute inset-0 pointer-events-none border border-gray-200 rounded-xl" />
             </motion.div>
           </div>
         </section>
