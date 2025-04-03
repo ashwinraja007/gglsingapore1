@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 const AboutUs = () => {
-  return <section className="py-10 bg-gray-50">
+  return <section className="py-10 bg-gray-50 mx-0 px-0">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           <div className="w-full overflow-hidden rounded-lg shadow-lg">
