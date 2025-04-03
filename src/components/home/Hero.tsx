@@ -311,31 +311,7 @@ export const Hero = () => {
       </motion.div>
 
       {/* Scroll indicator - desktop only */}
-      <motion.div initial={{
-      opacity: 0
-    }} animate={isVisible ? {
-      opacity: 1
-    } : {}} transition={{
-      delay: 1.5,
-      duration: 1
-    }} className="absolute bottom-4 left-1/2 transform -translate-x-1/2 hidden md:flex flex-col items-center">
-        <span className="text-white/80 text-sm mb-2">Scroll to explore</span>
-        <motion.div animate={{
-        y: [0, 8, 0]
-      }} transition={{
-        repeat: Infinity,
-        duration: 2,
-        ease: "easeInOut"
-      }} className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <motion.div animate={{
-          y: [0, 10, 0]
-        }} transition={{
-          repeat: Infinity,
-          duration: 1.5,
-          ease: "easeInOut"
-        }} className="w-1.5 h-3 bg-brand-gold rounded-full mt-1" />
-        </motion.div>
-      </motion.div>
+      
     </section>;
 };
 export default Hero;
