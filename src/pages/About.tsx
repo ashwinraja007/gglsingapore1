@@ -1,134 +1,120 @@
-import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, ArrowRight, Facebook, Linkedin } from "lucide-react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { motion } from 'framer-motion';
+const About = () => {
+  return <div className="min-h-screen flex flex-col relative">
+      <Header />
 
-export const Footer = () => {
-  const footerAnimation = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-  };
-
-  return (
-    <footer className="pt-16 pb-8 bg-gradient-to-b from-white to-gray-100">
-      <div className="container mx-auto px-4">
-        {/* Decorative Line */}
-        <div className="h-1 bg-gradient-to-r from-brand-navy via-brand-gold to-brand-navy rounded-full mb-8"></div>
-
-        {/* Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
-          {/* Company Info */}
-          <motion.div 
-            initial="hidden" 
-            whileInView="visible" 
-            viewport={{ once: true }} 
-            variants={footerAnimation} 
-            className="flex flex-col items-center md:items-start"
-          >
-            <div className="mb-5">
-              <div className="flex flex-col space-y-3">
-                <img 
-                  src="/lovable-uploads/GGL.png" 
-                  alt="GGL Logo" 
-                  className="h-14 w-auto object-contain"
-                  loading="lazy" 
-                />
-                <img 
-                  src="/1GlobalEnterprises.png" 
-                  alt="1 Global Enterprises Logo" 
-                  className="h-10 w-auto object-contain" 
-                />
-              </div>
-            </div>
-            <p className="text-sm md:text-base text-gray-600 max-w-xs">
-              GGL is a global freight forwarder offering premium logistics services, backed by a team with over 25 years of expertise in international and domestic transportation.
+      <main className="flex-grow mt-20">
+        {/* Hero Section */}
+        <motion.section initial={{
+        opacity: 0
+      }} animate={{
+        opacity: 1
+      }} transition={{
+        duration: 1
+      }} className="relative h-[30vh] flex items-center justify-center bg-blue-50 overflow-hidden">
+          <motion.div initial={{
+          y: 20,
+          opacity: 0
+        }} animate={{
+          y: 0,
+          opacity: 1
+        }} transition={{
+          delay: 0.2,
+          duration: 0.8
+        }} className="text-center px-4 relative z-10">
+            <h1 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4 font-inter">
+             Who We Are
+            </h1>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-inter font-light">
+             A global leader in logistics and supply chain solutions
             </p>
-            <div className="flex space-x-3 mt-4">
-              <motion.a 
-                href="https://www.facebook.com/gglusa" 
-                target="_blank" 
-                className="bg-brand-navy text-white p-2 rounded-full hover:bg-brand-gold transition"
-                whileHover={{ y: -3, scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Facebook size={18} />
-              </motion.a>
-              <motion.a 
-                href="https://www.linkedin.com/company/gglus/" 
-                target="_blank" 
-                className="bg-brand-navy text-white p-2 rounded-full hover:bg-brand-gold transition"
-                whileHover={{ y: -3, scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Linkedin size={18} />
-              </motion.a>
-            </div>
           </motion.div>
+        </motion.section>
 
-          {/* Navigation - Left Aligned */}
-          <motion.div 
-            initial="hidden" 
-            whileInView="visible" 
-            viewport={{ once: true }} 
-            variants={footerAnimation} 
-            transition={{ delay: 0.2 }}
-            className="flex flex-col items-start"
-          >
-            <h3 className="font-bold text-lg text-brand-navy mb-5">Navigation</h3>
-            <div className="flex flex-col gap-3">
-              {[
-                { name: "Home", path: "/" },
-                { name: "About", path: "/about" },
-                { name: "Services", path: "/services" },
-                { name: "Contact us", path: "/contact" },
-              ].map((link, index) => (
-                <Link 
-                  key={index} 
-                  to={link.path} 
-                  className="text-gray-600 hover:text-brand-gold transition flex items-center gap-2"
-                >
-                  <ArrowRight size={14} className="text-brand-gold" />
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
+        {/* Main Content Section */}
+        <section className="py-0">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+                <motion.div initial={{
+                opacity: 0,
+                x: -20
+              }} whileInView={{
+                opacity: 1,
+                x: 0
+              }} transition={{
+                duration: 0.8
+              }} viewport={{
+                once: true
+              }} className="space-y-6">
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                    Our Story
+                  </h3>
+                  <p className="text-gray-700 text-lg leading-relaxed">GGL is a proud subsidiary of 1 Global Enterprises, a dynamic investment company with a diverse portfolio in freight forwarding, supply chain management, and logistics technology, as part of this global network, GGL benefits from strategic investments across multiple brands specializing in transportation, warehousing, and supply chain solutions.</p>
+                  <p className="text-gray-700 text-lg leading-relaxed">
+Backed by 1 Global Enterprises' industry expertise and innovation-driven approach, GGL leverages synergies across its affiliated companies to provide integrated, technology-driven logistics solutions. This connection ensures operational excellence, financial stability, and access to world-class supply chain infrastructure, positioning GGL as a leader in end-to-end global logistics services.                  </p>
+                </motion.div>
 
-          {/* Contact Info - Left Aligned */}
-          <motion.div 
-            initial="hidden" 
-            whileInView="visible" 
-            viewport={{ once: true }} 
-            variants={footerAnimation} 
-            transition={{ delay: 0.4 }}
-            className="flex flex-col items-start"
-          >
-            <h3 className="font-bold text-lg text-brand-navy mb-5">Contact Us</h3>
-            <div className="space-y-4 text-gray-600">
-              <div className="flex items-start gap-3">
-                <MapPin size={18} className="text-brand-gold mt-1" />
-                <p>Suite 5, 7-9 Mallet Road, Tullamarine, Victoria, 3043</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone size={18} className="text-brand-gold" />
-                <p>+61 432254969</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone size={18} className="text-brand-gold" />
-                <p>+61 388205157</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail size={18} className="text-brand-gold" />
-                <p>info@gglaustralia.com</p>
+                <motion.div initial={{
+                opacity: 0,
+                x: 20
+              }} whileInView={{
+                opacity: 1,
+                x: 0
+              }} transition={{
+                duration: 0.8
+              }} viewport={{
+                once: true
+              }} className="relative">
+                  <div className="relative overflow-hidden rounded-xl shadow-lg aspect-[4/3]">
+                    <img src="/lovable-uploads/gp.jpg" alt="Global Business Partnership" className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  </div>
+                </motion.div>
               </div>
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </section>
 
-        {/* Footer Bottom */}
-        <div className="text-center text-gray-600 mt-10 text-sm">
-          &copy; {new Date().getFullYear()} GGL. All Rights Reserved.
-        </div>
-      </div>
-    </footer>
-  );
+        {/* Stats Section */}
+        <section className="bg-gray-50 py-0">
+          <div className="container mx-auto px-4">
+            
+          </div>
+        </section>
+
+        {/* Call to Action */}
+        <section className="bg-blue-600 text-white py-[93px] my-[21px]">
+          <div className="container mx-auto px-4">
+            <motion.div initial={{
+            opacity: 0
+          }} whileInView={{
+            opacity: 1
+          }} transition={{
+            duration: 0.8
+          }} viewport={{
+            once: true
+          }} className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl font-bold mb-6 text-slate-50">
+                Ready to Transform Your Supply Chain?
+              </h2>
+              <p className="text-xl text-blue-100 mb-8">Trust GGL for your logistics needs</p>
+              <motion.button whileHover={{
+              scale: 1.05
+            }} whileTap={{
+              scale: 0.98
+            }} className="px-8 py-3 bg-white text-blue-600 rounded-lg text-lg font-medium">
+                Contact Us Today
+              </motion.button>
+            </motion.div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>;
 };
+export default About;
