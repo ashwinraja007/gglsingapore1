@@ -11,9 +11,9 @@ const AboutUs = () => {
             </AspectRatio>
           </div>
           
-          <div>
+          <div className="px-[34px]">
             <h2 className="text-2xl font-bold text-gray-800 mb-3">About Us</h2>
-            <p className="text-gray-600 mb-5 text-sm md:text-base">GGL is a proud subsidiary of 1 Global Enterprises, a dynamic investment company with a diverse portfolio in freight forwarding, supply chain management, and logistics technology, as part of this global network, GGL benefits from strategic investments across multiple brands specializing in transportation, warehousing, and supply chain solutions.</p>
+            <p className="text-gray-600 mb-5 text-sm md:text-base text-justify">GGL is a proud subsidiary of 1 Global Enterprises, a dynamic investment company with a diverse portfolio in freight forwarding, supply chain management, and logistics technology, as part of this global network, GGL benefits from strategic investments across multiple brands specializing in transportation, warehousing, and supply chain solutions.</p>
             <Link to="/about">
               <Button variant="outline" size="sm" className="text-sm">Learn More</Button>
             </Link>
