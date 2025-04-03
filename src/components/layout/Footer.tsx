@@ -14,9 +14,9 @@ export const Footer = () => {
         {/* Decorative Line */}
         <div className="h-1 bg-gradient-to-r from-brand-navy via-brand-gold to-brand-navy rounded-full mb-8"></div>
 
-        {/* Grid Layout: Logo (Left) | Navigation & Contact (Right) */}
-        <div className="flex flex-col md:flex-row justify-between items-start gap-10">
-          {/* Logo (Left-Aligned) */}
+        {/* Footer Content */}
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-10 md:gap-16">
+          {/* Logo Section (Left-Aligned) */}
           <motion.div 
             initial="hidden" 
             whileInView="visible" 
@@ -24,7 +24,7 @@ export const Footer = () => {
             variants={footerAnimation} 
             className="flex flex-col items-start w-full md:w-1/3"
           >
-            <div className="mb-5">
+            <div className="mb-4">
               <img 
                 src="/lovable-uploads/GGL.png" 
                 alt="GGL Logo" 
@@ -62,8 +62,8 @@ export const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Right Section: Navigation & Contact Us (Side-by-Side) */}
-          <div className="flex flex-col md:flex-row w-full md:w-2/3 justify-between">
+          {/* Navigation & Contact Us Section (Tighter Spacing) */}
+          <div className="flex flex-col md:flex-row w-full md:w-2/3 gap-8 md:gap-12">
             {/* Navigation */}
             <motion.div 
               initial="hidden" 
@@ -73,8 +73,8 @@ export const Footer = () => {
               transition={{ delay: 0.2 }}
               className="flex flex-col items-start"
             >
-              <h3 className="font-bold text-lg text-brand-navy mb-5">Navigation</h3>
-              <div className="flex flex-col gap-3">
+              <h3 className="font-bold text-lg text-brand-navy mb-4">Navigation</h3>
+              <div className="flex flex-col gap-2">
                 {[
                   { name: "Home", path: "/" },
                   { name: "About", path: "/about" },
@@ -102,21 +102,21 @@ export const Footer = () => {
               transition={{ delay: 0.4 }}
               className="flex flex-col items-start"
             >
-              <h3 className="font-bold text-lg text-brand-navy mb-5">Contact Us</h3>
-              <div className="space-y-4 text-gray-600">
-                <div className="flex items-start gap-3">
+              <h3 className="font-bold text-lg text-brand-navy mb-4">Contact Us</h3>
+              <div className="space-y-3 text-gray-600">
+                <div className="flex items-start gap-2">
                   <MapPin size={18} className="text-brand-gold mt-1" />
                   <p>Suite 5, 7-9 Mallet Road, Tullamarine, Victoria, 3043</p>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
                   <Phone size={18} className="text-brand-gold" />
                   <p>+61 432254969</p>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
                   <Phone size={18} className="text-brand-gold" />
                   <p>+61 388205157</p>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
                   <Mail size={18} className="text-brand-gold" />
                   <p>info@gglaustralia.com</p>
                 </div>
