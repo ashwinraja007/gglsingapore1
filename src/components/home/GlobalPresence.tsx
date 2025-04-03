@@ -102,7 +102,7 @@ const GlobalPresence = () => {
     amount: 0.2
   }} variants={containerVariants} className="bg-gradient-to-b from-brand-navy to-brand-navy/90 text-white py-[33px] px-0">
       <div className="container mx-auto px-[19px]">
-        <div className="text-center mb-10">
+        <div className="text-center mb-10 py-[13px] px-0">
           <motion.div initial={{
           opacity: 0,
           y: -20
@@ -165,7 +165,7 @@ const GlobalPresence = () => {
             scale: 1.05
           }} whileTap={{
             scale: 0.98
-          }} className="inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-bold rounded-lg shadow-lg hover:shadow-gold-glow transition-all duration-300 px-[19px] py-[12px] my-0 mx-0">
+          }} className="inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-bold rounded-lg shadow-lg hover:shadow-gold-glow transition-all duration-300 mx-0 py-[14px] px-[20px] my-0">
               Explore Our Global Network <ExternalLink size={16} />
             </motion.a>
           </motion.div>
