@@ -229,7 +229,7 @@ export const Hero = () => {
               scale: 0.97
             }} className="w-full sm:w-auto">
                 <Link to="/contact">
-                  <Button variant="gold" size="lg" className="w-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 gold-glow px-[20px] my-[2px] py-0 mx-0 rounded-md">
+                  <Button variant="gold" size="lg" className="w-full shadow-lg hover:shadow-xl transition-all duration-300 gold-glow py-0 rounded-md my-[3px] font-bold px-[17px] mx-0">
                     Get A Quote
                   </Button>
                 </Link>
