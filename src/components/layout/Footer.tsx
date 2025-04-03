@@ -59,7 +59,7 @@ export const Footer = () => {
           once: true
         }} variants={footerAnimation} transition={{
           delay: 0.2
-        }} className="flex flex-col items-start px-[95px]">
+        }} className="flex flex-col items-start px-[145px]">
             <h3 className="font-bold text-lg text-brand-navy mb-4">Navigation</h3>
             <div className="flex flex-col gap-2">
               {[{
