@@ -1,57 +1,106 @@
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import FacebookLogo from "/icons/facebook.svg";
+import LinkedinLogo from "/icons/linkedin.svg";
 
-const AboutUs = () => {
+export const Footer = () => {
+  const footerAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
+  
+  const currentYear = new Date().getFullYear();
+  
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          
-          {/* Image Section with Motion */}
+    <footer className="pt-16 pb-8 bg-gradient-to-b from-white to-gray-100 text-gray-700">
+      <div className="container mx-auto px-4">
+        {/* Top Gradient Border */}
+        <div className="relative mb-8">
+          <div className="h-1 bg-gradient-to-r from-brand-navy via-brand-gold to-brand-navy rounded-full"></div>
+        </div>
+        
+        {/* Footer Content */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+          {/* Logo Section */}
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="relative w-full rounded-lg overflow-hidden shadow-lg"
-          >
-            <img 
-              src="/lovable-uploads/b91d7108-4472-4301-a481-16d521230362.jpg" 
-              alt="About Us"
-              className="w-full h-full object-cover rounded-lg"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-          </motion.div>
-
-          {/* Text Section */}
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center md:text-left"
-          >
-            <h2 className="text-3xl font-extrabold text-gray-800 mb-4 leading-tight">
-              About <span className="text-blue-600">GGL</span>
-            </h2>
-            <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6">
-              GGL is a proud subsidiary of <strong>1 Global Enterprises</strong>, a dynamic investment 
-              company with a diverse portfolio in freight forwarding, supply chain management, and 
-              logistics technology. As part of this global network, GGL benefits from strategic investments 
-              across multiple brands specializing in transportation, warehousing, and supply chain solutions.
+            initial="hidden" 
+            whileInView="visible" 
+            viewport={{ once: true }} 
+            variants={footerAnimation} 
+            className="flex flex-col items-start">
+            <div className="mb-5">
+              <img src="/lovable-uploads/GGL.png" alt="GGL Logo" className="h-12 w-auto" loading="lazy" />
+              <img src="/1GlobalEnterprises.png" alt="1 Global Enterprises Logo" className="h-6 w-auto object-contain mt-2" />
+            </div>
+            <p className="text-sm md:text-base mb-6 text-gray-600">
+              GGL is a global freight forwarder offering premium logistics services, 
+              backed by a team with over 25 years of expertise in international and domestic transportation.
             </p>
-            <Link to="/about">
-              <Button variant="default" size="lg" className="px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 transition">
-                Learn More
-              </Button>
-            </Link>
+            <div className="flex space-x-3 mt-2">
+              <motion.a 
+                href="https://www.facebook.com/yourpage" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-brand-navy text-white p-2 rounded-full transition hover:bg-brand-gold hover:text-brand-navy"
+                whileHover={{ y: -3, scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}>
+                <img src={FacebookLogo} alt="Facebook" className="w-4 h-4" />
+              </motion.a>
+              <motion.a 
+                href="https://www.linkedin.com/in/yourpage" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-brand-navy text-white p-2 rounded-full transition hover:bg-brand-gold hover:text-brand-navy"
+                whileHover={{ y: -3, scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}>
+                <img src={LinkedinLogo} alt="LinkedIn" className="w-4 h-4" />
+              </motion.a>
+            </div>
           </motion.div>
-
+          
+          {/* Navigation */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={footerAnimation} transition={{ delay: 0.2 }}>
+            <h3 className="font-bold text-lg text-brand-navy mb-5 relative">Navigation</h3>
+            <div className="flex flex-col gap-3">
+              {[{ name: "Home", path: "/" }, { name: "About", path: "/about" }, { name: "Services", path: "/services" }, { name: "Contact us", path: "/contact" }].map((link, index) => (
+                <Link key={index} to={link.path} className="flex items-center gap-2 text-gray-600 hover:text-brand-gold transition">
+                  <ArrowRight size={14} className="text-brand-gold" />
+                  <span>{link.name}</span>
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+          
+          {/* Contact Section */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={footerAnimation} transition={{ delay: 0.4 }}>
+            <h3 className="font-bold text-lg text-brand-navy mb-5">Contact Us</h3>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <MapPin size={18} className="text-brand-gold" />
+                <p>Suite 5, 7-9 Mallet Road, Tullamarine, Victoria, 3043</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone size={18} className="text-brand-gold" />
+                <p>+61 432254969</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone size={18} className="text-brand-gold" />
+                <p>+61 388205157</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail size={18} className="text-brand-gold" />
+                <p>info@gglaustralia.com</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+        
+        {/* Footer Bottom */}
+        <div className="mt-10 text-center text-sm text-gray-500 border-t border-gray-300 pt-6">
+          <p>© {currentYear} GGL • All rights reserved</p>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
-
-export default AboutUs;
