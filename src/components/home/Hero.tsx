@@ -252,23 +252,7 @@ export const Hero = () => {
       duration: 0.8,
       delay: 1.3
     }} className="container mx-auto px-4 sm:px-6 absolute bottom-12 left-0 right-0 z-10 md:hidden">
-        <motion.button className="w-full bg-brand-navy/90 backdrop-blur-md p-4 rounded-lg shadow-lg flex items-center justify-between text-white border-2 border-brand-gold/50" onClick={() => setIsMenuOpen(!isMenuOpen)} whileHover={{
-        scale: 1.02
-      }} whileTap={{
-        scale: 0.98
-      }}>
-          <span className="text-base font-medium flex items-center gap-3">
-            <Globe className="w-5 h-5 text-brand-gold" />
-            Quick Access
-          </span>
-          <motion.div animate={{
-          rotate: isMenuOpen ? 180 : 0
-        }} transition={{
-          duration: 0.3
-        }}>
-            <ChevronDown className="h-5 w-5" />
-          </motion.div>
-        </motion.button>
+        
 
         <AnimatePresence>
           {isMenuOpen && <motion.div initial={{
