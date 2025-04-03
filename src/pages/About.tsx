@@ -53,7 +53,7 @@ const About = () => {
                   <h3 className="text-2xl font-semibold text-gray-800 mb-4">
                     Our Story
                   </h3>
-                  <p className="text-gray-700 text-lg leading-relaxed">GGL is a proud subsidiary of 1 Global Enterprises, a dynamic investment company with a diverse portfolio in freight forwarding, supply chain management, and logistics technology, as part of this global network, GGL benefits from strategic investments across multiple brands specializing in transportation, warehousing, and supply chain solutions, as well as cutting-edge freight and warehouse management software.</p>
+                  <p className="text-gray-700 text-lg leading-relaxed">GGL is a proud subsidiary of 1 Global Enterprises, a dynamic investment company with a diverse portfolio in freight forwarding, supply chain management, and logistics technology, as part of this global network, GGL benefits from strategic investments across multiple brands specializing in transportation, warehousing, and supply chain solutions.</p>
                   <p className="text-gray-700 text-lg leading-relaxed">
 Backed by 1 Global Enterprises' industry expertise and innovation-driven approach, GGL leverages synergies across its affiliated companies to provide integrated, technology-driven logistics solutions. This connection ensures operational excellence, financial stability, and access to world-class supply chain infrastructure, positioning GGL as a leader in end-to-end global logistics services.                  </p>
                 </motion.div>
@@ -82,42 +82,7 @@ Backed by 1 Global Enterprises' industry expertise and innovation-driven approac
         {/* Stats Section */}
         <section className="bg-gray-50 py-0">
           <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-                Our Global Impact
-              </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                {[{
-                value: "120+",
-                label: "Countries Served"
-              }, {
-                value: "15,000+",
-                label: "Global Fleet"
-              }, {
-                value: "25,000+",
-                label: "Team Members"
-              }, {
-                value: "99.8%",
-                label: "On-Time Delivery"
-              }].map((stat, index) => <motion.div key={stat.label} initial={{
-                opacity: 0,
-                y: 10
-              }} whileInView={{
-                opacity: 1,
-                y: 0
-              }} transition={{
-                duration: 0.5,
-                delay: index * 0.1
-              }} viewport={{
-                once: true
-              }} className="text-center">
-                    <h3 className="text-4xl font-bold text-blue-600 mb-2">
-                      {stat.value}
-                    </h3>
-                    <p className="text-gray-600">{stat.label}</p>
-                  </motion.div>)}
-              </div>
-            </div>
+            
           </div>
         </section>
 
@@ -136,9 +101,7 @@ Backed by 1 Global Enterprises' industry expertise and innovation-driven approac
               <h2 className="text-3xl font-bold mb-6 text-slate-50">
                 Ready to Transform Your Supply Chain?
               </h2>
-              <p className="text-xl text-blue-100 mb-8">
-                Join thousands of businesses that trust GGL with their logistics needs.
-              </p>
+              <p className="text-xl text-blue-100 mb-8">Trust GGL for your logistics needs</p>
               <motion.button whileHover={{
               scale: 1.05
             }} whileTap={{
