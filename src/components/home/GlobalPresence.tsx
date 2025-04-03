@@ -100,8 +100,8 @@ const GlobalPresence = () => {
   return <motion.section initial="hidden" whileInView="visible" viewport={{
     once: true,
     amount: 0.2
-  }} variants={containerVariants} className="py-16 bg-gradient-to-b from-brand-navy to-brand-navy/90 text-white">
-      <div className="container mx-auto px-4">
+  }} variants={containerVariants} className="bg-gradient-to-b from-brand-navy to-brand-navy/90 text-white px-0 py-[33px]">
+      <div className="container mx-auto px-[19px]">
         <div className="text-center mb-10">
           <motion.div initial={{
           opacity: 0,
@@ -131,7 +131,7 @@ const GlobalPresence = () => {
           </p>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative max-w-3xl mx-auto px-0">
           {/* Key stats with improved design */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             {[{
@@ -165,7 +165,7 @@ const GlobalPresence = () => {
             scale: 1.05
           }} whileTap={{
             scale: 0.98
-          }} className="inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-bold rounded-lg shadow-lg hover:shadow-gold-glow transition-all duration-300 py-[13px] px-[18px]">
+          }} className="inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-bold rounded-lg shadow-lg hover:shadow-gold-glow transition-all duration-300 px-[19px] py-[12px] my-0 mx-0">
               Explore Our Global Network <ExternalLink size={16} />
             </motion.a>
           </motion.div>
