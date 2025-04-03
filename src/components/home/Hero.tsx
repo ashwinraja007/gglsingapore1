@@ -315,39 +315,7 @@ export const Hero = () => {
       duration: 0.8,
       delay: 1.3
     }} className="hidden md:block container px-4 sm:px-6 absolute bottom-16 left-0 right-0 z-10 mx-[59px]">
-        <div className="grid grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-4">
-          {portalLinks.map((link, index) => <motion.div key={index} initial={{
-          opacity: 0,
-          y: 20
-        }} animate={isVisible ? {
-          opacity: 1,
-          y: 0
-        } : {}} transition={{
-          delay: index * 0.1 + 1.3
-        }} whileHover={{
-          y: -5,
-          scale: 1.02
-        }} className="bg-white/15 backdrop-blur-md rounded-lg hover:bg-white/25 transition-all duration-300 border border-brand-gold/30 shadow-lg">
-              <Link to={link.url} className="w-full h-full p-4 flex flex-col items-center justify-center text-white px-0 py-[3px] my-0 mx-0">
-                <motion.span className="text-brand-gold transform transition-transform p-2 bg-white/10 rounded-full mb-2" whileHover={{
-              scale: 1.1,
-              rotate: 10
-            }} animate={{
-              y: [0, -3, 0]
-            }} transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "mirror"
-            }}>
-                  {link.icon}
-                </motion.span>
-                <div className="text-center">
-                  <div className="font-medium">{link.title}</div>
-                  <div className="text-xs text-white/80 mt-1">{link.description}</div>
-                </div>
-              </Link>
-            </motion.div>)}
-        </div>
+        
       </motion.div>
 
       {/* Scroll indicator - desktop only */}

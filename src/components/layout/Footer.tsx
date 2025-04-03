@@ -79,33 +79,7 @@ export const Footer = () => {
             </div>
           </motion.div>
           
-          <motion.div initial="hidden" whileInView="visible" viewport={{
-          once: true
-        }} variants={footerAnimation} transition={{
-          delay: 0.4
-        }}>
-            <h3 className="font-bold text-brand-navy mb-5 text-lg relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-10 after:h-1 after:bg-brand-gold">
-              Useful Links
-            </h3>
-            <div className="flex flex-col gap-3 mt-6">
-              {[{
-              name: "Customer Login",
-              path: "https://www.google.com/"
-            }, {
-              name: "Agent Login",
-              path: "/agent-login"
-            }, {
-              name: "Tracking",
-              path: "/tracking"
-            }, {
-              name: "Sailing Schedule",
-              path: "/schedule"
-            }].map((link, index) => <Link key={index} to={link.path} className="text-gray-600 hover:text-brand-gold transition-colors duration-300 flex items-center gap-2 group">
-                  <ArrowRight size={14} className="text-brand-gold group-hover:translate-x-1 transition-transform duration-300" />
-                  <span>{link.name}</span>
-                </Link>)}
-            </div>
-          </motion.div>
+          
           
           <motion.div initial="hidden" whileInView="visible" viewport={{
           once: true
