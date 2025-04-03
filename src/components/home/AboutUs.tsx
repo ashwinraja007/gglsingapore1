@@ -7,7 +7,7 @@ const AboutUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           <div className="h-[250px] md:h-[300px] w-full overflow-hidden rounded-lg shadow-lg">
             <AspectRatio ratio={16 / 9} className="h-full">
-              <img src="/lovable-uploads/delievery.jpg" alt="About Us" className="w-full h-full object-cover" loading="lazy" />
+              <img alt="About Us" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/1dff4c29-f02b-4a67-afc5-80d2a2b5aaff.jpg" />
             </AspectRatio>
           </div>
           
