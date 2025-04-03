@@ -65,7 +65,7 @@ export const Hero = () => {
   return (
     <section className="relative min-h-[75vh] md:min-h-[90vh] overflow-hidden pt-8 md:pt-16">
       {/* Mobile Navigation Menu Button */}
-      <div className="fixed top-4 right-4 z-50 md:hidden">
+      <div className="fixed top-4 left-4 z-50 md:hidden">
         <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-2 bg-white/80 rounded-md shadow-md">
           {isMobileMenuOpen ? <X className="h-6 w-6 text-brand-navy" /> : <Menu className="h-6 w-6 text-brand-navy" />}
         </button>
@@ -79,7 +79,7 @@ export const Hero = () => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed top-0 right-0 w-4/5 h-screen bg-brand-navy/95 backdrop-blur-lg z-50 shadow-xl border-l border-brand-gold/30 flex flex-col"
+            className="fixed top-0 left-0 w-4/5 h-screen bg-brand-navy/95 backdrop-blur-lg z-50 shadow-xl border-l border-brand-gold/30 flex flex-col"
           >
             <div className="p-6 mt-12 space-y-6">
               <div className="flex items-center gap-3 mb-6">
@@ -146,14 +146,14 @@ export const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/90 via-brand-navy/70 to-brand-navy/90" />
       </motion.div>
 
-      {/* Main content - Right aligned */}
+      {/* Main content - left aligned */}
       <div className="absolute inset-0 flex items-center">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-2xl ml-auto space-y-4 md:space-y-5 text-right"
+            className="max-w-2xl ml-auto space-y-4 md:space-y-5 text-left"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -236,7 +236,7 @@ export const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, delay: 1.3 }}
-        className="container mx-auto px-4 sm:px-6 absolute bottom-8 left-0 right-0 z-10 md:hidden"
+        className="container mx-auto px-4 sm:px-6 absolute bottom-8 left-0 left-0 z-10 md:hidden"
       >
         <AnimatePresence>
           {isMenuOpen && (
