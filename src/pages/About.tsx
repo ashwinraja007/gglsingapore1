@@ -63,7 +63,7 @@ const About = () => {
                 >
                   <div className="relative overflow-hidden rounded-xl shadow-lg h-[400px] w-full">
                     <img 
-                      src="/lovable-uploads/gp.jpg" 
+                      src="/mnt/data/Gemini_Generated_Image_sebltbsebltbsebl.jpg" 
                       alt="Global Business Partnership" 
                       className="w-full h-full object-contain"
                     />
