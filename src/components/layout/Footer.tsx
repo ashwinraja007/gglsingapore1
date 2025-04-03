@@ -14,9 +14,9 @@ export const Footer = () => {
         {/* Decorative Line */}
         <div className="h-1 bg-gradient-to-r from-brand-navy via-brand-gold to-brand-navy rounded-full mb-8"></div>
 
-        {/* Footer Layout: Logo (Left) | Navigation & Contact (Right) */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
-          {/* Logo Section (Left-Aligned) */}
+        {/* 3-Column Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* Column 1: Logo & About Section */}
           <motion.div 
             initial="hidden" 
             whileInView="visible" 
@@ -62,67 +62,64 @@ export const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Navigation & Contact Us (Right-Aligned) */}
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-12 md:gap-16">
-            {/* Navigation */}
-            <motion.div 
-              initial="hidden" 
-              whileInView="visible" 
-              viewport={{ once: true }} 
-              variants={footerAnimation} 
-              transition={{ delay: 0.2 }}
-              className="flex flex-col items-start"
-            >
-              <h3 className="font-bold text-lg text-brand-navy mb-4">Navigation</h3>
-              <div className="flex flex-col gap-2">
-                {[
-                  { name: "Home", path: "/" },
-                  { name: "About", path: "/about" },
-                  { name: "Services", path: "/services" },
-                  { name: "Contact us", path: "/contact" },
-                ].map((link, index) => (
-                  <Link 
-                    key={index} 
-                    to={link.path} 
-                    className="text-gray-600 hover:text-brand-gold transition flex items-center gap-2"
-                  >
-                    <ArrowRight size={14} className="text-brand-gold" />
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </motion.div>
+          {/* Column 2: Navigation */}
+          <motion.div 
+            initial="hidden" 
+            whileInView="visible" 
+            viewport={{ once: true }} 
+            variants={footerAnimation} 
+            transition={{ delay: 0.2 }}
+            className="flex flex-col items-start"
+          >
+            <h3 className="font-bold text-lg text-brand-navy mb-4">Navigation</h3>
+            <div className="flex flex-col gap-2">
+              {[
+                { name: "Home", path: "/" },
+                { name: "About", path: "/about" },
+                { name: "Services", path: "/services" },
+                { name: "Contact us", path: "/contact" },
+              ].map((link, index) => (
+                <Link 
+                  key={index} 
+                  to={link.path} 
+                  className="text-gray-600 hover:text-brand-gold transition flex items-center gap-2"
+                >
+                  <ArrowRight size={14} className="text-brand-gold" />
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
 
-            {/* Contact Info */}
-            <motion.div 
-              initial="hidden" 
-              whileInView="visible" 
-              viewport={{ once: true }} 
-              variants={footerAnimation} 
-              transition={{ delay: 0.4 }}
-              className="flex flex-col items-start"
-            >
-              <h3 className="font-bold text-lg text-brand-navy mb-4">Contact Us</h3>
-              <div className="space-y-3 text-gray-600">
-                <div className="flex items-start gap-2">
-                  <MapPin size={18} className="text-brand-gold mt-1" />
-                  <p>Suite 5, 7-9 Mallet Road, Tullamarine, Victoria, 3043</p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone size={18} className="text-brand-gold" />
-                  <p>+61 432254969</p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone size={18} className="text-brand-gold" />
-                  <p>+61 388205157</p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail size={18} className="text-brand-gold" />
-                  <p>info@gglaustralia.com</p>
-                </div>
+          {/* Column 3: Contact Info */}
+          <motion.div 
+            initial="hidden" 
+            whileInView="visible" 
+            viewport={{ once: true }} 
+            variants={footerAnimation} 
+            transition={{ delay: 0.4 }}
+            className="flex flex-col items-start"
+          >
+            <h3 className="font-bold text-lg text-brand-navy mb-4">Contact Us</h3>
+            <div className="space-y-3 text-gray-600">
+              <div className="flex items-start gap-2">
+                <MapPin size={18} className="text-brand-gold mt-1" />
+                <p>Suite 5, 7-9 Mallet Road, Tullamarine, Victoria, 3043</p>
               </div>
-            </motion.div>
-          </div>
+              <div className="flex items-center gap-2">
+                <Phone size={18} className="text-brand-gold" />
+                <p>+61 432254969</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone size={18} className="text-brand-gold" />
+                <p>+61 388205157</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail size={18} className="text-brand-gold" />
+                <p>info@gglaustralia.com</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
         {/* Footer Bottom */}
