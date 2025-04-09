@@ -65,12 +65,7 @@ const GlobalPresence = () => {
         )}
       </div>
       
-      <footer className="bg-white border-t border-amber-100 py-2 shadow-inner">
-        <div className="container mx-auto px-4 text-center text-xs text-gray-500">
-          <span className="hidden sm:inline">GGL Global Presence Map — Interactive Company Locations</span>
-          <span className="sm:hidden">GGL Global Map</span>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

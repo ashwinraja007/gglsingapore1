@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Map, Info } from "lucide-react";
+import { Info } from "lucide-react";
 
 const InfoPanel: React.FC = () => {
   return (
