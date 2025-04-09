@@ -275,6 +275,9 @@ const countries = [{
   }]
 }];
 
+// Sort countries alphabetically by name
+const sortedCountries = [...countries].sort((a, b) => a.name.localeCompare(b.name));
+
 const Sidebar: React.FC<SidebarProps> = ({
   isOpen,
   onClose
@@ -343,7 +346,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                 collapsible 
                 className="w-full space-y-3"
               >
-                {countries.map(country => (
+                {sortedCountries.map(country => (
                   <AccordionItem 
                     key={country.name} 
                     value={country.name} 
