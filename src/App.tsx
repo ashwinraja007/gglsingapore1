@@ -13,6 +13,7 @@ import LiquidTransportation from "./pages/services/LiquidTransportation";
 import AirFreight from "./pages/services/AirFreight";
 import OceanFreight from "./pages/services/OceanFreight";
 import CustomsClearance from "./pages/services/CustomsClearance";
+import GlobalPresence from "./pages/GlobalPresence";
 import ScrollToTop from "./components/common/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/global-presence" element={<GlobalPresence />} />
           {/* Service specific pages */}
           <Route path="/services/liquid-transportation" element={<LiquidTransportation />} />
           <Route path="/services/air-freight" element={<AirFreight />} />
