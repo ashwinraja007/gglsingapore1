@@ -1,63 +1,95 @@
 
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import { RefreshCw, Maximize2, Minimize2 } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { motion } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 
+const MAP_URL = "https://www.google.com/maps/d/u/0/embed?mid=1d5jZQlEjnKqnsGHvdJWR5wB_-fcQ_Zk&z=2&ll=12.9716,77.5946&hl=en&ehbc=2E312F&output=embed";
+
 const MapContainer = () => {
-  const locations = [
-    { id: 1, name: "Melbourne", position: { top: "75%", left: "85%" }, country: "Australia" },
-    { id: 2, name: "Singapore", position: { top: "58%", left: "75%" }, country: "Singapore" },
-    { id: 3, name: "Dubai", position: { top: "45%", left: "62%" }, country: "UAE" },
-    { id: 4, name: "London", position: { top: "30%", left: "48%" }, country: "UK" },
-    { id: 5, name: "New York", position: { top: "35%", left: "25%" }, country: "USA" },
-    { id: 6, name: "Los Angeles", position: { top: "40%", left: "15%" }, country: "USA" },
-    { id: 7, name: "Shanghai", position: { top: "40%", left: "80%" }, country: "China" },
-    { id: 8, name: "Mumbai", position: { top: "50%", left: "68%" }, country: "India" },
-    { id: 9, name: "Cape Town", position: { top: "75%", left: "52%" }, country: "South Africa" }
-  ];
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isFullScreen, setIsFullScreen] = useState(false);
+
+  const handleReload = () => {
+    if (iframeRef.current) {
+      const currentSrc = iframeRef.current.src;
+      iframeRef.current.src = '';
+      setTimeout(() => {
+        if (iframeRef.current) {
+          iframeRef.current.src = currentSrc;
+        }
+      }, 100);
+      setIsLoaded(false);
+    }
+  };
+
+  const toggleFullScreen = () => {
+    setIsFullScreen(!isFullScreen);
+  };
 
   return (
-    <div className="relative h-full w-full border-r border-amber-100 bg-white">
-      <div className="absolute inset-0 flex items-center justify-center p-4 md:p-10">
-        <AspectRatio ratio={16/9} className="w-full max-w-5xl">
-          <div className="relative w-full h-full">
-            {/* World map image */}
-            <img 
-              src="/lovable-uploads/earth.jpg" 
-              alt="World Map" 
-              className="w-full h-full object-cover rounded-xl shadow-lg"
-            />
-            
-            {/* Location pins */}
-            {locations.map(location => (
-              <motion.div 
-                key={location.id}
-                className="absolute cursor-pointer group"
-                style={{ 
-                  top: location.position.top, 
-                  left: location.position.left 
-                }}
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ 
-                  type: "spring",
-                  stiffness: 260,
-                  damping: 20,
-                  delay: 0.1 * location.id 
-                }}
-                whileHover={{ scale: 1.2 }}
-              >
-                <div className="relative">
-                  <MapPin className="w-6 h-6 text-red-500 drop-shadow-md" />
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-white/90 backdrop-blur-sm text-black text-xs font-medium px-2 py-1 rounded shadow-md whitespace-nowrap">
-                    {location.name}, {location.country}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+    <div className="w-full h-full flex justify-center">
+      <div className={`bg-white rounded-2xl shadow-lg overflow-hidden relative w-full transition-all duration-300 ease-in-out ${isFullScreen ? 'max-w-full' : 'max-w-6xl'} my-3`}>
+        {/* Map Header */}
+        <div className="flex justify-between items-center p-3 border-b border-amber-100 bg-gradient-to-r from-amber-50 to-white">
+          <h3 className="font-medium text-amber-700 flex items-center">
+            <span className="hidden sm:inline">Interactive Global Presence Map</span>
+            <span className="sm:hidden">Global Map</span>
+          </h3>
+          <div className="flex items-center gap-2">
+            <Button variant="outline" size="sm" onClick={handleReload} className="text-amber-600 border-amber-200 hover:bg-amber-50">
+              <RefreshCw className="h-3.5 w-3.5 mr-1" />
+              <span className="hidden sm:inline">Refresh</span>
+            </Button>
+            <Button variant="outline" size="sm" onClick={toggleFullScreen} className="text-amber-600 border-amber-200 hover:bg-amber-50">
+              {isFullScreen ? <>
+                  <Minimize2 className="h-3.5 w-3.5 mr-1" />
+                  <span className="hidden sm:inline">Compact</span>
+                </> : <>
+                  <Maximize2 className="h-3.5 w-3.5 mr-1" />
+                  <span className="hidden sm:inline">Expand</span>
+                </>}
+            </Button>
           </div>
-        </AspectRatio>
+        </div>
+
+        {/* Map Container */}
+        <div className={`relative transition-all duration-300 ${isFullScreen ? 'aspect-[16/9]' : 'aspect-[4/3]'}`}>
+          {/* Mask the top black Google bar */}
+          <div className="absolute top-0 left-0 w-full h-[50px] bg-white z-10 pointer-events-none" />
+          
+          <iframe 
+            ref={iframeRef} 
+            src={MAP_URL} 
+            title="Interactive Map" 
+            className="w-full h-full border-0" 
+            loading="eager" 
+            style={{
+              marginTop: '-125px',
+              backgroundColor: 'transparent',
+              filter: 'contrast(1.05) saturate(1.1)'
+            }} 
+            onLoad={() => setIsLoaded(true)}
+          ></iframe>
+          
+          {/* Loading Spinner */}
+          {!isLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 z-10">
+              <div className="flex flex-col items-center">
+                <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-amber-500"></div>
+                <p className="mt-3 text-sm text-gray-600">Loading map...</p>
+              </div>
+            </div>
+          )}
+        </div>
+        
+        {/* Map Footer */}
+        <div className="py-2 px-4 border-t border-amber-100 bg-gradient-to-r from-white to-amber-50 text-xs text-gray-500 text-center">
+          <p>© 2025 GGL Global Presence Map | Data updated quarterly</p>
+        </div>
       </div>
     </div>
   );
