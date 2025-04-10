@@ -7,7 +7,8 @@ import { Loader2 } from "lucide-react";
 // Lazy load components
 const Hero = lazy(() => import("@/components/home/Hero"));
 const AboutUs = lazy(() => import("@/components/home/AboutUs"));
-const Memberships = lazy(() => import("@/components/home/Memberships"));
+// Memberships component is now commented out
+// const Memberships = lazy(() => import("@/components/home/Memberships"));
 const Services = lazy(() => import("@/components/home/Services"));
 const GlobalPresence = lazy(() => import("@/components/home/GlobalPresence"));
 const QuickEnquiry = lazy(() => import("@/components/home/QuickEnquiry"));
@@ -32,9 +33,11 @@ const Index = () => {
           <AboutUs />
         </Suspense>
         
+        {/* Memberships component is now hidden
         <Suspense fallback={<LoadingComponent />}>
           <Memberships />
         </Suspense>
+        */}
         
         <Suspense fallback={<LoadingComponent />}>
           <Services />
