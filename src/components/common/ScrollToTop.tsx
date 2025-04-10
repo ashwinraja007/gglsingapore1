@@ -16,7 +16,7 @@ export const ScrollToTop = () => {
     }
   };
 
-  // Scroll to top function
+  // Scroll to top function - ensure it works with click events
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -40,7 +40,7 @@ export const ScrollToTop = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-3 bg-brand-gold rounded-full shadow-lg hover:bg-amber-500 transition-all duration-300 z-50 hover:scale-110"
+          className="fixed bottom-8 right-8 p-3 bg-brand-gold rounded-full shadow-lg hover:bg-amber-500 transition-all duration-300 z-50 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-amber-400"
           aria-label="Scroll to top"
         >
           <ChevronUp className="h-6 w-6 text-brand-navy" />
