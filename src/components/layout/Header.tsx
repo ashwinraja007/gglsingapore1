@@ -2,6 +2,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import CountrySelector from "../common/CountrySelector";
 
 export const Header = () => {
   const location = useLocation();
@@ -62,6 +63,7 @@ export const Header = () => {
             <button onClick={() => handleNavClick("/contact")} className={`text-gray-800 hover:text-brand-gold font-medium transition-colors py-1 ${location.pathname === '/contact' ? 'text-brand-gold' : ''}`}>
               Contact Us
             </button>
+            <CountrySelector />
             <button onClick={() => handleNavClick("/contact")} className="px-5 py-2 bg-[#F6B100] text-black rounded-full hover:bg-[#FFCC33] transition font-medium">
               Get A Quote
             </button>
@@ -83,6 +85,7 @@ export const Header = () => {
             <button onClick={() => handleNavClick("/contact")} className={`text-gray-800 hover:text-brand-gold font-medium ${location.pathname === '/contact' ? 'text-brand-gold' : ''}`}>
               Contact Us
             </button>
+            <CountrySelector />
             <button onClick={() => handleNavClick("/contact")} className="px-4 py-2 bg-brand-gold text-brand-navy rounded-md hover:bg-amber-500 text-center font-medium w-full">
               Get A Quote
             </button>
