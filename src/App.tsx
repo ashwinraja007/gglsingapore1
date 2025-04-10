@@ -14,7 +14,7 @@ import AirFreight from "./pages/services/AirFreight";
 import OceanFreight from "./pages/services/OceanFreight";
 import CustomsClearance from "./pages/services/CustomsClearance";
 import GlobalPresence from "./pages/GlobalPresence";
-import ScrollToTop from "./components/common/ScrollToTop";
+import { ScrollToTop } from "./components/common/ScrollToTop";
 
 // Create a new QueryClient instance
 const queryClient = new QueryClient();
