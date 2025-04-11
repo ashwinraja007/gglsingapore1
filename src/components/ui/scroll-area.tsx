@@ -44,12 +44,21 @@ const ScrollBar = React.forwardRef<
       onPointerDown={(e) => {
         // Prevent default to allow proper dragging
         e.preventDefault();
+        // Create a new PointerEvent manually with only the required properties
+        const newEvent = new PointerEvent('pointerdown', {
+          bubbles: e.bubbles,
+          cancelable: e.cancelable,
+          clientX: e.clientX,
+          clientY: e.clientY,
+          pointerId: e.pointerId,
+        });
+        
         // Ensure event propagates to Radix UI handlers
         const thumb = e.currentTarget;
         const scrollbar = thumb.parentElement;
         if (scrollbar) {
           // This allows the pointer event to bubble to Radix's handlers
-          scrollbar.dispatchEvent(new PointerEvent('pointerdown', e));
+          scrollbar.dispatchEvent(newEvent);
         }
       }}
     />

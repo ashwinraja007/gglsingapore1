@@ -38,9 +38,14 @@ const countries: CountryData[] = [
   { country: "UK", company: "MOLTECH", website: "https://moltech.uk/", priority: 16, flag: "/gb.svg" }
 ];
 
+// Find Australia in the countries list
+const findAustraliaCountry = () => {
+  return countries.find(country => country.country === "AUSTRALIA") || countries[0];
+};
+
 const CountrySelector = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState<CountryData>(countries[0]);
+  const [selectedCountry, setSelectedCountry] = useState<CountryData>(findAustraliaCountry());
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Sort countries by priority
