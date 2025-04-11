@@ -39,7 +39,20 @@ const ScrollBar = React.forwardRef<
     )}
     {...props}
   >
-    <ScrollAreaPrimitive.ScrollAreaThumb className="relative flex-1 rounded-full bg-border cursor-pointer hover:bg-gray-400 active:bg-gray-500" />
+    <ScrollAreaPrimitive.ScrollAreaThumb 
+      className="relative flex-1 rounded-full bg-border cursor-pointer hover:bg-gray-400 active:bg-gray-500"
+      onPointerDown={(e) => {
+        // Prevent default to allow proper dragging
+        e.preventDefault();
+        // Ensure event propagates to Radix UI handlers
+        const thumb = e.currentTarget;
+        const scrollbar = thumb.parentElement;
+        if (scrollbar) {
+          // This allows the pointer event to bubble to Radix's handlers
+          scrollbar.dispatchEvent(new PointerEvent('pointerdown', e));
+        }
+      }}
+    />
   </ScrollAreaPrimitive.ScrollAreaScrollbar>
 ))
 ScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName
