@@ -43,10 +43,20 @@ const findAustraliaCountry = () => {
   return countries.find(country => country.country === "AUSTRALIA") || countries[0];
 };
 
+// Get the Australia flag for display
+const getAustraliaFlag = () => {
+  const australia = findAustraliaCountry();
+  return australia.flag || "/au.svg";
+};
+
 const CountrySelector = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState<CountryData>(findAustraliaCountry());
+  // This state is only used for tracking the selected country for redirection
+  const [selectedRedirectCountry, setSelectedRedirectCountry] = useState<CountryData>(findAustraliaCountry());
   const dropdownRef = useRef<HTMLDivElement>(null);
+  
+  // The Australia flag that always shows in the button
+  const australiaFlag = getAustraliaFlag();
 
   // Sort countries by priority, with Australia first
   const sortedCountries = [...countries].sort((a, b) => {
@@ -57,7 +67,7 @@ const CountrySelector = () => {
 
   // Handle redirect
   const handleCountrySelect = (country: CountryData) => {
-    setSelectedCountry(country);
+    setSelectedRedirectCountry(country);
     window.open(country.website, '_blank', 'noopener,noreferrer');
     setIsOpen(false);
   };
@@ -84,15 +94,12 @@ const CountrySelector = () => {
             variant="outline" 
             className="border-[#F6B100] bg-white text-gray-800 hover:bg-[#F6B100]/10 px-4 py-2 rounded-full flex items-center gap-2"
           >
-            {selectedCountry.flag ? (
-              <img 
-                src={selectedCountry.flag} 
-                alt={`${selectedCountry.country} flag`} 
-                className="w-5 h-5 rounded-sm shadow-sm object-cover"
-              />
-            ) : (
-              <Globe className="h-4 w-4 text-brand-gold" />
-            )}
+            {/* Always show Australia flag in the button */}
+            <img 
+              src={australiaFlag} 
+              alt="Australia flag" 
+              className="w-5 h-5 rounded-sm shadow-sm object-cover"
+            />
             <span className="flex items-center gap-1">
               Switch Country <ChevronDown className="h-3 w-3 ml-1 text-gray-500" />
             </span>
