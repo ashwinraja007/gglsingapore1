@@ -20,13 +20,13 @@ interface CountryData {
 }
 
 const countries: CountryData[] = [
-  { country: "SINGAPORE", company: "GC", website: "https://www.globalconsol.com/", priority: 1, flag: "/sg.svg" },
-  { country: "MALAYSIA", company: "OECL", website: "https://www.oecl.sg/malaysia/home", priority: 2, flag: "/my.svg" },
-  { country: "INDONESIA", company: "OECL", website: "https://www.oecl.sg/indonesia/home", priority: 3, flag: "/id.svg" },
-  { country: "THAILAND", company: "OECL", website: "https://www.oecl.sg/thailand/home", priority: 4, flag: "/th.svg" },
-  { country: "MYANMAR", company: "GC", website: "https://www.globalconsol.com", priority: 5, flag: "/mm.svg" },
-  { country: "CHINA", company: "HAIXUN", website: "https://www.haixun.co", priority: 6, flag: "/china.svg" },
-  { country: "AUSTRALIA", company: "GGL AUS", website: "https://www.gglaustralia.com", priority: 7, flag: "/au.svg" },
+  { country: "AUSTRALIA", company: "GGL AUS", website: "https://www.gglaustralia.com", priority: 1, flag: "/au.svg" },
+  { country: "SINGAPORE", company: "GC", website: "https://www.globalconsol.com/", priority: 2, flag: "/sg.svg" },
+  { country: "MALAYSIA", company: "OECL", website: "https://www.oecl.sg/malaysia/home", priority: 3, flag: "/my.svg" },
+  { country: "INDONESIA", company: "OECL", website: "https://www.oecl.sg/indonesia/home", priority: 4, flag: "/id.svg" },
+  { country: "THAILAND", company: "OECL", website: "https://www.oecl.sg/thailand/home", priority: 5, flag: "/th.svg" },
+  { country: "MYANMAR", company: "GC", website: "https://www.globalconsol.com", priority: 6, flag: "/mm.svg" },
+  { country: "CHINA", company: "HAIXUN", website: "https://www.haixun.co", priority: 7, flag: "/china.svg" },
   { country: "INDIA", company: "GGL", website: "https://ggl.sg/india", priority: 8, flag: "/in.svg" },
   { country: "BANGLADESH", company: "GC", website: "https://www.globalconsol.com", priority: 9, flag: "/bd.svg" },
   { country: "SRI LANKA", company: "GC", website: "https://www.globalconsol.com", priority: 10, flag: "/lk.svg" },
@@ -48,8 +48,12 @@ const CountrySelector = () => {
   const [selectedCountry, setSelectedCountry] = useState<CountryData>(findAustraliaCountry());
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Sort countries by priority
-  const sortedCountries = [...countries].sort((a, b) => a.priority - b.priority);
+  // Sort countries by priority, with Australia first
+  const sortedCountries = [...countries].sort((a, b) => {
+    if (a.country === "AUSTRALIA") return -1;
+    if (b.country === "AUSTRALIA") return 1;
+    return a.priority - b.priority;
+  });
 
   // Handle redirect
   const handleCountrySelect = (country: CountryData) => {
