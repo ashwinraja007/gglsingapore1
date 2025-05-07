@@ -96,7 +96,7 @@ const CountrySelector = () => {
           >
             {/* Always show Australia flag in the button */}
             <img 
-              src={australiaFlag} 
+              src="/au.svg" 
               alt="Australia flag" 
               className="w-5 h-5 rounded-sm shadow-sm object-cover"
             />
