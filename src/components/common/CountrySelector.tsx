@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -65,50 +64,104 @@ const CountrySelector = () => {
     return a.priority - b.priority;
   });
 
-  // Fixed handling for redirection with stronger implementation
+  // Completely redesigned redirect function with reliable redirection strategy
   const handleCountrySelect = (country: CountryData) => {
-    setSelectedRedirectCountry(country);
-    
-    // Make sure the URL is properly formatted
+    // Ensure clean url with protocol
     let url = country.website;
     if (url && !url.startsWith('http://') && !url.startsWith('https://')) {
       url = 'https://' + url;
     }
     
-    console.log("Redirecting to:", url); // Debug log
+    console.log("Redirecting to:", url);
     
-    // Use setTimeout to ensure the redirect happens after the dropdown closes
+    // Close dropdown first
+    setIsOpen(false);
+    
+    // Execute redirect with a slight delay after UI updates
     setTimeout(() => {
-      // Direct window.open approach as the primary method
-      const newWindow = window.open(url, '_blank');
-      
-      // If window.open is blocked, try alternative approach
-      if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-        console.log("Primary redirect failed, trying alternative method");
+      // Method 1: Direct browser navigation with fallback
+      const openWindow = () => {
+        // Create randomized target name to avoid browser caching issues
+        const randomTarget = '_blank_' + Math.random().toString(36).substring(2, 15);
+        const newWindow = window.open(url, randomTarget);
         
+        if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+          console.log("Method 1 failed, trying method 2");
+          return false;
+        }
+        return true;
+      };
+      
+      // Method 2: Link creation with simulation of user interaction
+      const clickLink = () => {
         try {
-          // Create a temporary link and programmatically click it
+          // Remove any existing temporary links
+          const oldLinks = document.querySelectorAll('.temp-redirect-link');
+          oldLinks.forEach(link => {
+            if (document.body.contains(link)) {
+              document.body.removeChild(link);
+            }
+          });
+          
+          // Create a new link element with unique class for cleanup
           const link = document.createElement('a');
           link.href = url;
           link.target = '_blank';
           link.rel = 'noopener noreferrer';
-          link.style.display = 'none';
+          link.className = 'temp-redirect-link';
+          link.style.position = 'absolute';
+          link.style.opacity = '0';
+          link.style.pointerEvents = 'none';
+          link.textContent = 'Redirect';
+          link.setAttribute('data-href', url); // Store URL for debugging
+          
+          // Attach to body
           document.body.appendChild(link);
+          
+          // Simulate user click
           link.click();
           
-          // Clean up the temporary element
+          // Clean up after a delay
           setTimeout(() => {
             if (document.body.contains(link)) {
               document.body.removeChild(link);
             }
-          }, 100);
+          }, 1000);
+          
+          return true;
         } catch (e) {
-          console.error("All redirect attempts failed:", e);
+          console.error("Method 2 failed:", e);
+          return false;
+        }
+      };
+      
+      // Method 3: Location change with return (last resort)
+      const locationChange = () => {
+        try {
+          // This is a last resort because it navigates away from the current page
+          const backupUrl = window.location.href;
+          window.location.href = url;
+          
+          // Set a timeout to return to the original page
+          setTimeout(() => {
+            window.location.href = backupUrl;
+          }, 100);
+          
+          return true;
+        } catch (e) {
+          console.error("All methods failed:", e);
+          return false;
+        }
+      };
+      
+      // Try each method in sequence
+      if (!openWindow()) {
+        if (!clickLink()) {
+          // Only use location change as absolute last resort - generally shouldn't get here
+          // locationChange();
         }
       }
-    }, 100); // Small delay to ensure UI updates first
-    
-    setIsOpen(false);
+    }, 100);
   };
 
   // Close dropdown when clicking outside
