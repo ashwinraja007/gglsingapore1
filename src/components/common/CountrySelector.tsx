@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Globe } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -64,7 +63,7 @@ const CountrySelector = () => {
     return a.priority - b.priority;
   });
 
-  // Completely redesigned redirect function with reliable redirection strategy
+  // Simplified and robust redirect function
   const handleCountrySelect = (country: CountryData) => {
     // Ensure clean url with protocol
     let url = country.website;
@@ -77,89 +76,29 @@ const CountrySelector = () => {
     // Close dropdown first
     setIsOpen(false);
     
-    // Execute redirect with a slight delay after UI updates
+    // Create a hidden anchor element for reliable redirection
+    const link = document.createElement('a');
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    
+    // Use both click() and dispatchEvent for maximum browser compatibility
+    try {
+      // Modern approach
+      link.click();
+    } catch (e) {
+      // Fallback for older browsers
+      const event = document.createEvent('MouseEvents');
+      event.initEvent('click', true, true);
+      link.dispatchEvent(event);
+    }
+    
+    // Clean up the DOM
     setTimeout(() => {
-      // Method 1: Direct browser navigation with fallback
-      const openWindow = () => {
-        // Create randomized target name to avoid browser caching issues
-        const randomTarget = '_blank_' + Math.random().toString(36).substring(2, 15);
-        const newWindow = window.open(url, randomTarget);
-        
-        if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-          console.log("Method 1 failed, trying method 2");
-          return false;
-        }
-        return true;
-      };
-      
-      // Method 2: Link creation with simulation of user interaction
-      const clickLink = () => {
-        try {
-          // Remove any existing temporary links
-          const oldLinks = document.querySelectorAll('.temp-redirect-link');
-          oldLinks.forEach(link => {
-            if (document.body.contains(link)) {
-              document.body.removeChild(link);
-            }
-          });
-          
-          // Create a new link element with unique class for cleanup
-          const link = document.createElement('a');
-          link.href = url;
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
-          link.className = 'temp-redirect-link';
-          link.style.position = 'absolute';
-          link.style.opacity = '0';
-          link.style.pointerEvents = 'none';
-          link.textContent = 'Redirect';
-          link.setAttribute('data-href', url); // Store URL for debugging
-          
-          // Attach to body
-          document.body.appendChild(link);
-          
-          // Simulate user click
-          link.click();
-          
-          // Clean up after a delay
-          setTimeout(() => {
-            if (document.body.contains(link)) {
-              document.body.removeChild(link);
-            }
-          }, 1000);
-          
-          return true;
-        } catch (e) {
-          console.error("Method 2 failed:", e);
-          return false;
-        }
-      };
-      
-      // Method 3: Location change with return (last resort)
-      const locationChange = () => {
-        try {
-          // This is a last resort because it navigates away from the current page
-          const backupUrl = window.location.href;
-          window.location.href = url;
-          
-          // Set a timeout to return to the original page
-          setTimeout(() => {
-            window.location.href = backupUrl;
-          }, 100);
-          
-          return true;
-        } catch (e) {
-          console.error("All methods failed:", e);
-          return false;
-        }
-      };
-      
-      // Try each method in sequence
-      if (!openWindow()) {
-        if (!clickLink()) {
-          // Only use location change as absolute last resort - generally shouldn't get here
-          // locationChange();
-        }
+      if (document.body.contains(link)) {
+        document.body.removeChild(link);
       }
     }, 100);
   };
