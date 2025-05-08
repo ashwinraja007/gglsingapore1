@@ -65,7 +65,7 @@ const CountrySelector = () => {
     return a.priority - b.priority;
   });
 
-  // Handle redirect with improved reliability
+  // Fixed handling for redirection with stronger implementation
   const handleCountrySelect = (country: CountryData) => {
     setSelectedRedirectCountry(country);
     
@@ -75,20 +75,38 @@ const CountrySelector = () => {
       url = 'https://' + url;
     }
     
-    // Create and click a temporary anchor element for more reliable navigation
-    try {
-      const link = document.createElement('a');
-      link.href = url;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (e) {
-      console.error("Redirect failed:", e);
-      // Fallback to window.open
-      window.open(url, '_blank', 'noopener,noreferrer');
-    }
+    console.log("Redirecting to:", url); // Debug log
+    
+    // Use setTimeout to ensure the redirect happens after the dropdown closes
+    setTimeout(() => {
+      // Direct window.open approach as the primary method
+      const newWindow = window.open(url, '_blank');
+      
+      // If window.open is blocked, try alternative approach
+      if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+        console.log("Primary redirect failed, trying alternative method");
+        
+        try {
+          // Create a temporary link and programmatically click it
+          const link = document.createElement('a');
+          link.href = url;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.style.display = 'none';
+          document.body.appendChild(link);
+          link.click();
+          
+          // Clean up the temporary element
+          setTimeout(() => {
+            if (document.body.contains(link)) {
+              document.body.removeChild(link);
+            }
+          }, 100);
+        } catch (e) {
+          console.error("All redirect attempts failed:", e);
+        }
+      }
+    }, 100); // Small delay to ensure UI updates first
     
     setIsOpen(false);
   };
@@ -129,18 +147,18 @@ const CountrySelector = () => {
         <DropdownMenuContent 
           align="center" 
           className="w-[280px] border border-amber-100 bg-white p-2 rounded-lg shadow-lg"
-          onPointerDownOutside={(e) => e.preventDefault()}
         >
           <ScrollArea className="h-[300px] w-full pr-2">
             <div className="grid grid-cols-1 gap-1 p-1">
               {sortedCountries.map((country) => (
-                <DropdownMenuItem
+                <div
                   key={country.country + country.company}
-                  onSelect={(e) => {
-                    e.preventDefault(); // Prevent closing on select
+                  className="cursor-pointer hover:bg-amber-50 p-2 rounded-md flex items-center gap-2 transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
                     handleCountrySelect(country);
                   }}
-                  className="cursor-pointer hover:bg-amber-50 p-2 rounded-md flex items-center gap-2 transition-colors"
                 >
                   <motion.div
                     whileHover={{ scale: 1.05 }}
@@ -164,7 +182,7 @@ const CountrySelector = () => {
                       <div className="text-xs text-gray-500">{country.company}</div>
                     </div>
                   </motion.div>
-                </DropdownMenuItem>
+                </div>
               ))}
             </div>
           </ScrollArea>
