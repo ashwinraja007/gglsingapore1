@@ -34,7 +34,7 @@ const countries: CountryData[] = [
   { country: "SAUDI ARABIA", company: "AMASS", website: "https://amassmiddleeast.com/", priority: 13, flag: "/sa.svg" },
   { country: "UAE", company: "AMASS", website: "https://amassmiddleeast.com/", priority: 14, flag: "/ae.svg" },
   { country: "USA", company: "GGL", website: "https://gglusa.us/", priority: 15, flag: "/us.svg" },
-  { country: "UK", company: "MOLTECH", website: "https://moltech.uk/", priority: 16, flag: "/gb.svg" }
+  { country: "UK", company: "MOLTECH", website: "https://google.com/", priority: 16, flag: "/gb.svg" }
 ];
 
 // Find Australia in the countries list
