@@ -65,10 +65,31 @@ const CountrySelector = () => {
     return a.priority - b.priority;
   });
 
-  // Handle redirect
+  // Handle redirect with improved reliability
   const handleCountrySelect = (country: CountryData) => {
     setSelectedRedirectCountry(country);
-    window.open(country.website, '_blank', 'noopener,noreferrer');
+    
+    // Make sure the URL is properly formatted
+    let url = country.website;
+    if (url && !url.startsWith('http://') && !url.startsWith('https://')) {
+      url = 'https://' + url;
+    }
+    
+    // Create and click a temporary anchor element for more reliable navigation
+    try {
+      const link = document.createElement('a');
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (e) {
+      console.error("Redirect failed:", e);
+      // Fallback to window.open
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+    
     setIsOpen(false);
   };
 
@@ -114,7 +135,7 @@ const CountrySelector = () => {
             <div className="grid grid-cols-1 gap-1 p-1">
               {sortedCountries.map((country) => (
                 <DropdownMenuItem
-                  key={country.country}
+                  key={country.country + country.company}
                   onSelect={(e) => {
                     e.preventDefault(); // Prevent closing on select
                     handleCountrySelect(country);
