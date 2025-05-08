@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Globe } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -49,8 +50,6 @@ const getAustraliaFlag = () => {
 
 const CountrySelector = () => {
   const [isOpen, setIsOpen] = useState(false);
-  // This state is only used for tracking the selected country for redirection
-  const [selectedRedirectCountry, setSelectedRedirectCountry] = useState<CountryData>(findAustraliaCountry());
   const dropdownRef = useRef<HTMLDivElement>(null);
   
   // The Australia flag that always shows in the button
@@ -63,9 +62,9 @@ const CountrySelector = () => {
     return a.priority - b.priority;
   });
 
-  // Simplified and robust redirect function
+  // Improved and more reliable redirect function with multiple fallbacks
   const handleCountrySelect = (country: CountryData) => {
-    // Ensure clean url with protocol
+    // Format URL properly
     let url = country.website;
     if (url && !url.startsWith('http://') && !url.startsWith('https://')) {
       url = 'https://' + url;
@@ -73,34 +72,53 @@ const CountrySelector = () => {
     
     console.log("Redirecting to:", url);
     
-    // Close dropdown first
+    // Close dropdown first to improve user experience
     setIsOpen(false);
     
-    // Create a hidden anchor element for reliable redirection
-    const link = document.createElement('a');
-    link.href = url;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.style.display = 'none';
-    document.body.appendChild(link);
-    
-    // Use both click() and dispatchEvent for maximum browser compatibility
-    try {
-      // Modern approach
-      link.click();
-    } catch (e) {
-      // Fallback for older browsers
-      const event = document.createEvent('MouseEvents');
-      event.initEvent('click', true, true);
-      link.dispatchEvent(event);
-    }
-    
-    // Clean up the DOM
+    // Wait a moment after closing dropdown to ensure UI updates before redirect
     setTimeout(() => {
-      if (document.body.contains(link)) {
-        document.body.removeChild(link);
+      // Method 1: Try window.open first (most reliable for new tabs)
+      try {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+        // If window.open succeeded and wasn't blocked, we're done
+        if (newWindow && !newWindow.closed) {
+          return;
+        }
+      } catch (e) {
+        console.log("window.open failed, trying alternative method");
       }
-    }, 100);
+      
+      // Method 2: Create a hidden link and programmatically click it
+      try {
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        
+        // Use a MouseEvent to simulate a more natural click
+        const clickEvent = new MouseEvent('click', {
+          bubbles: true,
+          cancelable: true,
+          view: window
+        });
+        link.dispatchEvent(clickEvent);
+        
+        // Cleanup the DOM
+        setTimeout(() => {
+          if (document.body.contains(link)) {
+            document.body.removeChild(link);
+          }
+        }, 100);
+      } catch (e) {
+        console.log("Link click simulation failed, using location as last resort");
+        
+        // Method 3: Last resort - direct location change
+        // This is less ideal as it navigates away from the current page
+        window.location.href = url;
+      }
+    }, 50); // Small delay to ensure the dropdown closes first
   };
 
   // Close dropdown when clicking outside
@@ -148,7 +166,7 @@ const CountrySelector = () => {
                   className="cursor-pointer hover:bg-amber-50 p-2 rounded-md flex items-center gap-2 transition-colors"
                   onClick={(e) => {
                     e.preventDefault();
-                    e.stopPropagation();
+                    e.stopPropagation(); // Prevent event bubbling that could interfere with redirection
                     handleCountrySelect(country);
                   }}
                 >
