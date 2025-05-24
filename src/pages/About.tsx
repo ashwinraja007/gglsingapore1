@@ -51,7 +51,7 @@ const About = () => {
               }} viewport={{
                 once: true
               }} className="space-y-6">
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                  <h3 className="font-semibold text-gray-800 mb-4 text-3xl">
                     Our Story
                   </h3>
                   <p className="text-gray-700 text-lg leading-relaxed">At GGL, we are proud to be one of Singapore's leading logistics companies. We offer specialized divisions in warehousing, forwarding (air and ocean), and transportation. Our mission is to deliver comprehensive end-to-end solutions in global freight forwarding, managed through a trusted network of partners who excel in all logistics segments.</p>
