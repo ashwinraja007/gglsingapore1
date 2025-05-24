@@ -1,9 +1,7 @@
-
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Linkedin, Facebook } from "lucide-react";
 import { useState, useEffect } from "react";
 import CountrySelector from "../common/CountrySelector";
-
 export const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -31,7 +29,6 @@ export const Header = () => {
     setIsMobileMenuOpen(false);
     window.scrollTo(0, 0);
   };
-  
   return <header className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white py-2 shadow-md' : 'bg-white/95 py-2'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
@@ -67,24 +64,7 @@ export const Header = () => {
               Contact Us
             </button>
             
-            <div className="flex items-center gap-2 ml-2 border-l pl-2 border-gray-200">
-              <a 
-                href="https://www.linkedin.com/company/gglus/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-brand-gold transition-colors"
-              >
-                <Linkedin size={18} />
-              </a>
-              <a 
-                href="https://www.facebook.com/gglusa" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-brand-gold transition-colors"
-              >
-                <Facebook size={18} />
-              </a>
-            </div>
+            
             
             <CountrySelector />
             <button onClick={() => handleNavClick("/contact")} className="px-5 py-2 bg-[#F6B100] text-black rounded-full hover:bg-[#FFCC33] transition font-medium">
@@ -113,20 +93,10 @@ export const Header = () => {
             </button>
             
             <div className="flex items-center gap-4 py-2">
-              <a 
-                href="https://www.linkedin.com/company/gglus/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-brand-gold transition-colors"
-              >
+              <a href="https://www.linkedin.com/company/gglus/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-brand-gold transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a 
-                href="https://www.facebook.com/gglusa" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-brand-gold transition-colors"
-              >
+              <a href="https://www.facebook.com/gglusa" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-brand-gold transition-colors">
                 <Facebook size={20} />
               </a>
             </div>
