@@ -90,19 +90,19 @@ At GGL, we are proud to be one of Singapore's leading logistics companies. We of
             <div className="space-y-3 text-gray-600">
               <div className="flex items-start gap-2">
                 <MapPin size={18} className="text-brand-gold mt-1 flex-shrink-0" />
-                <p>Suite 5, 7-9 Mallet Road, Tullamarine, Victoria, 3043</p>
+                <p>GGL (Singapore) Pte Ltd.
+Blk 511 Kampong Bahru Road
+#03-01 Keppel Distripark
+Singapore - 099447</p>
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={18} className="text-brand-gold flex-shrink-0" />
-                <p>+61 432254969</p>
+                <p>+ 65 69080838</p>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone size={18} className="text-brand-gold flex-shrink-0" />
-                <p>+61 388205157</p>
-              </div>
+              
               <div className="flex items-center gap-2">
                 <Mail size={18} className="text-brand-gold flex-shrink-0" />
-                <p>info@gglaustralia.com</p>
+                <p>june@ggl.sg</p>
               </div>
             </div>
           </motion.div>
