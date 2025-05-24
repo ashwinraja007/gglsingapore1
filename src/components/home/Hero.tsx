@@ -174,7 +174,7 @@ export const Hero = () => {
         zIndex: activeSlide === index ? 1 : 0
       }}>
             <img src={image} alt={`Slide ${index + 1}`} className="w-full h-full object-cover object-center" loading={index === 0 ? "eager" : "lazy"} />
-            <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/90 via-brand-navy/70 to-brand-navy/90" />
+            <div className="absolute inset-0" />
           </motion.div>)}
       </div>
 
