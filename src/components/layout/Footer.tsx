@@ -31,9 +31,8 @@ export const Footer = () => {
               <img src="/lovable-uploads/GGL.png" alt="GGL Logo" className="h-14 w-auto object-contain" loading="lazy" />
               <img src="/1GlobalEnterprises.png" alt="1 Global Enterprises Logo" className="h-10 w-auto object-contain mt-2" />
             </div>
-            <p className="text-sm md:text-base text-gray-600 max-w-xs text-justify">
-              GGL is a global freight forwarder offering premium logistics services, backed by a team with over 25 years of expertise in international and domestic transportation.
-            </p>
+            <p className="text-sm md:text-base text-gray-600 max-w-xs text-left">
+At GGL, we are proud to be one of Singapore's leading logistics companies. We offer specialized divisions in warehousing, forwarding (air and ocean), and transportation. Our mission is to deliver comprehensive end-to-end solutions in global freight forwarding, managed through a trusted network of partners who excel in all logistics segments.</p>
             <div className="flex space-x-3 mt-4">
               <motion.a href="https://www.facebook.com/gglusa" target="_blank" className="bg-brand-navy text-white p-2 rounded-full hover:bg-brand-gold transition" whileHover={{
               y: -3,
