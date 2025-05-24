@@ -376,7 +376,13 @@ const Sidebar: React.FC<SidebarProps> = ({
                             <Button 
                               variant="ghost" 
                               className="w-full justify-start text-sm p-2 h-auto rounded-md bg-white hover:bg-amber-50 border border-gray-100 hover:border-amber-200 transition-all shadow-sm" 
-                              onClick={() => navigateToLocation(city.lat, city.lng, city)}
+                              onClick={() => {
+                                navigateToLocation(city.lat, city.lng, city);
+                                // Force rerender on mobile
+                                if (isMobile) {
+                                  setTimeout(() => setSelectedLocation({...city}), 50);
+                                }
+                              }}
                             >
                               <MapPin className="w-4 h-4 mr-2 text-amber-600 flex-shrink-0" />
                               <span className="font-medium truncate">{city.name}</span>

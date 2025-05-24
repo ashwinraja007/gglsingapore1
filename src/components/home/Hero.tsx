@@ -1,19 +1,49 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Users, UserCircle, SearchCode, Ship, Box, ChevronDown, Globe, Menu, X } from "lucide-react";
+import { Users, UserCircle, SearchCode, Ship, Box, ChevronDown, Globe, Menu, X, Calendar, ExternalLink } from "lucide-react";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 export const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCustomerPortalOpen, setIsCustomerPortalOpen] = useState(false);
+  const [activeSlide, setActiveSlide] = useState(0);
   const isMobile = useIsMobile();
+  
+  // Image slider data
+  const sliderImages = [
+    "/homeimage.jpg",
+    "/lovable-uploads/transport.jpg",
+    "/lovable-uploads/ocean.jpg",
+    "/lovable-uploads/airfreight.jpg"
+  ];
+
   useEffect(() => {
     // Delay setting visibility for entrance animation
     const timer = setTimeout(() => setIsVisible(true), 300);
     return () => clearTimeout(timer);
   }, []);
+
+  // Auto-advance slider
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % sliderImages.length);
+    }, 5000); // Change slide every 5 seconds
+    
+    return () => clearInterval(interval);
+  }, [sliderImages.length]);
 
   // Close mobile menu when screen size changes
   useEffect(() => {
@@ -25,36 +55,49 @@ export const Hero = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [isMobileMenuOpen]);
+  
   const portalLinks = [{
     icon: <Users className="w-5 h-5" />,
     title: "Customer Portal",
     description: "Access shipping dashboard",
-    url: "/customer-portal"
+    onClick: () => setIsCustomerPortalOpen(true)
   }, {
     icon: <UserCircle className="w-5 h-5" />,
     title: "Partner Portal",
     description: "Manage partnership",
-    url: "/partner-portal"
+    url: "https://www.globalconsol.com/",
+    external: true
   }, {
     icon: <SearchCode className="w-5 h-5" />,
     title: "Tracking",
     description: "Track your shipment",
-    url: "/tracking"
+    url: "https://www.marinetraffic.com/",
+    external: true
   }, {
     icon: <Ship className="w-5 h-5" />,
     title: "Sailing Schedule",
     description: "View schedules",
-    url: "/schedule"
+    url: "https://www.maersk.com/schedules/",
+    external: true
   }, {
-    icon: <Box className="w-5 h-5" />,
-    title: "Container Sizes",
-    description: "View dimensions",
-    url: "/containers"
+    icon: <Calendar className="w-5 h-5" />,
+    title: "Online Quote",
+    description: "Request a quote",
+    url: "/contact",
+    external: false
   }];
+  
   return <section className="relative min-h-[75vh] md:min-h-[90vh] overflow-hidden pt-8 md:pt-16">
       {/* Mobile Navigation Menu Button */}
       <div className="fixed top-4 left-4 z-50 md:hidden">
-        
+        <Button
+          size="icon"
+          variant="ghost"
+          className="rounded-full bg-white/90 text-brand-navy shadow-md"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </Button>
       </div>
 
       {/* Mobile Navigation Drawer */}
@@ -86,13 +129,47 @@ export const Hero = () => {
             }} transition={{
               delay: index * 0.1
             }} className="border-b border-white/20 pb-3">
-                    <Link to={link.url} className="flex items-center gap-3 text-white" onClick={() => setIsMobileMenuOpen(false)}>
-                      <span className="text-brand-gold">{link.icon}</span>
-                      <div>
-                        <div className="font-medium">{link.title}</div>
-                        <div className="text-xs text-white/70">{link.description}</div>
-                      </div>
-                    </Link>
+                    {link.external ? (
+                      <a 
+                        href={link.url} 
+                        className="flex items-center gap-3 text-white" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <span className="text-brand-gold">{link.icon}</span>
+                        <div>
+                          <div className="font-medium">{link.title}</div>
+                          <div className="text-xs text-white/70">{link.description}</div>
+                        </div>
+                      </a>
+                    ) : link.onClick ? (
+                      <button 
+                        className="flex items-center gap-3 text-white w-full text-left" 
+                        onClick={() => {
+                          link.onClick();
+                          setIsMobileMenuOpen(false);
+                        }}
+                      >
+                        <span className="text-brand-gold">{link.icon}</span>
+                        <div>
+                          <div className="font-medium">{link.title}</div>
+                          <div className="text-xs text-white/70">{link.description}</div>
+                        </div>
+                      </button>
+                    ) : (
+                      <Link 
+                        to={link.url} 
+                        className="flex items-center gap-3 text-white" 
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <span className="text-brand-gold">{link.icon}</span>
+                        <div>
+                          <div className="font-medium">{link.title}</div>
+                          <div className="text-xs text-white/70">{link.description}</div>
+                        </div>
+                      </Link>
+                    )}
                   </motion.div>)}
               </div>
               
@@ -125,70 +202,141 @@ export const Hero = () => {
           </motion.div>}
       </AnimatePresence>
 
-      {/* Background image with parallax effect */}
-      <motion.div initial={{
-      scale: 1.1,
-      opacity: 0.8
-    }} animate={{
-      scale: 1,
-      opacity: 1
-    }} transition={{
-      duration: 1.8,
-      ease: "easeOut"
-    }} className="absolute inset-0">
-        <img src="homeimage.jpg" alt="Hero background" className="w-full h-full object-cover object-center" loading="eager" />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/90 via-brand-navy/70 to-brand-navy/90" />
-      </motion.div>
-
-      {/* Main content - left aligned */}
-      <div className="absolute inset-0 flex items-center my-[3px]">
-        
+      {/* Background image with parallax effect - now converted to slider */}
+      <div className="absolute inset-0 overflow-hidden">
+        {sliderImages.map((image, index) => (
+          <motion.div 
+            key={index} 
+            initial={{ opacity: 0 }}
+            animate={{ 
+              opacity: activeSlide === index ? 1 : 0,
+              scale: activeSlide === index ? 1 : 1.1 
+            }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            className="absolute inset-0"
+            style={{ zIndex: activeSlide === index ? 1 : 0 }}
+          >
+            <img 
+              src={image} 
+              alt={`Slide ${index + 1}`} 
+              className="w-full h-full object-cover object-center" 
+              loading={index === 0 ? "eager" : "lazy"} 
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/90 via-brand-navy/70 to-brand-navy/90" />
+          </motion.div>
+        ))}
       </div>
 
-      {/* MOBILE ONLY: Quick Access Button */}
-      <motion.div initial={{
-      opacity: 0,
-      y: 20
-    }} animate={isVisible ? {
-      opacity: 1,
-      y: 0
-    } : {}} transition={{
-      duration: 0.8,
-      delay: 1.3
-    }} className="container mx-auto px-4 sm:px-6 absolute bottom-8 left-0 left-0 z-10 md:hidden">
-        <AnimatePresence>
-          {isMenuOpen && <motion.div initial={{
-          opacity: 0,
-          height: 0
-        }} animate={{
-          opacity: 1,
-          height: 'auto'
-        }} exit={{
-          opacity: 0,
-          height: 0
-        }} transition={{
-          duration: 0.3
-        }} className="space-y-2 mt-2 mb-4 overflow-hidden bg-brand-navy/80 backdrop-blur-md rounded-lg border border-brand-gold/30 shadow-lg">
-              {portalLinks.map((link, index) => <motion.div key={index} initial={{
-            opacity: 0,
-            x: -20
-          }} animate={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            delay: index * 0.07
-          }} className="hover:bg-white/15 transition-colors">
-                  <Link to={link.url} className="w-full p-4 flex items-center space-x-4 text-white">
-                    <span className="text-brand-gold bg-white/10 p-2 rounded-full">{link.icon}</span>
-                    <div className="text-left">
-                      <div className="font-medium">{link.title}</div>
-                      <div className="text-xs text-white/80">{link.description}</div>
-                    </div>
-                  </Link>
-                </motion.div>)}
-            </motion.div>}
-        </AnimatePresence>
-      </motion.div>
+      {/* Main content - portals bar at bottom */}
+      <div className="absolute bottom-8 left-0 right-0 z-10 px-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="max-w-7xl mx-auto"
+        >
+          <div className="bg-brand-navy/80 backdrop-blur-md rounded-xl p-4 border border-brand-gold/20 shadow-xl">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+              {portalLinks.map((link, index) => (
+                <div key={index} className="flex flex-col items-center">
+                  {link.external ? (
+                    <a 
+                      href={link.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full"
+                    >
+                      <Button 
+                        variant="gold" 
+                        className="w-full h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm bg-brand-gold text-brand-navy shadow-gold-glow"
+                      >
+                        {link.icon}
+                        <span className="font-medium">{link.title}</span>
+                      </Button>
+                    </a>
+                  ) : link.onClick ? (
+                    <Button 
+                      variant="gold" 
+                      className="w-full h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm bg-brand-gold text-brand-navy shadow-gold-glow"
+                      onClick={link.onClick}
+                    >
+                      {link.icon}
+                      <span className="font-medium">{link.title}</span>
+                    </Button>
+                  ) : (
+                    <Link to={link.url} className="w-full">
+                      <Button 
+                        variant="gold" 
+                        className="w-full h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm bg-brand-gold text-brand-navy shadow-gold-glow"
+                      >
+                        {link.icon}
+                        <span className="font-medium">{link.title}</span>
+                      </Button>
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Customer Portal Dialog */}
+      <Dialog open={isCustomerPortalOpen} onOpenChange={setIsCustomerPortalOpen}>
+        <DialogContent className="sm:max-w-[600px] bg-white">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold text-brand-navy">Customer Portal</DialogTitle>
+          </DialogHeader>
+          
+          <div className="grid gap-6 py-4">
+            <div className="space-y-4">
+              <h3 className="font-medium text-gray-800">Tutorial Videos</h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="border rounded-lg overflow-hidden">
+                  <AspectRatio ratio={16/9}>
+                    <video controls className="w-full h-full object-cover">
+                      <source src="/video-placeholder.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </AspectRatio>
+                  <div className="p-2 bg-gray-50 text-sm font-medium">Getting Started</div>
+                </div>
+                
+                <div className="border rounded-lg overflow-hidden">
+                  <AspectRatio ratio={16/9}>
+                    <video controls className="w-full h-full object-cover">
+                      <source src="/video-placeholder-2.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </AspectRatio>
+                  <div className="p-2 bg-gray-50 text-sm font-medium">Advanced Features</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <DialogFooter className="flex flex-col sm:flex-row gap-2">
+            <a 
+              href="https://customer-portal.ggl.sg" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-full sm:w-auto"
+            >
+              <Button variant="gold" className="w-full flex items-center gap-2">
+                Login <ExternalLink className="h-4 w-4" />
+              </Button>
+            </a>
+            <Button 
+              variant="outline" 
+              onClick={() => setIsCustomerPortalOpen(false)} 
+              className="w-full sm:w-auto"
+            >
+              Close
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </section>;
 };
 export default Hero;

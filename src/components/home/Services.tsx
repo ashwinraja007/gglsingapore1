@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Truck, Package, Anchor, Droplets } from "lucide-react";
+import { ArrowRight, Truck, Package, Anchor, Droplets, Warehouse } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { useEffect } from "react";
@@ -16,14 +16,14 @@ const EnhancedServiceCard = ({ image, title, description, icon, link }: {
   // Choose the appropriate image based on service title
   const getServiceImage = () => {
     switch(title) {
-      case "Air Freight":
+      case "AIR FREIGHT":
         return "/airfreight2.jpg";
-      case "Ocean Freight":
+      case "OCEAN FREIGHT":
         return "/lovable-uploads/oceanfrieght.jpg";
-      case "Customs Clearance":
-        return "/lovable-uploads/cc.jpg";
-      case "Liquid Transportation":
-        return "/lovable-uploads/liquid.jpg";
+      case "TRANSPORTATION AND DISTRIBUTION":
+        return "/lovable-uploads/transport.jpg";
+      case "WAREHOUSING":
+        return "/lovable-uploads/warehouse.jpg";
       default:
         return image;
     }
@@ -37,7 +37,7 @@ const EnhancedServiceCard = ({ image, title, description, icon, link }: {
       className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl border border-gray-100"
     >
       <Link to={link} className="block h-full" onClick={() => window.scrollTo(0, 0)}> 
-        <div className="h-44 sm:h-48 md:h-40 overflow-hidden">
+        <div className="h-56 sm:h-64 md:h-52 overflow-hidden">
           <AspectRatio ratio={16/9} className="h-full">
             <img 
               src={getServiceImage()} 
@@ -54,8 +54,9 @@ const EnhancedServiceCard = ({ image, title, description, icon, link }: {
             <h3 className="text-lg font-bold text-brand-navy">{title}</h3>
           </div>
           
-          <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+          <p className="text-sm text-gray-600 mb-4">
             {description}
+            <span className="text-brand-gold ml-1">Read more...</span>
           </p>
           
           <div className="inline-flex items-center text-brand-gold font-medium text-sm group">
@@ -77,32 +78,32 @@ const EnhancedServiceCard = ({ image, title, description, icon, link }: {
 export const Services = () => {
   const services = [
     {
-      image: "/lovable-uploads/airfreight.jpg",
-      title: "Air Freight",
-      description: "Tailored Air Freight Solutions to Meet Your Unique Requirements. We offer flexible air freight solutions for time-sensitive documents or large-scale cargo.",
-      icon: <Package size={10} />,
-      link: "/services/air-freight"
-    },
-    {
-      image: "/lovable-uploads/ocean.jpg",
-      title: "Ocean Freight",
-      description: "Connecting you globally with comprehensive ocean freight services. We offer both LCL for smaller shipments and FCL for dedicated container needs.",
+      image: "/lovable-uploads/oceanfrieght.jpg",
+      title: "OCEAN FREIGHT",
+      description: "GGL's dedicated ocean freight department specialize in the complete range freight management services for LCL and FCL loads, supported thru a well established and reliable partner network around the world, for efficient collection, storage & delivery from shippers do",
       icon: <Anchor size={20} />,
       link: "/services/ocean-freight"
     },
     {
-      image: "/lovable-uploads/cc.jpg",
-      title: "Customs Clearance",
-      description: "Expert customs clearance services ensuring your shipments move smoothly across borders with accurate documentation and regulatory compliance.",
-      icon: <Truck size={20} />,
-      link: "/services/customs-clearance"
+      image: "/lovable-uploads/airfreight.jpg",
+      title: "AIR FREIGHT",
+      description: "At GGL, we provide a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams offer seamless air import, export, and express options, all on a convenient door-to-door basis. GGL stands out with competitive rat",
+      icon: <Package size={20} />,
+      link: "/services/air-freight"
     },
     {
-      image: "/lovable-uploads/liquid.jpg",
-      title: "Liquid Transportation",
-      description: "Specialized solutions for transporting liquids safely and efficiently, utilizing ISO tanks, flexitanks, and specialized tankers managed by expert teams.",
-      icon: <Droplets size={20} />,
-      link: "/services/liquid-transportation"
+      image: "/lovable-uploads/transport.jpg",
+      title: "TRANSPORTATION AND DISTRIBUTION",
+      description: "GGL boasts a dedicated fleet of vehicles to ensure timely domestic distribution and deliveries. Our efficient operational infrastructure provides our clients with high productivity, frequent services, and fast, reliable distribution operations. GGL is committed to delivering e",
+      icon: <Truck size={20} />,
+      link: "/services/transportation"
+    },
+    {
+      image: "/lovable-uploads/warehouse.jpg",
+      title: "WAREHOUSING",
+      description: "GGL is a premier supply chain solutions provider in Singapore, addressing the full spectrum of logistics needs for our clients. We facilitate the movement of goods from suppliers to manufacturers (for parts and components), from manufacturers and brand owners to resellers and",
+      icon: <Warehouse size={20} />,
+      link: "/services/warehousing"
     }
   ];
 
@@ -144,7 +145,7 @@ export const Services = () => {
           </p>
         </motion.div>
         
-        <motion.div variants={containerVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div variants={containerVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {services.map((service, index) => (
             <motion.div key={index} variants={itemVariants} transition={{ duration: 0.5, delay: index * 0.1 }}>
               <EnhancedServiceCard 

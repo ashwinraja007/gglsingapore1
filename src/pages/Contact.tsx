@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -7,10 +8,16 @@ import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaFacebookF } from 'react-icons/fa';
-import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, Globe } from 'lucide-react';
+import { useIsMobile } from "@/hooks/use-mobile";
+import MapContainer from "@/components/MapContainer";
+import Sidebar from "@/components/Sidebar";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Contact = () => {
   const { register, handleSubmit } = useForm();
+  const isMobile = useIsMobile();
+  const [activeTab, setActiveTab] = useState("form");
 
   const onSubmit = (data: any) => {
     console.log(data);
@@ -83,6 +90,8 @@ const Contact = () => {
                     <div className="flex gap-4">
                       <motion.a
                         href="https://www.linkedin.com/company/gglus/" 
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ y: -5 }}
                         className="bg-gray-100 p-3 rounded-full text-gray-600 hover:bg-blue-600 hover:text-white transition-colors"
                       >
@@ -91,6 +100,8 @@ const Contact = () => {
 
                       <motion.a
                         href="https://www.facebook.com/gglusa" 
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ y: -5 }}
                         className="bg-gray-100 p-3 rounded-full text-gray-600 hover:bg-blue-600 hover:text-white transition-colors"
                       >
@@ -138,6 +149,66 @@ const Contact = () => {
                 </form>
               </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* Global Presence Section with Map and Sidebar */}
+        <section className="py-10 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-10"
+            >
+              <h2 className="text-3xl font-bold text-gray-800 flex items-center justify-center gap-3">
+                <Globe className="text-blue-600" />
+                Global Presence
+              </h2>
+              <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
+                Find our offices worldwide and reach out to our local teams
+              </p>
+            </motion.div>
+
+            {/* Mobile tabs for switching between map and locations */}
+            {isMobile ? (
+              <Tabs
+                defaultValue="map"
+                value={activeTab}
+                onValueChange={setActiveTab}
+                className="w-full mb-6"
+              >
+                <div className="flex justify-center mb-4">
+                  <TabsList>
+                    <TabsTrigger value="map" className="px-6">Map</TabsTrigger>
+                    <TabsTrigger value="locations" className="px-6">Locations</TabsTrigger>
+                  </TabsList>
+                </div>
+                
+                <TabsContent value="map" className="mt-0">
+                  <div className="h-[60vh] w-full">
+                    <MapContainer />
+                  </div>
+                </TabsContent>
+                
+                <TabsContent value="locations" className="mt-0">
+                  <div className="h-[60vh] w-full overflow-auto">
+                    <Sidebar isOpen={true} onClose={() => {}} />
+                  </div>
+                </TabsContent>
+              </Tabs>
+            ) : (
+              // Desktop view: Map and sidebar side by side
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="lg:col-span-2 rounded-xl overflow-hidden shadow-lg">
+                  <MapContainer />
+                </div>
+                <div className="lg:col-span-1">
+                  <Sidebar isOpen={true} onClose={() => {}} />
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
