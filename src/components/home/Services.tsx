@@ -1,9 +1,11 @@
+
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Truck, Package, Anchor, Droplets, Warehouse } from "lucide-react";
+import { ArrowRight, Truck, Package, Anchor, Warehouse } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { useEffect } from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 const EnhancedServiceCard = ({
   image,
   title,
@@ -32,6 +34,7 @@ const EnhancedServiceCard = ({
         return image;
     }
   };
+
   return <motion.div whileHover={{
     y: -5
   }} whileTap={{
@@ -56,7 +59,6 @@ const EnhancedServiceCard = ({
           
           <p className="text-sm text-gray-600 mb-4">
             {description}
-            
           </p>
           
           <div className="inline-flex items-center text-brand-gold font-medium text-sm group">
@@ -75,32 +77,34 @@ const EnhancedServiceCard = ({
       </Link>
     </motion.div>;
 };
+
 export const Services = () => {
   const services = [{
     image: "/lovable-uploads/oceanfrieght.jpg",
     title: "OCEAN FREIGHT",
-    description: "GGL's dedicated ocean freight department specialize in the complete range freight management services for LCL and FCL loads, supported thru a well established and reliable partner network around the world, for efficient collection, storage & delivery from shippers do",
+    description: "GGL's dedicated ocean freight department specialize in the complete range freight management services for LCL and FCL loads, supported thru a well established and reliable partner network around the world, for efficient collection, storage & delivery from shippers door to door.",
     icon: <Anchor size={20} />,
     link: "/services/ocean-freight"
   }, {
     image: "/lovable-uploads/airfreight.jpg",
     title: "AIR FREIGHT",
-    description: "At GGL, we provide a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams offer seamless air import, export, and express options, all on a convenient door-to-door basis. GGL stands out with competitive rat",
+    description: "At GGL, we provide a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams offer seamless air import, export, and express options, all on a convenient door-to-door basis. GGL stands out with competitive rates.",
     icon: <Package size={20} />,
     link: "/services/air-freight"
   }, {
     image: "/lovable-uploads/transport.jpg",
     title: "TRANSPORTATION AND DISTRIBUTION",
-    description: "GGL boasts a dedicated fleet of vehicles to ensure timely domestic distribution and deliveries. Our efficient operational infrastructure provides our clients with high productivity, frequent services, and fast, reliable distribution operations. GGL is committed to delivering e",
+    description: "GGL boasts a dedicated fleet of vehicles to ensure timely domestic distribution and deliveries. Our efficient operational infrastructure provides our clients with high productivity, frequent services, and fast, reliable distribution operations. GGL is committed to delivering excellence.",
     icon: <Truck size={20} />,
     link: "/services/transportation"
   }, {
     image: "/lovable-uploads/warehouse.jpg",
     title: "WAREHOUSING",
-    description: "GGL is a premier supply chain solutions provider in Singapore, addressing the full spectrum of logistics needs for our clients. We facilitate the movement of goods from suppliers to manufacturers (for parts and components), from manufacturers and brand owners to resellers and",
+    description: "GGL is a premier supply chain solutions provider in Singapore, addressing the full spectrum of logistics needs for our clients. We facilitate the movement of goods from suppliers to manufacturers (for parts and components), from manufacturers and brand owners to resellers and distributors.",
     icon: <Warehouse size={20} />,
     link: "/services/warehousing"
   }];
+
   const containerVariants = {
     hidden: {
       opacity: 0
@@ -112,6 +116,7 @@ export const Services = () => {
       }
     }
   };
+
   const itemVariants = {
     hidden: {
       opacity: 0,
@@ -128,6 +133,7 @@ export const Services = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
+
   return <motion.section initial="hidden" whileInView="visible" viewport={{
     once: true,
     amount: 0.1
@@ -143,7 +149,7 @@ export const Services = () => {
           </p>
         </motion.div>
         
-        <motion.div variants={containerVariants} className="grid grid-cols-1 sm:grid-cols-4 gap-6">
+        <motion.div variants={containerVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => <motion.div key={index} variants={itemVariants} transition={{
           duration: 0.5,
           delay: index * 0.1
@@ -174,4 +180,5 @@ export const Services = () => {
       </div>
     </motion.section>;
 };
+
 export default Services;

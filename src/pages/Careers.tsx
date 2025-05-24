@@ -2,213 +2,232 @@
 import React from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Button } from "@/components/ui/button";
 import { motion } from 'framer-motion';
-
-// Job position component
-const JobPosition = ({ title, location, department, description }) => {
-  return (
-    <motion.div 
-      whileHover={{ y: -5 }}
-      className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100"
-    >
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-800 mb-2">{title}</h3>
-        <div className="flex flex-wrap text-sm text-gray-600 mb-4 gap-4">
-          <div className="flex items-center gap-1">
-            <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            <span>{location}</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            <span>{department}</span>
-          </div>
-        </div>
-        <p className="text-gray-600 mb-6 line-clamp-3">{description}</p>
-        <Button variant="outline" className="border-blue-500 text-blue-500 hover:bg-blue-50">
-          View Position
-        </Button>
-      </div>
-    </motion.div>
-  );
-};
+import { Users, TrendingUp, Heart, Globe, Award, Target } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Careers = () => {
-  const jobListings = [
+  const benefits = [
     {
-      id: 1,
+      icon: <Users className="h-6 w-6 text-brand-gold" />,
+      title: "Collaborative Culture",
+      description: "Work with passionate professionals in a supportive environment that values teamwork and innovation."
+    },
+    {
+      icon: <TrendingUp className="h-6 w-6 text-brand-gold" />,
+      title: "Career Growth",
+      description: "Advance your career with continuous learning opportunities and clear progression paths."
+    },
+    {
+      icon: <Heart className="h-6 w-6 text-brand-gold" />,
+      title: "Work-Life Balance",
+      description: "Enjoy flexible working arrangements and comprehensive benefits that support your well-being."
+    },
+    {
+      icon: <Globe className="h-6 w-6 text-brand-gold" />,
+      title: "Global Opportunities",
+      description: "Be part of an international network with opportunities to work across different markets."
+    },
+    {
+      icon: <Award className="h-6 w-6 text-brand-gold" />,
+      title: "Recognition",
+      description: "Your contributions are valued and recognized through various reward and recognition programs."
+    },
+    {
+      icon: <Target className="h-6 w-6 text-brand-gold" />,
+      title: "Meaningful Impact",
+      description: "Make a real difference in global trade and logistics, connecting businesses worldwide."
+    }
+  ];
+
+  const positions = [
+    {
       title: "Logistics Coordinator",
-      location: "Singapore",
       department: "Operations",
-      description: "We are seeking an experienced Logistics Coordinator to join our team in Singapore. The ideal candidate will be responsible for coordinating logistics operations, tracking shipments, and ensuring efficient delivery of goods to customers."
+      location: "Singapore",
+      type: "Full-time",
+      description: "Coordinate shipments and manage logistics operations to ensure smooth delivery processes."
     },
     {
-      id: 2,
+      title: "Customer Service Executive",
+      department: "Customer Relations",
+      location: "Singapore",
+      type: "Full-time",
+      description: "Provide exceptional customer service and support to our global client base."
+    },
+    {
       title: "Air Freight Specialist",
-      location: "Melbourne, Australia",
       department: "Air Freight",
-      description: "As an Air Freight Specialist, you will be responsible for managing air freight operations, coordinating with clients and carriers, and ensuring timely delivery of shipments. The ideal candidate should have excellent communication skills and experience in air freight logistics."
-    },
-    {
-      id: 3,
-      title: "Customer Service Representative",
       location: "Singapore",
-      department: "Customer Support",
-      description: "We are looking for a Customer Service Representative to join our Singapore office. The successful candidate will handle client inquiries, resolve issues, and ensure excellent customer experience. Strong communication skills and logistics knowledge are essential."
+      type: "Full-time",
+      description: "Manage air freight operations and coordinate with airlines and customs authorities."
     },
     {
-      id: 4,
-      title: "Warehouse Manager",
-      location: "Dubai, UAE",
+      title: "Warehouse Operations Manager",
       department: "Warehousing",
-      description: "Experienced Warehouse Manager needed to oversee daily operations, manage inventory, and lead a team of warehouse staff. The ideal candidate should have proven experience in logistics and warehouse management."
-    },
-    {
-      id: 5,
-      title: "Route Optimization Specialist",
-      location: "Bangkok, Thailand",
-      department: "Operations",
-      description: "Join our team as a Route Optimization Specialist to analyze transportation routes, identify efficiency improvements, and reduce delivery times and costs. Knowledge of route optimization software and logistics experience required."
+      location: "Singapore",
+      type: "Full-time",
+      description: "Oversee warehouse operations and ensure efficient storage and distribution processes."
     }
   ];
 
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-
+      
       <main className="flex-grow pt-20">
         {/* Hero Section */}
-        <section className="bg-blue-600 text-white py-16 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 opacity-90" />
-          <div className="absolute inset-0 opacity-10 bg-[url('/lovable-uploads/transport.jpg')] bg-center bg-cover" />
-          
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-3xl mx-auto text-center">
-              <motion.h1 
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="text-4xl md:text-5xl font-bold mb-6"
-              >
-                Join Our Team
-              </motion.h1>
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-xl text-blue-100 mb-8"
-              >
-                Discover opportunities to grow with a global leader in logistics
-              </motion.p>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                <Button size="lg" variant="gold" className="text-brand-navy shadow-lg">
-                  View Open Positions
-                </Button>
-              </motion.div>
-            </div>
+        <section className="bg-gradient-to-r from-brand-navy to-blue-700 text-white py-16">
+          <div className="container mx-auto px-4">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center max-w-3xl mx-auto"
+            >
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                Join Our Global Team
+              </h1>
+              <p className="text-xl mb-8 text-blue-100">
+                Build your career with one of Singapore's leading logistics companies. 
+                We're looking for passionate individuals to join our mission of connecting the world through exceptional logistics solutions.
+              </p>
+              <Button variant="gold" size="lg" className="font-semibold">
+                View Open Positions
+              </Button>
+            </motion.div>
           </div>
         </section>
 
-        {/* Why Join Us Section */}
+        {/* Why Join Us */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Join GGL?</h2>
-              <p className="text-gray-600">
-                At GGL, we offer more than just a job – we provide a career with opportunities for growth, 
-                learning, and making a global impact in the logistics industry.
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl font-bold text-brand-navy mb-4">Why Choose GGL?</h2>
+              <div className="w-24 h-1 bg-brand-gold mx-auto mb-6"></div>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                At GGL, we believe our people are our greatest asset. We foster an environment where talent thrives and careers flourish.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: "🌍",
-                  title: "Global Reach",
-                  description: "Work with a diverse international team and gain exposure to global logistics operations across continents."
-                },
-                {
-                  icon: "📈",
-                  title: "Career Growth",
-                  description: "We invest in our employees' development with training programs and clear advancement paths."
-                },
-                {
-                  icon: "🤝",
-                  title: "Collaborative Culture",
-                  description: "Join a supportive environment where teamwork and innovation are valued and rewarded."
-                },
-                {
-                  icon: "💡",
-                  title: "Innovation Focus",
-                  description: "Be part of a company that embraces technology and innovative solutions in logistics."
-                },
-                {
-                  icon: "🏆",
-                  title: "Recognition",
-                  description: "We celebrate achievements and recognize the contributions of our team members."
-                },
-                {
-                  icon: "❤️",
-                  title: "Work-Life Balance",
-                  description: "We understand the importance of balance and offer flexible work arrangements where possible."
-                }
-              ].map((benefit, index) => (
-                <motion.div 
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {benefits.map((benefit, index) => (
+                <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white p-6 rounded-lg shadow-md text-center"
                 >
-                  <div className="text-4xl mb-4">{benefit.icon}</div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">{benefit.title}</h3>
-                  <p className="text-gray-600">{benefit.description}</p>
+                  <Card className="h-full hover:shadow-lg transition-shadow border-l-4 border-brand-gold">
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-2">
+                        {benefit.icon}
+                        <CardTitle className="text-lg">{benefit.title}</CardTitle>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="text-gray-600">
+                        {benefit.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Current Openings */}
-        <section className="py-16 bg-white">
+        {/* Open Positions */}
+        <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Current Openings</h2>
-              <p className="text-gray-600">
-                Explore our available positions and find the perfect role for your skills and career aspirations.
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl font-bold text-brand-navy mb-4">Current Opportunities</h2>
+              <div className="w-24 h-1 bg-brand-gold mx-auto mb-6"></div>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Explore exciting career opportunities across our various departments and locations.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              {jobListings.map((job, index) => (
-                <motion.div 
-                  key={job.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+            <div className="space-y-6 max-w-4xl mx-auto">
+              {positions.map((position, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <JobPosition {...job} />
+                  <Card className="hover:shadow-lg transition-shadow">
+                    <CardHeader>
+                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <div>
+                          <CardTitle className="text-xl text-brand-navy">{position.title}</CardTitle>
+                          <div className="flex flex-wrap gap-2 mt-2">
+                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                              {position.department}
+                            </span>
+                            <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                              {position.location}
+                            </span>
+                            <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">
+                              {position.type}
+                            </span>
+                          </div>
+                        </div>
+                        <Button variant="outline" className="border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white">
+                          Apply Now
+                        </Button>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="text-gray-600">
+                        {position.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
 
-            <div className="text-center mt-10">
-              <p className="text-gray-600 mb-4">Don't see a position that matches your skills?</p>
-              <Button className="bg-blue-600 hover:bg-blue-700">
-                Submit Open Application
-              </Button>
-            </div>
+        {/* CTA Section */}
+        <section className="py-16 bg-gradient-to-r from-brand-navy to-blue-700 text-white">
+          <div className="container mx-auto px-4">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <h2 className="text-3xl font-bold mb-4">Ready to Start Your Journey?</h2>
+              <p className="text-xl mb-8 text-blue-100">
+                Don't see the right position? Send us your resume and we'll keep you in mind for future opportunities.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button variant="gold" size="lg" className="font-semibold">
+                  Submit Your Resume
+                </Button>
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-brand-navy">
+                  Contact HR
+                </Button>
+              </div>
+            </motion.div>
           </div>
         </section>
       </main>

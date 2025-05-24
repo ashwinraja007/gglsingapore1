@@ -1,7 +1,6 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { motion } from "framer-motion";
 
 const AboutUs = () => {
@@ -38,11 +37,11 @@ const AboutUs = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             viewport={{ once: true }}
-            className="w-full overflow-hidden rounded-lg shadow-lg order-1 md:order-2"
+            className="w-full overflow-hidden rounded-lg shadow-lg order-1 md:order-2 flex justify-center"
           >
-            <AspectRatio ratio={16 / 9} className="bg-gray-200">
-              <img alt="About Us" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/6d67d7a8-444c-4b65-bb7f-392a419d541c.jpg" />
-            </AspectRatio>
+            <div className="w-[500px] h-[500px]">
+              <img alt="About Us" className="w-full h-full object-cover rounded-lg" loading="lazy" src="/lovable-uploads/6d67d7a8-444c-4b65-bb7f-392a419d541c.jpg" />
+            </div>
           </motion.div>
         </motion.div>
       </div>
