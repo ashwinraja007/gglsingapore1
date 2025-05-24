@@ -56,7 +56,7 @@ const EnhancedServiceCard = ({
           
           <p className="text-sm text-gray-600 mb-4">
             {description}
-            <span className="text-brand-gold ml-1">Read more...</span>
+            
           </p>
           
           <div className="inline-flex items-center text-brand-gold font-medium text-sm group">
