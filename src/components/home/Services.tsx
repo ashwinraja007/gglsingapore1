@@ -81,25 +81,25 @@ const EnhancedServiceCard = ({
 export const Services = () => {
   const services = [{
     image: "/lovable-uploads/oceanfrieght.jpg",
-    title: "OCEAN FREIGHT",
+    title: "Ocean Freight",
     description: "GGL's dedicated ocean freight department specialize in the complete range freight management services for LCL and FCL loads, supported thru a well established and reliable partner network around the world, for efficient collection, storage & delivery from shippers door to door.",
     icon: <Anchor size={20} />,
     link: "/services/ocean-freight"
   }, {
     image: "/lovable-uploads/airfreight.jpg",
-    title: "AIR FREIGHT",
+    title: "Air Frieght",
     description: "At GGL, we provide a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams offer seamless air import, export, and express options, all on a convenient door-to-door basis. GGL stands out with competitive rates.",
     icon: <Package size={20} />,
     link: "/services/air-freight"
   }, {
     image: "/lovable-uploads/transport.jpg",
-    title: "TRANSPORTATION AND DISTRIBUTION",
+    title: "Transportation And Distribution",
     description: "GGL boasts a dedicated fleet of vehicles to ensure timely domestic distribution and deliveries. Our efficient operational infrastructure provides our clients with high productivity, frequent services, and fast, reliable distribution operations. GGL is committed to delivering excellence.",
     icon: <Truck size={20} />,
     link: "/services/transportation"
   }, {
     image: "/lovable-uploads/warehouse.jpg",
-    title: "WAREHOUSING",
+    title: "Warehousing",
     description: "GGL is a premier supply chain solutions provider in Singapore, addressing the full spectrum of logistics needs for our clients. We facilitate the movement of goods from suppliers to manufacturers (for parts and components), from manufacturers and brand owners to resellers and distributors.",
     icon: <Warehouse size={20} />,
     link: "/services/warehousing"
