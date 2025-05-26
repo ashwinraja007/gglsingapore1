@@ -80,7 +80,7 @@ const EnhancedServiceCard = ({
 
 export const Services = () => {
   const services = [{
-    image: "/hero3.png",
+    image: "/lovable-uploads/oceanfrieght.jpg",
     title: "Ocean Freight",
     description: "GGL's dedicated ocean freight department specialize in the complete range freight management services for LCL and FCL loads, supported thru a well established and reliable partner network around the world, for efficient collection, storage & delivery from shippers door to door.",
     icon: <Anchor size={20} />,
