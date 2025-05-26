@@ -22,13 +22,13 @@ const EnhancedServiceCard = ({
   // Choose the appropriate image based on service title
   const getServiceImage = () => {
     switch (title) {
-      case "AIR FREIGHT":
+      case "Air Freight":
         return "/airfreight2.jpg";
-      case "OCEAN FREIGHT":
+      case "Ocean Frieght":
         return "/lovable-uploads/oceanfrieght.jpg";
-      case "TRANSPORTATION AND DISTRIBUTION":
+      case "Transportation And Distribution":
         return "/lovable-uploads/transport.jpg";
-      case "WAREHOUSING":
+      case "Warehousing":
         return "/lovable-uploads/warehouse.jpg";
       default:
         return image;
