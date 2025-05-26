@@ -15,7 +15,7 @@ export const Hero = () => {
   const isMobile = useIsMobile();
 
   // Image slider data
-  const sliderImages = ["/homeimage.jpg", "/lovable-uploads/transport.jpg", "/lovable-uploads/ocean.jpg", "/lovable-uploads/airfreight.jpg"];
+  const sliderImages = ["/homeimage.jpg", "/lovable-uploads/transport.jpg", "/hero3.png", "/hero4.png"];
   useEffect(() => {
     // Delay setting visibility for entrance animation
     const timer = setTimeout(() => setIsVisible(true), 300);
