@@ -47,7 +47,7 @@ const AboutUs = () => {
               <img
                 alt="About Us"
                 loading="lazy"
-                src="/lovable-uploads/6d67d7a8-444c-4b65-bb7f-392a419d541c.jpg"
+                src="/aboutus.png"
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>
