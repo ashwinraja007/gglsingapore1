@@ -50,19 +50,19 @@ export const Hero = () => {
     icon: <UserCircle className="w-5 h-5" />,
     title: "Partner Portal",
     description: "Manage partnership",
-    url: "https://www.globalconsol.com/",
+    url: "hhttps://pp.onlinetracking.co/auth/login/3",
     external: true
   }, {
     icon: <SearchCode className="w-5 h-5" />,
     title: "Tracking",
     description: "Track your shipment",
-    url: "https://www.marinetraffic.com/",
+    url: "http://ec2-13-229-38-56.ap-southeast-1.compute.amazonaws.com:8081/ords/f?p=107:102:::::P0_GROUP_RID:59",
     external: true
   }, {
     icon: <Ship className="w-5 h-5" />,
     title: "Sailing Schedule",
     description: "View schedules",
-    url: "https://www.maersk.com/schedules/",
+    url: "http://ec2-13-229-38-56.ap-southeast-1.compute.amazonaws.com:8081/ords/f?p=107:104:::::P0_GROUP_RID:59",
     external: true
   }, {
     icon: <Calendar className="w-5 h-5" />,
