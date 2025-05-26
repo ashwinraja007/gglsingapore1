@@ -132,7 +132,7 @@ const Services = () => {
     id: 1,
     icon: <Plane className="w-5 h-5" />,
     title: "Air Freight",
-    image: "/airfreight2.jpg",
+    image: "/home4.png",
     description: "Comprehensive air freight solutions with express services, door-to-door delivery, and competitive rates to meet all your shipping requirements.",
     link: "/services/air-freight"
   }, {
@@ -144,27 +144,13 @@ const Services = () => {
     link: "/services/ocean-freight"
   }, {
     id: 3,
-    icon: <FileText className="w-5 h-5" />,
-    title: "Customs Clearance",
-    image: "/lovable-uploads/cc.jpg",
-    description: "Expert customs clearance services ensuring your shipments move smoothly across borders with accurate documentation and regulatory compliance.",
-    link: "/services/customs-clearance"
-  }, {
-    id: 4,
-    icon: <Droplets className="w-5 h-5" />,
-    title: "Liquid Transportation",
-    image: "/lovable-uploads/liquid.jpg",
-    description: "Specialized solutions for transporting liquids safely and efficiently, utilizing ISO tanks, flexitanks, and specialized tankers managed by expert teams.",
-    link: "/services/liquid-transportation"
-  }, {
-    id: 5,
     icon: <Truck className="w-5 h-5" />,
     title: "Transportation",
     image: "/lovable-uploads/transport.jpg",
     description: "Dedicated fleet of vehicles ensuring timely domestic distribution with an efficient operational infrastructure providing high productivity and reliable service.",
     link: "/services/transportation"
   }, {
-    id: 6,
+    id: 4,
     icon: <Warehouse className="w-5 h-5" />,
     title: "Warehousing",
     image: "/lovable-uploads/warehouse.jpg",
