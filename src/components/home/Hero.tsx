@@ -228,7 +228,7 @@ export const Hero = () => {
                 <div className="border rounded-lg overflow-hidden">
                   <AspectRatio ratio={16 / 9}>
                     <video controls className="w-full h-full object-cover">
-                      <source src="/video-placeholder.mp4" type="video/mp4" />
+                      <source src="/GGL_demo1.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </AspectRatio>
@@ -238,7 +238,7 @@ export const Hero = () => {
                 <div className="border rounded-lg overflow-hidden">
                   <AspectRatio ratio={16 / 9}>
                     <video controls className="w-full h-full object-cover">
-                      <source src="/video-placeholder-2.mp4" type="video/mp4" />
+                      <source src="/GGL_promo.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </AspectRatio>
