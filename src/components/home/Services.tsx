@@ -80,13 +80,13 @@ const EnhancedServiceCard = ({
 
 export const Services = () => {
   const services = [{
-    image: "/lovable-uploads/oceanfrieght.jpg",
+    image: "/hero3.png",
     title: "Ocean Freight",
     description: "GGL's dedicated ocean freight department specialize in the complete range freight management services for LCL and FCL loads, supported thru a well established and reliable partner network around the world, for efficient collection, storage & delivery from shippers door to door.",
     icon: <Anchor size={20} />,
     link: "/services/ocean-freight"
   }, {
-    image: "/lovable-uploads/airfreight.jpg",
+    image: "/hero4.png",
     title: "Air Frieght",
     description: "At GGL, we provide a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams offer seamless air import, export, and express options, all on a convenient door-to-door basis. GGL stands out with competitive rates.",
     icon: <Package size={20} />,
