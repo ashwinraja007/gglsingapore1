@@ -50,7 +50,7 @@ export const Hero = () => {
     icon: <UserCircle className="w-5 h-5" />,
     title: "Partner Portal",
     description: "Manage partnership",
-    url: "hhttps://pp.onlinetracking.co/auth/login/3",
+    url: "https://pp.onlinetracking.co/auth/login/3",
     external: true
   }, {
     icon: <SearchCode className="w-5 h-5" />,
