@@ -67,7 +67,7 @@ const Contact = () => {
                 
                 <div className="space-y-8">
                   <div className="space-y-6">
-                    <h3 className="text-lg font-semibold">Australia Office</h3>
+                    <h3 className="text-lg font-semibold">Singapore Office</h3>
                     
                     <motion.div whileHover={{
                     x: 10
@@ -87,7 +87,7 @@ const Contact = () => {
                       <div>
                         <p className="font-medium">Address</p>
                         <p className="text-gray-600">
-                          Suite 5, 7-9 Mallet Road,<br />Tullamarine, Victoria, 3043
+                          GGL (Singapore) Pte Ltd. Blk 511 Kampong Bahru Road #03-01 Keppel Distripark Singapore - 099447
                         </p>
                       </div>
                     </motion.div>
