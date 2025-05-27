@@ -23,13 +23,13 @@ const EnhancedServiceCard = ({
   const getServiceImage = () => {
     switch (title) {
       case "Air Freight":
-        return "/airfreight2.jpg";
+        return "/airfreighth.png";
       case "Ocean Freight":
-        return "/lovable-uploads/oceanfrieght.jpg";
+        return "/ships.png";
       case "Transportation And Distribution":
-        return "/lovable-uploads/transport.jpg";
+        return "/transports.png";
       case "Warehousing":
-        return "/lovable-uploads/warehouse.jpg";
+        return "/warehouses.png";
       default:
         return image;
     }
