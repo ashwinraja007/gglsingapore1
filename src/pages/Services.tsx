@@ -34,17 +34,17 @@ const ServiceCard = ({
   const getServiceImage = () => {
     switch (title) {
       case "Air Freight":
-        return "/airfreight2.jpg";
+        return "/airfreighth.png";
       case "Ocean Freight":
-        return "/lovable-uploads/oceanfrieght.jpg";
+        return "/ships.png";
       case "Customs Clearance":
         return "/lovable-uploads/cc.jpg";
       case "Liquid Transportation":
-        return "/lovable-uploads/liquid.jpg";
+        return "/transports.png";
       case "Transportation":
-        return "/lovable-uploads/transport.jpg";
+        return "/transports.png";
       case "Warehousing":
-        return "/lovable-uploads/warehouse.jpg";
+        return "/warehouses.png";
       default:
         return image;
     }
@@ -132,28 +132,28 @@ const Services = () => {
     id: 1,
     icon: <Plane className="w-5 h-5" />,
     title: "Air Freight",
-    image: "/home4.png",
+    image: "/airfreighth.png",
     description: "Comprehensive air freight solutions with express services, door-to-door delivery, and competitive rates to meet all your shipping requirements.",
     link: "/services/air-freight"
   }, {
     id: 2,
     icon: <Ship className="w-5 h-5" />,
     title: "Ocean Freight",
-    image: "/lovable-uploads/oceanfrieght.jpg",
+    image: "/ships.png",
     description: "Complete range of freight management services for LCL and FCL loads, with reliable global partner networks ensuring efficient delivery.",
     link: "/services/ocean-freight"
   }, {
     id: 3,
     icon: <Truck className="w-5 h-5" />,
     title: "Transportation",
-    image: "/lovable-uploads/transport.jpg",
+    image: "/transports.png",
     description: "Dedicated fleet of vehicles ensuring timely domestic distribution with an efficient operational infrastructure providing high productivity and reliable service.",
     link: "/services/transportation"
   }, {
     id: 4,
     icon: <Warehouse className="w-5 h-5" />,
     title: "Warehousing",
-    image: "/lovable-uploads/warehouse.jpg",
+    image: "/warehouses.png",
     description: "Premier supply chain solutions addressing the full spectrum of logistics needs, facilitating the movement of goods throughout the entire supply chain.",
     link: "/services/warehousing"
   }];
