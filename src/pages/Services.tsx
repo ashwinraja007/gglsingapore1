@@ -188,9 +188,7 @@ const Services = () => {
                 From air and ocean freight to specialized transportation solutions, we offer end-to-end logistics expertise to meet your global shipping needs.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button variant="gold" size="lg" className="font-semibold">
-                  Get a Quote
-                </Button>
+                
                 
               </div>
             </motion.div>
