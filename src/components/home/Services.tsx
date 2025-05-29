@@ -23,11 +23,11 @@ const EnhancedServiceCard = ({
   const getServiceImage = () => {
     switch (title) {
       case "Air Freight":
-        return "/airfreighth.png";
+        return "/planeh2.png";
       case "Ocean Freight":
         return "/ships.png";
       case "Transportation And Distribution":
-        return "/transports.png";
+        return "/transpoth.png";
       case "Warehousing":
         return "/warehouses.png";
       default:
@@ -86,13 +86,13 @@ export const Services = () => {
     icon: <Anchor size={20} />,
     link: "/services/ocean-freight"
   }, {
-    image: "/cargoplane.png",
+    image: "/planeh2.png",
     title: "Air Freight",
     description: "At GGL, we provide a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams offer seamless air import, export, and express options, all on a convenient door-to-door basis. GGL stands out with competitive rates.",
     icon: <Package size={20} />,
     link: "/services/air-freight"
   }, {
-    image: "/lovable-uploads/transport.jpg",
+    image: "/transpoth.jpg",
     title: "Transportation And Distribution",
     description: "GGL boasts a dedicated fleet of vehicles to ensure timely domestic distribution and deliveries. Our efficient operational infrastructure provides our clients with high productivity, frequent services, and fast, reliable distribution operations. GGL is committed to delivering excellence.",
     icon: <Truck size={20} />,
