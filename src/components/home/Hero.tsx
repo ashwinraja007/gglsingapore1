@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import {
@@ -20,7 +21,7 @@ import {
 } from "@/components/ui/dialog";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-export const Hero = () => {
+const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCustomerPortalOpen, setIsCustomerPortalOpen] = useState(false);
@@ -123,7 +124,7 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="max-w-7xl mx-auto"
         >
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-xl">
+          <div className="backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-xl">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
               {portalLinks.map((link, index) => (
                 <div key={index} className="flex flex-col items-center">
@@ -136,7 +137,7 @@ export const Hero = () => {
                     >
                       <Button
                         variant="outline"
-                        className="w-full h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm bg-transparent border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-navy transition-colors"
+                        className="w-full h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-navy transition-colors"
                       >
                         {link.icon}
                         <span className="font-medium">{link.title}</span>
@@ -145,7 +146,7 @@ export const Hero = () => {
                   ) : link.onClick ? (
                     <Button
                       variant="outline"
-                      className="w-full h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm bg-transparent border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-navy transition-colors"
+                      className="w-full h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-navy transition-colors"
                       onClick={link.onClick}
                     >
                       {link.icon}
@@ -155,7 +156,7 @@ export const Hero = () => {
                     <Link to={link.url} className="w-full">
                       <Button
                         variant="outline"
-                        className="w-full h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm bg-transparent border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-navy transition-colors"
+                        className="w-full h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-navy transition-colors"
                       >
                         {link.icon}
                         <span className="font-medium">{link.title}</span>
@@ -210,3 +211,5 @@ export const Hero = () => {
     </section>
   );
 };
+
+export default Hero;

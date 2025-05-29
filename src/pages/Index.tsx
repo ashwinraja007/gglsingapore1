@@ -3,12 +3,10 @@ import { Suspense, lazy } from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Loader2 } from "lucide-react";
+import Hero from "@/components/home/Hero";
 
-// Lazy load components
-const Hero = lazy(() => import("@/components/home/Hero"));
+// Lazy load other components
 const AboutUs = lazy(() => import("@/components/home/AboutUs"));
-// Memberships component is now commented out
-// const Memberships = lazy(() => import("@/components/home/Memberships"));
 const Services = lazy(() => import("@/components/home/Services"));
 const GlobalPresence = lazy(() => import("@/components/home/GlobalPresence"));
 const QuickEnquiry = lazy(() => import("@/components/home/QuickEnquiry"));
@@ -25,19 +23,11 @@ const Index = () => {
     <div className="min-h-screen flex flex-col relative">
       <Header />
       <main className="flex-grow pt-16">
-        <Suspense fallback={<LoadingComponent />}>
-          <Hero />
-        </Suspense>
+        <Hero />
         
         <Suspense fallback={<LoadingComponent />}>
           <AboutUs />
         </Suspense>
-        
-        {/* Memberships component is now hidden
-        <Suspense fallback={<LoadingComponent />}>
-          <Memberships />
-        </Suspense>
-        */}
         
         <Suspense fallback={<LoadingComponent />}>
           <Services />
