@@ -86,7 +86,7 @@ export const Services = () => {
     icon: <Anchor size={20} />,
     link: "/services/ocean-freight"
   }, {
-    image: "/hero4.png",
+    image: "/cargoplane.png",
     title: "Air Freight",
     description: "At GGL, we provide a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams offer seamless air import, export, and express options, all on a convenient door-to-door basis. GGL stands out with competitive rates.",
     icon: <Package size={20} />,
