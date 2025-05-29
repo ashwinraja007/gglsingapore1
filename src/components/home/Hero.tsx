@@ -206,7 +206,7 @@ const Hero = () => {
         duration: 0.8,
         delay: 0.5
       }} className="max-w-7xl mx-auto">
-          <div className="rounded-xl p-4 border border-white/20 shadow-xl">
+          <div className="backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-xl">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
               {portalLinks.map((link, index) => <div key={index} className="flex flex-col items-center">
                   {link.external ? <a href={link.url} target="_blank" rel="noopener noreferrer" className="w-full">
