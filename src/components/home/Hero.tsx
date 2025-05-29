@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 export const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -16,6 +17,7 @@ export const Hero = () => {
 
   // Image slider data
   const sliderImages = ["/homeimage.jpg", "/transporth1.png", "/hero3.png", "/airfreighth.png"];
+
   useEffect(() => {
     // Delay setting visibility for entrance animation
     const timer = setTimeout(() => setIsVisible(true), 300);
@@ -41,6 +43,7 @@ export const Hero = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [isMobileMenuOpen]);
+
   const portalLinks = [{
     icon: <Users className="w-5 h-5" />,
     title: "Customer Portal",
@@ -71,7 +74,9 @@ export const Hero = () => {
     url: "/contact",
     external: false
   }];
-  return <section className="relative min-h-[75vh] md:min-h-[90vh] overflow-hidden pt-8 md:pt-16">
+
+  return (
+    <section className="relative min-h-[75vh] md:min-h-[90vh] overflow-hidden pt-8 md:pt-16">
       {/* Mobile Navigation Menu Button */}
       <div className="fixed top-4 left-4 z-50 md:hidden">
         
@@ -79,17 +84,14 @@ export const Hero = () => {
 
       {/* Mobile Navigation Drawer */}
       <AnimatePresence>
-        {isMobileMenuOpen && <motion.div initial={{
-        x: '100%'
-      }} animate={{
-        x: 0
-      }} exit={{
-        x: '100%'
-      }} transition={{
-        type: 'spring',
-        damping: 25,
-        stiffness: 300
-      }} className="fixed top-0 left-0 w-4/5 h-screen bg-brand-navy/95 backdrop-blur-lg z-50 shadow-xl border-l border-brand-gold/30 flex flex-col">
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            className="fixed top-0 left-0 w-4/5 h-screen bg-brand-navy/95 backdrop-blur-lg z-50 shadow-xl border-l border-brand-gold/30 flex flex-col"
+          >
             <div className="p-6 mt-12 space-y-6">
               <div className="flex items-center gap-3 mb-6">
                 <Globe className="w-8 h-8 text-brand-gold" />
@@ -157,57 +159,79 @@ export const Hero = () => {
                 </motion.div>
               </div>
             </div>
-          </motion.div>}
+          </motion.div>
+        )}
       </AnimatePresence>
 
       {/* Background image with parallax effect - now converted to slider */}
       <div className="absolute inset-0 overflow-hidden">
-        {sliderImages.map((image, index) => <motion.div key={index} initial={{
-        opacity: 0
-      }} animate={{
-        opacity: activeSlide === index ? 1 : 0,
-        scale: activeSlide === index ? 1 : 1.1
-      }} transition={{
-        duration: 1.2,
-        ease: "easeInOut"
-      }} className="absolute inset-0" style={{
-        zIndex: activeSlide === index ? 1 : 0
-      }}>
-            <img src={image} alt={`Slide ${index + 1}`} className="w-full h-full object-cover object-center" loading={index === 0 ? "eager" : "lazy"} />
+        {sliderImages.map((image, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: activeSlide === index ? 1 : 0,
+              scale: activeSlide === index ? 1 : 1.1
+            }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            className="absolute inset-0"
+            style={{ zIndex: activeSlide === index ? 1 : 0 }}
+          >
+            <img 
+              src={image} 
+              alt={`Slide ${index + 1}`} 
+              className="w-full h-full object-cover object-center" 
+              loading={index === 0 ? "eager" : "lazy"} 
+            />
             <div className="absolute inset-0" />
-          </motion.div>)}
+          </motion.div>
+        ))}
       </div>
 
       {/* Main content - portals bar at bottom */}
       <div className="absolute bottom-8 left-0 right-0 z-10 px-4">
-        <motion.div initial={{
-        opacity: 0,
-        y: 50
-      }} animate={isVisible ? {
-        opacity: 1,
-        y: 0
-      } : {}} transition={{
-        duration: 0.8,
-        delay: 0.5
-      }} className="max-w-7xl mx-auto">
-          <div className="bg-brand-navy/80 backdrop-blur-md rounded-xl p-4 border border-brand-gold/20 shadow-xl">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="max-w-7xl mx-auto"
+        >
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-xl">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-              {portalLinks.map((link, index) => <div key={index} className="flex flex-col items-center">
-                  {link.external ? <a href={link.url} target="_blank" rel="noopener noreferrer" className="w-full">
-                      <Button variant="gold" className="w-full h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm bg-brand-gold text-brand-navy shadow-gold-glow">
+              {portalLinks.map((link, index) => (
+                <div key={index} className="flex flex-col items-center">
+                  {link.external ? (
+                    <a href={link.url} target="_blank" rel="noopener noreferrer" className="w-full">
+                      <Button 
+                        variant="outline" 
+                        className="w-full h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm bg-transparent border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-navy transition-colors"
+                      >
                         {link.icon}
                         <span className="font-medium">{link.title}</span>
                       </Button>
-                    </a> : link.onClick ? <Button variant="gold" className="w-full h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm bg-brand-gold text-brand-navy shadow-gold-glow" onClick={link.onClick}>
+                    </a>
+                  ) : link.onClick ? (
+                    <Button 
+                      variant="outline" 
+                      className="w-full h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm bg-transparent border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-navy transition-colors"
+                      onClick={link.onClick}
+                    >
                       {link.icon}
                       <span className="font-medium">{link.title}</span>
-                    </Button> : <Link to={link.url} className="w-full">
-                      <Button variant="gold" className="w-full h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm bg-brand-gold text-brand-navy shadow-gold-glow">
+                    </Button>
+                  ) : (
+                    <Link to={link.url} className="w-full">
+                      <Button 
+                        variant="outline" 
+                        className="w-full h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm bg-transparent border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-navy transition-colors"
+                      >
                         {link.icon}
                         <span className="font-medium">{link.title}</span>
                       </Button>
-                    </Link>}
-                </div>)}
+                    </Link>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </motion.div>
@@ -260,6 +284,8 @@ export const Hero = () => {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
