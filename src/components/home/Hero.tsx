@@ -12,7 +12,7 @@ const Hero = () => {
   const [isCustomerPortalOpen, setIsCustomerPortalOpen] = useState(false);
   const [activeSlide, setActiveSlide] = useState(0);
   const isMobile = useIsMobile();
-  const sliderImages = ["/homeimage.jpg", "/transporth1.png", "/hero3.png", "/airfreighth.png"];
+  const sliderImages = ["/homeimage.jpg", "/transporth1.png", "/hero3.png", "/cargoplane.png"];
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 300);
     return () => clearTimeout(timer);
