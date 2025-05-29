@@ -146,7 +146,7 @@ const Services = () => {
     id: 3,
     icon: <Truck className="w-5 h-5" />,
     title: "Transportation",
-    image: "/truks.png",
+    image: "/trucks.png",
     description: "Dedicated fleet of vehicles ensuring timely domestic distribution with an efficient operational infrastructure providing high productivity and reliable service.",
     link: "/services/transportation"
   }, {
