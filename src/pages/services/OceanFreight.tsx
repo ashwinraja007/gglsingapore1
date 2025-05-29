@@ -131,9 +131,9 @@ const OceanFreight = () => {
             }} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
                 <div className="relative">
                   <AspectRatio ratio={16 / 9}>
-                    <img src="/lovable-uploads/fcl.jpg" alt="FCL Shipping" className="w-full h-full object-cover" />
+                    <img alt="FCL Shipping" className="w-full h-full object-cover" src="/lovable-uploads/4f773111-0142-4865-abc1-d1d8304355e3.png" />
                   </AspectRatio>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end my-0">
                     <h3 className="text-white text-xl font-bold p-6">Full Container Load (FCL)</h3>
                   </div>
                 </div>
