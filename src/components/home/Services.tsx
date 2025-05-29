@@ -92,7 +92,7 @@ export const Services = () => {
     icon: <Package size={20} />,
     link: "/services/air-freight"
   }, {
-    image: "/transpoth.jpg",
+    image: "/transpoth.png",
     title: "Transportation And Distribution",
     description: "GGL boasts a dedicated fleet of vehicles to ensure timely domestic distribution and deliveries. Our efficient operational infrastructure provides our clients with high productivity, frequent services, and fast, reliable distribution operations. GGL is committed to delivering excellence.",
     icon: <Truck size={20} />,
