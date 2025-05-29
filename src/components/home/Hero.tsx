@@ -97,7 +97,7 @@ const Hero = () => {
       <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-0 right-0 z-10 px-2 sm:px-4">
         <div className={`max-w-7xl mx-auto transition-all duration-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
           {/* REMOVED border border-white/20 - No more white border! */}
-          <div className="bg-white/0 p-3 sm:p-4 rounded-xl\n">
+          <div className="bg-white/0 p-3 sm:p-4 rounded-xl\\n my-[31px]">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3">
               {portalLinks.map((link, index) => <div key={index} className="flex flex-col items-center">
                   {link.external ? <a href={link.url} target="_blank" rel="noopener noreferrer" className="w-full">
