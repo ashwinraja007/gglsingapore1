@@ -34,17 +34,17 @@ const ServiceCard = ({
   const getServiceImage = () => {
     switch (title) {
       case "Air Freight":
-        return "/airfreighth.png";
+        return "/cargoplane3.png";
       case "Ocean Freight":
-        return "/ships.png";
+        return "/ships2.png";
       case "Customs Clearance":
         return "/lovable-uploads/cc.jpg";
       case "Liquid Transportation":
         return "/transports.png";
       case "Transportation":
-        return "/transports.png";
+        return "/trucks.png";
       case "Warehousing":
-        return "/warehouses.png";
+        return "/warehouse2.png";
       default:
         return image;
     }
