@@ -132,28 +132,28 @@ const Services = () => {
     id: 1,
     icon: <Plane className="w-5 h-5" />,
     title: "Air Freight",
-    image: "/airfreighth.png",
+    image: "/cargoplane3.png",
     description: "Comprehensive air freight solutions with express services, door-to-door delivery, and competitive rates to meet all your shipping requirements.",
     link: "/services/air-freight"
   }, {
     id: 2,
     icon: <Ship className="w-5 h-5" />,
     title: "Ocean Freight",
-    image: "/ships.png",
+    image: "/ships2.png",
     description: "Complete range of freight management services for LCL and FCL loads, with reliable global partner networks ensuring efficient delivery.",
     link: "/services/ocean-freight"
   }, {
     id: 3,
     icon: <Truck className="w-5 h-5" />,
     title: "Transportation",
-    image: "/transports.png",
+    image: "/truks.png",
     description: "Dedicated fleet of vehicles ensuring timely domestic distribution with an efficient operational infrastructure providing high productivity and reliable service.",
     link: "/services/transportation"
   }, {
     id: 4,
     icon: <Warehouse className="w-5 h-5" />,
     title: "Warehousing",
-    image: "/warehouses.png",
+    image: "/warehouse2.png",
     description: "Premier supply chain solutions addressing the full spectrum of logistics needs, facilitating the movement of goods throughout the entire supply chain.",
     link: "/services/warehousing"
   }];
