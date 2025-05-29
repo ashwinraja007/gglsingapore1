@@ -192,7 +192,7 @@ const Contact = () => {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
               <div className="h-[500px] w-full">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7758855462267!2d103.8196!3d1.2904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1976e1f0c5e3%3A0x8b5b5b5b5b5b5b5b!2sKeppel%20Distripark!5e0!3m2!1sen!2ssg!4v1635000000000!5m2!1sen!2ssg"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8363351564667!2d103.82589297571258!3d1.2712250618219825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da193cfd8d7e7b%3A0x963fd5af6f24aaf9!2sGlobal%20Consolidators%20Shipping%20and%20Logistics%20Pte%20Ltd!5e0!3m2!1sen!2sin!4v1748499774082!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
