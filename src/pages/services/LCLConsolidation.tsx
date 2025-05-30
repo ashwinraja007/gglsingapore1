@@ -87,6 +87,27 @@ The GGL Group is strategically located in the cargo transhipment hubs of Singapo
 GGL announces the commencement of its operations in India with the launch of its first office in Mumbai. Offices in Chennai and strategic ICD’s like New Delhi, Pune and Bangalore will follow soon. With this significant development GGL will offer in India a wide spectrum of logistics services including LCL Consolidation, Dangerous Cargo transportation, FCL, Airfreight, Warehousing/3 PL logistics and land transport solutions.
 
 GGL with its internet based software platform offers unmatched shipment visibility from origin to final destination thereby delivering a truly differentiated customer experience</p>
+<p className="text-gray-700 mb-6 text-justify">GGL is a premier supply chain solutions provider in Singapore, addressing the full spectrum of logistics needs for our clients. We facilitate the movement of goods from suppliers to manufacturers (for parts and components), from manufacturers and brand owners to resellers and consumers (for finished products), and from consumers back to original equipment manufacturers (for spares and returns).
+
+Our state-of-the-art warehouses are tailored to meet clients' specific requirements and are supported by cutting-edge WMS systems. These systems offer complete visibility and advanced features such as online picking and reorder cycle notifications.
+
+Our skilled warehouse team is highly experienced and trained to accommodate the unique needs of each client. They are backed by dedicated teams specializing in forwarding and land transportation.
+
+GGL caters to a wide array of industries, offering an extensive range of warehousing and distribution services, includin</p>
+<p className="text-gray-700 mb-6 text-justify">GGL is a premier supply chain solutions provider in Singapore, addressing the full spectrum of logistics needs for our clients. We facilitate the movement of goods from suppliers to manufacturers (for parts and components), from manufacturers and brand owners to resellers and consumers (for finished products), and from consumers back to original equipment manufacturers (for spares and returns).
+
+Our state-of-the-art warehouses are tailored to meet clients' specific requirements and are supported by cutting-edge WMS systems. These systems offer complete visibility and advanced features such as online picking and reorder cycle notifications.
+
+Our skilled warehouse team is highly experienced and trained to accommodate the unique needs of each client. They are backed by dedicated teams specializing in forwarding and land transportation.
+
+GGL caters to a wide array of industries, offering an extensive range of warehousing and distribution services, includin</p>
+<p className="text-gray-700 mb-6 text-justify">GGL is a premier supply chain solutions provider in Singapore, addressing the full spectrum of logistics needs for our clients. We facilitate the movement of goods from suppliers to manufacturers (for parts and components), from manufacturers and brand owners to resellers and consumers (for finished products), and from consumers back to original equipment manufacturers (for spares and returns).
+
+Our state-of-the-art warehouses are tailored to meet clients' specific requirements and are supported by cutting-edge WMS systems. These systems offer complete visibility and advanced features such as online picking and reorder cycle notifications.
+
+Our skilled warehouse team is highly experienced and trained to accommodate the unique needs of each client. They are backed by dedicated teams specializing in forwarding and land transportation.
+
+GGL caters to a wide array of industries, offering an extensive range of warehousing and distribution services, includin</p>
             </div>
             
             {/* LCL and FCL Services */}
