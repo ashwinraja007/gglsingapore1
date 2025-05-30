@@ -103,6 +103,12 @@ export const Services = () => {
     description: "GGL is a premier supply chain solutions provider in Singapore, addressing the full spectrum of logistics needs for our clients. We facilitate the movement of goods from suppliers to manufacturers (for parts and components), from manufacturers and brand owners to resellers and distributors.",
     icon: <Warehouse size={20} />,
     link: "/services/warehousing"
+  }, {
+    image: "/lcl.png",
+    title: "LCL Consolidation",
+    description: "GGL is a LCL Consolidator with global presence covering North America, UK, Middle East, Indian Sub Continent, South East Asia and Far East. Our LCL Groupage services is backed by very efficient customer support at competitive prices.",
+    icon: <Warehouse size={20} />,
+    link: "/services/warehousing"
   }];
 
   const containerVariants = {
@@ -149,7 +155,7 @@ export const Services = () => {
           </p>
         </motion.div>
         
-        <motion.div variants={containerVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div variants={containerVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {services.map((service, index) => <motion.div key={index} variants={itemVariants} transition={{
           duration: 0.5,
           delay: index * 0.1
