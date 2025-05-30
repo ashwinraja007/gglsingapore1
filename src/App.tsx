@@ -8,7 +8,7 @@ import Index from "./pages/Index";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
-import Transportation from "./pages/Transportation";
+import Transportation from "./pages/services/Transportation";
 import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
 import LiquidTransportation from "./pages/services/LiquidTransportation";
