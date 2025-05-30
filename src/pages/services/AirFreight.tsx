@@ -80,10 +80,8 @@ const AirFreight = () => {
                 Comprehensive Air Freight Services
               </h2>
               <div className="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
-              <p className="text-gray-700 mb-6 font-normal text-justify">Tailored air freight solutions to meet your unique requirements. We understand that every shipment is different. That's why we offer flexible air freight solutions designed to meet your specific needs. Whether you're shipping time-sensitive documents or large-scale cargo, we have the expertise and resources to handle it efficiently.</p>
-              <p className="text-gray-700 text-justify">
-                Our comprehensive services include air imports, exports, and express deliveries, all with the convenience of door-to-door service. We pride ourselves on our competitive pricing and our unwavering commitment to providing exceptional customer support. Let us optimize your air freight logistics and ensure your shipments reach their destinations seamlessly.
-              </p>
+              <p className="text-gray-700 mb-6 font-normal text-justify">At GGL, we provide a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams offer seamless air import, export, and express options, all on a convenient door-to-door basis.</p>
+              <p className="text-gray-700 text-justify">GGL stands out with competitive rates and outstanding support operations, ensuring complete customer satisfaction with every shipment. Whether you're looking for speed, reliability, or cost-efficiency, our air freight services deliver on all fronts, making GGL your trusted partner in global logistics.</p>
             </div>
             
             {/* Features Grid */}
@@ -123,57 +121,7 @@ const AirFreight = () => {
             </div>
             
             {/* Additional Services */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <motion.div initial={{
-              opacity: 0,
-              x: -20
-            }} whileInView={{
-              opacity: 1,
-              x: 0
-            }} transition={{
-              duration: 0.5
-            }} viewport={{
-              once: true
-            }} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
-                <div className="h-48 sm:h-56 relative">
-                  <AspectRatio ratio={16 / 9} className="h-full">
-                    <img src="/lovable-uploads/warehouse.jpg" alt="Air Import" className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                      <h3 className="text-white text-xl font-bold p-6">Air Import</h3>
-                    </div>
-                  </AspectRatio>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-600 text-justify">Our air import services ensure your international purchases reach you efficiently. We handle all documentation, customs clearance, and final delivery to your doorstep.</p>
-                </div>
-              </motion.div>
-              
-              <motion.div initial={{
-              opacity: 0,
-              x: 20
-            }} whileInView={{
-              opacity: 1,
-              x: 0
-            }} transition={{
-              duration: 0.5
-            }} viewport={{
-              once: true
-            }} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
-                <div className="h-48 sm:h-56 relative">
-                  <AspectRatio ratio={16 / 9} className="h-full">
-                    <img src="/lovable-uploads/airimport.png" alt="Air Export" className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                      <h3 className="text-white text-xl font-bold p-6">Air Export</h3>
-                    </div>
-                  </AspectRatio>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-600 text-justify">
-                    When sending your products worldwide, our air export services provide the speed and reliability you need. We manage the entire process from pickup to delivery at the final destination.
-                  </p>
-                </div>
-              </motion.div>
-            </div>
+            
             
             {/* CTA Section */}
             <motion.div initial={{
