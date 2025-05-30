@@ -15,6 +15,8 @@ import LiquidTransportation from "./pages/services/LiquidTransportation";
 import AirFreight from "./pages/services/AirFreight";
 import OceanFreight from "./pages/services/OceanFreight";
 import CustomsClearance from "./pages/services/CustomsClearance";
+import LCLConsolidation from "./pages/services/LCLConsolidation";
+import Warehousing from "./pages/services/Warehousing";
 import GlobalPresence from "./pages/GlobalPresence";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 
@@ -34,13 +36,15 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/careers" element={<Careers />} />
-             <Route path="/Transportation" element={<Transportation />} />
+            <Route path="/Transportation" element={<Transportation />} />
             <Route path="/global-presence" element={<GlobalPresence />} />
             {/* Service specific pages */}
             <Route path="/services/liquid-transportation" element={<LiquidTransportation />} />
             <Route path="/services/air-freight" element={<AirFreight />} />
             <Route path="/services/ocean-freight" element={<OceanFreight />} />
             <Route path="/services/customs-clearance" element={<CustomsClearance />} />
+            <Route path="/services/lcl-consolidation" element={<LCLConsolidation />} />
+            <Route path="/services/warehousing" element={<Warehousing />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Toaster />
