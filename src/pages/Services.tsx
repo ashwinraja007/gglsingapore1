@@ -126,48 +126,37 @@ const ServiceDetailCard = ({
       </div>
     </motion.div>;
 };
-const services = [
-    {
-      image: "/lovable-uploads/oceanfrieght.jpg",
-      title: "Ocean Freight",
-      description:
-        "GGL's dedicated ocean freight department specialize in the complete range freight management services for LCL and FCL loads, supported thru a well established and reliable partner network around the world, for efficient collection, storage & delivery from shippers door to door.",
-      icon: <Anchor size={20} />,
-      link: "/services/ocean-freight"
-    },
-    {
-      image: "/planeh2.png",
-      title: "Air Freight",
-      description:
-        "At GGL, we provide a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams offer seamless air import, export, and express options, all on a convenient door-to-door basis. GGL stands out with competitive rates.",
-      icon: <Package size={20} />,
-      link: "/services/air-freight"
-    },
-    {
-      image: "/transpoth.png",
-      title: "Transportation And Distribution",
-      description:
-        "GGL boasts a dedicated fleet of vehicles to ensure timely domestic distribution and deliveries. Our efficient operational infrastructure provides our clients with high productivity, frequent services, and fast, reliable distribution operations. GGL is committed to delivering excellence.",
-      icon: <Truck size={20} />,
-      link: "/services/transportation"
-    },
-    {
-      image: "/lovable-uploads/warehouse.jpg",
-      title: "Warehousing",
-      description:
-        "GGL is a premier supply chain solutions provider in Singapore, addressing the full spectrum of logistics needs for our clients. We facilitate the movement of goods from suppliers to manufacturers (for parts and components), from manufacturers and brand owners to resellers and distributors.",
-      icon: <Warehouse size={20} />,
-      link: "/services/warehousing"
-    },
-    {
-      image: "/lcl.png",
-      title: "LCL Consolidation",
-      description:
-        "GGL is a LCL Consolidator with global presence covering North America, UK, Middle East, Indian Sub Continent, South East Asia and Far East. Our LCL Groupage services is backed by very efficient customer support at competitive prices.The GGL Group is strategically located in the cargo transhipment hubs to all major destinations worldwide",
-      icon: <Warehouse size={20} />,
-      link: "/services/warehousing"
-    }
-  ];
+const Services = () => {
+  const isMobile = useIsMobile();
+  const services = [{
+    id: 1,
+    icon: <Plane className="w-5 h-5" />,
+    title: "Air Freight",
+    image: "/cargoplane3.png",
+    description: "Comprehensive air freight solutions with express services, door-to-door delivery, and competitive rates to meet all your shipping requirements.",
+    link: "/services/air-freight"
+  }, {
+    id: 2,
+    icon: <Ship className="w-5 h-5" />,
+    title: "Ocean Freight",
+    image: "/ships2.png",
+    description: "Complete range of freight management services for LCL and FCL loads, with reliable global partner networks ensuring efficient delivery.",
+    link: "/services/ocean-freight"
+  }, {
+    id: 3,
+    icon: <Truck className="w-5 h-5" />,
+    title: "Transportation",
+    image: "/trucks.png",
+    description: "Dedicated fleet of vehicles ensuring timely domestic distribution with an efficient operational infrastructure providing high productivity and reliable service.",
+    link: "/services/transportation"
+  }, {
+    id: 4,
+    icon: <Warehouse className="w-5 h-5" />,
+    title: "Warehousing",
+    image: "/warehouse2.png",
+    description: "Premier supply chain solutions addressing the full spectrum of logistics needs, facilitating the movement of goods throughout the entire supply chain.",
+    link: "/services/warehousing"
+  }];
   const featuredServices = services.slice(0, 3);
   return <div className="min-h-screen flex flex-col">
       <ScrollToTop />
