@@ -156,7 +156,8 @@ const Services = () => {
     image: "/warehouse2.png",
     description: "Premier supply chain solutions addressing the full spectrum of logistics needs, facilitating the movement of goods throughout the entire supply chain.",
     link: "/services/warehousing"
-  }];
+  }
+];
   const featuredServices = services.slice(0, 3);
   return <div className="min-h-screen flex flex-col">
       <ScrollToTop />
