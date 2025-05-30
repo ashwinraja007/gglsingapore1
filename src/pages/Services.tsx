@@ -160,9 +160,9 @@ const Services = () => {
     id: 5,
     icon: <Warehouse className="w-5 h-5" />,
     title: "LCL Consolidation",
-    image: "/warehouse2.png",
+    image: "/lcl.png",
     description: "GGL is a LCL Consolidator with global presence covering North America, UK, Middle East, Indian Sub Continent, South East Asia and Far East. Our LCL Groupage services is backed by very efficient customer support at competitive prices.",
-    link: "/services/warehousing"
+    link: "/services/lcl-consolidation"
   }];
   const featuredServices = services.slice(0, 3);
   return <div className="min-h-screen flex flex-col">
