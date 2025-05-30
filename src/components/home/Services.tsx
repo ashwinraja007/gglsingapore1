@@ -106,7 +106,7 @@ export const Services = () => {
   }, {
     image: "/lcl.png",
     title: "LCL Consolidation",
-    description: "GGL is a LCL Consolidator with global presence covering North America, UK, Middle East, Indian Sub Continent, South East Asia and Far East. Our LCL Groupage services is backed by very efficient customer support at competitive prices.",
+    description: "GGL is a LCL Consolidator with global presence covering North America, UK, Middle East, Indian Sub Continent, South East Asia and Far East. Our LCL Groupage services is backed by very efficient customer support at competitive prices.The GGL Group is strategically located in the cargo transhipment hubs to all major destinations worldwide",
     icon: <Warehouse size={20} />,
     link: "/services/warehousing"
   }];
