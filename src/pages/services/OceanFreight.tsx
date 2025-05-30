@@ -85,6 +85,16 @@ const OceanFreight = () => {
 GGL provide scheduled and multiple services that connect all economies. GGL has a dedicated carrier pricing department and provide customized solutions based on the transit and price requirements of the clients.
 
 Every milestone during transit of shipment is notified to client thru a menu driven where customer select which milestone need to be notified to avoid excess communication.</p>
+ <p className="text-gray-700 mb-6 text-justify">GGL’s dedicated ocean freight department specialize in the complete range freight management services for LCL and FCL loads, supported thru a well established and reliable partner network around the world, for efficient collection, storage & delivery from shippers door to consignee door, with customs brokerage and clearance facilities.
+
+GGL provide scheduled and multiple services that connect all economies. GGL has a dedicated carrier pricing department and provide customized solutions based on the transit and price requirements of the clients.
+
+Every milestone during transit of shipment is notified to client thru a menu driven where customer select which milestone need to be notified to avoid excess communication.</p>
+ <p className="text-gray-700 mb-6 text-justify">GGL’s dedicated ocean freight department specialize in the complete range freight management services for LCL and FCL loads, supported thru a well established and reliable partner network around the world, for efficient collection, storage & delivery from shippers door to consignee door, with customs brokerage and clearance facilities.
+
+GGL provide scheduled and multiple services that connect all economies. GGL has a dedicated carrier pricing department and provide customized solutions based on the transit and price requirements of the clients.
+
+Every milestone during transit of shipment is notified to client thru a menu driven where customer select which milestone need to be notified to avoid excess communication.</p>
             </div>
             
             {/* LCL and FCL Services */}
