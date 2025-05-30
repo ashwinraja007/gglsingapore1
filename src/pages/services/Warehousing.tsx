@@ -80,93 +80,13 @@ const Warehousing = () => {
                 Comprehensive Warehousing Services
               </h2>
               <div className="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
-              <p className="text-gray-700 mb-6 text-justify">GGL is a premier supply chain solutions provider in Singapore, addressing the full spectrum of logistics needs for our clients. We facilitate the movement of goods from suppliers to manufacturers (for parts and components), from manufacturers and brand owners to resellers and consumers (for finished products), and from consumers back to original equipment manufacturers (for spares and returns).
-
-Our state-of-the-art warehouses are tailored to meet clients' specific requirements and are supported by cutting-edge WMS systems. These systems offer complete visibility and advanced features such as online picking and reorder cycle notifications.
-
-Our skilled warehouse team is highly experienced and trained to accommodate the unique needs of each client. They are backed by dedicated teams specializing in forwarding and land transportation.
-
-GGL caters to a wide array of industries, offering an extensive range of warehousing and distribution services, includin</p>
-<p className="text-gray-700 mb-6 text-justify">GGL is a premier supply chain solutions provider in Singapore, addressing the full spectrum of logistics needs for our clients. We facilitate the movement of goods from suppliers to manufacturers (for parts and components), from manufacturers and brand owners to resellers and consumers (for finished products), and from consumers back to original equipment manufacturers (for spares and returns).
-
-Our state-of-the-art warehouses are tailored to meet clients' specific requirements and are supported by cutting-edge WMS systems. These systems offer complete visibility and advanced features such as online picking and reorder cycle notifications.
-
-Our skilled warehouse team is highly experienced and trained to accommodate the unique needs of each client. They are backed by dedicated teams specializing in forwarding and land transportation.
-
-GGL caters to a wide array of industries, offering an extensive range of warehousing and distribution services, includin</p>
-<p className="text-gray-700 mb-6 text-justify">GGL is a premier supply chain solutions provider in Singapore, addressing the full spectrum of logistics needs for our clients. We facilitate the movement of goods from suppliers to manufacturers (for parts and components), from manufacturers and brand owners to resellers and consumers (for finished products), and from consumers back to original equipment manufacturers (for spares and returns).
-
-Our state-of-the-art warehouses are tailored to meet clients' specific requirements and are supported by cutting-edge WMS systems. These systems offer complete visibility and advanced features such as online picking and reorder cycle notifications.
-
-Our skilled warehouse team is highly experienced and trained to accommodate the unique needs of each client. They are backed by dedicated teams specializing in forwarding and land transportation.
-
-GGL caters to a wide array of industries, offering an extensive range of warehousing and distribution services, includin</p>
+              <p className="text-gray-700 mb-6 text-justify">GGL is a premier supply chain solutions provider in Singapore, addressing the full spectrum of logistics needs for our clients. We facilitate the movement of goods from suppliers to manufacturers (for parts and components), from manufacturers and brand owners to resellers and consumers (for finished products), and from consumers back to original equipment manufacturers (for spares and returns).</p>
+            <p className="text-gray-700 mb-6 text-justify">Our state-of-the-art warehouses are tailored to meet clients' specific requirements and are supported by cutting-edge WMS systems. These systems offer complete visibility and advanced features such as online picking and reorder cycle notifications.</p>
+            <p className="text-gray-700 mb-6 text-justify">Our skilled warehouse team is highly experienced and trained to accommodate the unique needs of each client. They are backed by dedicated teams specializing in forwarding and land transportation.</p>
             </div>
             
             {/* Storage and Distribution Services */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <motion.div initial={{
-              opacity: 0,
-              x: -20
-            }} whileInView={{
-              opacity: 1,
-              x: 0
-            }} transition={{
-              duration: 0.5
-            }} viewport={{
-              once: true
-            }} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
-                <div className="relative">
-                  <AspectRatio ratio={16 / 9}>
-                    <img src="/warehouse2.png" alt="Secure Storage" className="w-full h-full object-cover" />
-                  </AspectRatio>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                    <h3 className="text-white text-xl font-bold p-6">Secure Storage</h3>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Shield className="h-6 w-6 text-brand-gold" />
-                    <h4 className="text-lg font-semibold">Protected Environment</h4>
-                  </div>
-                  <p className="text-gray-600 mb-4 text-justify">
-                    Our state-of-the-art warehousing facilities provide secure, climate-controlled storage for your valuable inventory. With advanced security systems and professional handling, your goods are protected at all times.
-                  </p>
-                  <p className="text-gray-600 text-justify">We offer flexible storage solutions to accommodate various inventory sizes and specialized requirements, ensuring optimal conditions for your products while maintaining cost-effectiveness.</p>
-                </div>
-              </motion.div>
-              
-              <motion.div initial={{
-              opacity: 0,
-              x: 20
-            }} whileInView={{
-              opacity: 1,
-              x: 0
-            }} transition={{
-              duration: 0.5
-            }} viewport={{
-              once: true
-            }} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
-                <div className="relative">
-                  <AspectRatio ratio={16 / 9}>
-                    <img alt="Distribution Services" className="w-full h-full object-cover" src="/trucks.png" />
-                  </AspectRatio>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end my-0">
-                    <h3 className="text-white text-xl font-bold p-6">Distribution Services</h3>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Truck className="h-6 w-6 text-brand-gold" />
-                    <h4 className="text-lg font-semibold">Efficient Distribution Network</h4>
-                  </div>
-                  <p className="text-gray-600 mb-4 text-justify">
-                    Our comprehensive distribution services ensure timely delivery of your products to their final destinations. We manage the entire fulfillment process from order processing to last-mile delivery.
-                  </p>
-                  <p className="text-gray-600 text-justify">With our strategic network of distribution centers and partnerships, we provide efficient and cost-effective solutions that optimize your supply chain and improve customer satisfaction.</p>
-                </div>
-              </motion.div>
-            </div>
+            
             
             {/* Features Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
