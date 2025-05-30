@@ -87,6 +87,20 @@ Our state-of-the-art warehouses are tailored to meet clients' specific requireme
 Our skilled warehouse team is highly experienced and trained to accommodate the unique needs of each client. They are backed by dedicated teams specializing in forwarding and land transportation.
 
 GGL caters to a wide array of industries, offering an extensive range of warehousing and distribution services, includin</p>
+<p className="text-gray-700 mb-6 text-justify">GGL is a premier supply chain solutions provider in Singapore, addressing the full spectrum of logistics needs for our clients. We facilitate the movement of goods from suppliers to manufacturers (for parts and components), from manufacturers and brand owners to resellers and consumers (for finished products), and from consumers back to original equipment manufacturers (for spares and returns).
+
+Our state-of-the-art warehouses are tailored to meet clients' specific requirements and are supported by cutting-edge WMS systems. These systems offer complete visibility and advanced features such as online picking and reorder cycle notifications.
+
+Our skilled warehouse team is highly experienced and trained to accommodate the unique needs of each client. They are backed by dedicated teams specializing in forwarding and land transportation.
+
+GGL caters to a wide array of industries, offering an extensive range of warehousing and distribution services, includin</p>
+<p className="text-gray-700 mb-6 text-justify">GGL is a premier supply chain solutions provider in Singapore, addressing the full spectrum of logistics needs for our clients. We facilitate the movement of goods from suppliers to manufacturers (for parts and components), from manufacturers and brand owners to resellers and consumers (for finished products), and from consumers back to original equipment manufacturers (for spares and returns).
+
+Our state-of-the-art warehouses are tailored to meet clients' specific requirements and are supported by cutting-edge WMS systems. These systems offer complete visibility and advanced features such as online picking and reorder cycle notifications.
+
+Our skilled warehouse team is highly experienced and trained to accommodate the unique needs of each client. They are backed by dedicated teams specializing in forwarding and land transportation.
+
+GGL caters to a wide array of industries, offering an extensive range of warehousing and distribution services, includin</p>
             </div>
             
             {/* Storage and Distribution Services */}
