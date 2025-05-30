@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import Transportation from "./pages/Transportation";
 import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
 import LiquidTransportation from "./pages/services/LiquidTransportation";
@@ -33,6 +34,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/careers" element={<Careers />} />
+             <Route path="/Transportation" element={<Transportation />} />
             <Route path="/global-presence" element={<GlobalPresence />} />
             {/* Service specific pages */}
             <Route path="/services/liquid-transportation" element={<LiquidTransportation />} />
@@ -45,7 +47,7 @@ function App() {
           <Sonner />
         </BrowserRouter>
       </TooltipProvider>
-    </QueryClientProvider>
+    </QueryClientProvider> 
   );
 }
 
