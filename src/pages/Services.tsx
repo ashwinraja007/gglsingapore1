@@ -156,6 +156,13 @@ const Services = () => {
     image: "/warehouse2.png",
     description: "Premier supply chain solutions addressing the full spectrum of logistics needs, facilitating the movement of goods throughout the entire supply chain.",
     link: "/services/warehousing"
+  },  {
+    id: 5,
+    icon: <Warehouse className="w-5 h-5" />,
+    title: "LCL Consolidation",
+    image: "/warehouse2.png",
+    description: "GGL is a LCL Consolidator with global presence covering North America, UK, Middle East, Indian Sub Continent, South East Asia and Far East. Our LCL Groupage services is backed by very efficient customer support at competitive prices.",
+    link: "/services/warehousing"
   }
 ];
   const featuredServices = services.slice(0, 3);
