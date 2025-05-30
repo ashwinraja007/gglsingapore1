@@ -46,7 +46,7 @@ const EnhancedServiceCard = ({
             <img src={getServiceImage()} alt={title} className="h-40 w-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </AspectRatio>
         </div>
-        <div className="p-5 px-[16px] py-0">
+        <div className="p-5 px-[16px] py-[9px]">
           <div className="flex items-center space-x-3 mb-3">
             <div className="w-10 h-10 rounded-full flex items-center justify-center text-brand-navy bg-[#f6b100]">
               {icon}
