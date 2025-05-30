@@ -41,12 +41,12 @@ const EnhancedServiceCard = ({
     stiffness: 300
   }} className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl border border-gray-100">
       <Link to={link} className="block h-full" onClick={() => window.scrollTo(0, 0)}> 
-        <div className="h-36 sm:h-64 md:h-2 overflow-hidden my-0 py-0">
+        <div className="h-56 sm:h-64 md:h-52 overflow-hidden py-0">
           <AspectRatio ratio={16 / 9} className="h-full">
-            <img src={getServiceImage()} alt={title} className="h-full w-full transition-transform duration-500 group-hover:scale-110 object-cover" />
+            <img src={getServiceImage()} alt={title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </AspectRatio>
         </div>
-        <div className="p-5 py-0 my-0 px-[20px]">
+        <div className="p-5 px-[16px] py-0">
           <div className="flex items-center space-x-3 mb-3">
             <div className="w-10 h-10 rounded-full flex items-center justify-center text-brand-navy bg-[#f6b100]">
               {icon}
