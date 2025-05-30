@@ -152,7 +152,7 @@ const Careers = () => {
           }} viewport={{
             once: true
           }} className="text-center">
-              <h2 className="text-3xl font-bold mb-4">Ready to Start Your Journey?</h2>
+              <h2 className="text-3xl font-bold mb-4 text-slate-50">Ready to Start Your Journey?</h2>
               <p className="text-xl mb-8 text-blue-100">
                 Don't see the right position? Send us your resume and we'll keep you in mind for future opportunities.
               </p>
@@ -160,7 +160,7 @@ const Careers = () => {
                 <Button variant="gold" size="lg" className="font-semibold">
                   Submit Your Resume
                 </Button>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-brand-navy">
+                <Button variant="outline" size="lg" className="border-white text-black hover:bg-white hover:text-brand-navy">
                   Contact HR
                 </Button>
               </div>
