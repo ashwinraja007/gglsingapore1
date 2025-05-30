@@ -156,15 +156,14 @@ const Services = () => {
     image: "/warehouse2.png",
     description: "Premier supply chain solutions addressing the full spectrum of logistics needs, facilitating the movement of goods throughout the entire supply chain.",
     link: "/services/warehousing"
-  },  {
+  }, {
     id: 5,
     icon: <Warehouse className="w-5 h-5" />,
     title: "LCL Consolidation",
     image: "/warehouse2.png",
     description: "GGL is a LCL Consolidator with global presence covering North America, UK, Middle East, Indian Sub Continent, South East Asia and Far East. Our LCL Groupage services is backed by very efficient customer support at competitive prices.",
     link: "/services/warehousing"
-  }
-];
+  }];
   const featuredServices = services.slice(0, 3);
   return <div className="min-h-screen flex flex-col">
       <ScrollToTop />
@@ -229,7 +228,7 @@ const Services = () => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map(service => <ServiceCard key={service.id} {...service} />)}
             </div>
           </div>
