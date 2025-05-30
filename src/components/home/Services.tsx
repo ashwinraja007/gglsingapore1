@@ -1,11 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Truck, Package, Anchor, Warehouse } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { useEffect } from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-
 const EnhancedServiceCard = ({
   image,
   title,
@@ -34,7 +32,6 @@ const EnhancedServiceCard = ({
         return image;
     }
   };
-
   return <motion.div whileHover={{
     y: -5
   }} whileTap={{
@@ -44,12 +41,12 @@ const EnhancedServiceCard = ({
     stiffness: 300
   }} className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl border border-gray-100">
       <Link to={link} className="block h-full" onClick={() => window.scrollTo(0, 0)}> 
-        <div className="h-56 sm:h-64 md:h-52 overflow-hidden">
+        <div className="h-56 sm:h-64 md:h-52 overflow-hidden py-0">
           <AspectRatio ratio={16 / 9} className="h-full">
             <img src={getServiceImage()} alt={title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </AspectRatio>
         </div>
-        <div className="p-5">
+        <div className="p-5 px-[16px] py-0">
           <div className="flex items-center space-x-3 mb-3">
             <div className="w-10 h-10 rounded-full flex items-center justify-center text-brand-navy bg-[#f6b100]">
               {icon}
@@ -61,7 +58,7 @@ const EnhancedServiceCard = ({
             {description}
           </p>
           
-          <div className="inline-flex items-center text-brand-gold font-medium text-sm group">
+          <div className="inline-flex items-center text-brand-gold font-medium text-sm group py-[8px] px-[2px] my-[2px]">
             Learn More
             <motion.span className="ml-1" animate={{
             x: [0, 5, 0]
@@ -77,7 +74,6 @@ const EnhancedServiceCard = ({
       </Link>
     </motion.div>;
 };
-
 export const Services = () => {
   const services = [{
     image: "/lovable-uploads/oceanfrieght.jpg",
@@ -110,7 +106,6 @@ export const Services = () => {
     icon: <Warehouse size={20} />,
     link: "/services/warehousing"
   }];
-
   const containerVariants = {
     hidden: {
       opacity: 0
@@ -122,7 +117,6 @@ export const Services = () => {
       }
     }
   };
-
   const itemVariants = {
     hidden: {
       opacity: 0,
@@ -139,7 +133,6 @@ export const Services = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
-
   return <motion.section initial="hidden" whileInView="visible" viewport={{
     once: true,
     amount: 0.1
@@ -159,7 +152,7 @@ export const Services = () => {
           {services.map((service, index) => <motion.div key={index} variants={itemVariants} transition={{
           duration: 0.5,
           delay: index * 0.1
-        }}>
+        }} className="py-0">
               <EnhancedServiceCard image={service.image} title={service.title} description={service.description} icon={service.icon} link={service.link} />
             </motion.div>)}
         </motion.div>
@@ -186,5 +179,4 @@ export const Services = () => {
       </div>
     </motion.section>;
 };
-
 export default Services;
