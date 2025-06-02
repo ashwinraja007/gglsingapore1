@@ -87,7 +87,7 @@ const About = () => {
               once: true
             }}>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-                  Singapore's Premier <span className="text-blue-600">Logistics Partner</span>
+                 <span className="text-blue-600">About Us</span>
                 </h2>
                 
                 <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
@@ -143,46 +143,43 @@ const About = () => {
         </section>
 
         {/* Why Choose GGL Section */}
-        <section className="py-20 bg-white px-6">
-          <div className="max-w-7xl mx-auto">
-            <motion.div initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.8
-          }} viewport={{
-            once: true
-          }} className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Why Choose <span className="text-blue-600">GGL?</span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our commitment to excellence and innovation sets us apart in the logistics industry
-              </p>
-            </motion.div>
+<section className="py-20 bg-white px-6">
+  <div className="max-w-7xl mx-auto">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="text-center mb-16"
+    >
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Why Choose <span className="text-blue-600">GGL?</span>
+      </h2>
+      <div className="text-xl text-gray-600 max-w-4xl mx-auto space-y-6 text-left">
+        <p>
+          At GGL, we specialize in Less-than-Container Load (LCL) consolidation, offering global
+          logistics solutions designed to simplify complex supply chains. As a trusted LCL consolidator,
+          we provide seamless and cost-effective cargo movement across key global trade
+          lanes—including North America, the UK, the Middle East, the Indian Subcontinent,
+          Southeast Asia, and the Far East.
+        </p>
+        <p>
+          Our core strength lies in our strategic presence at major transshipment hubs, including
+          Singapore, Malaysia, Sri Lanka, and Dubai, allowing us to operate direct weekly sailings to
+          major ports worldwide. This robust network ensures optimized transit times, reduced freight
+          costs, and greater reliability for our clients.
+        </p>
+        <p>
+          With a deep commitment to service excellence, GGL combines global reach with local expertise.
+          Our LCL groupage services are supported by dedicated customer service teams, ensuring
+          smooth coordination, fast turnaround, and complete transparency from origin to destination—all
+          at highly competitive rates.
+        </p>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-              {features.map((feature, index) => <motion.div key={index} initial={{
-              opacity: 0,
-              y: 20
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              delay: index * 0.1,
-              duration: 0.5
-            }} viewport={{
-              once: true
-            }} className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700">{feature}</span>
-                </motion.div>)}
-            </div>
-          </div>
-        </section>
 
         {/* LCL Consolidation Section */}
         <section className="py-20 bg-gradient-to-r from-blue-900 to-indigo-900 text-white px-6">
