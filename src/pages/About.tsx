@@ -121,8 +121,8 @@ const About = () => {
               once: true
             }} className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                  <img src="/images/gp.jpg" alt="GGL Global Logistics" className="w-full h-[500px] object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  <img alt="GGL Global Logistics" className="w-full h-[500px] object-cover" src="/lovable-uploads/41795fb5-562d-45d1-a8d3-f26724bc079b.png" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent my-0"></div>
                 </div>
                 
                 {/* Floating cards */}
