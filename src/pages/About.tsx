@@ -208,7 +208,7 @@ const About = () => {
 
                 
 
-                <h3 className="text-2xl font-semibold mb-6 text-slate-50">GGL's Role in LCL Consolidation:</h3>
+                <h3 className="text-2xl mb-6 text-yellow-500 font-bold">GGL's Role in LCL Consolidation:</h3>
                 <div className="space-y-4 mb-8">
                   {lclServices.map((item, index) => <motion.div key={index} initial={{
                   opacity: 0,
@@ -230,7 +230,7 @@ const About = () => {
                 <p className="text-lg text-blue-100 leading-relaxed">
                   With our strategic global hub network and advanced tracking systems, we provide reliable, transparent, and economical LCL solutions tailored to your supply chain needs.
                 </p>
-                <p className="text-lg text-blue-100 leading-relaxed">At GGL, we don’t just move freight — we move businesses forward.</p>
+                <p className="text-lg text-yellow-500 leading-relaxed font-bold my-[20px]">At GGL, we don’t just move freight — we move businesses forward.</p>
               </motion.div>
 
               <motion.div initial={{
