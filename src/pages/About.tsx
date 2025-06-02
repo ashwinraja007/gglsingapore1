@@ -143,17 +143,21 @@ const About = () => {
         </section>
 
         {/* Why Choose GGL Section */}
-<section className="py-20 bg-white px-6">
+      <section className="py-20 bg-white px-6">
   <div className="max-w-7xl mx-auto">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className="text-center mb-16"
-    >
+    <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.8
+          }} viewport={{
+            once: true
+          }} className="text-center mb-16">
       <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-        Why Choose <span className="text-blue-600">GGL?</span>
+        Why Choose <span className="text-yellow-500">GGL?</span>
       </h2>
       <div className="text-xl text-gray-600 max-w-4xl mx-auto space-y-6 text-left">
         <p>
@@ -178,7 +182,7 @@ const About = () => {
       </div>
     </motion.div>
   </div>
-</section>
+      </section>
 
 
         {/* LCL Consolidation Section */}
