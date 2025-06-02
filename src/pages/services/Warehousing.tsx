@@ -102,7 +102,7 @@ operations and drive long-term growth.</p>
             {/* Features Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
               {[{
-              title: "Consolidation &amp; Deconsolidation",
+              title: "Consolidation & Deconsolidation",
               description: "",
               icon: <Package className="h-5 w-5 text-brand-gold" />
             }, {
@@ -114,7 +114,7 @@ operations and drive long-term growth.</p>
               description: "",
               icon: <Globe className="h-5 w-5 text-brand-gold" />
             }, {
-              title: "Inventory &amp; Purchase Order Management",
+              title: "Inventory & Purchase Order Management",
               description: "",
               icon: <Timer className="h-5 w-5 text-brand-gold" />
             }, {
