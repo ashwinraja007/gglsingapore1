@@ -270,8 +270,8 @@ const About = () => {
         }} viewport={{
           once: true
         }} className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to <span className="text-blue-200">Partner</span> With Us?
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-50">
+              Ready to <span className="text-slate-50">Partner</span> With Us?
             </h2>
             <p className="text-xl mb-8 text-blue-100 leading-relaxed">
               We don't just move freight — we move businesses forward. Let's discuss how we can optimize your supply chain.
