@@ -230,6 +230,9 @@ const About = () => {
                 <p className="text-lg text-blue-100 leading-relaxed">
                   With our strategic global hub network and advanced tracking systems, we provide reliable, transparent, and economical LCL solutions tailored to your supply chain needs.
                 </p>
+                <p className="text-lg text-blue-100 leading-relaxed">
+                  With our strategic global hub network and advanced tracking systems, we provide reliable, transparent, and economical LCL solutions tailored to your supply chain needs.
+                </p>
               </motion.div>
 
               <motion.div initial={{
