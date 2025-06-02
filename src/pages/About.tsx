@@ -160,20 +160,20 @@ const About = () => {
         Why Choose <span className="text-yellow-500">GGL?</span>
       </h2>
       <div className="text-xl text-gray-600 max-w-4xl mx-auto space-y-6 text-left">
-        <p>
+        <p className="text-base">
           At GGL, we specialize in Less-than-Container Load (LCL) consolidation, offering global
           logistics solutions designed to simplify complex supply chains. As a trusted LCL consolidator,
           we provide seamless and cost-effective cargo movement across key global trade
           lanes—including North America, the UK, the Middle East, the Indian Subcontinent,
           Southeast Asia, and the Far East.
         </p>
-        <p>
+        <p className="text-base">
           Our core strength lies in our strategic presence at major transshipment hubs, including
           Singapore, Malaysia, Sri Lanka, and Dubai, allowing us to operate direct weekly sailings to
           major ports worldwide. This robust network ensures optimized transit times, reduced freight
           costs, and greater reliability for our clients.
         </p>
-        <p>
+        <p className="text-base">
           With a deep commitment to service excellence, GGL combines global reach with local expertise.
           Our LCL groupage services are supported by dedicated customer service teams, ensuring
           smooth coordination, fast turnaround, and complete transparency from origin to destination—all
@@ -230,9 +230,7 @@ const About = () => {
                 <p className="text-lg text-blue-100 leading-relaxed">
                   With our strategic global hub network and advanced tracking systems, we provide reliable, transparent, and economical LCL solutions tailored to your supply chain needs.
                 </p>
-                <p className="text-lg text-blue-100 leading-relaxed">
-                  With our strategic global hub network and advanced tracking systems, we provide reliable, transparent, and economical LCL solutions tailored to your supply chain needs.
-                </p>
+                <p className="text-lg text-blue-100 leading-relaxed">At GGL, we don’t just move freight — we move businesses forward.</p>
               </motion.div>
 
               <motion.div initial={{
