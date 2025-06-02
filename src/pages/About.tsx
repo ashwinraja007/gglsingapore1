@@ -59,9 +59,9 @@ const About = () => {
             duration: 0.8
           }} className="text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-slate-50">
-                About <span className="text-blue-300">GGL</span>
+                About <span className="text-slate-50">GGL</span>
               </h1>
-              <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed text-slate-50">
                 Singapore's premier logistics company, offering specialized expertise across warehousing, freight forwarding, and transportation
               </p>
             </motion.div>
