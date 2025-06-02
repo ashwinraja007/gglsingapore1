@@ -115,24 +115,7 @@ const LCLConsolidation = () => {
               title: "Specialized Cargo",
               description: "Solutions for oversized and project cargo",
               icon: <Gauge className="h-5 w-5 text-brand-gold" />
-            }].map((feature, index) => <motion.div key={index} initial={{
-              opacity: 0,
-              y: 20
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.5,
-              delay: index * 0.1
-            }} viewport={{
-              once: true
-            }} className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100">
-                  <div className="mb-3 bg-blue-50 p-2 rounded-full inline-block">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-gray-800">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </motion.div>)}
+            }].map((feature, index) => {})}
             </div>
             
             {/* CTA Section */}
