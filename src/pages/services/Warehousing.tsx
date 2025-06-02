@@ -102,25 +102,26 @@ operations and drive long-term growth.</p>
             {/* Features Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
               {[{
-      title: "Consolidation & Deconsolidation",
-      icon: <Package className="h-6 w-6 text-white" />
-    },
-    {
-      title: "Pick & Pack",
-      icon: <Box className="h-6 w-6 text-white" />
-    },
-    {
-      title: "Storage & Distribution",
-      icon: <Globe className="h-6 w-6 text-white" />
-    },
-    {
-      title: "Inventory & Purchase Order Management",
-      icon: <Timer className="h-6 w-6 text-white" />
-    },
-    {
-      title: "Value-Added Services (labelling, kitting, inspections)",
-      icon: <Shield className="h-6 w-6 text-white" />
-    }].map((feature, index) => <motion.div key={index} initial={{
+              title: "Consolidation &amp; Deconsolidation",
+              description: "",
+              icon: <Package className="h-5 w-5 text-brand-gold" />
+            }, {
+              title: "Pick & Pack",
+              description: "",
+              icon: <Box className="h-5 w-5 text-brand-gold" />
+            }, {
+              title: "Storage & Distribution",
+              description: "",
+              icon: <Globe className="h-5 w-5 text-brand-gold" />
+            }, {
+              title: "Inventory &amp; Purchase Order Management",
+              description: "",
+              icon: <Timer className="h-5 w-5 text-brand-gold" />
+            }, {
+              title: "Value-Added Services (labelling, kitting, inspections)",
+              description: "",
+              icon: <Shield className="h-5 w-5 text-brand-gold" />
+            }].map((feature, index) => <motion.div key={index} initial={{
               opacity: 0,
               y: 20
             }} whileInView={{
