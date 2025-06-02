@@ -91,19 +91,19 @@ const About = () => {
                 </h2>
                 
                 <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
-                  <p>
+                  <p className="text-base">
                     At GGL, we take pride in being one of Singapore's premier logistics companies, offering specialized expertise across warehousing, freight forwarding (air and ocean), and transportation. Our mission is to provide seamless, end-to-end global logistics solutions through a trusted network of partners, each excelling in their respective logistics segments.
                   </p>
                   
-                  <p>
+                  <p className="text-base">
                     Our experienced team is dedicated to delivering world-class service, tailored to meet the unique needs of each client. Whether it's a custom-built logistics strategy or a full-spectrum solution, we ensure efficiency, reliability, and value every step of the way.
                   </p>
                   
-                  <p>
+                  <p className="text-base">
                     To enhance customer experience, GGL leverages a powerful, internet-based software platform that offers real-time shipment visibility—from origin to destination. This technology ensures transparency, control, and timely updates, delivering a seamless and differentiated logistics experience.
                   </p>
 
-                  <p>
+                  <p className="text-base">
                     Renowned for our exceptional service quality, GGL is recognized as one of the most customer-focused logistics companies in the region. Our ability to consistently deliver dependable and economical solutions has helped us build enduring partnerships with clients around the world.
                   </p>
                 </div>
