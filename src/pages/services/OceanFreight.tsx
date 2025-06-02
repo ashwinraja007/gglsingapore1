@@ -85,6 +85,9 @@ const OceanFreight = () => {
               <p className="text-gray-700 mb-6 text-justify">
                 Clients receive shipment milestone notifications through a customizable notification system, reducing unnecessary communication.
               </p>
+              <p className="text-gray-700 mb-6 text-justify">
+                Clients receive shipment milestone notifications through a customizable notification system, reducing unnecessary communication.
+              </p>
             </div>
 
             {/* CTA Section */}
