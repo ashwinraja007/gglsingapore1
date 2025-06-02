@@ -84,7 +84,7 @@ const AirFreight = () => {
             </div>
             
             {/* Features Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
               {[{
               icon: <Clock className="h-10 w-10 text-brand-gold" />,
               title: "Time-Definite Deliveries",
@@ -101,7 +101,7 @@ const AirFreight = () => {
               icon: <Clock className="h-10 w-10 text-brand-gold" />,
               title: "Real-Time Shipment Tracking",
               description: "Full visibility and status updates through integrated tracking systems."
-            },{
+            }, {
               icon: <Headset className="h-10 w-10 text-brand-gold" />,
               title: "Customs Clearance Support",
               description: "End-to-end handling of documentation, customs brokerage, and compliance to streamline international transit."
