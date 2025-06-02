@@ -133,28 +133,28 @@ const Services = () => {
     icon: <Plane className="w-5 h-5" />,
     title: "Air Freight",
     image: "/cargoplane3.png",
-    description: "Comprehensive air freight solutions with express services, door-to-door delivery, and competitive rates to meet all your shipping requirements.",
+    description: "At GGL, we offer a comprehensive range of air freight solutions tailored to meet your time-sensitive and high-priority shipping needs.",
     link: "/services/air-freight"
   }, {
     id: 2,
     icon: <Ship className="w-5 h-5" />,
     title: "Ocean Freight",
     image: "/ships2.png",
-    description: "Complete range of freight management services for LCL and FCL loads, with reliable global partner networks ensuring efficient delivery.",
+    description: "At GGL, our dedicated Ocean Freight Department specializes in comprehensive freight management services for both Less-than-Container Load (LCL) and Full Container Load (FCL) shipments.",
     link: "/services/ocean-freight"
   }, {
     id: 3,
     icon: <Truck className="w-5 h-5" />,
     title: "Transportation",
     image: "/trucks.png",
-    description: "Dedicated fleet of vehicles ensuring timely domestic distribution with an efficient operational infrastructure providing high productivity and reliable service.",
+    description: "GGL proudly operates a dedicated fleet of vehicles designed to guarantee timely and efficient domestic distribution and delivery services.",
     link: "/services/transportation"
   }, {
     id: 4,
     icon: <Warehouse className="w-5 h-5" />,
     title: "Warehousing",
     image: "/warehouse2.png",
-    description: "Premier supply chain solutions addressing the full spectrum of logistics needs, facilitating the movement of goods throughout the entire supply chain.",
+    description: "GGL is a leading LCL consolidator with a strong global footprint, offering reliable groupage services across key trade lanes—including North America, the UK, the Middle East, the Indian Subcontinent, Southeast Asia, and the Far East.",
     link: "/services/warehousing"
   }, {
     id: 5,
