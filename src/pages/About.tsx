@@ -169,7 +169,7 @@ const About = () => {
         </p>
         <p className="text-base">
           Our core strength lies in our strategic presence at major transshipment hubs, including
-          Singapore, Malaysia, Sri Lanka, and Dubai, allowing us to operate direct weekly sailings to
+          <strong>Singapore, Malaysia, Sri Lanka, and Dubai,</strong> allowing us to operate direct weekly sailings to
           major ports worldwide. This robust network ensures optimized transit times, reduced freight
           costs, and greater reliability for our clients.
         </p>
