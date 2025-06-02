@@ -82,6 +82,8 @@ const AirFreight = () => {
               <div className="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
               <p className="text-gray-700 mb-6 font-normal text-justify">At GGL, we provide a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams offer seamless air import, export, and express options, all on a convenient door-to-door basis.</p>
               <p className="text-gray-700 text-justify">GGL stands out with competitive rates and outstanding support operations, ensuring complete customer satisfaction with every shipment. Whether you're looking for speed, reliability, or cost-efficiency, our air freight services deliver on all fronts, making GGL your trusted partner in global logistics.</p>
+              <p className="text-gray-700 text-justify">GGL stands out with competitive rates and outstanding support operations, ensuring complete customer satisfaction with every shipment. Whether you're looking for speed, reliability, or cost-efficiency, our air freight services deliver on all fronts, making GGL your trusted partner in global logistics.</p>
+              <p className="text-gray-700 text-justify">GGL stands out with competitive rates and outstanding support operations, ensuring complete customer satisfaction with every shipment. Whether you're looking for speed, reliability, or cost-efficiency, our air freight services deliver on all fronts, making GGL your trusted partner in global logistics.</p>
             </div>
             
             {/* Features Grid */}
