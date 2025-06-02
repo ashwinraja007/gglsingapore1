@@ -100,7 +100,7 @@ operations and drive long-term growth.</p>
             
             
             {/* Features Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
               {[{
               title: "Consolidation &amp; Deconsolidation",
               description: "",
@@ -109,15 +109,15 @@ operations and drive long-term growth.</p>
               title: "Pick & Pack",
               description: "",
               icon: <Box className="h-5 w-5 text-brand-gold" />
-            },  {
+            }, {
               title: "Storage & Distribution",
               description: "",
               icon: <Globe className="h-5 w-5 text-brand-gold" />
-            },{
+            }, {
               title: "Inventory &amp; Purchase Order Management",
               description: "",
               icon: <Timer className="h-5 w-5 text-brand-gold" />
-            },{
+            }, {
               title: "Value-Added Services (labelling, kitting, inspections)",
               description: "",
               icon: <Shield className="h-5 w-5 text-brand-gold" />
