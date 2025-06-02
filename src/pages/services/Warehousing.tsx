@@ -102,29 +102,25 @@ operations and drive long-term growth.</p>
             {/* Features Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {[{
-              title: "Inventory Management",
-              description: "Real-time tracking and management of your stock",
+              title: "Consolidation &amp; Deconsolidation",
+              description: "",
               icon: <Package className="h-5 w-5 text-brand-gold" />
             }, {
-              title: "Climate Control",
-              description: "Temperature and humidity controlled storage",
-              icon: <Gauge className="h-5 w-5 text-brand-gold" />
-            }, {
-              title: "Order Fulfillment",
-              description: "Complete pick, pack, and ship services",
+              title: "Pick & Pack",
+              description: "",
               icon: <Box className="h-5 w-5 text-brand-gold" />
-            }, {
-              title: "Security Systems",
-              description: "24/7 monitoring and advanced security measures",
-              icon: <Shield className="h-5 w-5 text-brand-gold" />
-            }, {
-              title: "Location Tracking",
-              description: "Real-time visibility of inventory location",
-              icon: <MapPin className="h-5 w-5 text-brand-gold" />
-            }, {
-              title: "Fast Processing",
-              description: "Quick turnaround times for all operations",
+            },  {
+              title: "Storage & Distribution",
+              description: "",
+              icon: <Globe className="h-5 w-5 text-brand-gold" />
+            },{
+              title: "Inventory &amp; Purchase Order Management",
+              description: "",
               icon: <Timer className="h-5 w-5 text-brand-gold" />
+            },{
+              title: "Value-Added Services (labelling, kitting, inspections)",
+              description: "",
+              icon: <Shield className="h-5 w-5 text-brand-gold" />
             }].map((feature, index) => <motion.div key={index} initial={{
               opacity: 0,
               y: 20
