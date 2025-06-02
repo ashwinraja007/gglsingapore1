@@ -164,12 +164,12 @@ const About = () => {
           At GGL, we specialize in Less-than-Container Load (LCL) consolidation, offering global
           logistics solutions designed to simplify complex supply chains. As a trusted LCL consolidator,
           we provide seamless and cost-effective cargo movement across key global trade
-          lanes—including North America, the UK, the Middle East, the Indian Subcontinent,
-          Southeast Asia, and the Far East.
+          lanes—including <strong> North America, the UK, the Middle East, the Indian Subcontinent,
+          Southeast Asia, and the Far East.</strong>
         </p>
         <p className="text-base">
-          Our core strength lies in our strategic presence at major transshipment hubs, including
-          <strong>Singapore, Malaysia, Sri Lanka, and Dubai,</strong> allowing us to operate direct weekly sailings to
+          Our core strength lies in our strategic presence at major transshipment hubs, <strong>including
+          Singapore, Malaysia, Sri Lanka, and Dubai,</strong> allowing us to operate direct weekly sailings to
           major ports worldwide. This robust network ensures optimized transit times, reduced freight
           costs, and greater reliability for our clients.
         </p>
