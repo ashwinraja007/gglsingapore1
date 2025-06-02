@@ -80,30 +80,31 @@ const AirFreight = () => {
                 Comprehensive Air Freight Services
               </h2>
               <div className="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
-              <p className="text-gray-700 mb-6 font-normal text-justify">At GGL, we provide a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams offer seamless air import, export, and express options, all on a convenient door-to-door basis.</p>
-              <p className="text-gray-700 text-justify">GGL stands out with competitive rates and outstanding support operations, ensuring complete customer satisfaction with every shipment. Whether you're looking for speed, reliability, or cost-efficiency, our air freight services deliver on all fronts, making GGL your trusted partner in global logistics.</p>
-              <p className="text-gray-700 text-justify">GGL stands out with competitive rates and outstanding support operations, ensuring complete customer satisfaction with every shipment. Whether you're looking for speed, reliability, or cost-efficiency, our air freight services deliver on all fronts, making GGL your trusted partner in global logistics.</p>
-              <p className="text-gray-700 text-justify">GGL stands out with competitive rates and outstanding support operations, ensuring complete customer satisfaction with every shipment. Whether you're looking for speed, reliability, or cost-efficiency, our air freight services deliver on all fronts, making GGL your trusted partner in global logistics.</p>
+              <p className="text-gray-700 mb-6 font-normal text-justify">At GGL, we offer a comprehensive range of air freight solutions tailored to meet your time-sensitive and high-priority shipping needs. Our expert air freight teams handle air import, export, and express shipments with precision, offering seamless door-to-door services across global trade lanes.</p>
             </div>
             
             {/* Features Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {[{
               icon: <Clock className="h-10 w-10 text-brand-gold" />,
-              title: "Time-sensitive Delivery",
-              description: "Fast and reliable delivery for urgent shipments"
+              title: "Time-Definite Deliveries",
+              description: "Flexible options including next-flight-out, express, and deferred services to meet critical timelines."
             }, {
               icon: <Plane className="h-10 w-10 text-brand-gold" />,
-              title: "Global Air Network",
-              description: "Extensive network covering all major destinations"
+              title: "Cargo Consolidation",
+              description: "Efficient consolidation services to optimize costs and reduce handling time."
             }, {
               icon: <Globe className="h-10 w-10 text-brand-gold" />,
-              title: "Door-to-Door",
-              description: "Complete service from pickup to final delivery"
+              title: "Specialized Handling",
+              description: "Capabilities to manage high-value, sensitive, or perishable cargo with care and compliance."
             }, {
+              icon: <Clock className="h-10 w-10 text-brand-gold" />,
+              title: "Real-Time Shipment Tracking",
+              description: "Full visibility and status updates through integrated tracking systems."
+            },{
               icon: <Headset className="h-10 w-10 text-brand-gold" />,
-              title: "24/7 Support",
-              description: "Round-the-clock assistance for your shipments"
+              title: "Customs Clearance Support",
+              description: "End-to-end handling of documentation, customs brokerage, and compliance to streamline international transit."
             }].map((feature, index) => <motion.div key={index} initial={{
               opacity: 0,
               y: 20
