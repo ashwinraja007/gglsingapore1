@@ -71,7 +71,6 @@ const LCLConsolidation = () => {
               <p className="text-gray-700 mb-6 text-justify">GGL is a LCL Consolidator with global presence covering North America, UK, Middle East, Indian Sub Continent, South East Asia and Far East. Our LCL Groupage services is backed by very efficient customer support at competitive prices.</p>
               <p className="text-gray-700 mb-6 text-justify">The GGL Group is strategically located in the cargo transhipment hubs of Singapore, Malaysia, Srilanka and Dubai offering direct weekly sailings to all major destinations worldwide.</p>
               <p className="text-gray-700 mb-6 text-justify">GGL announces the commencement of its operations in India with the launch of its first office in Mumbai. Offices in Chennai and strategic ICD's like New Delhi, Pune and Bangalore will follow soon. With this significant development GGL will offer in India a wide spectrum of logistics services including LCL Consolidation, Dangerous Cargo transportation, FCL, Airfreight, Warehousing/3 PL logistics and land transport solutions.</p>
-              <p className="text-gray-700 mb-6 text-justify">GGL with its internet based software platform offers unmatched shipment visibility from origin to final destination thereby delivering a truly differentiated customer experience.</p>
             </div>
             
             {/* Features Grid */}
