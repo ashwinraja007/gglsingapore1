@@ -154,7 +154,7 @@ const Services = () => {
     icon: <Warehouse className="w-5 h-5" />,
     title: "Warehousing",
     image: "/warehouse2.png",
-    description: "GGL is a leading LCL consolidator with a strong global footprint, offering reliable groupage services across key trade lanes—including North America, the UK, the Middle East, the Indian Subcontinent, Southeast Asia, and the Far East.",
+    description: "GGL is a leading supply chain solutions provider in Singapore, offering end-to- end logistics services tailored to a wide range of industries.",
     link: "/services/warehousing"
   }, {
     id: 5,
