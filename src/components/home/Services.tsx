@@ -24,7 +24,7 @@ const EnhancedServiceCard = ({
       case "Ocean Freight":
         return "/ships.png";
       case "Transportation And Distribution":
-        return "/transpoth.png";
+        return "/truck.png";
       case "Warehousing":
         return "/warehouses.png";
       default:
