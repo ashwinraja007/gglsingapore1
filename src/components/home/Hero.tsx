@@ -81,11 +81,11 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/40 z-[1]" />
 
      {/* Main Content - Vertically Shifted Up */}
-<div className="absolute inset-0 flex items-start justify-start z-[2] pt-16"> {/* Adjust pt-20 as needed */}
-  <div className="container mx-auto h-full flex items-start px-4 md:px-6 lg:px-8">
+<div className="absolute inset-0 flex items-center justify-start z-[2]">
+  <div className="container mx-auto h-full flex items-center px-4 md:px-6 lg:px-8">
     <div
-      className={`max-w-2xl space-y-4 md:space-y-5 text-left transition-all duration-800 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      className={`max-w-2xl space-y-4 md:space-y-5 text-left transition-all duration-800 transform ${
+        isVisible ? 'opacity-100 translate-y-[10%]' : 'opacity-0 translate-y-10'
       }`}
     >
       <div className="flex items-center gap-3 mb-2">
