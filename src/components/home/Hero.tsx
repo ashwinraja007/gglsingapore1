@@ -80,34 +80,35 @@ const Hero = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 z-[1]" />
 
-      {/* Main Content - Vertically Centered Left */}
-      <div className="absolute inset-0 flex items-center justify-start z-[2]">
-        <div className="container mx-auto h-full flex items-center px-4 md:px-6 lg:px-8">
-          <div
-            className={`max-w-2xl space-y-4 md:space-y-5 text-left transition-all duration-800 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}
-          >
-            <div className="flex items-center gap-3 mb-2">
-              <div className="text-yellow-500 animate-spin-slow">
-                <Globe className="w-8 h-8 sm:w-10 sm:h-10 drop-shadow-[0_0_8px_rgba(246,177,0,0.8)]" />
-              </div>
-              <span className="inline-block bg-yellow-500/20 backdrop-blur-sm text-white px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium border border-yellow-500/30">
-                Beyond Logistics, a Complete Solution
-              </span>
-            </div>
-
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Delivering Excellence in <span className="text-yellow-500">Global Logistics</span> Solutions
-            </h1>
-
-            <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-xl">
-              GGL brings over 25 years of expertise in international logistics,
-              offering comprehensive solutions tailored to your business needs.
-            </p>
-          </div>
+     {/* Main Content - Vertically Shifted Up */}
+<div className="absolute inset-0 flex items-start justify-start z-[2] pt-20"> {/* Adjust pt-20 as needed */}
+  <div className="container mx-auto h-full flex items-start px-4 md:px-6 lg:px-8">
+    <div
+      className={`max-w-2xl space-y-4 md:space-y-5 text-left transition-all duration-800 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
+      <div className="flex items-center gap-3 mb-2">
+        <div className="text-yellow-500 animate-spin-slow">
+          <Globe className="w-8 h-8 sm:w-10 sm:h-10 drop-shadow-[0_0_8px_rgba(246,177,0,0.8)]" />
         </div>
+        <span className="inline-block bg-yellow-500/20 backdrop-blur-sm text-white px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium border border-yellow-500/30">
+          Beyond Logistics, a Complete Solution
+        </span>
       </div>
+
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+        Delivering Excellence in <span className="text-yellow-500">Global Logistics</span> Solutions
+      </h1>
+
+      <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-xl">
+        GGL brings over 25 years of expertise in international logistics,
+        offering comprehensive solutions tailored to your business needs.
+      </p>
+    </div>
+  </div>
+</div>
+
 
       {/* Portal Buttons */}
       <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-0 right-0 z-10 px-2 sm:px-4">
