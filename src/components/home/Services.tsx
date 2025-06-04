@@ -110,7 +110,7 @@ export const Services = () => {
       link: "/services/lcl-consolidation"
     },
     {
-      image: "/projectcargo.png",
+      image: "/projectcargo3.png",
       title: "Project Cargo",
       description:
         "Project cargo refers to the specialized transportation of large, heavy, high-value, or complex equipment, often associated with large-scale infrastructure or construction projects.",
