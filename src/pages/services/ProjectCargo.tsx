@@ -238,4 +238,4 @@ const ProjectCargo = () => {
       <Footer />
     </div>;
 };
-export default CustomsClearance;
+export default ProjectCargo;
