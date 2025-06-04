@@ -42,7 +42,6 @@ function App() {
             <Route path="/services/liquid-transportation" element={<LiquidTransportation />} />
             <Route path="/services/air-freight" element={<AirFreight />} />
             <Route path="/services/ocean-freight" element={<OceanFreight />} />
-            <Route path="/services/customs-clearance" element={<CustomsClearance />} />
             <Route path="/services/lcl-consolidation" element={<LCLConsolidation />} />
             <Route path="/services/project-cargo" element={<ProjectCargo />} />
             <Route path="/services/warehousing" element={<Warehousing />} />
