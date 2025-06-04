@@ -128,49 +128,64 @@ const ServiceDetailCard = ({
 };
 const Services = () => {
   const isMobile = useIsMobile();
-  const services = [{
-    id: 1,
-    icon: <Plane className="w-5 h-5" />,
-    title: "Air Freight",
-    image: "/cargoplane3.png",
-    description: "At GGL, we offer a comprehensive range of air freight solutions tailored to meet your time-sensitive and high-priority shipping needs.",
-    link: "/services/air-freight"
-  }, {
-    id: 2,
-    icon: <Ship className="w-5 h-5" />,
-    title: "Ocean Freight",
-    image: "/ships2.png",
-    description: "At GGL, our dedicated Ocean Freight Department specializes in comprehensive freight management services for both Less-than-Container Load (LCL) and Full Container Load (FCL) shipments.",
-    link: "/services/ocean-freight"
-  }, {
-    id: 3,
-    icon: <Truck className="w-5 h-5" />,
-    title: "Transportation",
-    image: "/trucks.png",
-    description: "GGL proudly operates a dedicated fleet of vehicles designed to guarantee timely and efficient domestic distribution and delivery services.",
-    link: "/services/transportation"
-  }, {
-    id: 4,
-    icon: <Warehouse className="w-5 h-5" />,
-    title: "Warehousing",
-    image: "/warehouse2.png",
-    description: "GGL is a leading supply chain solutions provider in Singapore, offering end-to- end logistics services tailored to a wide range of industries.",
-    link: "/services/warehousing"
-  }, {
-    id: 5,
-    icon: <Warehouse className="w-5 h-5" />,
-    title: "LCL Consolidation",
-    image: "/lcl.png",
-    description: "GGL is a LCL Consolidator with global presence covering North America, UK, Middle East, Indian Sub Continent, South East Asia and Far East. Our LCL Groupage services is backed by very efficient customer support at competitive prices.",
-    link: "/services/lcl-consolidation"
-  }, {
-    id: 6,
-    icon: <Warehouse className="w-5 h-5" />,
-    title: "Project Cargo",
-    image: "/cargoproject.png",
-    description: " we specialize in delivering end-to-end logistics solutions for complex, heavy, and oversized shipments—commonly known as project cargo.",
-    link: "/services/project-cargo"
-  }];
+  const services = [
+    {
+      id: 1,
+      icon: <Plane className="w-5 h-5" />,
+      title: "Air Freight",
+      image: "/cargoplane3.png",
+      description: "At GGL, we offer a comprehensive range of air freight solutions tailored to meet your time-sensitive and high-priority shipping needs.",
+      link: "/services/air-freight"
+    },
+    {
+      id: 2,
+      icon: <Ship className="w-5 h-5" />,
+      title: "Ocean Freight",
+      image: "/ships2.png",
+      description: "At GGL, our dedicated Ocean Freight Department specializes in comprehensive freight management services for both Less-than-Container Load (LCL) and Full Container Load (FCL) shipments.",
+      link: "/services/ocean-freight"
+    },
+    {
+      id: 3,
+      icon: <Truck className="w-5 h-5" />,
+      title: "Transportation",
+      image: "/trucks.png",
+      description: "GGL proudly operates a dedicated fleet of vehicles designed to guarantee timely and efficient domestic distribution and delivery services.",
+      link: "/services/transportation"
+    },
+    {
+      id: 4,
+      icon: <Warehouse className="w-5 h-5" />,
+      title: "Warehousing",
+      image: "/warehouse2.png",
+      description: "GGL is a leading supply chain solutions provider in Singapore, offering end-to- end logistics services tailored to a wide range of industries.",
+      link: "/services/warehousing"
+    },
+    {
+      id: 5,
+      icon: <Warehouse className="w-5 h-5" />,
+      title: "LCL Consolidation",
+      image: "/lcl.png",
+      description: "GGL is a LCL Consolidator with global presence covering North America, UK, Middle East, Indian Sub Continent, South East Asia and Far East. Our LCL Groupage services is backed by very efficient customer support at competitive prices.",
+      link: "/services/lcl-consolidation"
+    },
+    {
+      id: 6,
+      icon: <Warehouse className="w-5 h-5" />,
+      title: "Project Cargo",
+      image: "/cargoproject.png",
+      description: "We specialize in delivering end-to-end logistics solutions for complex, heavy, and oversized shipments—commonly known as project cargo.",
+      link: "/services/project-cargo"
+    },
+    {
+      id: 7,
+      icon: <FileText className="w-5 h-5" />,
+      title: "Customs Clearance",
+      image: "/lovable-uploads/cc.jpg",
+      description: "Expert solutions for seamless border crossings, handling all aspects of customs documentation and regulatory compliance.",
+      link: "/services/customs-clearance"
+    }
+  ];
   const featuredServices = services.slice(0, 3);
   return <div className="min-h-screen flex flex-col">
       <ScrollToTop />

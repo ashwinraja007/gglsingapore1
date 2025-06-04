@@ -3,10 +3,10 @@ import React from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from 'framer-motion';
-import { Package, Truck, Shield, Globe, Settings, CheckCircle } from "lucide-react";
+import { FileCheck, ShieldCheck, Lightbulb, Globe } from "lucide-react";
 import { Link } from 'react-router-dom';
 
-const ProjectCargo = () => {
+const CustomsClearance = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -23,7 +23,7 @@ const ProjectCargo = () => {
                   transition={{ duration: 0.5 }} 
                   className="text-3xl md:text-4xl font-bold mb-4 text-gray-900"
                 >
-                  Project Cargo Services
+                  Customs Clearance Services
                 </motion.h1>
                 <motion.p 
                   initial={{ opacity: 0, y: 20 }} 
@@ -31,7 +31,7 @@ const ProjectCargo = () => {
                   transition={{ duration: 0.5, delay: 0.1 }} 
                   className="text-lg text-gray-700 mb-6"
                 >
-                  Specialized logistics solutions for complex, heavy, and oversized shipments
+                  Expert solutions for seamless border crossings
                 </motion.p>
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }} 
@@ -54,8 +54,8 @@ const ProjectCargo = () => {
                   className="rounded-xl overflow-hidden shadow-xl"
                 >
                   <img 
-                    src="/cargoproject.png" 
-                    alt="Project Cargo Service" 
+                    src="/lovable-uploads/cc.jpg" 
+                    alt="Customs Clearance Service" 
                     className="w-full h-auto object-cover" 
                   />
                 </motion.div>
@@ -69,14 +69,14 @@ const ProjectCargo = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto mb-12">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-gray-800">
-                End-to-End Project Cargo Solutions
+                Seamless Customs Clearance Solutions
               </h2>
               <div className="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
               <p className="text-gray-700 mb-6 text-justify">
-                We specialize in delivering end-to-end logistics solutions for complex, heavy, and oversized shipments—commonly known as project cargo. Our expertise spans across industries including oil & gas, construction, renewable energy, mining, and manufacturing, where standard shipping methods simply won't suffice.
+                Navigating the complexities of global trade is simplified with our expert customs clearance services. We ensure your shipments move smoothly across borders, handling all aspects of the process from accurate documentation and tariff classification to regulatory compliance and specialized cargo handling.
               </p>
               <p className="text-gray-700 text-justify">
-                From initial planning and route surveys to final delivery and installation support, our dedicated project cargo team manages every aspect of your shipment. We combine technical expertise, specialized equipment, and global partnerships to ensure your critical cargo reaches its destination safely, on time, and within budget.
+                Our experienced team stays abreast of evolving regulations, leverages advanced technology for expedited clearance, and maintains strong relationships with customs authorities worldwide. We prioritize transparency and open communication, providing real-time updates and peace of mind, allowing you to focus on your core business.
               </p>
             </div>
             
@@ -90,12 +90,12 @@ const ProjectCargo = () => {
                 className="bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
               >
                 <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-                  <Package className="h-16 w-16 text-white" />
+                  <FileCheck className="h-16 w-16 text-white" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3 text-gray-800">Heavy Lift Solutions</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-800">Documentation Expertise</h3>
                   <p className="text-gray-600 text-justify">
-                    Specialized handling for heavy machinery, industrial equipment, and oversized components requiring advanced lifting and transportation techniques.
+                    Our team ensures all your customs documentation is accurate, complete, and submitted correctly, preventing delays and ensuring compliance with international regulations.
                   </p>
                 </div>
               </motion.div>
@@ -108,12 +108,12 @@ const ProjectCargo = () => {
                 className="bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
               >
                 <div className="h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
-                  <Settings className="h-16 w-16 text-white" />
+                  <ShieldCheck className="h-16 w-16 text-white" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3 text-gray-800">Custom Engineering</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-800">Regulatory Compliance</h3>
                   <p className="text-gray-600 text-justify">
-                    Tailored engineering solutions including route planning, load calculations, and specialized packaging for unique cargo requirements.
+                    Stay compliant with constantly evolving international trade regulations. We keep up-to-date with changes to ensure your shipments meet all legal requirements.
                   </p>
                 </div>
               </motion.div>
@@ -126,12 +126,12 @@ const ProjectCargo = () => {
                 className="bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
               >
                 <div className="h-48 bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center">
-                  <Shield className="h-16 w-16 text-white" />
+                  <Lightbulb className="h-16 w-16 text-white" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3 text-gray-800">Risk Management</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-800">Expert Consultation</h3>
                   <p className="text-gray-600 text-justify">
-                    Comprehensive insurance coverage and risk assessment to protect your valuable cargo throughout the entire transportation process.
+                    Our customs experts provide guidance on duty and tax implications, helping you make informed decisions and optimize your international shipping strategy.
                   </p>
                 </div>
               </motion.div>
@@ -147,17 +147,17 @@ const ProjectCargo = () => {
                 className="bg-white rounded-lg p-6 shadow-md border border-gray-100"
               >
                 <h3 className="text-xl font-semibold mb-4 text-gray-800 flex items-center gap-2">
-                  <Truck className="h-5 w-5 text-brand-gold" />
-                  Multimodal Transportation
+                  <Globe className="h-5 w-5 text-brand-gold" />
+                  Import Clearance
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Seamless integration of sea, air, and land transportation modes to optimize routing and ensure safe delivery of your project cargo.
+                  Our import clearance services streamline the process of bringing goods into the country, ensuring compliance with local regulations and minimizing delays.
                 </p>
                 <ul className="list-disc list-inside text-gray-600 space-y-2">
-                  <li>Ocean freight with specialized vessels</li>
-                  <li>Heavy-duty trucking and trailers</li>
-                  <li>Rail transportation coordination</li>
-                  <li>Last-mile delivery solutions</li>
+                  <li>Duty and tax calculation</li>
+                  <li>Entry preparation and filing</li>
+                  <li>Tariff classification</li>
+                  <li>Customs examination support</li>
                 </ul>
               </motion.div>
               
@@ -169,17 +169,17 @@ const ProjectCargo = () => {
                 className="bg-white rounded-lg p-6 shadow-md border border-gray-100"
               >
                 <h3 className="text-xl font-semibold mb-4 text-gray-800 flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-brand-gold" />
-                  Project Management
+                  <Globe className="h-5 w-5 text-brand-gold" />
+                  Export Clearance
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Dedicated project managers oversee every aspect of your shipment, providing regular updates and ensuring seamless execution.
+                  Our export clearance services ensure your goods leave the country efficiently, with all necessary documentation and compliance requirements met.
                 </p>
                 <ul className="list-disc list-inside text-gray-600 space-y-2">
-                  <li>Pre-shipment surveys and planning</li>
-                  <li>Permit and documentation handling</li>
-                  <li>Real-time tracking and monitoring</li>
-                  <li>On-site support and coordination</li>
+                  <li>Export documentation preparation</li>
+                  <li>License and permit management</li>
+                  <li>Security filing and compliance</li>
+                  <li>Electronic export information filing</li>
                 </ul>
               </motion.div>
             </div>
@@ -192,9 +192,9 @@ const ProjectCargo = () => {
               viewport={{ once: true }} 
               className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl text-white p-8 text-center"
             >
-              <h3 className="text-2xl font-bold mb-4 text-slate-50">Need Project Cargo Solutions?</h3>
+              <h3 className="text-2xl font-bold mb-4 text-slate-50">Need Customs Clearance Services?</h3>
               <p className="mb-6 text-blue-50">
-                Contact our project cargo specialists for customized logistics solutions.
+                Contact our customs experts today for seamless border crossings.
               </p>
               <Link 
                 to="/contact" 
@@ -212,4 +212,4 @@ const ProjectCargo = () => {
   );
 };
 
-export default ProjectCargo;
+export default CustomsClearance;

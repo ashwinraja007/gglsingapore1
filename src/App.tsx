@@ -17,6 +17,7 @@ import OceanFreight from "./pages/services/OceanFreight";
 import LCLConsolidation from "./pages/services/LCLConsolidation";
 import Warehousing from "./pages/services/Warehousing";
 import ProjectCargo from "./pages/services/ProjectCargo";
+import CustomsClearance from "./pages/services/CustomsClearance";
 import GlobalPresence from "./pages/GlobalPresence";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 
@@ -44,6 +45,7 @@ function App() {
             <Route path="/services/ocean-freight" element={<OceanFreight />} />
             <Route path="/services/lcl-consolidation" element={<LCLConsolidation />} />
             <Route path="/services/project-cargo" element={<ProjectCargo />} />
+            <Route path="/services/customs-clearance" element={<CustomsClearance />} />
             <Route path="/services/warehousing" element={<Warehousing />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
