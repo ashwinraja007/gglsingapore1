@@ -5,7 +5,6 @@ import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-// EnhancedServiceCard Component
 const EnhancedServiceCard = ({
   image,
   title,
@@ -19,57 +18,44 @@ const EnhancedServiceCard = ({
   icon: JSX.Element;
   link: string;
 }) => {
-  const getServiceImage = () => {
-    switch (title) {
-      case "Air Freight":
-        return "/planeh2.png";
-      case "Ocean Freight":
-        return "/ships.png";
-      case "Transportation And Distribution":
-        return "/truck.png";
-      case "Warehousing":
-        return "/warehouses.png";
-      default:
-        return image;
-    }
-  };
-
   return (
     <motion.div
-      whileHover={{ y: -3 }}
+      whileHover={{ y: -2 }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", stiffness: 300 }}
-      className="group w-full overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-md border border-gray-200 flex flex-col"
+      className="group w-full overflow-hidden rounded-lg bg-white border border-gray-200 shadow hover:shadow-md transition-shadow"
     >
       <Link to={link} className="flex flex-col h-full" onClick={() => window.scrollTo(0, 0)}>
+        {/* Image */}
         <div className="overflow-hidden">
-          <AspectRatio ratio={4 / 3}>
+          <AspectRatio ratio={3 / 2}>
             <img
-              src={getServiceImage()}
+              src={image}
               alt={title}
-              loading="lazy"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </AspectRatio>
         </div>
 
-        <div className="flex flex-col justify-between flex-grow p-3 text-sm">
-          <div>
-            <div className="flex items-center space-x-2 mb-1">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center text-brand-navy bg-[#f6b100]">
-                {icon && React.cloneElement(icon, { size: 14 })}
-              </div>
-              <h3 className="text-sm font-semibold text-brand-navy">{title}</h3>
+        {/* Content */}
+        <div className="flex flex-col flex-grow p-3 gap-2">
+          <div className="flex items-center gap-2 text-brand-navy">
+            <div className="w-6 h-6 rounded-full bg-[#f6b100] flex items-center justify-center text-white">
+              {React.cloneElement(icon, { size: 14 })}
             </div>
-            <p className="text-xs text-gray-600 leading-snug line-clamp-4">{description}</p>
+            <h3 className="text-sm font-semibold">{title}</h3>
           </div>
 
-          <div className="inline-flex items-center text-brand-gold font-medium text-xs mt-2">
+          <p className="text-xs text-gray-600 line-clamp-3 leading-snug">
+            {description}
+          </p>
+
+          <div className="text-xs text-brand-gold font-medium inline-flex items-center mt-1">
             Learn More
             <motion.span
               className="ml-1"
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, repeatType: "mirror" }}
+              animate={{ x: [0, 4, 0] }}
+              transition={{ duration: 1.2, repeat: Infinity, repeatType: "mirror" }}
             >
               <ArrowRight size={12} />
             </motion.span>
@@ -79,7 +65,6 @@ const EnhancedServiceCard = ({
     </motion.div>
   );
 };
-
 // Services Component
 export const Services = () => {
   const services = [
