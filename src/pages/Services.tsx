@@ -176,14 +176,6 @@ const Services = () => {
       image: "/cargoproject.png",
       description: "We specialize in delivering end-to-end logistics solutions for complex, heavy, and oversized shipments—commonly known as project cargo.",
       link: "/services/project-cargo"
-    },
-    {
-      id: 7,
-      icon: <FileText className="w-5 h-5" />,
-      title: "Customs Clearance",
-      image: "/lovable-uploads/cc.jpg",
-      description: "Expert solutions for seamless border crossings, handling all aspects of customs documentation and regulatory compliance.",
-      link: "/services/customs-clearance"
     }
   ];
   const featuredServices = services.slice(0, 3);
