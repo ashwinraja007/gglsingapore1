@@ -160,25 +160,9 @@ const About = () => {
         Why Choose <span className="text-yellow-500">GGL?</span>
       </h2>
       <div className="text-xl text-gray-600 max-w-4xl mx-auto space-y-6 text-left">
-        <p className="text-base">
-          At GGL, we specialize in Less-than-Container Load (LCL) consolidation, offering global
-          logistics solutions designed to simplify complex supply chains. As a trusted LCL consolidator,
-          we provide seamless and cost-effective cargo movement across key global trade
-          lanes—including <strong> North America, the UK, the Middle East, the Indian Subcontinent,
-          Southeast Asia, and the Far East.</strong>
-        </p>
-        <p className="text-base">
-          Our core strength lies in our strategic presence at major transshipment hubs, <strong>including
-          Singapore, Malaysia, Sri Lanka, and Dubai,</strong> allowing us to operate direct weekly sailings to
-          major ports worldwide. This robust network ensures optimized transit times, reduced freight
-          costs, and greater reliability for our clients.
-        </p>
-        <p className="text-base">
-          With a deep commitment to service excellence, GGL combines global reach with local expertise.
-          Our LCL groupage services are supported by dedicated customer service teams, ensuring
-          smooth coordination, fast turnaround, and complete transparency from origin to destination—all
-          at highly competitive rates.
-        </p>
+        
+        
+        <p className="text-base my-0">At GGL, we believe logistics is more than just moving goods — it’s about delivering trust. Our team combines sharp attention to detail with a service-first mindset, ensuring every shipment is handled with care, precision, and efficiency. We pride ourselves on being responsive, proactive, and fully aligned with our clients’ needs. From documentation to delivery, we go the extra mile so you don’t have to.</p>
       </div>
     </motion.div>
   </div>
