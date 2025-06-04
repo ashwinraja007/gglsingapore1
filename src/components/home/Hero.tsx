@@ -85,7 +85,7 @@ const Hero = () => {
   <div className="container mx-auto h-full flex items-center px-4 md:px-6 lg:px-8">
     <div
       className={`max-w-2xl space-y-4 md:space-y-5 text-left transition-all duration-800 transform ${
-        isVisible ? 'opacity-100 translate-y-[10%]' : 'opacity-0 translate-y-0'
+        isVisible ? 'opacity-100 -translate-y-[5%]' : 'opacity-0 translate-y-10'
       }`}
     >
       <div className="flex items-center gap-3 mb-2">
