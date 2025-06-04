@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -170,27 +169,11 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Google Maps Section */}
+        {/* Google Maps Section - Only Map */}
         <section className="py-10 bg-gray-50">
           <div className="container mx-auto px-4 max-w-7xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-10"
-            >
-              <h2 className="text-3xl font-bold text-gray-800 flex items-center justify-center gap-3">
-                <MapPin className="text-blue-600" />
-                Our Location
-              </h2>
-              <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
-                Visit us at our Singapore office location
-              </p>
-            </motion.div>
-
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden relative">
-              <div className="h-[500px] w-full relative">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="h-[500px] w-full">
                 <iframe
                   src="https://www.google.com/maps/d/embed?mid=1GorHPvFj8yMbcANzh1a6NzHSIj-fDHs&ehbc=2E312F"
                   width="100%"
@@ -201,9 +184,6 @@ const Contact = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="GGL Singapore Office Location"
                 ></iframe>
-                {/* Overlay to hide Google Maps header elements */}
-                <div className="absolute top-0 left-0 right-0 h-14 bg-white z-10 pointer-events-none"></div>
-                <div className="absolute top-0 right-0 w-32 h-12 bg-white z-10 pointer-events-none"></div>
               </div>
             </div>
           </div>
