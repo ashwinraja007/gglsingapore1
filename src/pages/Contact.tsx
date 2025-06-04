@@ -202,8 +202,8 @@ const Contact = () => {
                   title="GGL Singapore Office Location"
                 ></iframe>
                 {/* Overlay to hide Google Maps header elements */}
-                <div className="absolute top-0 left-0 right-0 h-14 bg-white z-10 pointer-events-none"></div>
-                <div className="absolute top-0 right-0 w-32 h-14 bg-white z-10 pointer-events-none"></div>
+                <div className="absolute top-0 left-0 right-0 h-15 bg-white z-10 pointer-events-none"></div>
+                <div className="absolute top-0 right-0 w-32 h-15 bg-white z-10 pointer-events-none"></div>
               </div>
             </div>
           </div>
