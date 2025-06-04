@@ -189,8 +189,8 @@ const Contact = () => {
               </p>
             </motion.div>
 
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="h-[500px] w-full">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden relative">
+              <div className="h-[500px] w-full relative">
                 <iframe
                   src="https://www.google.com/maps/d/embed?mid=1GorHPvFj8yMbcANzh1a6NzHSIj-fDHs&ehbc=2E312F"
                   width="100%"
@@ -201,6 +201,9 @@ const Contact = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="GGL Singapore Office Location"
                 ></iframe>
+                {/* Overlay to hide Google Maps header elements */}
+                <div className="absolute top-0 left-0 right-0 h-12 bg-white z-10 pointer-events-none"></div>
+                <div className="absolute top-0 right-0 w-32 h-12 bg-white z-10 pointer-events-none"></div>
               </div>
             </div>
           </div>
