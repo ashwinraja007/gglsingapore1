@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { motion } from 'framer-motion';
 import { FileCheck, ShieldCheck, Lightbulb, Globe } from "lucide-react";
 import { Link } from 'react-router-dom';
-const CustomsClearance = () => {
+const ProjectCargo = () => {
   return <div className="min-h-screen flex flex-col">
       <Header />
       
