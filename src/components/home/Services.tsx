@@ -65,6 +65,7 @@ const EnhancedServiceCard = ({
     </motion.div>
   );
 };
+
 // Services Component
 export const Services = () => {
   const services = [
@@ -144,7 +145,7 @@ export const Services = () => {
       variants={containerVariants}
       className="py-10 bg-gradient-to-b from-white to-brand-lightGray"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-6xl">
         <motion.div variants={itemVariants} className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-3">Our Core Services</h2>
           <div className="w-24 h-1 bg-brand-gold mx-auto mb-4"></div>
@@ -155,7 +156,7 @@ export const Services = () => {
 
         <motion.div
           variants={containerVariants}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          className="grid grid-cols-3 gap-3 max-w-5xl mx-auto"
         >
           {services.map((service, index) => (
             <motion.div
