@@ -78,7 +78,7 @@ export const Services = () => {
       link: "/services/ocean-freight"
     },
     {
-      image: "/planeh2.png",
+      image: "/cargoplane.png",
       title: "Air Freight",
       description:
         "At GGL, we provide a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams offer seamless air import, export, and express options, all on a convenient door-to-door basis. GGL stands out with competitive rates.",
@@ -86,7 +86,7 @@ export const Services = () => {
       link: "/services/air-freight"
     },
     {
-      image: "/transpoth.png",
+      image: "/truck12.png",
       title: "Transportation And Distribution",
       description:
         "GGL boasts a dedicated fleet of vehicles to ensure timely domestic distribution and deliveries. Our efficient operational infrastructure provides our clients with high productivity, frequent services, and fast, reliable distribution operations. GGL is committed to delivering excellence.",
