@@ -186,77 +186,7 @@ const About = () => {
 
 
         {/* LCL Consolidation Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-900 to-indigo-900 text-white px-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div initial={{
-              opacity: 0,
-              x: -30
-            }} whileInView={{
-              opacity: 1,
-              x: 0
-            }} transition={{
-              duration: 0.8
-            }} viewport={{
-              once: true
-            }}>
-                
-                
-                
-
-                
-
-                
-
-                <h3 className="text-2xl mb-6 text-yellow-500 font-bold">GGL's Role in LCL Consolidation:</h3>
-                <div className="space-y-4 mb-8">
-                  {lclServices.map((item, index) => <motion.div key={index} initial={{
-                  opacity: 0,
-                  x: -20
-                }} whileInView={{
-                  opacity: 1,
-                  x: 0
-                }} transition={{
-                  delay: index * 0.1,
-                  duration: 0.5
-                }} viewport={{
-                  once: true
-                }} className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-blue-300 rounded-full flex-shrink-0"></div>
-                      <span className="text-blue-100">{item}</span>
-                    </motion.div>)}
-                </div>
-
-                <p className="text-lg text-blue-100 leading-relaxed">
-                  With our strategic global hub network and advanced tracking systems, we provide reliable, transparent, and economical LCL solutions tailored to your supply chain needs.
-                </p>
-                <p className="text-lg text-yellow-500 leading-relaxed font-bold my-[20px]">At GGL, we don’t just move freight — we move businesses forward.</p>
-              </motion.div>
-
-              <motion.div initial={{
-              opacity: 0,
-              x: 30
-            }} whileInView={{
-              opacity: 1,
-              x: 0
-            }} transition={{
-              duration: 0.8
-            }} viewport={{
-              once: true
-            }} className="relative">
-                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
-                  <h3 className="text-2xl font-semibold mb-6 text-slate-50">Global Hub Network</h3>
-                  <div className="space-y-4">
-                    {globalHubs.map((hub, index) => <div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg">
-                        <span className="font-medium">{hub}</span>
-                        <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                      </div>)}
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+        
 
         {/* Services Grid */}
         
