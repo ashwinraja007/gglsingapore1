@@ -163,6 +163,13 @@ const Services = () => {
     image: "/lcl.png",
     description: "GGL is a LCL Consolidator with global presence covering North America, UK, Middle East, Indian Sub Continent, South East Asia and Far East. Our LCL Groupage services is backed by very efficient customer support at competitive prices.",
     link: "/services/lcl-consolidation"
+  }, {
+    id: 6,
+    icon: <Warehouse className="w-5 h-5" />,
+    title: "Project Cargo",
+    image: "/cargoproject.png",
+    description: " we specialize in delivering end-to-end logistics solutions for complex, heavy, and oversized shipments—commonly known as project cargo.",
+    link: "/services/project-cargo"
   }];
   const featuredServices = services.slice(0, 3);
   return <div className="min-h-screen flex flex-col">
