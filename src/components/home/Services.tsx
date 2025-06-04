@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Truck, Package, Anchor, Warehouse } from "lucide-react";
+import { Plane, ArrowRight, Truck, Package, Anchor, Warehouse } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { useEffect } from "react";
@@ -84,7 +84,7 @@ export const Services = () => {
     image: "/planeh2.png",
     title: "Air Freight",
     description: "At GGL, we provide a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams offer seamless air import, export, and express options, all on a convenient door-to-door basis. GGL stands out with competitive rates.",
-    icon: <Package size={20} />,
+    icon: <Plane size={20} />,
     link: "/services/air-freight"
   }, {
     image: "/transpoth.png",
@@ -103,6 +103,12 @@ export const Services = () => {
     title: "LCL Consolidation",
     description: "GGL is a LCL Consolidator with global presence covering North America, UK, Middle East, Indian Sub Continent, South East Asia and Far East. Our LCL Groupage services is backed by very efficient customer support at competitive prices.The GGL Group is strategically located in the cargo transhipment hubs to all major destinations worldwide",
     icon: <Warehouse size={20} />,
+    link: "/services/lcl-consolidation"
+  }, {
+    image: "/projectcargo.png",
+    title: "Project Cargo",
+    description: "Project cargo refers to the specialized transportation of large, heavy, high-value, or complex equipment, often associated with large-scale infrastructure or construction projects.",
+    icon: <Package size={20} />,
     link: "/services/lcl-consolidation"
   }];
   const containerVariants = {
