@@ -173,7 +173,7 @@ const Services = () => {
       id: 6,
       icon: <Warehouse className="w-5 h-5" />,
       title: "Project Cargo",
-      image: "/cargoproject.png",
+      image: "/projectcargo3.png",
       description: "We specialize in delivering end-to-end logistics solutions for complex, heavy, and oversized shipments—commonly known as project cargo.",
       link: "/services/project-cargo"
     }
