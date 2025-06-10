@@ -2,10 +2,16 @@ import React, { useRef, useEffect, useState } from 'react';
 import { ScrollArea } from "@/components/ui/scroll-area";
 import InfoPanel from './InfoPanel';
 import { Button } from "@/components/ui/button";
-import { X, MapPin, Globe, ExternalLink, Phone, Mail, Home, ChevronRight, ChevronLeft } from 'lucide-react';
+import { X, MapPin, Globe, ExternalLink, Phone, Mail, Home, ChevronRight, ChevronDown } from 'lucide-react';
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useIsMobile } from '@/hooks/use-mobile';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -345,6 +351,16 @@ const Sidebar: React.FC<SidebarProps> = ({
     navigateToLocation(newCity.lat, newCity.lng, newCity);
   };
 
+  const handleCitySelection = (country: any, cityIndex: number) => {
+    setCurrentCityIndexes(prev => ({
+      ...prev,
+      [country.name]: cityIndex
+    }));
+    
+    const selectedCity = country.cities[cityIndex];
+    navigateToLocation(selectedCity.lat, selectedCity.lng, selectedCity);
+  };
+
   const getCurrentCity = (country: any) => {
     const currentIndex = currentCityIndexes[country.name] || 0;
     return country.cities[currentIndex];
@@ -407,7 +423,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                       
                       <AccordionContent className="bg-gradient-to-b from-amber-50/30 to-white px-3 py-2">
                         <div className="space-y-2">
-                          {/* Current city display with navigation */}
+                          {/* Current city display with dropdown for multiple cities */}
                           <div className="mb-3">
                             <div className="flex items-center justify-between mb-2">
                               <Button 
@@ -425,26 +441,34 @@ const Sidebar: React.FC<SidebarProps> = ({
                                 <ChevronRight className="w-4 h-4 ml-auto text-amber-300" />
                               </Button>
                               
-                              {/* Navigation buttons for multiple cities */}
+                              {/* Dropdown for multiple cities */}
                               {country.cities.length > 1 && (
-                                <div className="flex gap-1 ml-2">
-                                  <Button
-                                    variant="outline"
-                                    size="sm"
-                                    className="h-8 w-8 p-0 border-amber-200 hover:bg-amber-50"
-                                    onClick={() => handleCityNavigation(country, 'prev')}
-                                  >
-                                    <ChevronLeft className="h-3 w-3" />
-                                  </Button>
-                                  <Button
-                                    variant="outline"
-                                    size="sm"
-                                    className="h-8 w-8 p-0 border-amber-200 hover:bg-amber-50"
-                                    onClick={() => handleCityNavigation(country, 'next')}
-                                  >
-                                    <ChevronRight className="h-3 w-3" />
-                                  </Button>
-                                </div>
+                                <DropdownMenu>
+                                  <DropdownMenuTrigger asChild>
+                                    <Button
+                                      variant="outline"
+                                      size="sm"
+                                      className="ml-2 h-8 px-2 border-amber-200 hover:bg-amber-50"
+                                    >
+                                      <ChevronDown className="h-3 w-3" />
+                                    </Button>
+                                  </DropdownMenuTrigger>
+                                  <DropdownMenuContent align="end" className="w-48 bg-white border border-amber-200 shadow-lg">
+                                    {country.cities.map((city: any, index: number) => (
+                                      <DropdownMenuItem
+                                        key={index}
+                                        className={cn(
+                                          "cursor-pointer hover:bg-amber-50 focus:bg-amber-50",
+                                          currentIndex === index && "bg-amber-100 text-amber-800"
+                                        )}
+                                        onClick={() => handleCitySelection(country, index)}
+                                      >
+                                        <MapPin className="w-3 h-3 mr-2 text-amber-600" />
+                                        <span className="text-sm">{city.name}</span>
+                                      </DropdownMenuItem>
+                                    ))}
+                                  </DropdownMenuContent>
+                                </DropdownMenu>
                               )}
                             </div>
                             
