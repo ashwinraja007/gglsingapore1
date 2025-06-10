@@ -6,12 +6,6 @@ import { X, MapPin, Globe, ExternalLink, Phone, Mail, Home, ChevronRight, Chevro
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useIsMobile } from '@/hooks/use-mobile';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -291,7 +285,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const [expandedCountry, setExpandedCountry] = useState<string | null>(null);
   const [selectedLocation, setSelectedLocation] = useState<any | null>(null);
-  const [currentCityIndexes, setCurrentCityIndexes] = useState<{ [countryName: string]: number }>({});
+  const [selectedCityIndexes, setSelectedCityIndexes] = useState<{ [countryName: string]: number }>({});
   const isMobile = useIsMobile();
 
   useEffect(() => {
@@ -306,12 +300,12 @@ const Sidebar: React.FC<SidebarProps> = ({
       setSelectedLocation(firstCity);
       setExpandedCountry(firstCountry.name);
       
-      // Initialize current city indexes for all countries to 0 (first city)
+      // Initialize selected city indexes for all countries to 0 (first city)
       const initialIndexes: { [countryName: string]: number } = {};
       sortedCountries.forEach(country => {
         initialIndexes[country.name] = 0;
       });
-      setCurrentCityIndexes(initialIndexes);
+      setSelectedCityIndexes(initialIndexes);
       
       // Navigate to the first location on map
       navigateToLocation(firstCity.lat, firstCity.lng, firstCity);
@@ -332,27 +326,8 @@ const Sidebar: React.FC<SidebarProps> = ({
     }
   };
 
-  const handleCityNavigation = (country: any, direction: 'next' | 'prev') => {
-    const currentIndex = currentCityIndexes[country.name] || 0;
-    let newIndex;
-    
-    if (direction === 'next') {
-      newIndex = (currentIndex + 1) % country.cities.length;
-    } else {
-      newIndex = currentIndex === 0 ? country.cities.length - 1 : currentIndex - 1;
-    }
-    
-    setCurrentCityIndexes(prev => ({
-      ...prev,
-      [country.name]: newIndex
-    }));
-    
-    const newCity = country.cities[newIndex];
-    navigateToLocation(newCity.lat, newCity.lng, newCity);
-  };
-
   const handleCitySelection = (country: any, cityIndex: number) => {
-    setCurrentCityIndexes(prev => ({
+    setSelectedCityIndexes(prev => ({
       ...prev,
       [country.name]: cityIndex
     }));
@@ -361,9 +336,8 @@ const Sidebar: React.FC<SidebarProps> = ({
     navigateToLocation(selectedCity.lat, selectedCity.lng, selectedCity);
   };
 
-  const getCurrentCity = (country: any) => {
-    const currentIndex = currentCityIndexes[country.name] || 0;
-    return country.cities[currentIndex];
+  const isSelectedCity = (countryName: string, cityIndex: number) => {
+    return selectedCityIndexes[countryName] === cityIndex;
   };
 
   return (
@@ -395,9 +369,6 @@ const Sidebar: React.FC<SidebarProps> = ({
             <div className="mt-4 space-y-3">
               <Accordion type="single" collapsible value={expandedCountry || ""} className="w-full space-y-3">
                 {sortedCountries.map(country => {
-                  const currentCity = getCurrentCity(country);
-                  const currentIndex = currentCityIndexes[country.name] || 0;
-                  
                   return (
                     <AccordionItem 
                       key={country.name} 
@@ -423,99 +394,69 @@ const Sidebar: React.FC<SidebarProps> = ({
                       
                       <AccordionContent className="bg-gradient-to-b from-amber-50/30 to-white px-3 py-2">
                         <div className="space-y-2">
-                          {/* Current city display with dropdown for multiple cities */}
-                          <div className="mb-3">
-                            <div className="flex items-center justify-between mb-2">
-                              <Button 
-                                variant="ghost" 
-                                className="flex-1 justify-start text-sm p-2 h-auto rounded-md bg-white hover:bg-amber-50 border border-gray-100 hover:border-amber-200 transition-all shadow-sm"
-                                onClick={() => {
-                                  navigateToLocation(currentCity.lat, currentCity.lng, currentCity);
-                                  if (isMobile) {
-                                    setTimeout(() => setSelectedLocation({ ...currentCity }), 50);
-                                  }
-                                }}
-                              >
-                                <MapPin className="w-4 h-4 mr-2 text-amber-600 flex-shrink-0" />
-                                <span className="font-medium truncate">{currentCity.name}</span>
-                                <ChevronRight className="w-4 h-4 ml-auto text-amber-300" />
-                              </Button>
-                              
-                              {/* Dropdown for multiple cities */}
-                              {country.cities.length > 1 && (
-                                <DropdownMenu>
-                                  <DropdownMenuTrigger asChild>
-                                    <Button
-                                      variant="outline"
-                                      size="sm"
-                                      className="ml-2 h-8 px-2 border-amber-200 hover:bg-amber-50"
-                                    >
-                                      <ChevronDown className="h-3 w-3" />
-                                    </Button>
-                                  </DropdownMenuTrigger>
-                                  <DropdownMenuContent align="end" className="w-48 bg-white border border-amber-200 shadow-lg">
-                                    {country.cities.map((city: any, index: number) => (
-                                      <DropdownMenuItem
-                                        key={index}
-                                        className={cn(
-                                          "cursor-pointer hover:bg-amber-50 focus:bg-amber-50",
-                                          currentIndex === index && "bg-amber-100 text-amber-800"
-                                        )}
-                                        onClick={() => handleCitySelection(country, index)}
-                                      >
-                                        <MapPin className="w-3 h-3 mr-2 text-amber-600" />
-                                        <span className="text-sm">{city.name}</span>
-                                      </DropdownMenuItem>
-                                    ))}
-                                  </DropdownMenuContent>
-                                </DropdownMenu>
-                              )}
-                            </div>
-                            
-                            {/* City counter for multiple cities */}
-                            {country.cities.length > 1 && (
-                              <div className="text-xs text-center text-amber-600 mb-2">
-                                {currentIndex + 1} of {country.cities.length} locations
-                              </div>
-                            )}
-                            
-                            {/* Address details for current city */}
-                            {currentCity.address && (
-                              <div className="mt-2 p-3 bg-gradient-to-br from-amber-50 to-white rounded-lg border border-amber-200 shadow text-sm animate-in fade-in duration-300 w-full">
-                                <h4 className="font-semibold text-amber-700 mb-2 pb-1 border-b border-amber-100 flex items-center">
-                                  <span className="bg-gradient-to-r from-amber-600 to-amber-400 bg-clip-text text-transparent">{currentCity.name} Office</span>
-                                </h4>
+                          {/* All cities displayed as buttons */}
+                          <div className="space-y-2">
+                            {country.cities.map((city: any, index: number) => (
+                              <div key={index} className="w-full">
+                                <Button 
+                                  variant="ghost" 
+                                  className={cn(
+                                    "w-full justify-start text-sm p-2 h-auto rounded-md border transition-all shadow-sm",
+                                    isSelectedCity(country.name, index) 
+                                      ? "bg-amber-100 hover:bg-amber-150 border-amber-300 text-amber-800" 
+                                      : "bg-white hover:bg-amber-50 border-gray-100 hover:border-amber-200"
+                                  )}
+                                  onClick={() => {
+                                    handleCitySelection(country, index);
+                                    if (isMobile) {
+                                      setTimeout(() => setSelectedLocation({ ...city }), 50);
+                                    }
+                                  }}
+                                >
+                                  <MapPin className="w-4 h-4 mr-2 text-amber-600 flex-shrink-0" />
+                                  <span className="font-medium truncate">{city.name}</span>
+                                  <ChevronRight className="w-4 h-4 ml-auto text-amber-300" />
+                                </Button>
                                 
-                                <div className="flex items-start mb-2 group hover:bg-amber-50/50 p-2 rounded-md transition-colors w-full">
-                                  <Home className="w-4 h-4 mr-2 text-amber-500 mt-1 flex-shrink-0 group-hover:text-amber-600 transition-colors" />
-                                  <p className="text-gray-700 group-hover:text-gray-900 transition-colors text-sm break-words w-full overflow-hidden">{currentCity.address}</p>
-                                </div>
-                                
-                                {currentCity.contacts && currentCity.contacts.length > 0 && (
-                                  <div className="flex items-start mb-2 group hover:bg-amber-50/50 p-2 rounded-md transition-colors w-full">
-                                    <Phone className="w-4 h-4 mr-2 text-amber-500 mt-1 flex-shrink-0 group-hover:text-amber-600 transition-colors" />
-                                    <div className="space-y-1 w-full overflow-hidden">
-                                      {currentCity.contacts.map((contact: string, idx: number) => (
-                                        <p key={idx} className="text-gray-700 group-hover:text-gray-900 transition-colors text-sm break-words">{contact}</p>
-                                      ))}
+                                {/* Show address details for selected city */}
+                                {isSelectedCity(country.name, index) && city.address && (
+                                  <div className="mt-2 p-3 bg-gradient-to-br from-amber-50 to-white rounded-lg border border-amber-200 shadow text-sm animate-in fade-in duration-300 w-full">
+                                    <h4 className="font-semibold text-amber-700 mb-2 pb-1 border-b border-amber-100 flex items-center">
+                                      <span className="bg-gradient-to-r from-amber-600 to-amber-400 bg-clip-text text-transparent">{city.name} Office</span>
+                                    </h4>
+                                    
+                                    <div className="flex items-start mb-2 group hover:bg-amber-50/50 p-2 rounded-md transition-colors w-full">
+                                      <Home className="w-4 h-4 mr-2 text-amber-500 mt-1 flex-shrink-0 group-hover:text-amber-600 transition-colors" />
+                                      <p className="text-gray-700 group-hover:text-gray-900 transition-colors text-sm break-words w-full overflow-hidden">{city.address}</p>
                                     </div>
-                                  </div>
-                                )}
-                                
-                                {currentCity.email && (
-                                  <div className="flex items-start group hover:bg-amber-50/50 p-2 rounded-md transition-colors w-full">
-                                    <Mail className="w-4 h-4 mr-2 text-amber-500 mt-1 flex-shrink-0 group-hover:text-amber-600 transition-colors" />
-                                    <a 
-                                      href={`mailto:${currentCity.email}`} 
-                                      className="text-amber-600 hover:text-amber-800 hover:underline flex items-center text-sm break-words w-full overflow-hidden"
-                                    >
-                                      {currentCity.email}
-                                      <ExternalLink className="ml-1 h-3 w-3" />
-                                    </a>
+                                    
+                                    {city.contacts && city.contacts.length > 0 && (
+                                      <div className="flex items-start mb-2 group hover:bg-amber-50/50 p-2 rounded-md transition-colors w-full">
+                                        <Phone className="w-4 h-4 mr-2 text-amber-500 mt-1 flex-shrink-0 group-hover:text-amber-600 transition-colors" />
+                                        <div className="space-y-1 w-full overflow-hidden">
+                                          {city.contacts.map((contact: string, idx: number) => (
+                                            <p key={idx} className="text-gray-700 group-hover:text-gray-900 transition-colors text-sm break-words">{contact}</p>
+                                          ))}
+                                        </div>
+                                      </div>
+                                    )}
+                                    
+                                    {city.email && (
+                                      <div className="flex items-start group hover:bg-amber-50/50 p-2 rounded-md transition-colors w-full">
+                                        <Mail className="w-4 h-4 mr-2 text-amber-500 mt-1 flex-shrink-0 group-hover:text-amber-600 transition-colors" />
+                                        <a 
+                                          href={`mailto:${city.email}`} 
+                                          className="text-amber-600 hover:text-amber-800 hover:underline flex items-center text-sm break-words w-full overflow-hidden"
+                                        >
+                                          {city.email}
+                                          <ExternalLink className="ml-1 h-3 w-3" />
+                                        </a>
+                                      </div>
+                                    )}
                                   </div>
                                 )}
                               </div>
-                            )}
+                            ))}
                           </div>
                         </div>
                       </AccordionContent>
