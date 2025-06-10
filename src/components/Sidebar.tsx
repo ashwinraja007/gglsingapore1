@@ -2,14 +2,16 @@ import React, { useRef, useEffect, useState } from 'react';
 import { ScrollArea } from "@/components/ui/scroll-area";
 import InfoPanel from './InfoPanel';
 import { Button } from "@/components/ui/button";
-import { X, MapPin, Globe, ExternalLink, Phone, Mail, Home, ChevronRight } from 'lucide-react';
+import { X, MapPin, Globe, ExternalLink, Phone, Mail, Home, ChevronRight, ChevronLeft } from 'lucide-react';
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useIsMobile } from '@/hooks/use-mobile';
+
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
 }
+
 const countries = [{
   code: "in",
   name: "India",
@@ -275,6 +277,7 @@ const countries = [{
 
 // Sort countries alphabetically by name
 const sortedCountries = [...countries].sort((a, b) => a.name.localeCompare(b.name));
+
 const Sidebar: React.FC<SidebarProps> = ({
   isOpen,
   onClose
@@ -282,6 +285,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const [expandedCountry, setExpandedCountry] = useState<string | null>(null);
   const [selectedLocation, setSelectedLocation] = useState<any | null>(null);
+  const [currentCityIndexes, setCurrentCityIndexes] = useState<{ [countryName: string]: number }>({});
   const isMobile = useIsMobile();
 
   useEffect(() => {
@@ -295,6 +299,14 @@ const Sidebar: React.FC<SidebarProps> = ({
       const firstCity = firstCountry.cities[0];
       setSelectedLocation(firstCity);
       setExpandedCountry(firstCountry.name);
+      
+      // Initialize current city indexes for all countries to 0 (first city)
+      const initialIndexes: { [countryName: string]: number } = {};
+      sortedCountries.forEach(country => {
+        initialIndexes[country.name] = 0;
+      });
+      setCurrentCityIndexes(initialIndexes);
+      
       // Navigate to the first location on map
       navigateToLocation(firstCity.lat, firstCity.lng, firstCity);
     }
@@ -312,6 +324,30 @@ const Sidebar: React.FC<SidebarProps> = ({
         console.error("Navigation failed:", e);
       }
     }
+  };
+
+  const handleCityNavigation = (country: any, direction: 'next' | 'prev') => {
+    const currentIndex = currentCityIndexes[country.name] || 0;
+    let newIndex;
+    
+    if (direction === 'next') {
+      newIndex = (currentIndex + 1) % country.cities.length;
+    } else {
+      newIndex = currentIndex === 0 ? country.cities.length - 1 : currentIndex - 1;
+    }
+    
+    setCurrentCityIndexes(prev => ({
+      ...prev,
+      [country.name]: newIndex
+    }));
+    
+    const newCity = country.cities[newIndex];
+    navigateToLocation(newCity.lat, newCity.lng, newCity);
+  };
+
+  const getCurrentCity = (country: any) => {
+    const currentIndex = currentCityIndexes[country.name] || 0;
+    return country.cities[currentIndex];
   };
 
   return (
@@ -342,81 +378,114 @@ const Sidebar: React.FC<SidebarProps> = ({
             
             <div className="mt-4 space-y-3">
               <Accordion type="single" collapsible value={expandedCountry || ""} className="w-full space-y-3">
-                {sortedCountries.map(country => (
-                  <AccordionItem 
-                    key={country.name} 
-                    value={country.name} 
-                    className="border border-amber-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all bg-white"
-                  >
-                    <AccordionTrigger 
-                      onClick={() => {
-                        setExpandedCountry(expandedCountry === country.name ? null : country.name);
-                        navigateToLocation(country.lat, country.lng);
-                      }}
-                      className="rounded-t-md hover:bg-amber-50 transition-colors px-3 py-2"
+                {sortedCountries.map(country => {
+                  const currentCity = getCurrentCity(country);
+                  const currentIndex = currentCityIndexes[country.name] || 0;
+                  
+                  return (
+                    <AccordionItem 
+                      key={country.name} 
+                      value={country.name} 
+                      className="border border-amber-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all bg-white"
                     >
-                      <div className="flex items-center gap-3">
-                        <img 
-                          src={`/${country.code}.svg`} 
-                          alt={`${country.name} flag`} 
-                          className="w-6 h-6 rounded-sm object-cover shadow-sm" 
-                        />
-                        <span className="font-medium">{country.name}</span>
-                      </div>
-                    </AccordionTrigger>
-                    
-                    <AccordionContent className="bg-gradient-to-b from-amber-50/30 to-white px-3 py-2">
-                      <div className="space-y-2">
-                        {country.cities.map(city => (
-                          <div key={city.name} className="mb-3">
-                            <Button 
-                              variant="ghost" 
-                              className="w-full justify-start text-sm p-2 h-auto rounded-md bg-white hover:bg-amber-50 border border-gray-100 hover:border-amber-200 transition-all shadow-sm"
-                              onClick={() => {
-                                navigateToLocation(city.lat, city.lng, city);
-                                // Force rerender on mobile
-                                if (isMobile) {
-                                  setTimeout(() => setSelectedLocation({ ...city }), 50);
-                                }
-                              }}
-                            >
-                              <MapPin className="w-4 h-4 mr-2 text-amber-600 flex-shrink-0" />
-                              <span className="font-medium truncate">{city.name}</span>
-                              <ChevronRight className="w-4 h-4 ml-auto text-amber-300" />
-                            </Button>
+                      <AccordionTrigger 
+                        onClick={() => {
+                          setExpandedCountry(expandedCountry === country.name ? null : country.name);
+                          navigateToLocation(country.lat, country.lng);
+                        }}
+                        className="rounded-t-md hover:bg-amber-50 transition-colors px-3 py-2"
+                      >
+                        <div className="flex items-center gap-3">
+                          <img 
+                            src={`/${country.code}.svg`} 
+                            alt={`${country.name} flag`} 
+                            className="w-6 h-6 rounded-sm object-cover shadow-sm" 
+                          />
+                          <span className="font-medium">{country.name}</span>
+                        </div>
+                      </AccordionTrigger>
+                      
+                      <AccordionContent className="bg-gradient-to-b from-amber-50/30 to-white px-3 py-2">
+                        <div className="space-y-2">
+                          {/* Current city display with navigation */}
+                          <div className="mb-3">
+                            <div className="flex items-center justify-between mb-2">
+                              <Button 
+                                variant="ghost" 
+                                className="flex-1 justify-start text-sm p-2 h-auto rounded-md bg-white hover:bg-amber-50 border border-gray-100 hover:border-amber-200 transition-all shadow-sm"
+                                onClick={() => {
+                                  navigateToLocation(currentCity.lat, currentCity.lng, currentCity);
+                                  if (isMobile) {
+                                    setTimeout(() => setSelectedLocation({ ...currentCity }), 50);
+                                  }
+                                }}
+                              >
+                                <MapPin className="w-4 h-4 mr-2 text-amber-600 flex-shrink-0" />
+                                <span className="font-medium truncate">{currentCity.name}</span>
+                                <ChevronRight className="w-4 h-4 ml-auto text-amber-300" />
+                              </Button>
+                              
+                              {/* Navigation buttons for multiple cities */}
+                              {country.cities.length > 1 && (
+                                <div className="flex gap-1 ml-2">
+                                  <Button
+                                    variant="outline"
+                                    size="sm"
+                                    className="h-8 w-8 p-0 border-amber-200 hover:bg-amber-50"
+                                    onClick={() => handleCityNavigation(country, 'prev')}
+                                  >
+                                    <ChevronLeft className="h-3 w-3" />
+                                  </Button>
+                                  <Button
+                                    variant="outline"
+                                    size="sm"
+                                    className="h-8 w-8 p-0 border-amber-200 hover:bg-amber-50"
+                                    onClick={() => handleCityNavigation(country, 'next')}
+                                  >
+                                    <ChevronRight className="h-3 w-3" />
+                                  </Button>
+                                </div>
+                              )}
+                            </div>
                             
-                            {selectedLocation && selectedLocation.name === city.name && city.address && (
+                            {/* City counter for multiple cities */}
+                            {country.cities.length > 1 && (
+                              <div className="text-xs text-center text-amber-600 mb-2">
+                                {currentIndex + 1} of {country.cities.length} locations
+                              </div>
+                            )}
+                            
+                            {/* Address details for current city */}
+                            {currentCity.address && (
                               <div className="mt-2 p-3 bg-gradient-to-br from-amber-50 to-white rounded-lg border border-amber-200 shadow text-sm animate-in fade-in duration-300 w-full">
                                 <h4 className="font-semibold text-amber-700 mb-2 pb-1 border-b border-amber-100 flex items-center">
-                                  <span className="bg-gradient-to-r from-amber-600 to-amber-400 bg-clip-text text-transparent">{city.name} Office</span>
+                                  <span className="bg-gradient-to-r from-amber-600 to-amber-400 bg-clip-text text-transparent">{currentCity.name} Office</span>
                                 </h4>
                                 
-                                {city.address && (
-                                  <div className="flex items-start mb-2 group hover:bg-amber-50/50 p-2 rounded-md transition-colors w-full">
-                                    <Home className="w-4 h-4 mr-2 text-amber-500 mt-1 flex-shrink-0 group-hover:text-amber-600 transition-colors" />
-                                    <p className="text-gray-700 group-hover:text-gray-900 transition-colors text-sm break-words w-full overflow-hidden">{city.address}</p>
-                                  </div>
-                                )}
+                                <div className="flex items-start mb-2 group hover:bg-amber-50/50 p-2 rounded-md transition-colors w-full">
+                                  <Home className="w-4 h-4 mr-2 text-amber-500 mt-1 flex-shrink-0 group-hover:text-amber-600 transition-colors" />
+                                  <p className="text-gray-700 group-hover:text-gray-900 transition-colors text-sm break-words w-full overflow-hidden">{currentCity.address}</p>
+                                </div>
                                 
-                                {city.contacts && city.contacts.length > 0 && (
+                                {currentCity.contacts && currentCity.contacts.length > 0 && (
                                   <div className="flex items-start mb-2 group hover:bg-amber-50/50 p-2 rounded-md transition-colors w-full">
                                     <Phone className="w-4 h-4 mr-2 text-amber-500 mt-1 flex-shrink-0 group-hover:text-amber-600 transition-colors" />
                                     <div className="space-y-1 w-full overflow-hidden">
-                                      {city.contacts.map((contact: string, idx: number) => (
+                                      {currentCity.contacts.map((contact: string, idx: number) => (
                                         <p key={idx} className="text-gray-700 group-hover:text-gray-900 transition-colors text-sm break-words">{contact}</p>
                                       ))}
                                     </div>
                                   </div>
                                 )}
                                 
-                                {city.email && (
+                                {currentCity.email && (
                                   <div className="flex items-start group hover:bg-amber-50/50 p-2 rounded-md transition-colors w-full">
                                     <Mail className="w-4 h-4 mr-2 text-amber-500 mt-1 flex-shrink-0 group-hover:text-amber-600 transition-colors" />
                                     <a 
-                                      href={`mailto:${city.email}`} 
+                                      href={`mailto:${currentCity.email}`} 
                                       className="text-amber-600 hover:text-amber-800 hover:underline flex items-center text-sm break-words w-full overflow-hidden"
                                     >
-                                      {city.email}
+                                      {currentCity.email}
                                       <ExternalLink className="ml-1 h-3 w-3" />
                                     </a>
                                   </div>
@@ -424,11 +493,11 @@ const Sidebar: React.FC<SidebarProps> = ({
                               </div>
                             )}
                           </div>
-                        ))}
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  );
+                })}
               </Accordion>
             </div>
           </div>
