@@ -87,7 +87,7 @@ const About = () => {
               once: true
             }}>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-                 <span className="text-blue-600">About Us</span>
+                 <span className="text-[brand-navy_to-brand-navy/90] text-brand-navy">About Us</span>
                 </h2>
                 
                 <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
