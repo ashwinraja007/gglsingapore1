@@ -139,7 +139,7 @@ const Contact = () => {
                 }} whileTap={{
                   scale: 0.98
                 }}>
-                    <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6 flex items-center justify-center gap-2">
+                    <Button type="submit" className="w-full text-white py-6 flex items-center justify-center gap-2 bg-brand-navy">
                       Send Message
                       <Send size={18} />
                     </Button>
