@@ -106,7 +106,7 @@ const LCLConsolidation = () => {
             </div>
             
             {/* Features Grid */}
-            <section className="py-20 bg-gradient-to-r from-blue-900 to-indigo-900 text-white px-6 my-[49px]">
+            <section className="py-20 bg-gradient-to-r from-brand-navy to-brand-navy text-white px-6 my-[49px]">
               <div className="max-w-7xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                   <motion.div initial={{
