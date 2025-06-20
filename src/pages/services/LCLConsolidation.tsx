@@ -106,7 +106,7 @@ const LCLConsolidation = () => {
             </div>
             
             {/* Features Grid */}
-            <section className="py-20 bg-gradient-to-r from-brand-navy to-brand-navy text-white px-6 my-[49px]">
+            <section className="py-20 bg-gradient-to-r from-brand-navy to-brand-navy text-white px-6 my-[49px] rounded-3xl">
               <div className="max-w-7xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                   <motion.div initial={{
@@ -181,7 +181,7 @@ const LCLConsolidation = () => {
             duration: 0.5
           }} viewport={{
             once: true
-          }} className="bg-gradient-to-r from-brand-navy to-blue-700 rounded-xl text-white p-8 text-center py-[33px]">
+          }} className="bg-gradient-to-r from-brand-navy to-brand-navy rounded-xl text-white p-8 text-center py-[33px]">
               <h3 className="text-2xl font-bold mb-4 text-slate-50">Ready to Consolidate Your Shipments?</h3>
               <p className="mb-6 text-blue-50">
                 Contact our team today for tailored LCL consolidation solutions.
