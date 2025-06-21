@@ -71,8 +71,14 @@ At GGL, we are proud to be one of Singapore's leading logistics companies. We of
               name: "Services",
               path: "/services"
             }, {
-              name: "Contact us",
+              name: "Contact Us",
               path: "/contact"
+            }, {
+              name: "Privacy Policy",
+              path: "/privacy-policy"
+            }, {
+              name: "Terms And Conditions",
+              path: "/terms-and-conditions"
             }].map((link, index) => <Link key={index} to={link.path} className="text-gray-600 hover:text-brand-gold transition flex items-center gap-2">
                   <ArrowRight size={14} className="text-brand-gold" />
                   {link.name}
