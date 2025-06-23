@@ -19,8 +19,8 @@ const countries = [{
   lng: 78.6677,
   cities: [{
     name: "Mumbai",
-    lat: 21.1633,
-    lng: 79.0196,
+    lat: 17.8981,
+    lng: 78.0806,
     address: "407, mayuresh planet, plot no - 42 & 43, sector-15, cbd belapur, navi mumbai, maharashtra, 400614",
     contacts: ["Export customer service: +91 2245174102, +91 2245174109, +91 2245174118", "Export docs team: +91 2245174103, +91 2245174105", "Import docs team: +91 2245174104, +91 2245174106", "Import customer service: +91 2245174113, +91 2245174110, +91 2245174107, +91 2245174112"]
   }, {
@@ -148,18 +148,18 @@ const countries = [{
 }, {
   code: "pk",
   name: "Pakistan",
-  lat: 30.3753,
-  lng: 69.3451,
+  lat: 32.4145,
+  lng: 64.9162,
   cities: [{
     name: "Karachi",
-    lat: 24.8607,
-    lng: 67.0011,
+    lat: 32.4145,
+    lng: 64.9162,
     address: "Suite No.301, 3rd Floor, Fortune Center, Shahrah-e-Faisal, Block 6, PECHS, Karachi, Pakistan",
     contacts: ["+92-300-8282511", "+92-21-34302281-5"]
   }, {
     name: "Lahore",
-    lat: 31.5204,
-    lng: 74.3587,
+    lat: 32.4145,
+    lng: 64.9162,
     address: "Office # 301, 3rd Floor, Gulberg Arcade Main Market, Gulberg 2, Lahore, Pakistan",
     contacts: ["+92 42-35782306/07/08"]
   }]
