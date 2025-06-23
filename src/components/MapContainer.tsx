@@ -1,12 +1,9 @@
-
 import React, { useRef, useState } from 'react';
 import { RefreshCw, Maximize2, Minimize2 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { motion } from 'framer-motion';
-import { MapPin } from 'lucide-react';
 
-const MAP_URL = "https://www.google.com/maps/d/u/0/embed?mid=1d5jZQlEjnKqnsGHvdJWR5wB_-fcQ_Zk&z=2&ll=12.9716,77.5946&hl=en&ehbc=2E312F&output=embed";
+const MAP_URL = "https://www.google.com/maps/d/u/0/embed?mid=1d5jZQlEjnKqnsGHvdJWR5wB_-fcQ_Zk&z=10&ll=12.9716,77.5946&hl=en&ehbc=2E312F&output=embed";
 
 const MapContainer = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -33,6 +30,7 @@ const MapContainer = () => {
   return (
     <div className="w-full h-full flex justify-center">
       <div className={`bg-white rounded-2xl shadow-lg overflow-hidden relative w-full transition-all duration-300 ease-in-out ${isFullScreen ? 'max-w-full' : 'max-w-6xl'} my-3`}>
+        
         {/* Map Header */}
         <div className="flex justify-between items-center p-3 border-b border-amber-100 bg-gradient-to-r from-amber-50 to-white">
           <h3 className="font-medium text-amber-700 flex items-center">
@@ -45,13 +43,17 @@ const MapContainer = () => {
               <span className="hidden sm:inline">Refresh</span>
             </Button>
             <Button variant="outline" size="sm" onClick={toggleFullScreen} className="text-amber-600 border-amber-200 hover:bg-amber-50">
-              {isFullScreen ? <>
+              {isFullScreen ? (
+                <>
                   <Minimize2 className="h-3.5 w-3.5 mr-1" />
                   <span className="hidden sm:inline">Compact</span>
-                </> : <>
+                </>
+              ) : (
+                <>
                   <Maximize2 className="h-3.5 w-3.5 mr-1" />
                   <span className="hidden sm:inline">Expand</span>
-                </>}
+                </>
+              )}
             </Button>
           </div>
         </div>
@@ -74,7 +76,7 @@ const MapContainer = () => {
             }} 
             onLoad={() => setIsLoaded(true)}
           ></iframe>
-          
+
           {/* Loading Spinner */}
           {!isLoaded && (
             <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 z-10">
@@ -85,7 +87,7 @@ const MapContainer = () => {
             </div>
           )}
         </div>
-        
+
         {/* Map Footer */}
         <div className="py-2 px-4 border-t border-amber-100 bg-gradient-to-r from-white to-amber-50 text-xs text-gray-500 text-center">
           <p>© 2025 GGL Global Presence Map | Data updated quarterly</p>
