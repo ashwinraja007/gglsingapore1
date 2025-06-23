@@ -19,14 +19,14 @@ const countries = [{
   lng: 78.6677,
   cities: [{
     name: "Mumbai",
-    lat: 19.0760,
-    lng: 72.8777,
+    lat: 21.1633,
+    lng: 79.0196,
     address: "407, mayuresh planet, plot no - 42 & 43, sector-15, cbd belapur, navi mumbai, maharashtra, 400614",
     contacts: ["Export customer service: +91 2245174102, +91 2245174109, +91 2245174118", "Export docs team: +91 2245174103, +91 2245174105", "Import docs team: +91 2245174104, +91 2245174106", "Import customer service: +91 2245174113, +91 2245174110, +91 2245174107, +91 2245174112"]
   }, {
     name: "Delhi",
-    lat: 21.7630,
-    lng: 81.5686,
+    lat: 25.6073,
+    lng: 85.1330,
     address: "JA 511, DLF Tower A, Jasola District Centre, New Delhi, 110025",
     contacts: ["+91 9999022030"]
   }, {
