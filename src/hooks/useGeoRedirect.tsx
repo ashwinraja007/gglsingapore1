@@ -1,8 +1,8 @@
+
 import { useEffect, useState } from 'react';
 import { detectUserCountryAndRedirect, detectCountryByTimezone } from '@/utils/geoRedirect';
 
 export const useGeoRedirect = () => {
-  const [isRedirecting, setIsRedirecting] = useState(false);
   const [hasChecked, setHasChecked] = useState(false);
 
   useEffect(() => {
@@ -13,8 +13,6 @@ export const useGeoRedirect = () => {
       setHasChecked(true);
       
       try {
-        setIsRedirecting(true);
-        
         // First try IP-based detection
         const ipRedirectTriggered = await detectUserCountryAndRedirect();
         
@@ -28,19 +26,12 @@ export const useGeoRedirect = () => {
         }
       } catch (error) {
         console.error('Geo-redirection error:', error);
-      } finally {
-        // Only set redirecting to false if no redirect happened
-        setTimeout(() => {
-          setIsRedirecting(false);
-        }, 1000);
       }
     };
 
-    // Run the check after a small delay to ensure page is ready
-    const timer = setTimeout(handleGeoRedirection, 500);
-
-    return () => clearTimeout(timer);
+    // Run the check immediately
+    handleGeoRedirection();
   }, [hasChecked]);
 
-  return { isRedirecting };
+  return {};
 };
