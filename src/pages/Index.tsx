@@ -1,3 +1,4 @@
+
 import { Suspense, lazy } from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -18,24 +19,8 @@ const LoadingComponent = () => (
   </div>
 );
 
-// Redirect loading component
-const RedirectingComponent = () => (
-  <div className="fixed inset-0 bg-white z-50 flex items-center justify-center">
-    <div className="text-center">
-      <Loader2 className="h-8 w-8 animate-spin text-brand-gold mx-auto mb-4" />
-      <p className="text-lg font-medium text-gray-700">Redirecting to GGL India...</p>
-      <p className="text-sm text-gray-500 mt-2">Please wait while we take you to the India website</p>
-    </div>
-  </div>
-);
-
 const Index = () => {
-  const { isRedirecting } = useGeoRedirect();
-
-  // Show redirecting screen if redirect is in progress
-  if (isRedirecting) {
-    return <RedirectingComponent />;
-  }
+  useGeoRedirect();
 
   return (
     <div className="min-h-screen flex flex-col relative">
