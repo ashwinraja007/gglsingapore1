@@ -1,10 +1,9 @@
 // Utility for handling IP-based geographic redirection
 export const detectUserCountryAndRedirect = async () => {
   try {
-    // Try multiple IP geolocation services for better reliability
     let countryCode = '';
-    
-    // Service 1: ipapi.co (free tier, no API key required)
+
+    // Service 1: ipapi.co
     try {
       const response = await fetch('https://ipapi.co/json/', {
         method: 'GET',
@@ -12,7 +11,7 @@ export const detectUserCountryAndRedirect = async () => {
           'Accept': 'application/json',
         },
       });
-      
+
       if (response.ok) {
         const data = await response.json();
         countryCode = data.country_code;
@@ -21,14 +20,14 @@ export const detectUserCountryAndRedirect = async () => {
     } catch (error) {
       console.log('ipapi.co failed, trying alternative service');
     }
-    
-    // Service 2: Fallback to ip-api.com if first service fails
+
+    // Fallback: ip-api.com (HTTPS to avoid mixed content)
     if (!countryCode) {
       try {
-        const response = await fetch('http://ip-api.com/json/', {
+        const response = await fetch('https://ip-api.com/json/', {
           method: 'GET',
         });
-        
+
         if (response.ok) {
           const data = await response.json();
           countryCode = data.countryCode;
@@ -38,49 +37,55 @@ export const detectUserCountryAndRedirect = async () => {
         console.log('ip-api.com also failed');
       }
     }
-    
-    // Check if user is from India and redirect
-    if (countryCode === 'IN') {
-      console.log('User detected from India, redirecting to GGL India website');
-      
-      // Add a small delay to ensure the page has loaded
-      setTimeout(() => {
-        window.location.href = 'https://ggl.sg';
-      }, 100);
-      
-      return true; // Indicates redirect will happen
-    }
-    
-    return false; // No redirect needed
+
+    // Final redirection based on country
+    const redirectUrl = countryCode === 'IN'
+      ? 'https://gglindia.com/'
+      : 'https://ggl.sg';
+
+    console.log(`Redirecting user to ${redirectUrl}`);
+
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, 100);
+
+    return true; // Indicates redirect will happen
   } catch (error) {
     console.error('Error detecting user location:', error);
     return false;
   }
 };
 
-// Alternative method using browser's timezone as fallback
+// Fallback method using browser's timezone
 export const detectCountryByTimezone = () => {
   try {
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     console.log('User timezone:', timezone);
-    
-    // Indian timezones
+
     const indianTimezones = [
       'Asia/Kolkata',
       'Asia/Calcutta',
       'Asia/Mumbai',
       'Asia/Delhi'
     ];
-    
-    if (indianTimezones.includes(timezone)) {
-      console.log('User timezone suggests India location, redirecting...');
-      window.location.href = 'https://gglindia.com/';
-      return true;
-    }
-    
-    return false;
+
+    const redirectUrl = indianTimezones.includes(timezone)
+      ? 'https://gglindia.com/'
+      : 'https://ggl.sg';
+
+    console.log(`Timezone-based redirect to ${redirectUrl}`);
+    window.location.href = redirectUrl;
+    return true;
   } catch (error) {
     console.error('Error detecting timezone:', error);
     return false;
+  }
+};
+
+// Main function to run on page load
+export const handleGeoRedirect = async () => {
+  const redirected = await detectUserCountryAndRedirect();
+  if (!redirected) {
+    detectCountryByTimezone();
   }
 };
