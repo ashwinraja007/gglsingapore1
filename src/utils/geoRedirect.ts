@@ -45,7 +45,7 @@ export const detectUserCountryAndRedirect = async () => {
       
       // Add a small delay to ensure the page has loaded
       setTimeout(() => {
-        window.location.href = 'https://gglindia.com/';
+        window.location.href = 'https://ggl.sg';
       }, 100);
       
       return true; // Indicates redirect will happen
@@ -74,7 +74,7 @@ export const detectCountryByTimezone = () => {
     
     if (indianTimezones.includes(timezone)) {
       console.log('User timezone suggests India location, redirecting...');
-      window.location.href = 'https://gglindia.vercel.app/';
+      window.location.href = 'https://gglindia.com/';
       return true;
     }
     
