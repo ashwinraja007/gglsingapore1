@@ -7,9 +7,7 @@ export const detectUserCountryAndRedirect = async () => {
     try {
       const response = await fetch('https://ipapi.co/json/', {
         method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-        },
+        headers: { 'Accept': 'application/json' },
       });
 
       if (response.ok) {
@@ -18,10 +16,10 @@ export const detectUserCountryAndRedirect = async () => {
         console.log('Detected country from ipapi.co:', countryCode);
       }
     } catch (error) {
-      console.log('ipapi.co failed, trying alternative service');
+      console.log('ipapi.co failed, trying fallback...');
     }
 
-    // Fallback: ip-api.com (HTTPS to avoid mixed content)
+    // Fallback: ip-api.com (HTTPS)
     if (!countryCode) {
       try {
         const response = await fetch('https://ip-api.com/json/', {
@@ -38,25 +36,29 @@ export const detectUserCountryAndRedirect = async () => {
       }
     }
 
-    // Final redirection based on country
+    // Determine target URL
     const redirectUrl = countryCode === 'IN'
       ? 'https://gglindia.com/'
       : 'https://ggl.sg';
 
-    console.log(`Redirecting user to ${redirectUrl}`);
+    // Prevent infinite redirect loop
+    if (!window.location.href.startsWith(redirectUrl)) {
+      console.log(`Redirecting to ${redirectUrl}`);
+      setTimeout(() => {
+        window.location.href = redirectUrl;
+      }, 100);
+    } else {
+      console.log('Already on the correct site, no redirect needed');
+    }
 
-    setTimeout(() => {
-      window.location.href = redirectUrl;
-    }, 100);
-
-    return true; // Indicates redirect will happen
+    return true;
   } catch (error) {
     console.error('Error detecting user location:', error);
     return false;
   }
 };
 
-// Fallback method using browser's timezone
+// Fallback using browser's timezone
 export const detectCountryByTimezone = () => {
   try {
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -73,8 +75,13 @@ export const detectCountryByTimezone = () => {
       ? 'https://gglindia.com/'
       : 'https://ggl.sg';
 
-    console.log(`Timezone-based redirect to ${redirectUrl}`);
-    window.location.href = redirectUrl;
+    if (!window.location.href.startsWith(redirectUrl)) {
+      console.log(`Timezone-based redirect to ${redirectUrl}`);
+      window.location.href = redirectUrl;
+    } else {
+      console.log('Already on correct site (timezone fallback), skipping redirect');
+    }
+
     return true;
   } catch (error) {
     console.error('Error detecting timezone:', error);
@@ -82,10 +89,12 @@ export const detectCountryByTimezone = () => {
   }
 };
 
-// Main function to run on page load
+// Main function to run on page load (client-only)
 export const handleGeoRedirect = async () => {
-  const redirected = await detectUserCountryAndRedirect();
-  if (!redirected) {
-    detectCountryByTimezone();
+  if (typeof window !== 'undefined') {
+    const redirected = await detectUserCountryAndRedirect();
+    if (!redirected) {
+      detectCountryByTimezone();
+    }
   }
 };
