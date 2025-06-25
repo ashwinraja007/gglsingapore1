@@ -1,4 +1,4 @@
-// Utility for handling IP-based geographic redirection
+// Detect if user is from India and redirect to gglindia.com
 export const detectUserCountryAndRedirect = async () => {
   try {
     let countryCode = '';
@@ -19,7 +19,7 @@ export const detectUserCountryAndRedirect = async () => {
       console.log('ipapi.co failed, trying fallback...');
     }
 
-    // Fallback: ip-api.com (HTTPS)
+    // Service 2: ip-api.com (if first fails)
     if (!countryCode) {
       try {
         const response = await fetch('https://ip-api.com/json/', {
@@ -36,65 +36,21 @@ export const detectUserCountryAndRedirect = async () => {
       }
     }
 
-    // Determine target URL
-    const redirectUrl = countryCode === 'IN'
-      ? 'https://gglindia.com/'
-      : 'https://ggl.sg';
-
-    // Prevent infinite redirect loop
-    if (!window.location.href.startsWith(redirectUrl)) {
-      console.log(`Redirecting to ${redirectUrl}`);
+    // If user is from India and not already on gglindia.com, redirect them
+    if (countryCode === 'IN' && !window.location.href.includes('gglindia.com')) {
+      console.log('Redirecting to gglindia.com for Indian user');
       setTimeout(() => {
-        window.location.href = redirectUrl;
+        window.location.href = 'https://gglindia.com/';
       }, 100);
-    } else {
-      console.log('Already on the correct site, no redirect needed');
+      return true;
     }
 
-    return true;
+    // If not from India, just stay on the actual website
+    console.log('User is not from India. No redirect.');
+    return false;
+
   } catch (error) {
     console.error('Error detecting user location:', error);
     return false;
-  }
-};
-
-// Fallback using browser's timezone
-export const detectCountryByTimezone = () => {
-  try {
-    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    console.log('User timezone:', timezone);
-
-    const indianTimezones = [
-      'Asia/Kolkata',
-      'Asia/Calcutta',
-      'Asia/Mumbai',
-      'Asia/Delhi'
-    ];
-
-    const redirectUrl = indianTimezones.includes(timezone)
-      ? 'https://gglindia.com/'
-      : 'https://ggl.sg';
-
-    if (!window.location.href.startsWith(redirectUrl)) {
-      console.log(`Timezone-based redirect to ${redirectUrl}`);
-      window.location.href = redirectUrl;
-    } else {
-      console.log('Already on correct site (timezone fallback), skipping redirect');
-    }
-
-    return true;
-  } catch (error) {
-    console.error('Error detecting timezone:', error);
-    return false;
-  }
-};
-
-// Main function to run on page load (client-only)
-export const handleGeoRedirect = async () => {
-  if (typeof window !== 'undefined') {
-    const redirected = await detectUserCountryAndRedirect();
-    if (!redirected) {
-      detectCountryByTimezone();
-    }
   }
 };
