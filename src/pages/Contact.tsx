@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -6,34 +6,45 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaFacebookF } from 'react-icons/fa';
-import { Phone, Mail, MapPin, Send, XCircle } from 'lucide-react';
+import { Phone, MapPin, Send, XCircle } from 'lucide-react';
 
 const Contact = () => {
   const [showNotification, setShowNotification] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
-    // Check if redirected from FormSubmit
-    const url = new URL(window.location.href);
-    if (url.searchParams.get('submitted') === 'true') {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/karthikjungleemara@gmail.com", {
+        method: "POST",
+        headers: { 'Accept': 'application/json' },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
+
       setShowNotification(true);
+      form.reset();
+
       setTimeout(() => setShowNotification(false), 4000);
+    } catch (error) {
+      alert("Oops! Something went wrong. Please try again later.");
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
     }
-  }, []);
+  };
 
   return (
     <div className="min-h-screen flex flex-col relative">
       <Header />
-
-      {/* Notification */}
-      {showNotification && (
-        <div className="fixed top-6 right-6 z-50 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-3 transition-all">
-          <Send size={18} />
-          Message sent successfully!
-          <button onClick={() => setShowNotification(false)} className="ml-2">
-            <XCircle size={18} />
-          </button>
-        </div>
-      )}
 
       <main className="flex-grow">
         {/* Hero Section */}
@@ -127,15 +138,10 @@ const Contact = () => {
                 <p className="text-gray-600 mb-6">
                   Fill in the form below and we'll get back to you as soon as possible.
                 </p>
-                <form
-                  action="https://formsubmit.co/ajax/karthikjungleemara@gmail.com"
-                  method="POST"
-                  className="space-y-5"
-                >
+                <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                   <input type="hidden" name="_captcha" value="false" />
                   <input type="hidden" name="_template" value="box" />
                   <input type="hidden" name="_subject" value="New Contact Submission!" />
-                  <input type="hidden" name="_next" value="https://yourdomain.com/contact?submitted=true" />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <Input placeholder="First Name" name="First Name" required />
@@ -150,14 +156,14 @@ const Contact = () => {
                   <Input placeholder="Organization/Company" name="Organization" />
                   <Textarea placeholder="Your Message" name="Message" required />
 
-                  {/* Success Popup Notification */}
+                  {/* Success Popup Notification inside form above the button */}
                   {showNotification && (
                     <motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.3 }}
-                      className="flex items-center justify-between bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
+                      className="flex items-center justify-between bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4"
                       role="alert"
                     >
                       <span>✅ Message sent successfully!</span>
@@ -175,10 +181,39 @@ const Contact = () => {
                   <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                     <Button
                       type="submit"
+                      disabled={isSubmitting}
                       className="w-full text-white py-6 flex items-center justify-center gap-2 bg-brand-navy"
                     >
-                      Send Message
-                      <Send size={18} />
+                      {isSubmitting ? (
+                        <>
+                          <svg
+                            className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            />
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8v8H4z"
+                            />
+                          </svg>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Send Message
+                          <Send size={18} />
+                        </>
+                      )}
                     </Button>
                   </motion.div>
                 </form>
