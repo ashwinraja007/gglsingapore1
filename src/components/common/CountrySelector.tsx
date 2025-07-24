@@ -103,7 +103,6 @@ const CountrySelector = () => {
                 <DropdownMenuItem
                   key={country.country}
                   onSelect={(e) => {
-                    e.preventDefault(); // Prevent closing on select
                     handleCountrySelect(country);
                   }}
                   className="cursor-pointer hover:bg-amber-50 p-2 rounded-md flex items-center gap-2 transition-colors"
