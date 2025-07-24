@@ -97,7 +97,7 @@ const CountrySelector = () => {
           className="w-[280px] border border-amber-100 bg-white p-2 rounded-lg shadow-lg"
           onPointerDownOutside={(e) => e.preventDefault()}
         >
-          <ScrollArea className="h-[300px] w-full pr-2">
+          <ScrollArea className="max-h-[90vh] w-full pr-2">
             <div className="grid grid-cols-1 gap-1 p-1">
               {sortedCountries.map((country) => (
                 <DropdownMenuItem
