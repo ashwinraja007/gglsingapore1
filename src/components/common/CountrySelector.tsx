@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -53,7 +54,9 @@ const CountrySelector = () => {
 
   const handleCountrySelect = (country: CountryData) => {
     setSelectedRedirectCountry(country);
-    window.open(country.website, '_blank', 'noopener,noreferrer');
+    setTimeout(() => {
+      window.open(country.website, '_blank', 'noopener,noreferrer');
+    }, 100); // ensure dropdown closes before redirect
     setIsOpen(false);
   };
 
@@ -86,23 +89,26 @@ const CountrySelector = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent 
           align="center" 
-          className="w-[300px] max-h-screen border border-amber-100 bg-white p-2 rounded-lg shadow-lg"
+          className="w-[280px] border border-amber-100 bg-white p-2 rounded-lg shadow-lg max-h-[90vh]"
           onPointerDownOutside={(e) => e.preventDefault()}
         >
-          <ScrollArea className="h-[calc(100vh-120px)] w-full pr-2 overflow-y-auto">
+          <ScrollArea className="h-[calc(100vh-120px)] w-full pr-2 overflow-y-auto scrollbar-gold">
             <div className="grid grid-cols-1 gap-1 p-1">
               {sortedCountries.map((country) => (
-                <button
+                <DropdownMenuItem
                   key={country.country}
-                  onClick={() => handleCountrySelect(country)}
-                  className="cursor-pointer hover:bg-amber-50 p-2 rounded-md flex items-center gap-2 transition-colors w-full text-left"
+                  onSelect={(e) => {
+                    e.preventDefault();
+                    handleCountrySelect(country);
+                  }}
+                  className="cursor-pointer hover:bg-amber-50 p-2 rounded-md flex items-center gap-2 transition-colors"
                 >
-                  <motion.div whileHover={{ scale: 1.03 }} className="flex items-center w-full">
+                  <motion.div whileHover={{ scale: 1.05 }} className="flex items-center w-full">
                     <div className="flex-shrink-0">
                       {country.flag ? (
-                        <img
-                          src={country.flag}
-                          alt={`${country.country} flag`}
+                        <img 
+                          src={country.flag} 
+                          alt={`${country.country} flag`} 
                           className="w-6 h-6 rounded-sm shadow-sm object-cover"
                         />
                       ) : (
@@ -116,7 +122,7 @@ const CountrySelector = () => {
                       <div className="text-xs text-gray-500">{country.company}</div>
                     </div>
                   </motion.div>
-                </button>
+                </DropdownMenuItem>
               ))}
             </div>
           </ScrollArea>
