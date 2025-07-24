@@ -33,9 +33,9 @@ const countries: CountryData[] = [
   { country: "PAKISTAN", company: "GC", website: "https://www.globalconsol.com", priority: 11, flag: "/pk.svg" },
   { country: "QATAR", company: "ONE G", website: "https://oneglobalqatar.com/", priority: 12, flag: "/qa.svg" },
   { country: "SAUDI ARABIA", company: "AMASS", website: "https://amassmiddleeast.com/", priority: 13, flag: "/sa.svg" },
-  { country: "UAE", company: "AMASS", website: "https://amassmiddleeast.com/", priority: 14, flag: "/ae.svg" },
-  { country: "USA", company: "GGL", website: "https://gglusa.us/", priority: 15, flag: "/us.svg" },
-  { country: "UK", company: "MOLTECH", website: "https://moltech.uk/", priority: 16, flag: "/gb.svg" }
+  { country: "UAE", company: "AMASS", website: "https://www.amassmiddleeast.com/", priority: 14, flag: "/ae.svg" },
+  { country: "USA", company: "GGL", website: "https://www.gglusa.us/", priority: 15, flag: "/us.svg" },
+  { country: "UK", company: "MOLTECH", website: "https://www.moltech.uk/", priority: 16, flag: "/gb.svg" }
 ];
 
 // Find Australia in the countries list
