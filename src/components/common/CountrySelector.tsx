@@ -1,11 +1,9 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Globe } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -38,32 +36,27 @@ const countries: CountryData[] = [
   { country: "UK", company: "MOLTECH", website: "https://www.moltech.uk/", priority: 16, flag: "/gb.svg" }
 ];
 
-// Find Australia in the countries list
 const findAustraliaCountry = () => {
   return countries.find(country => country.country === "AUSTRALIA") || countries[0];
 };
 
 const CountrySelector = () => {
   const [isOpen, setIsOpen] = useState(false);
-  // This state is only used for tracking the selected country for redirection
   const [selectedRedirectCountry, setSelectedRedirectCountry] = useState<CountryData>(findAustraliaCountry());
   const dropdownRef = useRef<HTMLDivElement>(null);
-  
-  // Sort countries by priority, with Australia first
+
   const sortedCountries = [...countries].sort((a, b) => {
     if (a.country === "AUSTRALIA") return -1;
     if (b.country === "AUSTRALIA") return 1;
     return a.priority - b.priority;
   });
 
-  // Handle redirect
   const handleCountrySelect = (country: CountryData) => {
     setSelectedRedirectCountry(country);
     window.open(country.website, '_blank', 'noopener,noreferrer');
     setIsOpen(false);
   };
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -85,7 +78,6 @@ const CountrySelector = () => {
             variant="outline" 
             className="border-[#F6B100] bg-white text-gray-800 hover:bg-[#F6B100]/10 px-4 py-2 rounded-full flex items-center gap-2"
           >
-              {/* Show globe icon instead of Australia flag */}
             <Globe className="w-6 h-6 text-[#F6B100]" />
             <span className="flex items-center gap-1">
               Switch Country <ChevronDown className="h-3 w-3 ml-1 text-gray-500" />
@@ -94,33 +86,28 @@ const CountrySelector = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent 
           align="center" 
-          className="w-[280px] border border-amber-100 bg-white p-2 rounded-lg shadow-lg"
+          className="w-[300px] max-h-screen border border-amber-100 bg-white p-2 rounded-lg shadow-lg"
           onPointerDownOutside={(e) => e.preventDefault()}
         >
-          <ScrollArea className="max-h-[90vh] w-full pr-2">
+          <ScrollArea className="h-[calc(100vh-120px)] w-full pr-2 overflow-y-auto">
             <div className="grid grid-cols-1 gap-1 p-1">
               {sortedCountries.map((country) => (
-                <DropdownMenuItem
+                <button
                   key={country.country}
-                  onSelect={(e) => {
-                    handleCountrySelect(country);
-                  }}
-                  className="cursor-pointer hover:bg-amber-50 p-2 rounded-md flex items-center gap-2 transition-colors"
+                  onClick={() => handleCountrySelect(country)}
+                  className="cursor-pointer hover:bg-amber-50 p-2 rounded-md flex items-center gap-2 transition-colors w-full text-left"
                 >
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="flex items-center w-full"
-                  >
+                  <motion.div whileHover={{ scale: 1.03 }} className="flex items-center w-full">
                     <div className="flex-shrink-0">
                       {country.flag ? (
-                        <img 
-                          src={country.flag} 
-                          alt={`${country.country} flag`} 
+                        <img
+                          src={country.flag}
+                          alt={`${country.country} flag`}
                           className="w-6 h-6 rounded-sm shadow-sm object-cover"
                         />
                       ) : (
                         <div className="w-6 h-6 bg-gray-200 rounded-sm flex items-center justify-center">
-                         <Globe className="w-6 h-6 text-[#F6B100]" />
+                          <Globe className="w-6 h-6 text-[#F6B100]" />
                         </div>
                       )}
                     </div>
@@ -129,7 +116,7 @@ const CountrySelector = () => {
                       <div className="text-xs text-gray-500">{country.company}</div>
                     </div>
                   </motion.div>
-                </DropdownMenuItem>
+                </button>
               ))}
             </div>
           </ScrollArea>
