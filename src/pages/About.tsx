@@ -1,196 +1,76 @@
 import React from 'react';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Globe, Ship, Truck, Package, Clock, Shield, Target, Users, Award, CheckCircle, ArrowRight } from 'lucide-react';
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { motion } from "framer-motion";
 
 const About = () => {
-  const stats = [
-    {
-      number: "15+",
-      label: "Years Experience",
-      icon: Clock
-    },
-    {
-      number: "500+",
-      label: "Global Partners",
-      icon: Users
-    },
-    {
-      number: "50+",
-      label: "Countries Served",
-      icon: Globe
-    },
-    {
-      number: "99%",
-      label: "On-Time Delivery",
-      icon: Award
-    }
-  ];
-
-  const services = [
-    {
-      icon: Ship,
-      title: "Ocean Freight",
-      description: "Comprehensive sea freight solutions with global coverage"
-    },
-    {
-      icon: Package,
-      title: "Air Freight",
-      description: "Fast and reliable air cargo services worldwide"
-    },
-    {
-      icon: Truck,
-      title: "Land Transport",
-      description: "Efficient ground transportation and last-mile delivery"
-    },
-    {
-      icon: Shield,
-      title: "Warehousing",
-      description: "Secure storage and inventory management solutions"
-    }
-  ];
-
-  const features = [
-    "Real-time shipment tracking and visibility",
-    "Dedicated customer service teams",
-    "Strategic global hub network",
-    "Advanced logistics technology platform",
-    "Customs clearance expertise",
-    "Cost-effective LCL consolidation"
-  ];
-
-  const lclServices = [
-    "Collecting smaller shipments from multiple clients",
-    "Combining them into a single container at origin",
-    "Managing customs clearance and documentation",
-    "Ensuring secure and timely deconsolidation and final delivery"
-  ];
-
-  const globalHubs = ["Singapore", "Malaysia", "Sri Lanka", "Dubai"];
-
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-white">
       <Header />
 
-      <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-r from-brand-navy to-brand-navy/90 text-white px-6 mt-16">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-slate-50">
-                About <span className="text-slate-50">GGL</span>
-              </h1>
-              <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed text-slate-50">
-                Singapore's premier logistics company, offering specialized expertise across warehousing, freight forwarding, and transportation
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Main About Content */}
+      <main className="flex-grow mt-16">
+        {/* Image + Intro Content Section */}
         <section className="py-20 px-6 bg-gray-50">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-                  <span className="text-[brand-navy_to-brand-navy/90] text-brand-navy">About Us</span>
-                </h2>
-
-                <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
-                  <p className="text-base">
-                    GGL is a proud subsidiary of 1 Global Enterprises, a Singapore-based investment group with a robust and diverse portfolio spanning freight forwarding, supply chain management, and logistics technology. As part of this global network, GGL leverages strategic investments across multiple brands specializing in transportation, warehousing, and integrated supply chain solutions.
-                  </p>
-
-                  <p className="text-base">
-                    With a strong foundation backed by 1 Global Enterprises’ industry expertise and innovation-driven approach, GGL delivers seamless, technology-enabled logistics solutions. This affiliation ensures operational excellence, financial stability, and access to world-class infrastructure—positioning GGL as a leading provider of end-to-end global logistics services.
-                  </p>
-
-                  <p className="text-base">
-                    The 1 Global Group operates in 16 countries with a dedicated team of over 700 professionals. Its business verticals include Supply Chain Solutions, Renewable Energy, Information Technology, and Business Process Outsourcing, each managed by domain experts committed to delivering impactful results.
-                  </p>
-
-                  <p className="text-base">
-                    At GGL Singapore, we specialize in offering comprehensive logistics services such as:
-                  </p>
-
-                  <ul className="list-disc list-inside pl-4 text-base space-y-1">
-                    <li>Freight Management</li>
-                    <li>Warehouse Management</li>
-                    <li>Transport Management</li>
-                    <li>Liquid Logistics</li>
-                    <li>Oversized Shipments & Project Cargo</li>
-                  </ul>
-
-                  <p className="text-base">
-                    With the support of our in-house IT company, we are making significant investments in cutting-edge technologies—including Artificial Intelligence, Automation, and Data Analytics—to optimize operations and enhance transparency, efficiency, and client satisfaction.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                  <img
-                    alt="GGL Global Logistics"
-                    className="w-full h-[500px] object-cover"
-                    src="/lovable-uploads/41795fb5-562d-45d1-a8d3-f26724bc079b.png"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent my-0"></div>
-                </div>
-
-                {/* Floating card */}
-                <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-lg max-w-xs">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-blue-100 rounded-lg">
-                      <Globe className="w-6 h-6 text-blue-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Global Network</h4>
-                      <p className="text-sm text-gray-600">50+ countries worldwide</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose GGL Section */}
-        <section className="py-20 bg-white px-6">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            {/* Text Content */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Why Choose <span className="text-yellow-500">GGL?</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+                About <span className="text-yellow-500">GGL</span>
               </h2>
-              <div className="text-xl text-gray-600 max-w-4xl mx-auto space-y-6 text-left">
-                <p className="text-base my-0">
-                  At GGL, we believe logistics is more than just moving goods — it’s about delivering trust. Our team combines sharp attention to detail with a service-first mindset, ensuring every shipment is handled with care, precision, and efficiency. We pride ourselves on being responsive, proactive, and fully aligned with our clients’ needs. From documentation to delivery, we go the extra mile so you don’t have to.
+              <div className="space-y-6 text-gray-700 text-base leading-relaxed">
+                <p>
+                  GGL is a proud subsidiary of 1 Global Enterprises, a Singapore-based investment group with a robust and diverse portfolio spanning freight forwarding, supply chain management, and logistics technology. As part of this global network, GGL leverages strategic investments across multiple brands specializing in transportation, warehousing, and integrated supply chain solutions.
+                </p>
+                <p>
+                  With a strong foundation backed by 1 Global Enterprises’ industry expertise and innovation-driven approach, GGL delivers seamless, technology-enabled logistics solutions. This affiliation ensures operational excellence, financial stability, and access to world-class infrastructure—positioning GGL as a leading provider of end-to-end global logistics services.
+                </p>
+                <p>
+                  The 1 Global Group operates in 16 countries with a dedicated team of over 700 professionals. Its business verticals include Supply Chain Solutions, Renewable Energy, Information Technology, and Business Process Outsourcing, each managed by domain experts committed to delivering impactful results.
                 </p>
               </div>
             </motion.div>
+
+            {/* Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  alt="GGL Global Logistics"
+                  className="w-full h-[500px] object-cover"
+                  src="/lovable-uploads/41795fb5-562d-45d1-a8d3-f26724bc079b.png"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Additional Content Section */}
+        <section className="py-16 px-6 bg-white">
+          <div className="max-w-4xl mx-auto text-gray-700 text-base leading-relaxed space-y-6">
+            <p>
+              At GGL Singapore, we specialize in offering comprehensive logistics services such as:
+            </p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Freight Management</li>
+              <li>Warehouse Management</li>
+              <li>Transport Management</li>
+              <li>Liquid Logistics</li>
+              <li>Oversized Shipments & Project Cargo</li>
+            </ul>
+            <p>
+              With the support of our in-house IT company, we are making significant investments in cutting-edge technologies—including Artificial Intelligence, Automation, and Data Analytics—to optimize operations and enhance transparency, efficiency, and client satisfaction.
+            </p>
           </div>
         </section>
       </main>
