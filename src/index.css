@@ -56,6 +56,26 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+/* Gold scrollbar */
+.scrollbar-gold::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-gold::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.scrollbar-gold::-webkit-scrollbar-thumb {
+  background-color: #F6B100;
+  border-radius: 8px;
+  border: 2px solid #ffffff;
+}
+
+.scrollbar-gold {
+  scrollbar-width: thin;
+  scrollbar-color: #F6B100 #ffffff;
+}
+
 
   .dark {
     --background: 224 71% 13%;
