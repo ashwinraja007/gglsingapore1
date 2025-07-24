@@ -2,17 +2,31 @@ import React from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
+import {
+  Truck,
+  PackageCheck,
+  Warehouse,
+  Droplet,
+  Boxes
+} from "lucide-react";
 
 const About = () => {
+  const services = [
+    { title: "Freight Management", icon: Truck },
+    { title: "Warehouse Management", icon: Warehouse },
+    { title: "Transport Management", icon: PackageCheck },
+    { title: "Liquid Logistics", icon: Droplet },
+    { title: "Oversized Shipments & Project Cargo", icon: Boxes }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
 
       <main className="flex-grow mt-16">
-        {/* Image + Intro Content Section */}
+        {/* Hero Section with Image + 3 Paragraphs */}
         <section className="py-20 px-6 bg-gray-50">
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-            {/* Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -35,7 +49,6 @@ const About = () => {
               </div>
             </motion.div>
 
-            {/* Image */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -55,19 +68,36 @@ const About = () => {
           </div>
         </section>
 
-        {/* Additional Content Section */}
+        {/* Services Cards with Icons */}
         <section className="py-16 px-6 bg-white">
-          <div className="max-w-4xl mx-auto text-gray-700 text-base leading-relaxed space-y-6">
-            <p>
-              At GGL Singapore, we specialize in offering comprehensive logistics services such as:
-            </p>
-            <ul className="list-disc list-inside space-y-1">
-              <li>Freight Management</li>
-              <li>Warehouse Management</li>
-              <li>Transport Management</li>
-              <li>Liquid Logistics</li>
-              <li>Oversized Shipments & Project Cargo</li>
-            </ul>
+          <div className="max-w-7xl mx-auto text-center">
+            <h3 className="text-2xl font-semibold text-gray-800 mb-8">
+              Our Comprehensive Logistics Services
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {services.map((service, index) => {
+                const Icon = service.icon;
+                return (
+                  <div
+                    key={index}
+                    className="bg-gray-50 border border-gray-200 p-6 rounded-xl shadow hover:shadow-md transition"
+                  >
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="p-3 bg-yellow-100 rounded-full">
+                        <Icon className="w-6 h-6 text-yellow-600" />
+                      </div>
+                      <p className="text-base font-medium text-gray-700 text-center">{service.title}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Final Paragraph */}
+        <section className="pb-20 px-6 bg-white">
+          <div className="max-w-4xl mx-auto text-gray-700 text-base leading-relaxed">
             <p>
               With the support of our in-house IT company, we are making significant investments in cutting-edge technologies—including Artificial Intelligence, Automation, and Data Analytics—to optimize operations and enhance transparency, efficiency, and client satisfaction.
             </p>
