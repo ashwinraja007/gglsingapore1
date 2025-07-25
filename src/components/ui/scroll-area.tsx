@@ -1,7 +1,5 @@
-
 import * as React from "react"
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
-
 import { cn } from "@/lib/utils"
 
 const ScrollArea = React.forwardRef<
@@ -39,27 +37,10 @@ const ScrollBar = React.forwardRef<
     )}
     {...props}
   >
-    <ScrollAreaPrimitive.ScrollAreaThumb 
-      className="relative flex-1 rounded-full bg-border cursor-pointer hover:bg-gray-400 active:bg-gray-500"
-      onPointerDown={(e) => {
-        // Prevent default to allow proper dragging
-        e.preventDefault();
-        // Create a new PointerEvent manually with only the required properties
-        const newEvent = new PointerEvent('pointerdown', {
-          bubbles: e.bubbles,
-          cancelable: e.cancelable,
-          clientX: e.clientX,
-          clientY: e.clientY,
-          pointerId: e.pointerId,
-        });
-        
-        // Ensure event propagates to Radix UI handlers
-        const thumb = e.currentTarget;
-        const scrollbar = thumb.parentElement;
-        if (scrollbar) {
-          // This allows the pointer event to bubble to Radix's handlers
-          scrollbar.dispatchEvent(newEvent);
-        }
+    <ScrollAreaPrimitive.ScrollAreaThumb
+      className="relative flex-1 rounded-full hover:bg-[#e0a800] active:bg-[#c48f00]"
+      style={{
+        backgroundColor: "#F6B100", // golden color
       }}
     />
   </ScrollAreaPrimitive.ScrollAreaScrollbar>
