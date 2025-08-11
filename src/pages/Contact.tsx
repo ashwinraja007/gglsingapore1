@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaFacebookF } from 'react-icons/fa';
-import { Phone, MapPin, Send, XCircle } from 'lucide-react';
+import { Phone, MapPin, Mail, Send, XCircle } from 'lucide-react';
 
 const Contact = () => {
   const [showNotification, setShowNotification] = useState(false);
