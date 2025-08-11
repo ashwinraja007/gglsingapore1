@@ -21,37 +21,43 @@ const countries = [{
     lat: 9.9323,
     lng: 76.2996,
     address: "CC 59/801A Elizabeth Memorial Building, Thevara Ferry Jn, Cochin 682013 , Kerala.",
-    contacts: ["+91 484 4019192 / 93"]
+    contacts: ["+91 484 4019192 / 93"],
+    email: "info.india@ggl.sg"
   },{
     name: "Mumbai",
     lat: 19.01123,
     lng: 73.03715,
     address: "803 / 804, Shelton Cubix, Plot No. 87, Sector-15,CBD Belapur, Navi Mumbai, Maharastra - 400614.",
-    contacts: ["022-35131688 / 35113475 / 35082586"]
+    contacts: ["022-35131688 / 35113475 / 35082586"],
+    email: "info.india@ggl.sg"
   }, {
     name: "Mumbai-Andheri",
     lat: 19.11303, 
     lng: 72.86848,
     address: "503, Midas, Sahar Plaza Complex,Sir M.V Road,Andheri East, Mumbai 400059",
-    contacts: ["+91 8879756838"]
+    contacts: ["+91 8879756838"],
+    email: "info.india@ggl.sg"
   },{
     name: "Delhi",
     lat: 28.62748,
     lng: 77.2221,
     address: "903, Surya Kiran Building K.G Marg,Connaught Place New Delhi - 110001",
-    contacts: ["+91 11 493224477 / 48 /49"]
+    contacts: ["+91 11 493224477 / 48 /49"],
+    email: "info.india@ggl.sg"
   }, {
     name: "Bangalore",
     lat: 13.01855,
     lng: 77.64191,
     address: "3C-964 IIIrd Cross Street,HRBR LAYOUT 1st Block,Kalayan Nagar Bannaswadi,Bengaluru - 560043.",
-    contacts: ["+91 9841676259"]
+    contacts: ["+91 9841676259"],
+    email: "info.india@ggl.sg"
   }, {
     name: "Kolkata",
     lat: 22.5769, 
     lng: 88.4341,
     address: "Merlin Matrix, 3rd floor, Room No. 303 10,D. N. BLOCK, SECTOR - V SALT LAKE CITY, Kolkata – 700091",
-    contacts: ["+91 33 46025458 / 59 / 60/ 61"]
+    contacts: ["+91 33 46025458 / 59 / 60/ 61"],
+    email: "info.india@ggl.sg"
   }]
 }, {
   code: "my",
@@ -63,13 +69,15 @@ const countries = [{
     lat: 1.4842,
     lng: 103.7629,
     address: "Unit 20-03A, Level 20 Menara Zurich, 15 Jalan Dato Abdullah Tahir, 80300 Johor Bahru",
-    contacts: ["+603-3319 2778 / 74 / 75, 79"]
+    contacts: ["+603-3319 2778 / 74 / 75, 79"],
+    email: "info@oecl.sg"
   }, {
     name: "PORTKLANG",
     lat: 2.9982,
     lng: 101.3831,
     address: "MTBBT 2, 3A-5, Jalan Batu Nilam 16, The Landmark (Behind AEON Mall), Bandar Bukit Tinggi 2, 41200, Klang, Selangor D.E",
-    contacts: ["+603 - 3319 2778 / 74 / 75"]
+    contacts: ["+603 - 3319 2778 / 74 / 75"],
+    email: "info@oecl.sg"
   }]
 }, {
   code: "ae",
@@ -167,13 +175,15 @@ const countries = [{
     lat: -6.2088,
     lng: 106.8456,
     address: "408, Lina Building, JL.HR Rasuna Said kav B7, Jakarta",
-    contacts: ["+62 21 529 20292, 522 4887"]
+    contacts: ["+62 21 529 20292, 522 4887"],
+    email: "logistics.jkt@oecl.sg"
   }, {
     name: "Surabaya",
     lat: -7.2575,
     lng: 112.7521,
     address: "Japfa Indoland Center, Japfa Tower 1, Lantai 4/401-A JL Jend, Basuki Rahmat 129-137, Surabaya 60271",
-    contacts: ["+62 21 529 20292, 522 4887"]
+    contacts: ["+62 21 529 20292, 522 4887"],
+    email: "logistics.jkt@oecl.sg"
   }]
 }, {
   code: "lk",
@@ -198,7 +208,8 @@ const countries = [{
     lat: 13.72957,  
     lng: 100.53095,
     address: "109 CCT Building, 3rd Floor, Rm.3, Surawong Road, Suriyawongse, Bangrak, Bangkok 10500 109",
-    contacts: ["+662-634-3240", "+662-634-3942"]
+    contacts: ["+662-634-3240", "+662-634-3942"],
+    email: "info@oecl.sg"
   }]
 }, {
   code: "mm",
