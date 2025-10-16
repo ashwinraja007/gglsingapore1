@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Loader2 } from "lucide-react";
 import Hero from "@/components/home/Hero";
+import SEO from '@/components/SEO';
 
 // Lazy load other components
 const AboutUs = lazy(() => import("@/components/home/AboutUs"));
@@ -22,6 +23,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col relative">
+      <SEO />
       <Header />
       <main className="flex-grow pt-16">
         <Hero />
