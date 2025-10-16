@@ -19,7 +19,7 @@ export interface SeoPayload {
   extra_meta?: Record<string, string> | null;
 }
 
-const TABLE_NAME = "seo_gglsgog";
+const TABLE_NAME = "seo_gglsingapore";
 
 export async function fetchSeoRecords(): Promise<SeoRecord[]> {
   try {
