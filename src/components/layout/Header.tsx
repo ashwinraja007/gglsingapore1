@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Linkedin, Facebook } from "lucide-react";
 import CountrySelector from "../common/CountrySelector";
+import BCountrySelector from "../common/BCountrySelector"; // <- BD selector
 
 export const Header = () => {
   const location = useLocation();
@@ -10,9 +11,9 @@ export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isInfoOpen, setIsInfoOpen] = useState(false);
-  const infoRef = useRef(null);
+  const infoRef = useRef<HTMLDivElement | null>(null);
 
-  // ******** AUTO DETECT BANGLADESH MODE ********
+  // AUTO DETECT BANGLADESH MODE
   const isBangladesh = location.pathname.startsWith("/bangladesh");
 
   const base = isBangladesh ? "/bangladesh" : "";
@@ -33,8 +34,8 @@ export const Header = () => {
 
   // Close Dropdown on outside click
   useEffect(() => {
-    const handleClickOutside = (e: any) => {
-      if (infoRef.current && !(infoRef.current as any).contains(e.target)) {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (infoRef.current && !infoRef.current.contains(e.target as Node)) {
         setIsInfoOpen(false);
       }
     };
@@ -71,7 +72,6 @@ export const Header = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-
           {/* LOGO */}
           <div className="flex items-center gap-4">
             <img
@@ -173,8 +173,8 @@ export const Header = () => {
               Global Presence
             </button>
 
-            {/* COUNTRY SELECTOR */}
-            <CountrySelector />
+            {/* COUNTRY SELECTOR (BD vs Global) */}
+            {isBangladesh ? <BCountrySelector /> : <CountrySelector />}
 
             {/* CONTACT BUTTON */}
             <button
@@ -193,22 +193,15 @@ export const Header = () => {
           } overflow-hidden`}
         >
           <nav className="flex flex-col gap-4 border-t pt-4">
+            <button onClick={() => handleNavClick(homePath)}>Home</button>
 
-            <button onClick={() => handleNavClick(homePath)}>
-              Home
-            </button>
-
-            <button onClick={() => handleNavClick(aboutPath)}>
-              About Us
-            </button>
+            <button onClick={() => handleNavClick(aboutPath)}>About Us</button>
 
             <button onClick={() => handleNavClick(servicesPath)}>
               Services
             </button>
 
-            <button onClick={() => handleNavClick(careersPath)}>
-              Careers
-            </button>
+            <button onClick={() => handleNavClick(careersPath)}>Careers</button>
 
             <button onClick={() => handleNavClick(contactPath)}>
               Contact Us
@@ -224,7 +217,8 @@ export const Header = () => {
               </a>
             </div>
 
-            <CountrySelector />
+            {/* COUNTRY SELECTOR (BD vs Global) */}
+            {isBangladesh ? <BCountrySelector /> : <CountrySelector />}
 
             <button
               onClick={() => handleNavClick(contactPath)}
