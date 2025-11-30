@@ -19,7 +19,13 @@ import OceanFreight from "./pages/services/OceanFreight";
 import LCLConsolidation from "./pages/services/LCLConsolidation";
 import Warehousing from "./pages/services/Warehousing";
 import ProjectCargo from "./pages/services/ProjectCargo";
+
 import BangladeshHome from "./pages/BangladeshHome";
+import BangladeshAbout from "./pages/BangladeshAbout";
+import BangladeshServices from "./pages/BangladeshServices";
+import BangladeshGlobalPresence from "./pages/BangladeshGlobalPresence";
+import BangladeshContact from "./pages/BangladeshContact";
+
 import CustomsClearance from "./pages/services/CustomsClearance";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import GlobalPresence from "./pages/GlobalPresence";
@@ -49,6 +55,18 @@ function App() {
             <Route path="/services/transportation" element={<Transportation />} />
             <Route path="/global-presence" element={<GlobalPresence />} />
             <Route path="/bangladesh" element={<BangladeshHome />} />
+            <Route path="/bangladesh/home" element={<BangladeshHome />} />
+            <Route path="/bangladesh/about" element={<BangladeshAbout />} />
+            <Route path="/bangladesh/careers" element={<Careers />} />
+            <Route
+              path="/bangladesh/services"
+              element={<BangladeshServices />}
+            />
+            <Route
+              path="/bangladesh/global-presence"
+              element={<BangladeshGlobalPresence />}
+            />
+            <Route path="/bangladesh/contact" element={<BangladeshContact />} />
              <Route path="/admin" element={<AdminDashboard />} />
             {/* Service specific pages */}
             <Route path="/services/liquid-transportation" element={<LiquidTransportation />} />
