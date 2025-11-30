@@ -34,15 +34,7 @@ const BangladeshHome = () => {
 
       <main className="flex-grow pt-16">
         {/* Bangladesh Hero */}
-        <BHero
-          sliderImages={["/oceanf.png", "/hom3.png"]}
-          badgeText="Bangladesh Logistics Hub"
-          headline={
-            'Delivering Excellence for <span class="text-yellow-500">Bangladesh</span> Supply Chains'
-          }
-          subheadline="GGL Bangladesh connects Dhaka with global trade lanes through air, ocean, and land freight expertise backed by local service."
-          contactPath="/bangladesh/contact"
-        />
+        <BHero />
 
         {/* About Bangladesh section */}
         <Suspense fallback={<LoadingComponent />}>
