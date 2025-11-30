@@ -19,6 +19,7 @@ import OceanFreight from "./pages/services/OceanFreight";
 import LCLConsolidation from "./pages/services/LCLConsolidation";
 import Warehousing from "./pages/services/Warehousing";
 import ProjectCargo from "./pages/services/ProjectCargo";
+import BangladeshHome from "./pages/services/BangladeshHome";
 import CustomsClearance from "./pages/services/CustomsClearance";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import GlobalPresence from "./pages/GlobalPresence";
@@ -47,6 +48,7 @@ function App() {
             <Route path="/terms-and-conditions" element={<TermsOfUse />} />
             <Route path="/services/transportation" element={<Transportation />} />
             <Route path="/global-presence" element={<GlobalPresence />} />
+            <Route path="/bangladesh" element={<BangladeshHome />} />
              <Route path="/admin" element={<AdminDashboard />} />
             {/* Service specific pages */}
             <Route path="/services/liquid-transportation" element={<LiquidTransportation />} />
