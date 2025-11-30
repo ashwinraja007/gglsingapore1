@@ -57,6 +57,7 @@ function App() {
             
             <Route path="/bangladesh" element={<BangladeshHome />} />
             <Route path="/bangladesh/home" element={<BangladeshHome />} />
+            <Route path="/bangladesh/contact" element={<BangladeshContact />} />
             <Route path="/bangladesh/about" element={<BangladeshAbout />} />
             <Route path="/bangladesh/careers" element={<Careers />} />
             <Route
