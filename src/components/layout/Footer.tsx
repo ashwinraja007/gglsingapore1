@@ -34,6 +34,7 @@ export const Footer = () => {
         { name: "Home", path: "/bangladesh" },
         { name: "About", path: "/bangladesh/about" },
         { name: "Services", path: "/bangladesh/services" },
+        { name: "Global Presence", path: "/bangladesh/global-presence" },
         { name: "Contact Us", path: "/bangladesh/contact" },
       ]
     : [
