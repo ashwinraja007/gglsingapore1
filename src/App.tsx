@@ -19,7 +19,7 @@ import OceanFreight from "./pages/services/OceanFreight";
 import LCLConsolidation from "./pages/services/LCLConsolidation";
 import Warehousing from "./pages/services/Warehousing";
 import ProjectCargo from "./pages/services/ProjectCargo";
-import BangladeshHome from "./pages/services/BangladeshHome";
+import BangladeshHome from "./pages/BangladeshHome";
 import CustomsClearance from "./pages/CustomsClearance";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import GlobalPresence from "./pages/GlobalPresence";
