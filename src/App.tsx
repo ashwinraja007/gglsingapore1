@@ -21,7 +21,7 @@ import Warehousing from "./pages/services/Warehousing";
 import ProjectCargo from "./pages/services/ProjectCargo";
 
 import BangladeshHome from "./pages/BangladeshHome";
-import BangladeshAbout from "./pages/BangladeshAbout";
+
 import BangladeshServices from "./pages/BangladeshServices";
 import BangladeshGlobalPresence from "./pages/BangladeshGlobalPresence";
 import BangladeshContact from "./pages/BangladeshContact";
@@ -56,7 +56,7 @@ function App() {
             <Route path="/global-presence" element={<GlobalPresence />} />
             <Route path="/bangladesh" element={<BangladeshHome />} />
             <Route path="/bangladesh/home" element={<BangladeshHome />} />
-            <Route path="/bangladesh/about" element={<BangladeshAbout />} />
+            
             <Route path="/bangladesh/careers" element={<Careers />} />
             <Route
               path="/bangladesh/services"
