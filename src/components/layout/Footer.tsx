@@ -60,7 +60,7 @@ Singapore - 099447`,
     title: "GGL (Bangladesh) Ltd.",
     address:
       "Bangladesh Office Address Line 1\nAddress Line 2\nCity, Postal Code, Bangladesh",
-    phone: "+880 1XXXXXXXXX",
+    phone: "+880 1716 620989",
     email: "info.bd@ggl.sg",
   };
 
