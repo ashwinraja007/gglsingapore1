@@ -1,17 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { Users, UserCircle, SearchCode, Ship, Calendar, Globe } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Users, UserCircle, SearchCode, Ship, Calendar, Globe } from "lucide-react";
+import { useLocation, Link } from "react-router-dom";
+
+type PortalLink = {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  url?: string;
+  external?: boolean;
+  onClick?: () => void;
+};
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isCustomerPortalOpen, setIsCustomerPortalOpen] = useState(false);
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const sliderImages = [
-    '/homeimage.jpg',
-    '/truck12.png',
-    '/ships.png',
-    '/cargoplane.png',
-  ];
+  const location = useLocation();
+  const isBangladesh = location.pathname.startsWith("/bangladesh");
+
+  const sliderImages = ["/homeimage.jpg", "/truck12.png", "/ships.png", "/cargoplane.png"];
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 300);
@@ -19,46 +27,54 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % sliderImages.length);
-    }, 5000);
+    const interval = setInterval(
+      () => {
+        setActiveSlide((prev) => (prev + 1) % sliderImages.length);
+      },
+      5000
+    );
     return () => clearInterval(interval);
   }, [sliderImages.length]);
 
-  const portalLinks = [
+  const portalLinks: PortalLink[] = [
     {
       icon: <Users className="w-4 h-4 sm:w-5 sm:h-5" />,
-      title: 'Consolmate',
-      description: 'Access shipping dashboard',
-      url: 'https://consolmate.com/auth/login/3',
+      title: "Consolmate",
+      description: "Access shipping dashboard",
+      url: isBangladesh
+        ? "https://consolmate.com/auth/login/15" // Bangladesh
+        : "https://consolmate.com/auth/login/3", // Default (SG/global)
       external: true,
     },
     {
       icon: <UserCircle className="w-4 h-4 sm:w-5 sm:h-5" />,
-      title: 'Partner Portal',
-      description: 'Manage partnership',
-      url: 'https://pp.onlinetracking.co/auth/login/3',
-      external: true,
+      title: "Partner Portal",
+      description: "Manage partnership",
+      onClick: () => setIsCustomerPortalOpen(true),
     },
     {
       icon: <SearchCode className="w-4 h-4 sm:w-5 sm:h-5" />,
-      title: 'Tracking',
-      description: 'Track your shipment',
-      url: 'http://ec2-13-229-38-56.ap-southeast-1.compute.amazonaws.com:8081/ords/f?p=107:102:::::P0_GROUP_RID:59',
+      title: "Tracking",
+      description: "Track your shipment",
+      url: isBangladesh
+        ? "http://ec2-13-229-38-56.ap-southeast-1.compute.amazonaws.com:8081/ords/f?p=107:102:::::P0_GROUP_RID:262"
+        : "http://ec2-13-229-38-56.ap-southeast-1.compute.amazonaws.com:8081/ords/f?p=107:102:::::P0_GROUP_RID:59",
       external: true,
     },
     {
       icon: <Ship className="w-4 h-4 sm:w-5 sm:h-5" />,
-      title: 'Sailing Schedule',
-      description: 'View schedules',
-      url: 'http://ec2-13-229-38-56.ap-southeast-1.compute.amazonaws.com:8081/ords/f?p=107:104:::::P0_GROUP_RID:59',
+      title: "Sailing Schedule",
+      description: "View schedules",
+      url: isBangladesh
+        ? "http://ec2-13-229-38-56.ap-southeast-1.compute.amazonaws.com:8081/ords/f?p=107:104:::::P0_GROUP_RID:262"
+        : "http://ec2-13-229-38-56.ap-southeast-1.compute.amazonaws.com:8081/ords/f?p=107:104:::::P0_GROUP_RID:59",
       external: true,
     },
     {
       icon: <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />,
-      title: 'Online Quote',
-      description: 'Request a quote',
-      url: '/contact',
+      title: "Online Quote",
+      description: "Request a quote",
+      url: isBangladesh ? "/bangladesh/contact" : "/contact",
       external: false,
     },
   ];
@@ -71,7 +87,7 @@ const Hero = () => {
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1200 ease-in-out ${
-              activeSlide === index ? 'opacity-100' : 'opacity-0'
+              activeSlide === index ? "opacity-100" : "opacity-0"
             }`}
             style={{ zIndex: activeSlide === index ? 1 : 0 }}
           >
@@ -79,7 +95,7 @@ const Hero = () => {
               src={image}
               alt={`Slide ${index + 1}`}
               className="w-full h-full object-cover object-center"
-              loading={index === 0 ? 'eager' : 'lazy'}
+              loading={index === 0 ? "eager" : "lazy"}
             />
           </div>
         ))}
@@ -93,7 +109,7 @@ const Hero = () => {
         <div className="container mx-auto h-full flex items-center px-4 md:px-6 lg:px-8">
           <div
             className={`max-w-2xl space-y-4 md:space-y-5 text-left transition-all duration-800 transform ${
-              isVisible ? 'opacity-100 -translate-y-[3%]' : 'opacity-0 translate-y-10'
+              isVisible ? "opacity-100 -translate-y-[3%]" : "opacity-0 translate-y-10"
             }`}
           >
             <div className="flex items-center gap-3 mb-2">
@@ -106,7 +122,8 @@ const Hero = () => {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Delivering Excellence in <span className="text-yellow-500">Global Logistics</span> Solutions
+              Delivering Excellence in{" "}
+              <span className="text-yellow-500">Global Logistics</span> Solutions
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-xl">
@@ -121,21 +138,14 @@ const Hero = () => {
       <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-0 right-0 z-[10] px-2 sm:px-4">
         <div
           className={`max-w-7xl mx-auto transition-all duration-800 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
           <div className="bg-white/0 p-3 sm:p-4 my-[31px]">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3">
               {portalLinks.map((link, index) => (
                 <div key={index} className="flex flex-col items-center">
-                  {link.external ? (
-                    <a href={link.url} target="_blank" rel="noopener noreferrer" className="w-full">
-                      <button className="w-full h-12 sm:h-14 md:h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm bg-white/90 hover:bg-white text-gray-800 hover:text-blue-900 transition-all duration-300 rounded-lg shadow-sm hover:shadow-md hover:scale-105">
-                        {link.icon}
-                        <span className="font-medium leading-none">{link.title}</span>
-                      </button>
-                    </a>
-                  ) : link.onClick ? (
+                  {link.onClick ? (
                     <button
                       onClick={link.onClick}
                       className="w-full h-12 sm:h-14 md:h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm bg-white/90 hover:bg-white text-gray-800 hover:text-blue-900 transition-all duration-300 rounded-lg shadow-sm hover:shadow-md hover:scale-105"
@@ -143,13 +153,25 @@ const Hero = () => {
                       {link.icon}
                       <span className="font-medium leading-none">{link.title}</span>
                     </button>
-                  ) : (
-                    <a href={link.url} className="w-full">
+                  ) : link.external ? (
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full"
+                    >
                       <button className="w-full h-12 sm:h-14 md:h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm bg-white/90 hover:bg-white text-gray-800 hover:text-blue-900 transition-all duration-300 rounded-lg shadow-sm hover:shadow-md hover:scale-105">
                         {link.icon}
                         <span className="font-medium leading-none">{link.title}</span>
                       </button>
                     </a>
+                  ) : (
+                    <Link to={link.url || "#"} className="w-full">
+                      <button className="w-full h-12 sm:h-14 md:h-16 flex flex-col gap-1 items-center justify-center text-xs sm:text-sm bg-white/90 hover:bg-white text-gray-800 hover:text-blue-900 transition-all duration-300 rounded-lg shadow-sm hover:shadow-md hover:scale-105">
+                        {link.icon}
+                        <span className="font-medium leading-none">{link.title}</span>
+                      </button>
+                    </Link>
                   )}
                 </div>
               ))}
@@ -177,8 +199,8 @@ const Hero = () => {
                 <h3 className="font-medium text-gray-800">Tutorial Videos</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { src: '/GGL_demo1.mp4', label: 'Getting Started' },
-                    { src: '/GGL_promo.mp4', label: 'Advanced Features' },
+                    { src: "/GGL_demo1.mp4", label: "Getting Started" },
+                    { src: "/GGL_promo.mp4", label: "Advanced Features" },
                   ].map((video, i) => (
                     <div key={i} className="border rounded-lg overflow-hidden">
                       <div className="aspect-video">
@@ -201,7 +223,11 @@ const Hero = () => {
                 >
                   Cancel
                 </button>
-                <a href="https://consolmate.com/auth/login/3" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://cp.onlinetracking.co/#/login/3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
                     Login
                   </button>
