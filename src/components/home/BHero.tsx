@@ -56,7 +56,7 @@ const Hero = () => {
       icon: <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />,
       title: 'Online Quote',
       description: 'Request a quote',
-      url: '/contact',
+      url: '/bangladseh/contact',
       external: false,
     },
   ];
