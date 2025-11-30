@@ -2,7 +2,7 @@ import { Suspense, lazy } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Loader2 } from "lucide-react";
-import Hero from "@/components/home/Hero";
+import Hero from "@/components/home/BHero";
 
 const bangladeshNavPaths = {
   home: "/bangladesh",
@@ -34,7 +34,7 @@ const BangladeshHome = () => {
 
       <main className="flex-grow pt-16">
         {/* Bangladesh Hero */}
-        <Hero
+        <BHero
           sliderImages={["/oceanf.png", "/hom3.png"]}
           badgeText="Bangladesh Logistics Hub"
           headline={
