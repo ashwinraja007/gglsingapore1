@@ -130,29 +130,7 @@ const BangladeshServices = () => {
           </div>
         </section>
 
-        <section className="py-12 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className={`grid gap-8 ${isMobile ? "grid-cols-1" : "grid-cols-3"}`}>
-              {["Complete logistics coverage", "Dedicated account management", "24/7 support for urgent shipments", "Industry-leading transit times", "Comprehensive service portfolio", "Proven reliability and trust"].map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white rounded-lg shadow-md p-6 border border-gray-100"
-                >
-                  <h3 className="text-lg font-semibold text-brand-navy mb-2">{benefit}</h3>
-                  <p className="text-gray-600 text-sm">
-                    {index < 3
-                      ? "Our team ensures your shipments move smoothly across global routes."
-                      : "Experience reliability and expertise that keeps your logistics on track."}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+
       </main>
 
       <Footer />
