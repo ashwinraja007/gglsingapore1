@@ -1,44 +1,40 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Linkedin, Facebook } from "lucide-react";
 import CountrySelector from "../common/CountrySelector";
 
-type HeaderProps = {
-  // For Bangladesh use basePath="/bangladesh"
-  // For main site just use <Header /> (no prop)
-  basePath?: string;
-};
-
-export const Header: React.FC<HeaderProps> = ({ basePath = "" }) => {
+export const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isInfoOpen, setIsInfoOpen] = useState(false);
-  const infoRef = useRef<HTMLDivElement | null>(null);
+  const infoRef = useRef(null);
 
-  // Build paths based on basePath
-  const homePath = basePath || "/";
-  const aboutPath = basePath ? `${basePath}/about` : "/about";
-  const servicesPath = basePath ? `${basePath}/services` : "/services";
-  const careersPath = basePath ? `${basePath}/careers` : "/careers";
-  const contactPath = basePath ? `${basePath}/contact` : "/contact";
-  const globalPresencePath = basePath
-    ? `${basePath}/global-presence`
-    : "/global-presence";
+  // ******** AUTO DETECT BANGLADESH MODE ********
+  const isBangladesh = location.pathname.startsWith("/bangladesh");
 
-  // Scroll effect for sticky header background
+  const base = isBangladesh ? "/bangladesh" : "";
+
+  const homePath = isBangladesh ? "/bangladesh" : "/";
+  const aboutPath = `${base}/about`;
+  const servicesPath = `${base}/services`;
+  const careersPath = `${base}/careers`;
+  const contactPath = `${base}/contact`;
+  const globalPresencePath = `${base}/global-presence`;
+
+  // Sticky Header Scroll
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close dropdown if clicked outside
+  // Close Dropdown on outside click
   useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (infoRef.current && !infoRef.current.contains(e.target as Node)) {
+    const handleClickOutside = (e: any) => {
+      if (infoRef.current && !(infoRef.current as any).contains(e.target)) {
         setIsInfoOpen(false);
       }
     };
@@ -46,24 +42,19 @@ export const Header: React.FC<HeaderProps> = ({ basePath = "" }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Navigate + optional scroll to ID
   const handleNavClick = (path: string, scrollToId?: string) => {
     setIsMobileMenuOpen(false);
     if (location.pathname === path && scrollToId) {
       const el = document.getElementById(scrollToId);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
+      if (el) el.scrollIntoView({ behavior: "smooth" });
     } else {
       navigate(path);
       setTimeout(() => {
         if (scrollToId) {
           const el = document.getElementById(scrollToId);
-          if (el) {
-            el.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
+          if (el) el.scrollIntoView({ behavior: "smooth" });
         }
-      }, 500);
+      }, 400);
     }
   };
 
@@ -80,57 +71,53 @@ export const Header: React.FC<HeaderProps> = ({ basePath = "" }) => {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          {/* Logo Section */}
+
+          {/* LOGO */}
           <div className="flex items-center gap-4">
             <img
               src="/lovable-uploads/GGL.png"
-              alt="GGL Logo"
+              alt="Logo"
               onClick={handleLogoClick}
-              className="h-16 w-auto cursor-pointer transition-all duration-300 object-fill"
+              className="h-16 w-auto cursor-pointer"
             />
             <div className="h-8 w-px bg-gray-200 hidden md:block" />
+
             <a
               href="https://1ge.sg"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Visit 1 Global Enterprises Website"
             >
               <img
                 src="/1GlobalEnterprises.png"
-                alt="1 Global Enterprises Logo"
-                className="hidden md:block h-10 w-auto object-contain transition-all duration-300"
+                className="hidden md:block h-10 w-auto"
               />
             </a>
           </div>
 
-          {/* Hamburger for Mobile */}
+          {/* MOBILE MENU ICON */}
           <button
-            className="md:hidden text-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-md p-1"
+            className="md:hidden text-gray-800"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+            {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
 
-          {/* Desktop Nav */}
+          {/* DESKTOP NAV */}
           <nav className="hidden md:flex gap-6 items-center relative">
             <button
               onClick={() => handleNavClick(homePath)}
-              className={`text-gray-800 hover:text-brand-gold font-medium transition-colors py-1 ${
+              className={`text-gray-800 font-medium hover:text-brand-gold ${
                 location.pathname === homePath ? "text-brand-gold" : ""
               }`}
             >
               Home
             </button>
 
-            {/* Info Dropdown */}
+            {/* INFO DROPDOWN */}
             <div className="relative" ref={infoRef}>
               <button
-                onClick={() => setIsInfoOpen((prev) => !prev)}
-                className={`text-gray-800 hover:text-brand-gold font-medium transition-colors py-1 ${
+                onClick={() => setIsInfoOpen(!isInfoOpen)}
+                className={`text-gray-800 font-medium hover:text-brand-gold ${
                   [aboutPath, careersPath].includes(location.pathname)
                     ? "text-brand-gold"
                     : ""
@@ -138,25 +125,21 @@ export const Header: React.FC<HeaderProps> = ({ basePath = "" }) => {
               >
                 Info
               </button>
+
               {isInfoOpen && (
-                <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md z-50 min-w-[160px]">
+                <div className="absolute bg-white shadow-lg rounded-md top-full left-0 mt-2">
                   <button
-                    onClick={() => {
-                      handleNavClick(aboutPath);
-                      setIsInfoOpen(false);
-                    }}
-                    className={`block px-4 py-2 w-full text-left text-gray-800 hover:bg-gray-100 ${
+                    onClick={() => handleNavClick(aboutPath)}
+                    className={`block px-4 py-2 text-left hover:bg-gray-100 ${
                       location.pathname === aboutPath ? "text-brand-gold" : ""
                     }`}
                   >
                     About Us
                   </button>
+
                   <button
-                    onClick={() => {
-                      handleNavClick(careersPath);
-                      setIsInfoOpen(false);
-                    }}
-                    className={`block px-4 py-2 w-full text-left text-gray-800 hover:bg-gray-100 ${
+                    onClick={() => handleNavClick(careersPath)}
+                    className={`block px-4 py-2 text-left hover:bg-gray-100 ${
                       location.pathname === careersPath ? "text-brand-gold" : ""
                     }`}
                   >
@@ -166,9 +149,10 @@ export const Header: React.FC<HeaderProps> = ({ basePath = "" }) => {
               )}
             </div>
 
+            {/* SERVICES */}
             <button
               onClick={() => handleNavClick(servicesPath)}
-              className={`text-gray-800 hover:text-brand-gold font-medium transition-colors py-1 ${
+              className={`text-gray-800 font-medium hover:text-brand-gold ${
                 location.pathname.startsWith(servicesPath)
                   ? "text-brand-gold"
                   : ""
@@ -176,9 +160,11 @@ export const Header: React.FC<HeaderProps> = ({ basePath = "" }) => {
             >
               Services
             </button>
+
+            {/* GLOBAL PRESENCE */}
             <button
               onClick={() => handleNavClick(globalPresencePath)}
-              className={`text-gray-800 hover:text-brand-gold font-medium transition-colors py-1 ${
+              className={`text-gray-800 font-medium hover:text-brand-gold ${
                 location.pathname === globalPresencePath
                   ? "text-brand-gold"
                   : ""
@@ -187,82 +173,53 @@ export const Header: React.FC<HeaderProps> = ({ basePath = "" }) => {
               Global Presence
             </button>
 
+            {/* COUNTRY SELECTOR */}
             <CountrySelector />
 
+            {/* CONTACT BUTTON */}
             <button
-              onClick={() => handleNavClick(contactPath, "contact-form")}
-              className="px-5 py-2 bg-[#F6B100] text-black rounded-full hover:bg-[#FFCC33] transition font-medium"
+              onClick={() => handleNavClick(contactPath)}
+              className="px-5 py-2 bg-[#F6B100] rounded-full text-black"
             >
               Contact / Quote
             </button>
           </nav>
         </div>
 
-        {/* Mobile Nav */}
+        {/* MOBILE NAV */}
         <div
-          className={`${
-            isMobileMenuOpen ? "max-h-screen opacity-100 py-4" : "max-h-0 opacity-0"
-          } md:hidden overflow-hidden transition-all duration-300 ease-in-out`}
+          className={`md:hidden transition-all ${
+            isMobileMenuOpen ? "max-h-screen py-4" : "max-h-0"
+          } overflow-hidden`}
         >
-          <nav className="flex flex-col gap-4 border-t mt-4 border-gray-100">
-            <button
-              onClick={() => handleNavClick(homePath)}
-              className={`text-gray-800 hover:text-brand-gold font-medium ${
-                location.pathname === homePath ? "text-brand-gold" : ""
-              }`}
-            >
+          <nav className="flex flex-col gap-4 border-t pt-4">
+
+            <button onClick={() => handleNavClick(homePath)}>
               Home
             </button>
-            <button
-              onClick={() => handleNavClick(aboutPath)}
-              className={`text-gray-800 hover:text-brand-gold font-medium ${
-                location.pathname === aboutPath ? "text-brand-gold" : ""
-              }`}
-            >
+
+            <button onClick={() => handleNavClick(aboutPath)}>
               About Us
             </button>
-            <button
-              onClick={() => handleNavClick(servicesPath)}
-              className={`text-gray-800 hover:text-brand-gold font-medium ${
-                location.pathname.startsWith(servicesPath)
-                  ? "text-brand-gold"
-                  : ""
-              }`}
-            >
+
+            <button onClick={() => handleNavClick(servicesPath)}>
               Services
             </button>
-            <button
-              onClick={() => handleNavClick(careersPath)}
-              className={`text-gray-800 hover:text-brand-gold font-medium ${
-                location.pathname === careersPath ? "text-brand-gold" : ""
-              }`}
-            >
+
+            <button onClick={() => handleNavClick(careersPath)}>
               Careers
             </button>
-            <button
-              onClick={() => handleNavClick(contactPath)}
-              className={`text-gray-800 hover:text-brand-gold font-medium ${
-                location.pathname === contactPath ? "text-brand-gold" : ""
-              }`}
-            >
+
+            <button onClick={() => handleNavClick(contactPath)}>
               Contact Us
             </button>
 
+            {/* Social */}
             <div className="flex items-center gap-4 py-2">
-              <a
-                href="https://www.linkedin.com/company/gglus/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-brand-gold transition-colors"
-              >
+              <a href="https://www.linkedin.com/company/gglus/">
                 <Linkedin size={20} />
               </a>
-              <a
-                href="https://www.facebook.com/gglusa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-brand-gold transition-colors"
-              >
+              <a href="https://www.facebook.com/gglusa">
                 <Facebook size={20} />
               </a>
             </div>
@@ -270,8 +227,8 @@ export const Header: React.FC<HeaderProps> = ({ basePath = "" }) => {
             <CountrySelector />
 
             <button
-              onClick={() => handleNavClick(contactPath, "contact-form")}
-              className="px-4 py-2 bg-brand-gold text-brand-navy rounded-md hover:bg-amber-500 text-center font-medium w-full"
+              onClick={() => handleNavClick(contactPath)}
+              className="px-4 py-2 bg-brand-gold rounded-md text-black"
             >
               Get A Quote
             </button>
