@@ -23,8 +23,8 @@ import ProjectCargo from "./pages/services/ProjectCargo";
 import BangladeshHome from "./pages/BangladeshHome";
 import BangladeshAbout from "./pages/BangladeshAbout";
 import BangladeshServices from "./pages/BangladeshServices";
-import BangladeshContact from "./pages/BangladeshContact"
-
+import BangladeshContact from "./pages/BangladeshContact";
+import BangladeshGlobalPresence from "./pages/BangladeshGlobalPresence";
 
 import CustomsClearance from "./pages/services/CustomsClearance";
 import AdminDashboard from "./pages/admin/AdminDashboard";
