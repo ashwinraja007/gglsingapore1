@@ -3,14 +3,30 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X, Linkedin, Facebook } from "lucide-react";
 import CountrySelector from "../common/CountrySelector";
 
-export const Header = () => {
+type HeaderProps = {
+  // For Bangladesh use basePath="/bangladesh"
+  // For main site just use <Header /> (no prop)
+  basePath?: string;
+};
+
+export const Header: React.FC<HeaderProps> = ({ basePath = "" }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isInfoOpen, setIsInfoOpen] = useState(false);
-  const infoRef = useRef(null);
+  const infoRef = useRef<HTMLDivElement | null>(null);
+
+  // Build paths based on basePath
+  const homePath = basePath || "/";
+  const aboutPath = basePath ? `${basePath}/about` : "/about";
+  const servicesPath = basePath ? `${basePath}/services` : "/services";
+  const careersPath = basePath ? `${basePath}/careers` : "/careers";
+  const contactPath = basePath ? `${basePath}/contact` : "/contact";
+  const globalPresencePath = basePath
+    ? `${basePath}/global-presence`
+    : "/global-presence";
 
   // Scroll effect for sticky header background
   useEffect(() => {
@@ -22,10 +38,7 @@ export const Header = () => {
   // Close dropdown if clicked outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (
-        infoRef.current &&
-        !(infoRef.current as any).contains(e.target)
-      ) {
+      if (infoRef.current && !infoRef.current.contains(e.target as Node)) {
         setIsInfoOpen(false);
       }
     };
@@ -55,7 +68,7 @@ export const Header = () => {
   };
 
   const handleLogoClick = () => {
-    navigate("/");
+    navigate(homePath);
     window.scrollTo(0, 0);
   };
 
@@ -77,16 +90,16 @@ export const Header = () => {
             />
             <div className="h-8 w-px bg-gray-200 hidden md:block" />
             <a
-  href="https://1ge.sg"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Visit 1 Global Enterprises Website"
->
-            <img
-              src="/1GlobalEnterprises.png"
-              alt="1 Global Enterprises Logo"
-              className="hidden md:block h-10 w-auto object-contain transition-all duration-300"
-            />
+              href="https://1ge.sg"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit 1 Global Enterprises Website"
+            >
+              <img
+                src="/1GlobalEnterprises.png"
+                alt="1 Global Enterprises Logo"
+                className="hidden md:block h-10 w-auto object-contain transition-all duration-300"
+              />
             </a>
           </div>
 
@@ -95,15 +108,19 @@ export const Header = () => {
             className="md:hidden text-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-md p-1"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex gap-6 items-center relative">
             <button
-              onClick={() => handleNavClick("/")}
+              onClick={() => handleNavClick(homePath)}
               className={`text-gray-800 hover:text-brand-gold font-medium transition-colors py-1 ${
-                location.pathname === "/" ? "text-brand-gold" : ""
+                location.pathname === homePath ? "text-brand-gold" : ""
               }`}
             >
               Home
@@ -114,7 +131,7 @@ export const Header = () => {
               <button
                 onClick={() => setIsInfoOpen((prev) => !prev)}
                 className={`text-gray-800 hover:text-brand-gold font-medium transition-colors py-1 ${
-                  ["/about", "/careers"].includes(location.pathname)
+                  [aboutPath, careersPath].includes(location.pathname)
                     ? "text-brand-gold"
                     : ""
                 }`}
@@ -125,22 +142,22 @@ export const Header = () => {
                 <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md z-50 min-w-[160px]">
                   <button
                     onClick={() => {
-                      handleNavClick("/about");
+                      handleNavClick(aboutPath);
                       setIsInfoOpen(false);
                     }}
                     className={`block px-4 py-2 w-full text-left text-gray-800 hover:bg-gray-100 ${
-                      location.pathname === "/about" ? "text-brand-gold" : ""
+                      location.pathname === aboutPath ? "text-brand-gold" : ""
                     }`}
                   >
                     About Us
                   </button>
                   <button
                     onClick={() => {
-                      handleNavClick("/careers");
+                      handleNavClick(careersPath);
                       setIsInfoOpen(false);
                     }}
                     className={`block px-4 py-2 w-full text-left text-gray-800 hover:bg-gray-100 ${
-                      location.pathname === "/careers" ? "text-brand-gold" : ""
+                      location.pathname === careersPath ? "text-brand-gold" : ""
                     }`}
                   >
                     Careers
@@ -150,17 +167,21 @@ export const Header = () => {
             </div>
 
             <button
-              onClick={() => handleNavClick("/services")}
+              onClick={() => handleNavClick(servicesPath)}
               className={`text-gray-800 hover:text-brand-gold font-medium transition-colors py-1 ${
-                location.pathname.includes("/services") ? "text-brand-gold" : ""
+                location.pathname.startsWith(servicesPath)
+                  ? "text-brand-gold"
+                  : ""
               }`}
             >
               Services
             </button>
             <button
-              onClick={() => handleNavClick("/global-presence")}
+              onClick={() => handleNavClick(globalPresencePath)}
               className={`text-gray-800 hover:text-brand-gold font-medium transition-colors py-1 ${
-                location.pathname === "/global-presence" ? "text-brand-gold" : ""
+                location.pathname === globalPresencePath
+                  ? "text-brand-gold"
+                  : ""
               }`}
             >
               Global Presence
@@ -169,7 +190,7 @@ export const Header = () => {
             <CountrySelector />
 
             <button
-              onClick={() => handleNavClick("/contact", "contact-form")}
+              onClick={() => handleNavClick(contactPath, "contact-form")}
               className="px-5 py-2 bg-[#F6B100] text-black rounded-full hover:bg-[#FFCC33] transition font-medium"
             >
               Contact / Quote
@@ -185,41 +206,43 @@ export const Header = () => {
         >
           <nav className="flex flex-col gap-4 border-t mt-4 border-gray-100">
             <button
-              onClick={() => handleNavClick("/")}
+              onClick={() => handleNavClick(homePath)}
               className={`text-gray-800 hover:text-brand-gold font-medium ${
-                location.pathname === "/" ? "text-brand-gold" : ""
+                location.pathname === homePath ? "text-brand-gold" : ""
               }`}
             >
               Home
             </button>
             <button
-              onClick={() => handleNavClick("/about")}
+              onClick={() => handleNavClick(aboutPath)}
               className={`text-gray-800 hover:text-brand-gold font-medium ${
-                location.pathname === "/about" ? "text-brand-gold" : ""
+                location.pathname === aboutPath ? "text-brand-gold" : ""
               }`}
             >
               About Us
             </button>
             <button
-              onClick={() => handleNavClick("/services")}
+              onClick={() => handleNavClick(servicesPath)}
               className={`text-gray-800 hover:text-brand-gold font-medium ${
-                location.pathname.includes("/services") ? "text-brand-gold" : ""
+                location.pathname.startsWith(servicesPath)
+                  ? "text-brand-gold"
+                  : ""
               }`}
             >
               Services
             </button>
             <button
-              onClick={() => handleNavClick("/careers")}
+              onClick={() => handleNavClick(careersPath)}
               className={`text-gray-800 hover:text-brand-gold font-medium ${
-                location.pathname === "/careers" ? "text-brand-gold" : ""
+                location.pathname === careersPath ? "text-brand-gold" : ""
               }`}
             >
               Careers
             </button>
             <button
-              onClick={() => handleNavClick("/contact")}
+              onClick={() => handleNavClick(contactPath)}
               className={`text-gray-800 hover:text-brand-gold font-medium ${
-                location.pathname === "/contact" ? "text-brand-gold" : ""
+                location.pathname === contactPath ? "text-brand-gold" : ""
               }`}
             >
               Contact Us
@@ -247,7 +270,7 @@ export const Header = () => {
             <CountrySelector />
 
             <button
-              onClick={() => handleNavClick("/contact", "contact-form")}
+              onClick={() => handleNavClick(contactPath, "contact-form")}
               className="px-4 py-2 bg-brand-gold text-brand-navy rounded-md hover:bg-amber-500 text-center font-medium w-full"
             >
               Get A Quote
