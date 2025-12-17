@@ -102,7 +102,7 @@ const BangladeshContact = () => {
             >
               <div className="aspect-[4/3] w-full overflow-hidden rounded-xl shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/d/embed?mid=1n4WqX2KvVrDhYom0GMJ0FxbmZsRY8aQ&ehbc=2E312F"
+                  src="https://www.google.com/maps/d/embed?mid=1n4WqX2KvVrDhYom0GMJ0FxbmZsRY8aQ&ehbc=2E312F&noprof=1"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
