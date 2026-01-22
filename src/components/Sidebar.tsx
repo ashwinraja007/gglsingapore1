@@ -37,6 +37,13 @@ const countries = [{
     address: "503, Midas, Sahar Plaza Complex,Sir M.V Road,Andheri East, Mumbai 400059",
     contacts: ["+91 8879756838"],
     email: "info.india@ggl.sg"
+  }, {
+    name: "Ludhiana",
+    lat: 30.89135,
+    lng: 75.93255,
+    address: "No. 7A, G K Estate,Hari Nagar, Mundian Kalan,Chandigarh Road,Ludhiana, Punjab – 141015",
+    contacts: ["+91 62845 49881"],
+    email: "navjot.kohli@ggl.sg"
   },{
     name: "Delhi",
     lat: 28.62748,
