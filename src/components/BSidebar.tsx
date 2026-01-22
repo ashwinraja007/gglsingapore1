@@ -12,32 +12,27 @@ interface SidebarProps {
 }
 
 const countries = [{
-  code: "in",
-  name: "India",
-  lat: 19.00745,
-  lng: 73.03271,
-  cities: [{
-    name: "Mumbai",
-    lat: 19.00745,
-    lng: 73.03271,
-    address: "407, mayuresh planet, plot no - 42 & 43, sector-15, cbd belapur, navi mumbai, maharashtra, 400614",
-    contacts: ["Export customer service: +91 2245174102, +91 2245174109, +91 2245174118", "Export docs team: +91 2245174103, +91 2245174105", "Import docs team: +91 2245174104, +91 2245174106", "Import customer service: +91 2245174113, +91 2245174110, +91 2245174107, +91 2245174112"],
+    name: "Kochi",
+    lat: 9.9323,
+    lng: 76.2996,
+    address: "CC 59/801A Elizabeth Memorial Building, Thevara Ferry Jn, Cochin 682013 , Kerala.",
+    contacts: ["+91 484 4019192 / 93"],
     email: "info.india@ggl.sg"
-}, {
-    name: "Delhi",
-    lat: 28.53837,
-    lng: 77.29022,
-    address: "JA 511, DLF Tower A, Jasola District Centre, New Delhi, 110025",
-    contacts: ["+91 9999022030"],
+  },{
+    name: "Mumbai",
+    lat: 19.01123,
+    lng: 73.03715,
+    address: "803 / 804, Shelton Cubix, Plot No. 87, Sector-15,CBD Belapur, Navi Mumbai, Maharastra - 400614.",
+    contacts: ["022-35131688 / 35113475 / 35082586"],
     email: "info.india@ggl.sg"
   }, {
-    name: "Chennai",
-    lat: 13.0827,
-    lng: 80.2707,
-    address: "Old No G1, New G3, KAIZEN 2nd & 3rd Floor Plot No, 565Q, G Block, Annanagar East, Chennai, Tamil Nadu 600102",
-    contacts: ["+91 9123523496"],
+    name: "Mumbai-Andheri",
+    lat: 19.11303, 
+    lng: 72.86848,
+    address: "503, Midas, Sahar Plaza Complex,Sir M.V Road,Andheri East, Mumbai 400059",
+    contacts: ["+91 8879756838"],
     email: "info.india@ggl.sg"
-  },  {
+  }, {
     name: "Ludhiana",
     lat: 30.89135,
     lng: 75.93255,
@@ -45,18 +40,25 @@ const countries = [{
     contacts: ["+91 62845 49881"],
     email: "navjot.kohli@ggl.sg"
   },{
+    name: "Delhi",
+    lat: 28.62748,
+    lng: 77.2221,
+    address: "903, Surya Kiran Building K.G Marg,Connaught Place New Delhi - 110001",
+    contacts: ["+91 11 493224477 / 48 /49"],
+    email: "info.india@ggl.sg"
+  }, {
     name: "Bangalore",
-    lat: 12.9716,
-    lng: 77.5946,
-    address: "No 2M-216, First Floor, 2nd Main, East Of NGEF Layout, Kasturinagar, Bangalore-560043",
-    contacts: ["+91 9986949743"],
+    lat: 13.01855,
+    lng: 77.64191,
+    address: "3C-964 IIIrd Cross Street,HRBR LAYOUT 1st Block,Kalayan Nagar Bannaswadi,Bengaluru - 560043.",
+    contacts: ["+91 9841676259"],
     email: "info.india@ggl.sg"
   }, {
     name: "Kolkata",
-    lat: 22.5726,
-    lng: 88.3639,
-    address: "Room No - 29, 4th Floor, 6, Jawaharlal Nehru Rd, Siddha Esplanade, Adjacent to Metro Central (Previously Metro Cinema), Kolkata, West Bengal 700013",
-    contacts: ["+91 6290921534"],
+    lat: 22.5769, 
+    lng: 88.4341,
+    address: "Merlin Matrix, 3rd floor, Room No. 303 10,D. N. BLOCK, SECTOR - V SALT LAKE CITY, Kolkata – 700091",
+    contacts: ["+91 33 46025458 / 59 / 60/ 61"],
     email: "info.india@ggl.sg"
   }]
 }, {
