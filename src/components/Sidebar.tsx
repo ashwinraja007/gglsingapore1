@@ -97,6 +97,7 @@ const countries = [{
     lng: 55.2708,
     address: "Office # 509, Al Nazar Plaza, Oud Metha, Dubai, U.A.E",
     contacts: ["+971 4 3433388"]
+    }]
   },  {
   code: "qa",
   name: "Qatar",
