@@ -60,8 +60,7 @@ Singapore - 099447`,
   const bangladeshContact = {
     title: "GGL (Bangladesh) Ltd.",
     address:
-      "Bangladesh Office Address Line 1\nAddress Line 2\nCity, Postal Code, Bangladesh",
-    phone: "+880 1716 620989",
+      "ID #9-N (New), 9-M(Old-N), 9th floor, Tower 1, Police Plaza Concord No.2, Road # 144, Gulshan Model Town, Dhaka 1215, Bangladesh",
     email: "info.bd@ggl.sg",
   };
 
