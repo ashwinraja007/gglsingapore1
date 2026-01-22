@@ -37,7 +37,14 @@ const countries = [{
     address: "Old No G1, New G3, KAIZEN 2nd & 3rd Floor Plot No, 565Q, G Block, Annanagar East, Chennai, Tamil Nadu 600102",
     contacts: ["+91 9123523496"],
     email: "info.india@ggl.sg"
-  }, {
+  },  {
+    name: "Ludhiana",
+    lat: 30.89135,
+    lng: 75.93255,
+    address: "No. 7A, G K Estate,Hari Nagar, Mundian Kalan,Chandigarh Road,Ludhiana, Punjab – 141015",
+    contacts: ["+91 62845 49881"],
+    email: "navjot.kohli@ggl.sg"
+  },{
     name: "Bangalore",
     lat: 12.9716,
     lng: 77.5946,
