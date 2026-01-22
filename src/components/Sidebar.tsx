@@ -216,8 +216,7 @@ const countries = [{
     lat: 23.8103,
     lng: 90.4125,
     address: "ID #9-N (New), 9-M(Old-N), 9th floor, Tower 1, Police Plaza Concord No.2, Road # 144, Gulshan Model Town, Dhaka 1215, Bangladesh",
-    contacts: ["+880 1716 620989"],
-    email: "info@globalconsol.com"
+    contacts: ["+880 1716 620989"]
   }]
 }, {
   code: "pk",
