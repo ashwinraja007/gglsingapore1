@@ -17,7 +17,7 @@ const countries = [{
   lat: 9.9323,
   lng: 76.2996,
   cities: [{
-    name: "Kerala",
+    name: "Kochi",
     lat: 9.9323,
     lng: 76.2996,
     address: "CC 59/801A Elizabeth Memorial Building, Thevara Ferry Jn, Cochin 682013 , Kerala.",
