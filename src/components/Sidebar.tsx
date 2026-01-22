@@ -97,20 +97,7 @@ const countries = [{
     lng: 55.2708,
     address: "Office # 509, Al Nazar Plaza, Oud Metha, Dubai, U.A.E",
     contacts: ["+971 4 3433388"]
-  }, {
-    name: "JEBEL ALI",
-    lat: 24.9857,
-    lng: 55.1436,
-    address: "Warehouse# Zg06, Near Roundabout 13, North Zone, p. B No: 30821, jebel Ali, Dubai, U.A.E",
-    contacts: ["+971 4 8819787"]
-  }, {
-    name: "ABU DHABI",
-    lat: 24.4539,
-    lng: 54.3773,
-    address: "PB No: 30500, Office 3-1, Unit 101, 1st Floor, Al Jaber Jewellery Building, Al Khalidiya, Abu Dhabi, U.A.E",
-    contacts: ["+971 50 4337214"]
-  }]
-}, {
+  },  {
   code: "qa",
   name: "Qatar",
     lat: 25.276987,
@@ -158,19 +145,6 @@ const countries = [{
     lng: 39.1925,
     address: "Al-Madinah Al-Munawarah Road, Al Sharafeyah, Jeddah 4542 -22234, Kingdom of Saudi Arabia",
     contacts: ["+966 12 578 0874"]
-  }]
-},{
-  code: "sg",
-  name: "Singapore",
-  lat: 1.3521,
-  lng: 103.8198,
-  cities: [{
-    name: "Singapore",
-    lat: 1.3521,
-    lng: 103.8198,
-    address: "Blk 511 Kampong Bahru Road, #03-01 Keppel Distripark, Singapore - 099447",
-    contacts: ["+ 65 69084188"],
-    email: "info.sg@globalconsol.com "
   }]
 }, {
   code: "id",
