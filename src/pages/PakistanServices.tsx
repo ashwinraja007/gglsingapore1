@@ -3,8 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Plane, Ship, Truck, Warehouse } from "lucide-react";
-
+import { Plane, Ship, Truck, Warehouse } from "lucide-react";---``
 const pakistanNavPaths = {
   home: "/pakistan",
   about: "/pakistan/about",

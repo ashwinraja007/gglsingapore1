@@ -35,6 +35,7 @@ export const Footer = () => {
         { name: "Home", path: "/pakistan" },
         { name: "About", path: "/pakistan/about" },
         { name: "Services", path: "/pakistan/services" },
+        { name: "Careers", path: "/pakistan/careers" },
         { name: "Global Presence", path: "/pakistan/global-presence" },
         { name: "Contact Us", path: "/pakistan/contact" },
       ]
@@ -75,13 +76,24 @@ Singapore - 099447`,
 
   const pakistanContact = {
     title: "GGL (Pakistan)",
+  const karachiContact = {
+    title: "GGL (Pakistan) - Karachi",
     address:
       "Suite No.301, 3rd Floor, Fortune Center, Shahrah-e-Faisal, Block 6, PECHS, Karachi, Pakistan",
-    phone: "+92-300-8282511",
+    phone: "+92-300-8282511 / +92-21-34302281-5",
     email: "khalid.pk@globalconsol.com",
   };
 
   const contact = isPakistan ? pakistanContact : isBangladesh ? bangladeshContact : singaporeContact;
+  const lahoreContact = {
+    title: "GGL (Pakistan) - Lahore",
+    address:
+      "Office # 301, 3rd Floor, Gulberg Arcade Main Market, Gulberg 2, Lahore, Pakistan",
+    phone: "+92 42-35782306/07/08",
+    email: "shazia.pklhe@globalconsol.com",
+  };
+
+  const contact = isBangladesh ? bangladeshContact : singaporeContact;
 
   return (
     <footer className="pt-16 pb-8 bg-gradient-to-b from-white to-gray-100">
@@ -193,6 +205,64 @@ Singapore - 099447`,
                   {"\n"}
                   {contact.address}
                 </p>
+            {isPakistan ? (
+              <div className="space-y-6">
+                {/* Karachi Office */}
+                <div className="space-y-3 text-gray-600">
+                  <div className="flex items-start gap-2">
+                    <MapPin
+                      size={18}
+                      className="text-brand-gold mt-1 flex-shrink-0"
+                    />
+                    <p className="whitespace-pre-line">
+                      {karachiContact.title}
+                      {"\n"}
+                      {karachiContact.address}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Phone
+                      size={18}
+                      className="text-brand-gold flex-shrink-0"
+                    />
+                    <p>{karachiContact.phone}</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Mail
+                      size={18}
+                      className="text-brand-gold flex-shrink-0"
+                    />
+                    <a href={`mailto:${karachiContact.email}`} className="hover:text-brand-gold transition-colors">{karachiContact.email}</a>
+                  </div>
+                </div>
+                {/* Lahore Office */}
+                <div className="space-y-3 text-gray-600">
+                  <div className="flex items-start gap-2">
+                    <MapPin
+                      size={18}
+                      className="text-brand-gold mt-1 flex-shrink-0"
+                    />
+                    <p className="whitespace-pre-line">
+                      {lahoreContact.title}
+                      {"\n"}
+                      {lahoreContact.address}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Phone
+                      size={18}
+                      className="text-brand-gold flex-shrink-0"
+                    />
+                    <p>{lahoreContact.phone}</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Mail
+                      size={18}
+                      className="text-brand-gold flex-shrink-0"
+                    />
+                    <a href={`mailto:${lahoreContact.email}`} className="hover:text-brand-gold transition-colors">{lahoreContact.email}</a>
+                  </div>
+                </div>
               </div>
               <div className="flex items-center gap-2">
                 <Phone
@@ -200,6 +270,24 @@ Singapore - 099447`,
                   className="text-brand-gold flex-shrink-0"
                 />
                 <p>{contact.phone}</p>
+            ) : (
+              <div className="space-y-3 text-gray-600">
+                <div className="flex items-start gap-2">
+                  <MapPin size={18} className="text-brand-gold mt-1 flex-shrink-0" />
+                  <p className="whitespace-pre-line">
+                    {contact.title}
+                    {"\n"}
+                    {contact.address}
+                  </p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone size={18} className="text-brand-gold flex-shrink-0" />
+                  <p>{contact.phone}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail size={18} className="text-brand-gold flex-shrink-0" />
+                  <a href={`mailto:${contact.email}`} className="hover:text-brand-gold transition-colors">{contact.email}</a>
+                </div>
               </div>
 
               <div className="flex items-center gap-2">
@@ -210,6 +298,7 @@ Singapore - 099447`,
                 <p>{contact.email}</p>
               </div>
             </div>
+            )}
           </motion.div>
         </div>
 
