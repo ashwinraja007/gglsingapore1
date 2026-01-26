@@ -34,11 +34,11 @@ const pakistanHome = () => {
 
       <main className="flex-grow pt-16">
         {/* pakistan Hero */}
-        <BHero />
+        <PHero />
 
         {/* About pakistan section */}
         <Suspense fallback={<LoadingComponent />}>
-          <BAboutUs
+          <PAboutUs
             learnMorePath="/pakistan/about"
             imageSrc="/lovable-uploads/1c085df7-9363-40dc-a724-ff004b473cac.png"
           />
@@ -46,7 +46,7 @@ const pakistanHome = () => {
 
         {/* pakistan services */}
         <Suspense fallback={<LoadingComponent />}>
-          <BServices
+          <PServices
             servicesPath="/pakistan/services"
             cardLinkPrefix="/pakistan/services"
             singleDestination
@@ -55,12 +55,12 @@ const pakistanHome = () => {
 
         {/* pakistan global presence block */}
         <Suspense fallback={<LoadingComponent />}>
-          <BGlobalPresence linkPath="/pakistan/global-presence" />
+          <PGlobalPresence linkPath="/pakistan/global-presence" />
         </Suspense>
 
         {/* Common enquiry form (can be used for BD as well) */}
         <Suspense fallback={<LoadingComponent />}>
-          <BQuickEnquiry />
+          <PQuickEnquiry />
         </Suspense>
       </main>
 
