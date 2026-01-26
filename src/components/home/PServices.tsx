@@ -25,7 +25,7 @@ const EnhancedServiceCard = ({
       transition={{ type: "spring", stiffness: 300 }}
       className="group w-full overflow-hidden rounded-lg bg-white border border-gray-200 shadow hover:shadow-md transition-shadow"
     >
-      <Link to={link} className="flex flex-col h-full" onClick={() => window.scrollTo(0, 0)}>
+      <Link to={link} className="flex flex-col h-full">
         <div className="overflow-hidden">
           <AspectRatio ratio={3 / 2}>
             <img
@@ -68,42 +68,42 @@ export const PServices = () => {
       title: "Ocean Freight",
       description: "At GGL, we specialize in providing comprehensive ocean freight solutions that cater to the diverse needs of our clients. Whether you're shipping large volumes or smaller consignments, our services are designed to ensure efficiency, reliability, and cost-effectiveness",
       icon: <Anchor />,
-      link: "/pakistan/services/ocean-freight"
+      link: "/pakistan/services#ocean-freight"
     },
     {
       image: "/hom4.png",
       title: "LCL Consolidation",
       description: "We collect your goods from your location and prepare them for consolidation. This includes proper labelling, packaging, and documentation to ensure smooth transit.",
       icon: <Warehouse />,
-      link: "/pakistan/services/lcl-consolidation"
+      link: "/pakistan/services#lcl-consolidation"
     },
     {
       image: "/hom3.png",
       title: "Transportation And Distribution",
       description: "At GGL, we understand that efficient transportation and distribution are the backbone of a seamless supply chain. Our dedicated fleet and robust infrastructure ensure that your goods reach their destination on time, every time.",
       icon: <Truck />,
-      link: "/pakistan/services/transportation"
+      link: "/pakistan/services#transportation"
     },
     {
       image: "/warehosing.png",
       title: "Warehousing",
       description: "At GGL, we offer comprehensive warehousing and third-party logistics (3PL) solutions designed to streamline your supply chain operations. Our services are tailored to meet the diverse needs of businesses, ensuring efficiency, reliability, and scalability.",
       icon: <Warehouse />,
-      link: "/pakistan/services/warehousing"
+      link: "/pakistan/services#warehousing"
     },
     {
       image: "/aircargo1.png",
       title: "Air Freight",
       description: "At GGL, we offer a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams provide seamless air import, export, and express options, all on a convenient door-to-door basis.",
       icon: <Plane />,
-      link: "/pakistan/services/air-freight"
+      link: "/pakistan/services#air-freight"
     },
     {
       image: "/cargoh1.png",
       title: "Project Cargo",
       description: "At GGL, we specialize in managing project cargo—the transportation of large, heavy, high-value, or complex pieces of equipment and materials essential to major infrastructure, engineering, or industrial projects.",
       icon: <Warehouse />,
-      link: "/pakistan/services/project-cargo"
+      link: "/pakistan/services#project-cargo"
     }
   ];
 
