@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Users, UserCircle, SearchCode, Ship, Calendar, Globe } from 'lucide-react';
 
-const PHero = () => {
+const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isCustomerPortalOpen, setIsCustomerPortalOpen] = useState(false);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -56,7 +56,7 @@ const PHero = () => {
       icon: <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />,
       title: 'Online Quote',
       description: 'Request a quote',
-      url: '/pakistan/contact',
+      url: '/Pakistan/contact',
       external: false,
     },
   ];
@@ -155,8 +155,62 @@ const PHero = () => {
           </div>
         </div>
       </div>
+
+      {/* Customer Portal Modal */}
+      {isCustomerPortalOpen && (
+        <div className="fixed inset-0 bg-black/50 z-[50] flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-bold text-blue-900">Customer Portal</h2>
+                <button
+                  onClick={() => setIsCustomerPortalOpen(false)}
+                  className="text-gray-500 hover:text-gray-700 text-2xl"
+                >
+                  ×
+                </button>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="font-medium text-gray-800">Tutorial Videos</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { src: '/GGL_demo1.mp4', label: 'Getting Started' },
+                    { src: '/GGL_promo.mp4', label: 'Advanced Features' },
+                  ].map((video, i) => (
+                    <div key={i} className="border rounded-lg overflow-hidden">
+                      <div className="aspect-video">
+                        <video controls className="w-full h-full object-cover">
+                          <source src={video.src} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                      <div className="p-2 bg-gray-50 text-sm font-medium">{video.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Button Section */}
+              <div className="mt-6 flex justify-end gap-4">
+                <button
+                  onClick={() => setIsCustomerPortalOpen(false)}
+                  className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400"
+                >
+                  Cancel
+                </button>
+                <a href="https://consolmate.com/auth/login/3" target="_blank" rel="noopener noreferrer">
+                  <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                    Login
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
 
-export default PHero;
+export default Hero;
