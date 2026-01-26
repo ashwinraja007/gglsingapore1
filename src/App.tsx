@@ -75,6 +75,15 @@ function App() {
               path="/bangladesh/global-presence"
               element={<BangladeshGlobalPresence />}
             />
+            {/* Bangladesh Service Routes */}
+            <Route path="/bangladesh/services/transportation" element={<Transportation />} />
+            <Route path="/bangladesh/services/liquid-transportation" element={<LiquidTransportation />} />
+            <Route path="/bangladesh/services/air-freight" element={<AirFreight />} />
+            <Route path="/bangladesh/services/ocean-freight" element={<OceanFreight />} />
+            <Route path="/bangladesh/services/lcl-consolidation" element={<LCLConsolidation />} />
+            <Route path="/bangladesh/services/project-cargo" element={<ProjectCargo />} />
+            <Route path="/bangladesh/services/customs-clearance" element={<CustomsClearance />} />
+            <Route path="/bangladesh/services/warehousing" element={<Warehousing />} />
             <Route path="/bangladesh/contact" element={<BangladeshContact />} />
            
             {/* Pakistan Routes */}
@@ -84,6 +93,16 @@ function App() {
             <Route path="/pakistan/careers" element={<PakistanCareers />} />
             <Route path="/pakistan/contact" element={<PakistanContact />} />
             <Route path="/pakistan/global-presence" element={<PakistanGlobalPresence />} />
+
+            {/* Pakistan Service Routes */}
+            <Route path="/pakistan/services/transportation" element={<Transportation />} />
+            <Route path="/pakistan/services/liquid-transportation" element={<LiquidTransportation />} />
+            <Route path="/pakistan/services/air-freight" element={<AirFreight />} />
+            <Route path="/pakistan/services/ocean-freight" element={<OceanFreight />} />
+            <Route path="/pakistan/services/lcl-consolidation" element={<LCLConsolidation />} />
+            <Route path="/pakistan/services/project-cargo" element={<ProjectCargo />} />
+            <Route path="/pakistan/services/customs-clearance" element={<CustomsClearance />} />
+            <Route path="/pakistan/services/warehousing" element={<Warehousing />} />
 
              <Route path="/admin" element={<AdminDashboard />} />
             {/* Service specific pages */}
