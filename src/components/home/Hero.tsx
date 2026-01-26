@@ -71,15 +71,11 @@ const Hero = () => {
       external: true,
     },
     {
-icon: <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />,
-title: "Online Quote",
-description: "Request a quote",
-url: isPakistan
-  ? "/pakistan/contact"
-  : isBangladesh
-  ? "/bangladesh/contact"
-  : "/contact",
-external: false,
+      icon: <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />,
+      title: "Online Quote",
+      description: "Request a quote",
+      url: isBangladesh ? "/bangladesh/contact" : "/contact",
+      external: false,
     },
   ];
 
