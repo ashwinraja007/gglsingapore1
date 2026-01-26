@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Plane, Ship, Truck, Warehouse } from "lucide-react";---``
+import { Plane, Ship, Truck, Warehouse } from "lucide-react";
+import ScrollToTop from "@/components/common/ScrollToTop";
+
 const pakistanNavPaths = {
   home: "/pakistan",
   about: "/pakistan/about",
@@ -11,22 +13,6 @@ const pakistanNavPaths = {
   careers: "/pakistan/careers",
   contact: "/pakistan/contact",
   globalPresence: "/pakistan/global-presence",
-};
-
-const ScrollToTop = () => {
-  const { pathname, hash } = useLocation();
-  useEffect(() => {
-    if (!hash) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      const id = hash.replace('#', '');
-      const element = document.getElementById(id);
-      if (element) {
-        setTimeout(() => element.scrollIntoView({ behavior: "smooth" }), 100);
-      }
-    }
-  }, [pathname, hash]);
-  return null;
 };
 
 const ServiceCard = ({ icon, title, description, image, link, id }: any) => {

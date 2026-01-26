@@ -3,8 +3,18 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X, Linkedin, Facebook } from "lucide-react";
 import CountrySelector from "../common/CountrySelector";
 import BCountrySelector from "../common/BCountrySelector"; // <- BD selector
+import PCountrySelector from "../common/PCountrySelector"; // <- PK selector
 
-export const Header = () => {
+interface NavPaths {
+  home: string;
+  about: string;
+  services: string;
+  careers: string;
+  contact: string;
+  globalPresence: string;
+}
+
+export const Header = ({ navPaths }: { navPaths?: NavPaths }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -13,17 +23,18 @@ export const Header = () => {
   const [isInfoOpen, setIsInfoOpen] = useState(false);
   const infoRef = useRef<HTMLDivElement | null>(null);
 
-  // AUTO DETECT BANGLADESH MODE
+  // AUTO DETECT REGION MODE
   const isBangladesh = location.pathname.startsWith("/bangladesh");
+  const isPakistan = location.pathname.startsWith("/pakistan");
 
-  const base = isBangladesh ? "/bangladesh" : "";
-
-  const homePath = isBangladesh ? "/bangladesh" : "/";
-  const aboutPath = `${base}/about`;
-  const servicesPath = `${base}/services`;
-  const careersPath = `${base}/careers`;
-  const contactPath = `${base}/contact`;
-  const globalPresencePath = `${base}/global-presence`;
+  const paths: NavPaths = navPaths || {
+    home: isBangladesh ? "/bangladesh" : isPakistan ? "/pakistan" : "/",
+    about: isBangladesh ? "/bangladesh/about" : isPakistan ? "/pakistan/about" : "/about",
+    services: isBangladesh ? "/bangladesh/services" : isPakistan ? "/pakistan/services" : "/services",
+    careers: isBangladesh ? "/bangladesh/careers" : isPakistan ? "/pakistan/careers" : "/careers",
+    contact: isBangladesh ? "/bangladesh/contact" : isPakistan ? "/pakistan/contact" : "/contact",
+    globalPresence: isBangladesh ? "/bangladesh/global-presence" : isPakistan ? "/pakistan/global-presence" : "/global-presence",
+  };
 
   // Sticky Header Scroll
   useEffect(() => {
@@ -60,7 +71,7 @@ export const Header = () => {
   };
 
   const handleLogoClick = () => {
-    navigate(homePath);
+    navigate(paths.home);
     window.scrollTo(0, 0);
   };
 
@@ -76,7 +87,7 @@ export const Header = () => {
           <div className="flex items-center gap-4">
             <img
               src="/lovable-uploads/GGL.png"
-              alt="Logo"
+              alt="GGL Logo"
               onClick={handleLogoClick}
               className="h-16 w-auto cursor-pointer"
             />
@@ -98,6 +109,7 @@ export const Header = () => {
           <button
             className="md:hidden text-gray-800"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
@@ -105,9 +117,9 @@ export const Header = () => {
           {/* DESKTOP NAV */}
           <nav className="hidden md:flex gap-6 items-center relative">
             <button
-              onClick={() => handleNavClick(homePath)}
+              onClick={() => handleNavClick(paths.home)}
               className={`text-gray-800 font-medium hover:text-brand-gold ${
-                location.pathname === homePath ? "text-brand-gold" : ""
+                location.pathname === paths.home ? "text-brand-gold" : ""
               }`}
             >
               Home
@@ -118,7 +130,7 @@ export const Header = () => {
               <button
                 onClick={() => setIsInfoOpen(!isInfoOpen)}
                 className={`text-gray-800 font-medium hover:text-brand-gold ${
-                  [aboutPath, careersPath].includes(location.pathname)
+                  [paths.about, paths.careers].includes(location.pathname)
                     ? "text-brand-gold"
                     : ""
                 }`}
@@ -129,18 +141,18 @@ export const Header = () => {
               {isInfoOpen && (
                 <div className="absolute bg-white shadow-lg rounded-md top-full left-0 mt-2">
                   <button
-                    onClick={() => handleNavClick(aboutPath)}
+                    onClick={() => handleNavClick(paths.about)}
                     className={`block px-4 py-2 text-left hover:bg-gray-100 ${
-                      location.pathname === aboutPath ? "text-brand-gold" : ""
+                      location.pathname === paths.about ? "text-brand-gold" : ""
                     }`}
                   >
                     About Us
                   </button>
 
                   <button
-                    onClick={() => handleNavClick(careersPath)}
+                    onClick={() => handleNavClick(paths.careers)}
                     className={`block px-4 py-2 text-left hover:bg-gray-100 ${
-                      location.pathname === careersPath ? "text-brand-gold" : ""
+                      location.pathname === paths.careers ? "text-brand-gold" : ""
                     }`}
                   >
                     Careers
@@ -151,9 +163,9 @@ export const Header = () => {
 
             {/* SERVICES */}
             <button
-              onClick={() => handleNavClick(servicesPath)}
+              onClick={() => handleNavClick(paths.services)}
               className={`text-gray-800 font-medium hover:text-brand-gold ${
-                location.pathname.startsWith(servicesPath)
+                location.pathname.startsWith(paths.services)
                   ? "text-brand-gold"
                   : ""
               }`}
@@ -163,9 +175,9 @@ export const Header = () => {
 
             {/* GLOBAL PRESENCE */}
             <button
-              onClick={() => handleNavClick(globalPresencePath)}
+              onClick={() => handleNavClick(paths.globalPresence)}
               className={`text-gray-800 font-medium hover:text-brand-gold ${
-                location.pathname === globalPresencePath
+                location.pathname === paths.globalPresence
                   ? "text-brand-gold"
                   : ""
               }`}
@@ -173,12 +185,18 @@ export const Header = () => {
               Global Presence
             </button>
 
-            {/* COUNTRY SELECTOR (BD vs Global) */}
-            {isBangladesh ? <BCountrySelector /> : <CountrySelector />}
+            {/* COUNTRY SELECTOR (BD vs PK vs Global) */}
+            {isBangladesh ? (
+              <BCountrySelector />
+            ) : isPakistan ? (
+              <PCountrySelector />
+            ) : (
+              <CountrySelector />
+            )}
 
             {/* CONTACT BUTTON */}
             <button
-              onClick={() => handleNavClick(contactPath)}
+              onClick={() => handleNavClick(paths.contact)}
               className="px-5 py-2 bg-[#F6B100] rounded-full text-black"
             >
               Contact / Quote
@@ -193,17 +211,17 @@ export const Header = () => {
           } overflow-hidden`}
         >
           <nav className="flex flex-col gap-4 border-t pt-4">
-            <button onClick={() => handleNavClick(homePath)}>Home</button>
+            <button onClick={() => handleNavClick(paths.home)}>Home</button>
 
-            <button onClick={() => handleNavClick(aboutPath)}>About Us</button>
+            <button onClick={() => handleNavClick(paths.about)}>About Us</button>
 
-            <button onClick={() => handleNavClick(servicesPath)}>
+            <button onClick={() => handleNavClick(paths.services)}>
               Services
             </button>
 
-            <button onClick={() => handleNavClick(careersPath)}>Careers</button>
+            <button onClick={() => handleNavClick(paths.careers)}>Careers</button>
 
-            <button onClick={() => handleNavClick(contactPath)}>
+            <button onClick={() => handleNavClick(paths.contact)}>
               Contact Us
             </button>
 
@@ -217,11 +235,17 @@ export const Header = () => {
               </a>
             </div>
 
-            {/* COUNTRY SELECTOR (BD vs Global) */}
-            {isBangladesh ? <BCountrySelector /> : <CountrySelector />}
+            {/* COUNTRY SELECTOR (BD vs PK vs Global) */}
+            {isBangladesh ? (
+              <BCountrySelector />
+            ) : isPakistan ? (
+              <PCountrySelector />
+            ) : (
+              <CountrySelector />
+            )}
 
             <button
-              onClick={() => handleNavClick(contactPath)}
+              onClick={() => handleNavClick(paths.contact)}
               className="px-4 py-2 bg-brand-gold rounded-md text-black"
             >
               Get A Quote

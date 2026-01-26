@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 
 export const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const location = useLocation();
+  const { pathname, hash } = useLocation();
 
   // Show button when page is scrolled down
   const toggleVisibility = () => {
@@ -32,8 +32,16 @@ export const ScrollToTop = () => {
 
   // Reset scroll position when route changes
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
+    if (!hash) {
+      window.scrollTo(0, 0);
+    } else {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => element.scrollIntoView({ behavior: "smooth" }), 100);
+      }
+    }
+  }, [pathname, hash]);
 
   return (
     <>

@@ -74,8 +74,6 @@ Singapore - 099447`,
     email: "info.bd@ggl.sg",
   };
 
-  const pakistanContact = {
-    title: "GGL (Pakistan)",
   const karachiContact = {
     title: "GGL (Pakistan) - Karachi",
     address:
@@ -84,7 +82,6 @@ Singapore - 099447`,
     email: "khalid.pk@globalconsol.com",
   };
 
-  const contact = isPakistan ? pakistanContact : isBangladesh ? bangladeshContact : singaporeContact;
   const lahoreContact = {
     title: "GGL (Pakistan) - Lahore",
     address:
@@ -194,17 +191,6 @@ Singapore - 099447`,
             <h3 className="font-bold text-lg text-brand-navy mb-4">
               Contact Us
             </h3>
-            <div className="space-y-3 text-gray-600">
-              <div className="flex items-start gap-2">
-                <MapPin
-                  size={18}
-                  className="text-brand-gold mt-1 flex-shrink-0"
-                />
-                <p className="whitespace-pre-line">
-                  {contact.title}
-                  {"\n"}
-                  {contact.address}
-                </p>
             {isPakistan ? (
               <div className="space-y-6">
                 {/* Karachi Office */}
@@ -264,12 +250,6 @@ Singapore - 099447`,
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone
-                  size={18}
-                  className="text-brand-gold flex-shrink-0"
-                />
-                <p>{contact.phone}</p>
             ) : (
               <div className="space-y-3 text-gray-600">
                 <div className="flex items-start gap-2">
@@ -280,24 +260,19 @@ Singapore - 099447`,
                     {contact.address}
                   </p>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Phone size={18} className="text-brand-gold flex-shrink-0" />
-                  <p>{contact.phone}</p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail size={18} className="text-brand-gold flex-shrink-0" />
-                  <a href={`mailto:${contact.email}`} className="hover:text-brand-gold transition-colors">{contact.email}</a>
-                </div>
+                {contact.phone && (
+                  <div className="flex items-center gap-2">
+                    <Phone size={18} className="text-brand-gold flex-shrink-0" />
+                    <p>{contact.phone}</p>
+                  </div>
+                )}
+                {contact.email && (
+                  <div className="flex items-center gap-2">
+                    <Mail size={18} className="text-brand-gold flex-shrink-0" />
+                    <a href={`mailto:${contact.email}`} className="hover:text-brand-gold transition-colors">{contact.email}</a>
+                  </div>
+                )}
               </div>
-
-              <div className="flex items-center gap-2">
-                <Mail
-                  size={18}
-                  className="text-brand-gold flex-shrink-0"
-                />
-                <p>{contact.email}</p>
-              </div>
-            </div>
             )}
           </motion.div>
         </div>

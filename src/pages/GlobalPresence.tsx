@@ -4,7 +4,7 @@ import { Footer } from '@/components/layout/Footer';
 import MapContainer from '@/components/MapContainer';
 import Sidebar from '@/components/Sidebar';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Menu, Map, X } from 'lucide-react';
+import { Menu, Map } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 const GlobalPresence = () => {
@@ -86,7 +86,13 @@ const GlobalPresence = () => {
         
         {/* Mobile toggle buttons */}
         {isMobile && <div className="fixed bottom-4 right-4 z-50 flex gap-2">
-            
+            <Button
+              onClick={toggleView}
+              className="rounded-full shadow-lg bg-brand-navy text-white hover:bg-brand-gold hover:text-brand-navy transition-colors"
+              size="icon"
+            >
+              {showMap ? <Menu size={24} /> : <Map size={24} />}
+            </Button>
           </div>}
       </motion.div>
       
