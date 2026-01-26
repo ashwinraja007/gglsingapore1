@@ -12,6 +12,7 @@ import { Link, useLocation } from "react-router-dom";
 export const Footer = () => {
   const location = useLocation();
   const isBangladesh = location.pathname.startsWith("/bangladesh");
+  const isPakistan = location.pathname.startsWith("/pakistan");
 
   const footerAnimation = {
     hidden: {
@@ -29,7 +30,15 @@ export const Footer = () => {
   };
 
   // Navigation links: switch to Bangladesh routes on Bangladesh pages
-  const navigationLinks = isBangladesh
+  const navigationLinks = isPakistan
+    ? [
+        { name: "Home", path: "/pakistan" },
+        { name: "About", path: "/pakistan/about" },
+        { name: "Services", path: "/pakistan/services" },
+        { name: "Global Presence", path: "/pakistan/global-presence" },
+        { name: "Contact Us", path: "/pakistan/contact" },
+      ]
+    : isBangladesh
     ? [
         { name: "Home", path: "/bangladesh" },
         { name: "About", path: "/bangladesh/about" },
@@ -64,7 +73,15 @@ Singapore - 099447`,
     email: "info.bd@ggl.sg",
   };
 
-  const contact = isBangladesh ? bangladeshContact : singaporeContact;
+  const pakistanContact = {
+    title: "GGL (Pakistan)",
+    address:
+      "Suite No.301, 3rd Floor, Fortune Center, Shahrah-e-Faisal, Block 6, PECHS, Karachi, Pakistan",
+    phone: "+92-300-8282511",
+    email: "khalid.pk@globalconsol.com",
+  };
+
+  const contact = isPakistan ? pakistanContact : isBangladesh ? bangladeshContact : singaporeContact;
 
   return (
     <footer className="pt-16 pb-8 bg-gradient-to-b from-white to-gray-100">

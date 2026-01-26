@@ -26,6 +26,13 @@ import BangladeshServices from "./pages/BangladeshServices";
 import BangladeshContact from "./pages/BangladeshContact";
 import BangladeshGlobalPresence from "./pages/BangladeshGlobalPresence";
 
+import PakistanHome from "./pages/PakistanHome";
+import PakistanContact from "./pages/PakistanContact";
+import PakistanAbout from "./pages/pakistanaboutus";
+import PakistanCareers from "./pages/pakistancareers";
+import PakistanServices from "./pages/PakistanServices";
+import PakistanGlobalPresence from "./pages/PakistanGlobalPresence";
+
 import CustomsClearance from "./pages/services/CustomsClearance";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import GlobalPresence from "./pages/GlobalPresence";
@@ -70,6 +77,14 @@ function App() {
             />
             <Route path="/bangladesh/contact" element={<BangladeshContact />} />
            
+            {/* Pakistan Routes */}
+            <Route path="/pakistan" element={<PakistanHome />} />
+            <Route path="/pakistan/about" element={<PakistanAbout />} />
+            <Route path="/pakistan/services" element={<PakistanServices />} />
+            <Route path="/pakistan/careers" element={<PakistanCareers />} />
+            <Route path="/pakistan/contact" element={<PakistanContact />} />
+            <Route path="/pakistan/global-presence" element={<PakistanGlobalPresence />} />
+
              <Route path="/admin" element={<AdminDashboard />} />
             {/* Service specific pages */}
             <Route path="/services/liquid-transportation" element={<LiquidTransportation />} />
