@@ -2,7 +2,7 @@ import { Suspense, lazy } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Loader2 } from "lucide-react";
-import BHero from "@/components/home/BHero";
+import PHero from "@/components/home/PHero";
 
 const pakistanNavPaths = {
   home: "/pakistan",
