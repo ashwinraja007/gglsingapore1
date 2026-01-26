@@ -14,10 +14,10 @@ const pakistanNavPaths = {
 };
 
 // Lazy load other components
-const BAboutUs = lazy(() => import("@/components/home/BAboutUs"));
-const BServices = lazy(() => import("@/components/home/BServices"));
-const BGlobalPresence = lazy(() => import("@/components/home/BGlobalPresence"));
-const BQuickEnquiry = lazy(() => import("@/components/home/BQuickEnquiry"));
+const PAboutUs = lazy(() => import("@/components/home/PAboutUs"));
+const PServices = lazy(() => import("@/components/home/PServices"));
+const PGlobalPresence = lazy(() => import("@/components/home/PGlobalPresence"));
+const PQuickEnquiry = lazy(() => import("@/components/home/PQuickEnquiry"));
 
 // Loading component
 const LoadingComponent = () => (
