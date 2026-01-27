@@ -30,7 +30,10 @@ const PakistanContact = () => {
             </h2>
 
             {/* Karachi Map */}
-            <div className="mb-6 rounded-lg overflow-hidden border">
+            <div className="relative mb-6 rounded-lg overflow-hidden border">
+              {/* Hide Google My Maps black bar */}
+              <div className="absolute top-0 left-0 w-full h-[52px] bg-white z-10"></div>
+
               <iframe
                 title="Karachi Office Map"
                 src="https://www.google.com/maps/d/u/0/embed?mid=1reXoq38Nt5GKCCpv-f_cb1UwG-Ko30o&ehbc=2E312F&noprof=1&ll=24.870120920877522%2C67.04667544386298&z=14"
@@ -74,7 +77,10 @@ const PakistanContact = () => {
             </h2>
 
             {/* Lahore Map */}
-            <div className="mb-6 rounded-lg overflow-hidden border">
+            <div className="relative mb-6 rounded-lg overflow-hidden border">
+              {/* Hide Google My Maps black bar */}
+              <div className="absolute top-0 left-0 w-full h-[52px] bg-white z-10"></div>
+
               <iframe
                 title="Lahore Office Map"
                 src="https://www.google.com/maps/d/u/0/embed?mid=1ObHyVRDeNaWR7qOyMHKqqvqWbqjsCVk&ehbc=2E312F&noprof=1&ll=31.531188300000032%2C74.35251260000001&z=17"
