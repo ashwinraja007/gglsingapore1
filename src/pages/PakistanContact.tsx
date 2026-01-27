@@ -1,7 +1,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Mail, Phone, MapPin } from "lucide-react";
-import QuickEnquiry from "@/components/home/QuickEnquiry";
+import PQuickEnquiry from "@/components/home/PQuickEnquiry";
 
 const pakistanNavPaths = {
   home: "/pakistan",
@@ -116,7 +116,7 @@ const PakistanContact = () => {
 
         {/* Quick Enquiry */}
         <section className="mt-16">
-          <QuickEnquiry />
+          <PQuickEnquiry />
         </section>
       </main>
 
