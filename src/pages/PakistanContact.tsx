@@ -24,96 +24,92 @@ const PakistanContact = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Karachi Office */}
-          <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+          <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
             <h2 className="text-2xl font-bold mb-6 text-brand-gold border-b pb-2">
               Karachi Office
             </h2>
 
-            {/* Karachi Map */}
-            <div className="relative mb-6 rounded-lg overflow-hidden border">
-              {/* Hide Google My Maps black bar */}
-              <div className="absolute top-0 left-0 w-full h-[52px] bg-white z-10"></div>
+            {/* Karachi Map + Info Overlay */}
+            <div className="relative rounded-lg overflow-hidden border">
+              {/* White info box */}
+              <div className="absolute top-0 left-0 w-full z-20 bg-white px-4 py-3 space-y-2">
+                <div className="flex items-start gap-3 text-sm text-gray-700">
+                  <MapPin className="w-5 h-5 mt-0.5 text-brand-navy flex-shrink-0" />
+                  <p>
+                    Suite No.301, 3rd Floor, Fortune Center, Shahrah-e-Faisal,
+                    Block 6, PECHS, Karachi, Pakistan
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-3 text-sm">
+                  <Phone className="w-5 h-5 text-brand-navy flex-shrink-0" />
+                  <span className="font-medium">
+                    +92-300-8282511 / +92-21-34302281-5
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3 text-sm">
+                  <Mail className="w-5 h-5 text-brand-navy flex-shrink-0" />
+                  <a
+                    href="mailto:khalid.pk@globalconsol.com"
+                    className="font-medium hover:text-brand-gold"
+                  >
+                    khalid.pk@globalconsol.com
+                  </a>
+                </div>
+              </div>
 
               <iframe
                 title="Karachi Office Map"
                 src="https://www.google.com/maps/d/embed?mid=1JMzZUZez-TXZMm7jVMNTBmVJrbaCuEE&ehbc=2E312F"
-                className="w-full h-64 border-0"
+                className="w-full h-[420px] border-0"
                 loading="lazy"
               />
-            </div>
-
-            <div className="space-y-5 text-gray-700">
-              <div className="flex items-start gap-4">
-                <MapPin className="w-6 h-6 mt-1 text-brand-navy flex-shrink-0" />
-                <p className="leading-relaxed">
-                  Suite No.301, 3rd Floor, Fortune Center, Shahrah-e-Faisal,
-                  Block 6, PECHS, Karachi, Pakistan
-                </p>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <Phone className="w-6 h-6 text-brand-navy flex-shrink-0" />
-                <p className="font-medium">
-                  +92-300-8282511 / +92-21-34302281-5
-                </p>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <Mail className="w-6 h-6 text-brand-navy flex-shrink-0" />
-                <a
-                  href="mailto:khalid.pk@globalconsol.com"
-                  className="hover:text-brand-gold transition-colors font-medium"
-                >
-                  khalid.pk@globalconsol.com
-                </a>
-              </div>
             </div>
           </div>
 
           {/* Lahore Office */}
-          <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+          <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
             <h2 className="text-2xl font-bold mb-6 text-brand-gold border-b pb-2">
               Lahore Office
             </h2>
 
-            {/* Lahore Map */}
-            <div className="relative mb-6 rounded-lg overflow-hidden border">
-              {/* Hide Google My Maps black bar */}
-              <div className="absolute top-0 left-0 w-full h-[52px] bg-white z-10"></div>
+            {/* Lahore Map + Info Overlay */}
+            <div className="relative rounded-lg overflow-hidden border">
+              {/* White info box */}
+              <div className="absolute top-0 left-0 w-full z-20 bg-white px-4 py-3 space-y-2">
+                <div className="flex items-start gap-3 text-sm text-gray-700">
+                  <MapPin className="w-5 h-5 mt-0.5 text-brand-navy flex-shrink-0" />
+                  <p>
+                    Office # 301, 3rd Floor, Gulberg Arcade Main Market,
+                    Gulberg 2, Lahore, Pakistan
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-3 text-sm">
+                  <Phone className="w-5 h-5 text-brand-navy flex-shrink-0" />
+                  <span className="font-medium">
+                    +92 42-35782306 / 07 / 08
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3 text-sm">
+                  <Mail className="w-5 h-5 text-brand-navy flex-shrink-0" />
+                  <a
+                    href="mailto:shazia.pklhe@globalconsol.com"
+                    className="font-medium hover:text-brand-gold"
+                  >
+                    shazia.pklhe@globalconsol.com
+                  </a>
+                </div>
+              </div>
 
               <iframe
                 title="Lahore Office Map"
                 src="https://www.google.com/maps/d/embed?mid=10uacCU-_5ipOs0AgbK_tLis6pqsBTWc&ehbc=2E312F"
-                className="w-full h-64 border-0"
+                className="w-full h-[420px] border-0"
                 loading="lazy"
               />
-            </div>
-
-            <div className="space-y-5 text-gray-700">
-              <div className="flex items-start gap-4">
-                <MapPin className="w-6 h-6 mt-1 text-brand-navy flex-shrink-0" />
-                <p className="leading-relaxed">
-                  Office # 301, 3rd Floor, Gulberg Arcade Main Market,
-                  Gulberg 2, Lahore, Pakistan
-                </p>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <Phone className="w-6 h-6 text-brand-navy flex-shrink-0" />
-                <p className="font-medium">
-                  +92 42-35782306 / 07 / 08
-                </p>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <Mail className="w-6 h-6 text-brand-navy flex-shrink-0" />
-                <a
-                  href="mailto:shazia.pklhe@globalconsol.com"
-                  className="hover:text-brand-gold transition-colors font-medium"
-                >
-                  shazia.pklhe@globalconsol.com
-                </a>
-              </div>
             </div>
           </div>
         </div>
