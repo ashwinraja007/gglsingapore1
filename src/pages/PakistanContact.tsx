@@ -29,40 +29,40 @@ const PakistanContact = () => {
               Karachi Office
             </h2>
 
-            {/* Karachi Map + Info Overlay */}
-            <div className="relative rounded-lg overflow-hidden border">
-              {/* White info box */}
-              <div className="absolute top-0 left-0 w-full z-20 bg-white px-4 py-3 space-y-2">
-                <div className="flex items-start gap-3 text-sm text-gray-700">
-                  <MapPin className="w-5 h-5 mt-0.5 text-brand-navy flex-shrink-0" />
-                  <p>
-                    Suite No.301, 3rd Floor, Fortune Center, Shahrah-e-Faisal,
-                    Block 6, PECHS, Karachi, Pakistan
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-3 text-sm">
-                  <Phone className="w-5 h-5 text-brand-navy flex-shrink-0" />
-                  <span className="font-medium">
-                    +92-300-8282511 / +92-21-34302281-5
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-3 text-sm">
-                  <Mail className="w-5 h-5 text-brand-navy flex-shrink-0" />
-                  <a
-                    href="mailto:khalid.pk@globalconsol.com"
-                    className="font-medium hover:text-brand-gold"
-                  >
-                    khalid.pk@globalconsol.com
-                  </a>
-                </div>
+            {/* Address Box */}
+            <div className="bg-white border rounded-lg p-4 mb-4 space-y-3 text-sm">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 mt-0.5 text-brand-navy" />
+                <p>
+                  Suite No.301, 3rd Floor, Fortune Center, Shahrah-e-Faisal,
+                  Block 6, PECHS, Karachi, Pakistan
+                </p>
               </div>
 
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-brand-navy" />
+                <span className="font-medium">
+                  +92-300-8282511 / +92-21-34302281-5
+                </span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-brand-navy" />
+                <a
+                  href="mailto:khalid.pk@globalconsol.com"
+                  className="font-medium hover:text-brand-gold"
+                >
+                  khalid.pk@globalconsol.com
+                </a>
+              </div>
+            </div>
+
+            {/* Map */}
+            <div className="rounded-lg overflow-hidden border">
               <iframe
                 title="Karachi Office Map"
                 src="https://www.google.com/maps/d/embed?mid=1JMzZUZez-TXZMm7jVMNTBmVJrbaCuEE&ehbc=2E312F"
-                className="w-full h-[420px] border-0"
+                className="w-full h-64 border-0"
                 loading="lazy"
               />
             </div>
@@ -74,47 +74,47 @@ const PakistanContact = () => {
               Lahore Office
             </h2>
 
-            {/* Lahore Map + Info Overlay */}
-            <div className="relative rounded-lg overflow-hidden border">
-              {/* White info box */}
-              <div className="absolute top-0 left-0 w-full z-20 bg-white px-4 py-3 space-y-2">
-                <div className="flex items-start gap-3 text-sm text-gray-700">
-                  <MapPin className="w-5 h-5 mt-0.5 text-brand-navy flex-shrink-0" />
-                  <p>
-                    Office # 301, 3rd Floor, Gulberg Arcade Main Market,
-                    Gulberg 2, Lahore, Pakistan
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-3 text-sm">
-                  <Phone className="w-5 h-5 text-brand-navy flex-shrink-0" />
-                  <span className="font-medium">
-                    +92 42-35782306 / 07 / 08
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-3 text-sm">
-                  <Mail className="w-5 h-5 text-brand-navy flex-shrink-0" />
-                  <a
-                    href="mailto:shazia.pklhe@globalconsol.com"
-                    className="font-medium hover:text-brand-gold"
-                  >
-                    shazia.pklhe@globalconsol.com
-                  </a>
-                </div>
+            {/* Address Box */}
+            <div className="bg-white border rounded-lg p-4 mb-4 space-y-3 text-sm">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 mt-0.5 text-brand-navy" />
+                <p>
+                  Office # 301, 3rd Floor, Gulberg Arcade Main Market,
+                  Gulberg 2, Lahore, Pakistan
+                </p>
               </div>
 
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-brand-navy" />
+                <span className="font-medium">
+                  +92 42-35782306 / 07 / 08
+                </span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-brand-navy" />
+                <a
+                  href="mailto:shazia.pklhe@globalconsol.com"
+                  className="font-medium hover:text-brand-gold"
+                >
+                  shazia.pklhe@globalconsol.com
+                </a>
+              </div>
+            </div>
+
+            {/* Map */}
+            <div className="rounded-lg overflow-hidden border">
               <iframe
                 title="Lahore Office Map"
                 src="https://www.google.com/maps/d/embed?mid=10uacCU-_5ipOs0AgbK_tLis6pqsBTWc&ehbc=2E312F"
-                className="w-full h-[420px] border-0"
+                className="w-full h-64 border-0"
                 loading="lazy"
               />
             </div>
           </div>
         </div>
 
-        {/* Quick Enquiry Section */}
+        {/* Quick Enquiry */}
         <section className="mt-16">
           <QuickEnquiry />
         </section>
