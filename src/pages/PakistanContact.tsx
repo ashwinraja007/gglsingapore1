@@ -46,15 +46,7 @@ const PakistanContact = () => {
                 </span>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-brand-navy" />
-                <a
-                  href="mailto:khalid.pk@globalconsol.com"
-                  className="font-medium hover:text-brand-gold"
-                >
-                  khalid.pk@globalconsol.com
-                </a>
-              </div>
+
             </div>
 
             {/* Clean Google Map */}
@@ -91,15 +83,7 @@ const PakistanContact = () => {
                 </span>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-brand-navy" />
-                <a
-                  href="mailto:shazia.pklhe@globalconsol.com"
-                  className="font-medium hover:text-brand-gold"
-                >
-                  shazia.pklhe@globalconsol.com
-                </a>
-              </div>
+
             </div>
 
             {/* Clean Google Map */}
