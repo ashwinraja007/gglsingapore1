@@ -34,7 +34,7 @@ const PakistanContact = () => {
               <iframe
                 title="Karachi Office Map"
                 src="https://www.google.com/maps/d/u/0/embed?mid=1reXoq38Nt5GKCCpv-f_cb1UwG-Ko30o&ehbc=2E312F&noprof=1&ll=24.870120920877522%2C67.04667544386298&z=14"
-                className="absolute left-0 top-[-52px] w-full h-[540px] border-0"
+                className="w-full h-64 border-0"
                 loading="lazy"
               />
             </div>
@@ -78,7 +78,7 @@ const PakistanContact = () => {
               <iframe
                 title="Lahore Office Map"
                 src="https://www.google.com/maps/d/u/0/embed?mid=1ObHyVRDeNaWR7qOyMHKqqvqWbqjsCVk&ehbc=2E312F&noprof=1&ll=31.531188300000032%2C74.35251260000001&z=17"
-                className="absolute left-0 top-[-52px] w-full h-[540px] border-0"
+                className="w-full h-64 border-0"
                 loading="lazy"
               />
             </div>
