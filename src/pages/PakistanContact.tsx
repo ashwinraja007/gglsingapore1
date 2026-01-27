@@ -30,7 +30,7 @@ const PakistanContact = () => {
             </h2>
 
             {/* Address Box */}
-            <div className="bg-white border rounded-lg p-4 mb-4 space-y-3 text-sm">
+            <div className="border rounded-lg p-4 mb-4 space-y-3 text-sm">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-0.5 text-brand-navy" />
                 <p>
@@ -57,14 +57,11 @@ const PakistanContact = () => {
               </div>
             </div>
 
-            {/* Map with Black Bar Hidden */}
-            <div className="relative rounded-lg overflow-hidden border">
-              {/* Black bar cover */}
-              <div className="absolute top-0 left-0 w-full h-[56px] bg-white z-20"></div>
-
+            {/* Clean Google Map */}
+            <div className="rounded-lg overflow-hidden border">
               <iframe
                 title="Karachi Office Map"
-                src="https://www.google.com/maps/d/embed?mid=1JMzZUZez-TXZMm7jVMNTBmVJrbaCuEE&ehbc=2E312F"
+                src="https://www.google.com/maps?q=Fortune+Center+Shahrah-e-Faisal+Karachi&output=embed"
                 className="w-full h-64 border-0"
                 loading="lazy"
               />
@@ -78,7 +75,7 @@ const PakistanContact = () => {
             </h2>
 
             {/* Address Box */}
-            <div className="bg-white border rounded-lg p-4 mb-4 space-y-3 text-sm">
+            <div className="border rounded-lg p-4 mb-4 space-y-3 text-sm">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-0.5 text-brand-navy" />
                 <p>
@@ -105,14 +102,11 @@ const PakistanContact = () => {
               </div>
             </div>
 
-            {/* Map with Black Bar Hidden */}
-            <div className="relative rounded-lg overflow-hidden border">
-              {/* Black bar cover */}
-              <div className="absolute top-0 left-0 w-full h-[56px] bg-white z-20"></div>
-
+            {/* Clean Google Map */}
+            <div className="rounded-lg overflow-hidden border">
               <iframe
                 title="Lahore Office Map"
-                src="https://www.google.com/maps/d/embed?mid=10uacCU-_5ipOs0AgbK_tLis6pqsBTWc&ehbc=2E312F"
+                src="https://www.google.com/maps?q=Gulberg+Arcade+Main+Market+Lahore&output=embed"
                 className="w-full h-64 border-0"
                 loading="lazy"
               />
