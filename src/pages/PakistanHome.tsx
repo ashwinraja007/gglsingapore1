@@ -40,7 +40,7 @@ const pakistanHome = () => {
         <Suspense fallback={<LoadingComponent />}>
           <PAboutUs
             learnMorePath="/pakistan/about"
-            imageSrc="/lovable-uploads/1c085df7-9363-40dc-a724-ff004b473cac.png"
+            imageSrc="/Pabout.png"
           />
         </Suspense>
 
