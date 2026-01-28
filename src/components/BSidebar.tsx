@@ -15,8 +15,8 @@ const countries = [
   {
     code: "in",
     name: "India",
-    lat: 20.5937,
-    lng: 78.9629,
+    lat: 9.9323,
+    lng: 76.2996,
     cities: [
       {
         name: "Kochi",
