@@ -4,6 +4,7 @@ import { Menu, X, Linkedin, Facebook } from "lucide-react";
 import CountrySelector from "../common/CountrySelector";
 import BCountrySelector from "../common/BCountrySelector"; // <- BD selector
 import PCountrySelector from "../common/PCountrySelector"; // <- PK selector
+import UKCountrySelector from "../common/UKCountrySelector"; // <- UK selector
 
 interface NavPaths {
   home: string;
@@ -26,14 +27,15 @@ export const Header = ({ navPaths }: { navPaths?: NavPaths }) => {
   // AUTO DETECT REGION MODE
   const isBangladesh = location.pathname.startsWith("/bangladesh");
   const isPakistan = location.pathname.startsWith("/pakistan");
+  const isUK = location.pathname.startsWith("/uk");
 
   const paths: NavPaths = navPaths || {
-    home: isBangladesh ? "/bangladesh" : isPakistan ? "/pakistan" : "/",
-    about: isBangladesh ? "/bangladesh/about" : isPakistan ? "/pakistan/about" : "/about",
-    services: isBangladesh ? "/bangladesh/services" : isPakistan ? "/pakistan/services" : "/services",
-    careers: isBangladesh ? "/bangladesh/careers" : isPakistan ? "/pakistan/careers" : "/careers",
-    contact: isBangladesh ? "/bangladesh/contact" : isPakistan ? "/pakistan/contact" : "/contact",
-    globalPresence: isBangladesh ? "/bangladesh/global-presence" : isPakistan ? "/pakistan/global-presence" : "/global-presence",
+    home: isBangladesh ? "/bangladesh" : isPakistan ? "/pakistan" : isUK ? "/uk" : "/",
+    about: isBangladesh ? "/bangladesh/about" : isPakistan ? "/pakistan/about" : isUK ? "/uk/about" : "/about",
+    services: isBangladesh ? "/bangladesh/services" : isPakistan ? "/pakistan/services" : isUK ? "/uk/services" : "/services",
+    careers: isBangladesh ? "/bangladesh/careers" : isPakistan ? "/pakistan/careers" : isUK ? "/uk/careers" : "/careers",
+    contact: isBangladesh ? "/bangladesh/contact" : isPakistan ? "/pakistan/contact" : isUK ? "/uk/contact" : "/contact",
+    globalPresence: isBangladesh ? "/bangladesh/global-presence" : isPakistan ? "/pakistan/global-presence" : isUK ? "/uk/global-presence" : "/global-presence",
   };
 
   // Sticky Header Scroll
@@ -190,6 +192,8 @@ export const Header = ({ navPaths }: { navPaths?: NavPaths }) => {
               <BCountrySelector />
             ) : isPakistan ? (
               <PCountrySelector />
+            ) : isUK ? (
+              <UKCountrySelector />
             ) : (
               <CountrySelector />
             )}
@@ -240,6 +244,8 @@ export const Header = ({ navPaths }: { navPaths?: NavPaths }) => {
               <BCountrySelector />
             ) : isPakistan ? (
               <PCountrySelector />
+            ) : isUK ? (
+              <UKCountrySelector />
             ) : (
               <CountrySelector />
             )}

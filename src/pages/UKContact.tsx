@@ -28,6 +28,16 @@ const UKContact = () => {
                 </div>
               </div>
             </div>
+            
+            <div className="mt-8 rounded-lg overflow-hidden border border-gray-200 h-80">
+              <iframe
+                title="London Office Map"
+                src="https://www.google.com/maps?q=167-169+Great+Portland+Street+London+W1W+5PF&output=embed"
+                className="w-full h-full border-0"
+                loading="lazy"
+                allowFullScreen
+              />
+            </div>
           </div>
           
           <UKQuickEnquiry />

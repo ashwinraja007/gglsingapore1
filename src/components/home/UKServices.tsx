@@ -42,7 +42,7 @@ const EnhancedServiceCard = ({
             </div>
             <h3 className="text-sm font-semibold">{title}</h3>
           </div>
-          <p className="text-xs text-gray-600 line-clamp-3 leading-snug">
+          <p className="text-xs text-gray-600 leading-snug">
             {description}
           </p>
           <div className="text-xs text-brand-gold font-medium inline-flex items-center mt-1">
@@ -66,42 +66,42 @@ export const UKServices = () => {
     {
       image: "/hom1.png",
       title: "Ocean Freight",
-      description: "At GGL, we specialize in providing comprehensive ocean freight solutions that cater to the diverse needs of our clients. Whether you're shipping large volumes or smaller consignments, our services are designed to ensure efficiency, reliability, and cost-effectiveness",
+      description: "At GGL, we specialize in providing comprehensive ocean freight solutions that cater to the diverse needs of our clients. Whether you're shipping large volumes or smaller consignments, our services are designed to ensure efficiency, reliability, and cost-effectiveness. We offer both FCL (Full Container Load) and LCL (Less than Container Load) options, leveraging our strong relationships with major carriers to secure competitive rates and flexible sailing schedules.",
       icon: <Anchor />,
       link: "/uk/services/ocean-freight"
     },
     {
       image: "/hom4.png",
       title: "LCL Consolidation",
-      description: "We collect your goods from your location and prepare them for consolidation. This includes proper labelling, packaging, and documentation to ensure smooth transit.",
+      description: "We collect your goods from your location and prepare them for consolidation. This includes proper labelling, packaging, and documentation to ensure smooth transit. Our expert team manages the entire consolidation process, optimizing container space to reduce costs while ensuring your cargo is handled with care and arrives safely at its destination.",
       icon: <Warehouse />,
       link: "/uk/services/lcl-consolidation"
     },
     {
       image: "/hom3.png",
       title: "Transportation And Distribution",
-      description: "At GGL, we understand that efficient transportation and distribution are the backbone of a seamless supply chain. Our dedicated fleet and robust infrastructure ensure that your goods reach their destination on time, every time.",
+      description: "At GGL, we understand that efficient transportation and distribution are the backbone of a seamless supply chain. Our dedicated fleet and robust infrastructure ensure that your goods reach their destination on time, every time. We offer comprehensive domestic distribution services across the UK, including last-mile delivery, ensuring your products are delivered efficiently to your customers.",
       icon: <Truck />,
       link: "/uk/services/transportation"
     },
     {
       image: "/warehosing.png",
       title: "Warehousing",
-      description: "At GGL, we offer comprehensive warehousing and third-party logistics (3PL) solutions designed to streamline your supply chain operations. Our services are tailored to meet the diverse needs of businesses, ensuring efficiency, reliability, and scalability.",
+      description: "At GGL, we offer comprehensive warehousing and third-party logistics (3PL) solutions designed to streamline your supply chain operations. Our services are tailored to meet the diverse needs of businesses, ensuring efficiency, reliability, and scalability. Our modern facilities are equipped with advanced inventory management systems, providing real-time visibility and control over your stock.",
       icon: <Warehouse />,
       link: "/uk/services/warehousing"
     },
     {
       image: "/aircargo1.png",
       title: "Air Freight",
-      description: "At GGL, we offer a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams provide seamless air import, export, and express options, all on a convenient door-to-door basis.",
+      description: "At GGL, we offer a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams provide seamless air import, export, and express options, all on a convenient door-to-door basis. We handle time-sensitive shipments with precision, offering expedited services for urgent cargo and economical options for less critical deliveries.",
       icon: <Plane />,
       link: "/uk/services/air-freight"
     },
     {
       image: "/cargoh1.png",
       title: "Project Cargo",
-      description: "At GGL, we specialize in managing project cargo—the transportation of large, heavy, high-value, or complex pieces of equipment and materials essential to major infrastructure, engineering, or industrial projects.",
+      description: "At GGL, we specialize in managing project cargo—the transportation of large, heavy, high-value, or complex pieces of equipment and materials essential to major infrastructure, engineering, or industrial projects. Our dedicated project cargo team provides end-to-end solutions, including route planning, heavy lift handling, and customs clearance, ensuring your complex shipments are executed flawlessly.",
       icon: <Warehouse />,
       link: "/uk/services/project-cargo"
     }
