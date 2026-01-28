@@ -124,7 +124,3 @@ const ukServices = () => {
 };
 
 export default ukServices;
-
-
-
-export default UKServices;
