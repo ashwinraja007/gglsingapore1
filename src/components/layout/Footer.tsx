@@ -100,7 +100,8 @@ Singapore - 099447`,
     email: "shazia.pklhe@globalconsol.com",
   };
 
-  const e: "GGL (UK) Ltd.",
+  const ukContact = {
+    title: "GGL (UK) Ltd.",
     address: "167-169 Great Portland Street 5th Floor, London W1W 5PF, United Kingdom",
     phone: "+44 (0) 203 393 9508",
   };
