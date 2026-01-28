@@ -71,7 +71,7 @@ export const PServices = () => {
       link: "/pakistan/services/ocean-freight"
     },
     {
-      image: "/ps2.png",
+      image: "/ps5.png",
       title: "LCL Consolidation",
       description: "We collect your goods from your location and prepare them for consolidation. This includes proper labelling, packaging, and documentation to ensure smooth transit.",
       icon: <Warehouse />,
@@ -92,7 +92,7 @@ export const PServices = () => {
       link: "/pakistan/services/warehousing"
     },
     {
-      image: "/ps5.png",
+      image: "/ps2.png",
       title: "Air Freight",
       description: "At GGL, we offer a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams provide seamless air import, export, and express options, all on a convenient door-to-door basis.",
       icon: <Plane />,
