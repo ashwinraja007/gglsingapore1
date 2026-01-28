@@ -33,6 +33,13 @@ import PakistanCareers from "./pages/pakistancareers";
 import PakistanServices from "./pages/PakistanServices";
 import PakistanGlobalPresence from "./pages/PakistanGlobalPresence";
 
+import UKHome from "./pages/UKHome";
+import UKContact from "./pages/UKContact";
+import UKAbout from "./pages/UKAbout";
+import UKServices from "./pages/UKServices";
+import UKGlobalPresence from "./pages/UKGlobalPresence";
+import UKCareers from "./pages/UKCareers";
+
 import CustomsClearance from "./pages/services/CustomsClearance";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import GlobalPresence from "./pages/GlobalPresence";
@@ -103,6 +110,24 @@ function App() {
             <Route path="/pakistan/services/project-cargo" element={<ProjectCargo />} />
             <Route path="/pakistan/services/customs-clearance" element={<CustomsClearance />} />
             <Route path="/pakistan/services/warehousing" element={<Warehousing />} />
+
+            {/* UK Routes */}
+            <Route path="/uk" element={<UKHome />} />
+            <Route path="/uk/about" element={<UKAbout />} />
+            <Route path="/uk/services" element={<UKServices />} />
+            <Route path="/uk/contact" element={<UKContact />} />
+            <Route path="/uk/global-presence" element={<UKGlobalPresence />} />
+            <Route path="/uk/careers" element={<UKCareers />} />
+
+            {/* UK Service Routes */}
+            <Route path="/uk/services/transportation" element={<Transportation />} />
+            <Route path="/uk/services/liquid-transportation" element={<LiquidTransportation />} />
+            <Route path="/uk/services/air-freight" element={<AirFreight />} />
+            <Route path="/uk/services/ocean-freight" element={<OceanFreight />} />
+            <Route path="/uk/services/lcl-consolidation" element={<LCLConsolidation />} />
+            <Route path="/uk/services/project-cargo" element={<ProjectCargo />} />
+            <Route path="/uk/services/customs-clearance" element={<CustomsClearance />} />
+            <Route path="/uk/services/warehousing" element={<Warehousing />} />
 
              <Route path="/admin" element={<AdminDashboard />} />
             {/* Service specific pages */}

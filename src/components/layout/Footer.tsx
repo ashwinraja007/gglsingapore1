@@ -13,6 +13,7 @@ export const Footer = () => {
   const location = useLocation();
   const isBangladesh = location.pathname.startsWith("/bangladesh");
   const isPakistan = location.pathname.startsWith("/pakistan");
+  const isUK = location.pathname.startsWith("/uk");
 
   const footerAnimation = {
     hidden: {
@@ -38,6 +39,15 @@ export const Footer = () => {
         { name: "Careers", path: "/pakistan/careers" },
         { name: "Global Presence", path: "/pakistan/global-presence" },
         { name: "Contact Us", path: "/pakistan/contact" },
+      ]
+    : isUK
+    ? [
+        { name: "Home", path: "/uk" },
+        { name: "About", path: "/uk/about" },
+        { name: "Services", path: "/uk/services" },
+        { name: "Careers", path: "/uk/careers" },
+        { name: "Global Presence", path: "/uk/global-presence" },
+        { name: "Contact Us", path: "/uk/contact" },
       ]
     : isBangladesh
     ? [
@@ -90,7 +100,12 @@ Singapore - 099447`,
     email: "shazia.pklhe@globalconsol.com",
   };
 
-  const contact = isBangladesh ? bangladeshContact : singaporeContact;
+  const e: "GGL (UK) Ltd.",
+    address: "167-169 Great Portland Street 5th Floor, London W1W 5PF, United Kingdom",
+    phone: "+44 (0) 203 393 9508",
+  };
+
+  const contact = isBangladesh ? bangladeshContact : isUK ? ukContact : singaporeContact;
 
   return (
     <footer className="pt-16 pb-8 bg-gradient-to-b from-white to-gray-100">
