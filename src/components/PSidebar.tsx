@@ -12,44 +12,58 @@ interface SidebarProps {
 }
 
 const countries = [{
-  code: "in",
+ code: "in",
   name: "India",
-  lat: 19.00745,
-  lng: 73.03271,
+  lat: 9.9323,
+  lng: 76.2996,
   cities: [{
+    name: "Kochi",
+    lat: 9.9323,
+    lng: 76.2996,
+    address: "CC 59/801A Elizabeth Memorial Building, Thevara Ferry Jn, Cochin 682013 , Kerala.",
+    contacts: ["+91 484 4019192 / 93"],
+    email: "info.india@ggl.sg"
+  },{
     name: "Mumbai",
-    lat: 19.00745,
-    lng: 73.03271,
-    address: "407, mayuresh planet, plot no - 42 & 43, sector-15, cbd belapur, navi mumbai, maharashtra, 400614",
-    contacts: ["Export customer service: +91 2245174102, +91 2245174109, +91 2245174118", "Export docs team: +91 2245174103, +91 2245174105", "Import docs team: +91 2245174104, +91 2245174106", "Import customer service: +91 2245174113, +91 2245174110, +91 2245174107, +91 2245174112"],
+    lat: 19.01123,
+    lng: 73.03715,
+    address: "803 / 804, Shelton Cubix, Plot No. 87, Sector-15,CBD Belapur, Navi Mumbai, Maharastra - 400614.",
+    contacts: ["022-35131688 / 35113475 / 35082586"],
     email: "info.india@ggl.sg"
-}, {
+  }, {
+    name: "Mumbai-Andheri",
+    lat: 19.11303, 
+    lng: 72.86848,
+    address: "503, Midas, Sahar Plaza Complex,Sir M.V Road,Andheri East, Mumbai 400059",
+    contacts: ["+91 8879756838"],
+    email: "info.india@ggl.sg"
+  },{
     name: "Delhi",
-    lat: 28.53837,
-    lng: 77.29022,
-    address: "JA 511, DLF Tower A, Jasola District Centre, New Delhi, 110025",
-    contacts: ["+91 9999022030"],
+    lat: 28.62748,
+    lng: 77.2221,
+    address: "903, Surya Kiran Building K.G Marg,Connaught Place New Delhi - 110001",
+    contacts: ["+91 11 493224477 / 48 /49"],
     email: "info.india@ggl.sg"
   }, {
-    name: "Chennai",
-    lat: 13.0827,
-    lng: 80.2707,
-    address: "Old No G1, New G3, KAIZEN 2nd & 3rd Floor Plot No, 565Q, G Block, Annanagar East, Chennai, Tamil Nadu 600102",
-    contacts: ["+91 9123523496"],
-    email: "info.india@ggl.sg"
-  }, {
+    name: "Punjab",
+    lat: 30.89135,
+    lng: 75.93255,
+    address: "No. 7A, G K Estate,Hari Nagar, Mundian Kalan,Chandigarh Road,Ludhiana, Punjab – 141015",
+    contacts: ["+91 62845 49881"],
+    email: "navjot.kohli@ggl.sg"
+  },{
     name: "Bangalore",
-    lat: 12.9716,
-    lng: 77.5946,
-    address: "No 2M-216, First Floor, 2nd Main, East Of NGEF Layout, Kasturinagar, Bangalore-560043",
-    contacts: ["+91 9986949743"],
+    lat: 13.01855,
+    lng: 77.64191,
+    address: "3C-964 IIIrd Cross Street,HRBR LAYOUT 1st Block,Kalayan Nagar Bannaswadi,Bengaluru - 560043.",
+    contacts: ["+91 9841676259"],
     email: "info.india@ggl.sg"
   }, {
     name: "Kolkata",
-    lat: 22.5726,
-    lng: 88.3639,
-    address: "Room No - 29, 4th Floor, 6, Jawaharlal Nehru Rd, Siddha Esplanade, Adjacent to Metro Central (Previously Metro Cinema), Kolkata, West Bengal 700013",
-    contacts: ["+91 6290921534"],
+    lat: 22.5769, 
+    lng: 88.4341,
+    address: "Merlin Matrix, 3rd floor, Room No. 303 10,D. N. BLOCK, SECTOR - V SALT LAKE CITY, Kolkata – 700091",
+    contacts: ["+91 33 46025458 / 59 / 60/ 61"],
     email: "info.india@ggl.sg"
   }]
 }, {
@@ -167,8 +181,7 @@ const countries = [{
     lat: 23.8103,
     lng: 90.4125,
     address: "ID #9-N (New), 9-M(Old-N), 9th floor, Tower 1, Police Plaza Concord No.2, Road # 144, Gulshan Model Town, Dhaka 1215, Bangladesh",
-    contacts: ["+880 1716 620989"],
-    email: "info@globalconsol.com"
+    contacts: ["+880 1716 620989"]
   }]
 },{
   code: "ae",
@@ -180,19 +193,22 @@ const countries = [{
     lat: 25.2048,
     lng: 55.2708,
     address: "Office # 509, Al Nazar Plaza, Oud Metha, Dubai, U.A.E",
-    contacts: ["+971 4 3433388"]
+    contacts: ["+971 4 3433388"],
+    email: "inquiries@futurenetlogistics.com" 
   }, {
     name: "JEBEL ALI",
     lat: 24.9857,
     lng: 55.1436,
     address: "Warehouse# Zg06, Near Roundabout 13, North Zone, p. B No: 30821, jebel Ali, Dubai, U.A.E",
-    contacts: ["+971 4 8819787"]
+    contacts: ["+971 4 8819787"],
+    email: "info@futurenetlogistics.com"
   }, {
     name: "ABU DHABI",
     lat: 24.4539,
     lng: 54.3773,
     address: "PB No: 30500, Office 3-1, Unit 101, 1st Floor, Al Jaber Jewellery Building, Al Khalidiya, Abu Dhabi, U.A.E",
-    contacts: ["+971 50 4337214"]
+    contacts: ["+971 50 4337214"],
+    email: "info@futurenetlogistics.com"
   }]
 }, {
   code: "qa",
@@ -204,7 +220,8 @@ const countries = [{
     lat: 25.276987,
     lng: 51.520008,
     address: "Office no: 48, 2nd Floor, Al matar Centre, Old Airport Road Doha",
-    contacts: ["0974 33622555"]
+    contacts: ["0974 33622555"],
+    email: "info@oneglobalqatar.com"
   }]
 }, {
   code: "sa",
@@ -216,19 +233,22 @@ const countries = [{
     lat: 26.4207,
     lng: 50.0888,
     address: "Building No.2817, Secondary No9403, King Faisal Road, Al Tubebayshi Dist, Dammam, KSA 32233",
-    contacts: ["+966 13 343 0003"]
+    contacts: ["+966 13 343 0003"],
+    email: "info.sa@futurenetlogistics.com"
   }, {
     name: "Riyadh",
     lat: 24.7136,
     lng: 46.6753,
     address: "Room No. T18, Rail Business Centre, Bldg No. 3823, Omar Aimukhtar St, Thulaim, Riyadh 11332",
-    contacts: ["+966 11295 0020"]
+    contacts: ["+966 11295 0020"],
+    email: "info.sa@futurenetlogistics.com"
   }, {
     name: "Jeddah",
     lat: 21.4858,
     lng: 39.1925,
     address: "Al-Madinah Al-Munawarah Road, Al Sharafeyah, Jeddah 4542 -22234, Kingdom of Saudi Arabia",
-    contacts: ["+966 12 578 0874"]
+    contacts: ["+966 12 578 0874"],
+    email: "info.sa@futurenetlogistics.com"
   }]
 }, {
   code: "us",
@@ -240,7 +260,8 @@ const countries = [{
     lat: 41.8781,
     lng: -87.6298,
     address: "939 W. North Avenue, Suite 750, Chicago, IL 60642",
-    contacts: ["+1 847 254 7320"]
+    contacts: ["+1 847 254 7320"],
+    email: "info@gglusa.us"
   }, {
     name: "New York",
     lat: 40.7128,
