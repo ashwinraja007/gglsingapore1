@@ -14,7 +14,9 @@ const ukNavPaths = {
 const UKGlobalPresence = () => {
   return (
     <>
-      <Header balPresenceComponent />
+      <Header navPaths={ukNavPaths} />
+      <div className="pt-20">
+        <UKGlobalPresenceComponent />
       </div>
       <Footer />
     </>
