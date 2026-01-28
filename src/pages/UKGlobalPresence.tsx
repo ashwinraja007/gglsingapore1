@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import MapContainer from '@/components/MapContainer';
-import PSidebar from '@/components/PSidebar';
+import USidebar from '@/components/USidebar';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { motion } from 'framer-motion';
 import { Map, Menu } from 'lucide-react';
