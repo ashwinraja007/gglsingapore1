@@ -60,20 +60,20 @@ const ServiceCard = ({ icon, title, description, image, link, id }: any) => {
   );
 };
 
-const PakistanServices = () => {
+const ukServices = () => {
   const services = [
-    { id: 1, htmlId: "ocean-freight", icon: <Ship className="w-5 h-5" />, title: "Ocean Freight", image: "/oceanf.png", description: "At GGL, our dedicated Ocean Freight Department specializes in comprehensive freight management services for both Less-than-Container Load (LCL) and Full Container Load (FCL) shipments.", link: "/pakistan/services/ocean-freight" },
-    { id: 2, htmlId: "lcl-consolidation", icon: <Warehouse className="w-5 h-5" />, title: "LCL Consolidation", image: "/hom4.png", description: "We collect your goods from your location and prepare them for consolidation. This includes proper labelling, packaging, and documentation to ensure smooth transit.", link: "/pakistan/services/lcl-consolidation" },
-    { id: 3, htmlId: "transportation", icon: <Truck className="w-5 h-5" />, title: "Transportation", image: "/CARGO.png", description: "Efficient transportation and distribution are the backbone of a seamless supply chain. Our fleet and infrastructure ensure on-time delivery every time.", link: "/pakistan/services/transportation" },
-    { id: 4, htmlId: "warehousing", icon: <Warehouse className="w-5 h-5" />, title: "Warehousing", image: "/warhouseh1.png", description: "We offer full-service warehousing and third-party logistics (3PL) to streamline your supply chain with flexible, reliable, and scalable solutions.", link: "/pakistan/services/warehousing" },
-    { id: 5, htmlId: "air-freight", icon: <Plane className="w-5 h-5" />, title: "Air Freight", image: "/aircargo2.png", description: "Our air freight services provide fast, reliable, and flexible global shipping — including import/export, express, and door-to-door solutions.", link: "/pakistan/services/air-freight" },
-    { id: 6, htmlId: "project-cargo", icon: <Warehouse className="w-5 h-5" />, title: "Project Cargo", image: "/cargoh1.png", description: "We specialize in delivering end-to-end logistics for heavy, oversized, and time-critical shipments, ensuring efficiency and safety.", link: "/pakistan/services/project-cargo" }
+    { id: 1, htmlId: "ocean-freight", icon: <Ship className="w-5 h-5" />, title: "Ocean Freight", image: "/oceanf.png", description: "At GGL, our dedicated Ocean Freight Department specializes in comprehensive freight management services for both Less-than-Container Load (LCL) and Full Container Load (FCL) shipments.", link: "/uk/services/ocean-freight" },
+    { id: 2, htmlId: "lcl-consolidation", icon: <Warehouse className="w-5 h-5" />, title: "LCL Consolidation", image: "/hom4.png", description: "We collect your goods from your location and prepare them for consolidation. This includes proper labelling, packaging, and documentation to ensure smooth transit.", link: "/uk/services/lcl-consolidation" },
+    { id: 3, htmlId: "transportation", icon: <Truck className="w-5 h-5" />, title: "Transportation", image: "/CARGO.png", description: "Efficient transportation and distribution are the backbone of a seamless supply chain. Our fleet and infrastructure ensure on-time delivery every time.", link: "/uk/services/transportation" },
+    { id: 4, htmlId: "warehousing", icon: <Warehouse className="w-5 h-5" />, title: "Warehousing", image: "/warhouseh1.png", description: "We offer full-service warehousing and third-party logistics (3PL) to streamline your supply chain with flexible, reliable, and scalable solutions.", link: "/uk/services/warehousing" },
+    { id: 5, htmlId: "air-freight", icon: <Plane className="w-5 h-5" />, title: "Air Freight", image: "/aircargo2.png", description: "Our air freight services provide fast, reliable, and flexible global shipping — including import/export, express, and door-to-door solutions.", link: "/uk/services/air-freight" },
+    { id: 6, htmlId: "project-cargo", icon: <Warehouse className="w-5 h-5" />, title: "Project Cargo", image: "/cargoh1.png", description: "We specialize in delivering end-to-end logistics for heavy, oversized, and time-critical shipments, ensuring efficiency and safety.", link: "/uk/services/project-cargo" }
   ];
 
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      <Header navPaths={pakistanNavPaths} />
+      <Header navPaths={ukNavPaths} />
       <main className="flex-grow pt-16 md:pt-20">
         <section className="bg-gradient-to-r from-gray-900 to-brand-navy text-white relative overflow-hidden">
           <div className="absolute inset-0 z-0">
@@ -124,7 +124,7 @@ const PakistanServices = () => {
   );
 };
 
-export default PakistanServices;
+export default ukServices;
 
 const UKServices = () => {
   return (
