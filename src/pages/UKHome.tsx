@@ -6,10 +6,19 @@ import UKServices from "@/components/home/UKServices";
 import UKGlobalPresence from "@/components/home/UKGlobalPresence";
 import UKQuickEnquiry from "@/components/home/UKQuickEnquiry";
 
+const ukNavPaths = {
+  home: "/uk",
+  about: "/uk/about",
+  services: "/uk/services",
+  careers: "/uk/careers",
+  contact: "/uk/contact",
+  globalPresence: "/uk/global-presence",
+};
+
 const UKHome = () => {
   return (
     <>
-      <Header />
+      <Header navPaths={ukNavPaths} />
       <UKHero />
       <UKAboutUs />
       <UKServices />

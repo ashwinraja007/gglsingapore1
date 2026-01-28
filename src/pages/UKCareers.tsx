@@ -4,10 +4,19 @@ import { Button } from "@/components/ui/button";
 import { Briefcase, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const ukNavPaths = {
+  home: "/uk",
+  about: "/uk/about",
+  services: "/uk/services",
+  careers: "/uk/careers",
+  contact: "/uk/contact",
+  globalPresence: "/uk/global-presence",
+};
+
 const UKCareers = () => {
   return (
     <>
-      <Header />
+      <Header navPaths={ukNavPaths} />
       <main className="pt-24 pb-12 bg-gray-50 min-h-screen">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">

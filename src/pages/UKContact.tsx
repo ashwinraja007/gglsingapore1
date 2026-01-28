@@ -3,10 +3,19 @@ import { Footer } from "@/components/layout/Footer";
 import UKQuickEnquiry from "@/components/home/UKQuickEnquiry";
 import { MapPin, Phone } from "lucide-react";
 
+const ukNavPaths = {
+  home: "/uk",
+  about: "/uk/about",
+  services: "/uk/services",
+  careers: "/uk/careers",
+  contact: "/uk/contact",
+  globalPresence: "/uk/global-presence",
+};
+
 const UKContact = () => {
   return (
     <>
-      <Header />
+      <Header navPaths={ukNavPaths} />
       <main className="pt-24 pb-12">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold text-center mb-8 text-brand-navy">Contact Us - UK</h1>
