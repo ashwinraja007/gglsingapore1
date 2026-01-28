@@ -109,25 +109,33 @@ const countries = [
         email: "info@oecl.sg",
       },
     ],
-  },
-
-  {
-    code: "sg",
+  }, {
+  code: "cn",
+  name: "China",
+    lat: 22.54262,
+    lng: 114.11696,
+  cities: [{
+    name: "China",
+    lat: 22.54262,
+    lng: 114.11696,
+    address: "13C02, Block A, Zhaoxin Huijin Plaza 3085 Shennan East Road, Luohu, Shenzhen.",
+    contacts: ["+86 75582222447"],
+    email: "helen@haixun.co"
+  }]
+}, {
+  code: "sg",
+  name: "Singapore",
+  lat: 1.3521,
+  lng: 103.8198,
+  cities: [{
     name: "Singapore",
     lat: 1.3521,
     lng: 103.8198,
-    cities: [
-      {
-        name: "Singapore",
-        lat: 1.3521,
-        lng: 103.8198,
-        address:
-          "Blk 511 Kampong Bahru Road, #03-01 Keppel Distripark, Singapore - 099447",
-        contacts: ["+65 69084188"],
-        email: "june@ggl.sg",
-      },
-    ],
-  }, {
+    address: "Blk 511 Kampong Bahru Road, #03-01 Keppel Distripark, Singapore - 099447",
+    contacts: ["+ 65 69084188"],
+    email: "june@ggl.sg"
+  }]
+}, {
   code: "id",
   name: "Indonesia",
     lat: -6.2088,
