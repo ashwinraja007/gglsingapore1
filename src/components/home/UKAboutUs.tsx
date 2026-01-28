@@ -36,11 +36,6 @@ const UKAboutUs = ({
             <p className="text-gray-600 mb-6 text-base text-justify">
               Strategically positioned to serve the UK market, GGL connects businesses to key global ports and hubs. Our expansive network ensures fast, reliable, and cost-effective options for freight forwarders and logistics providers.
             </p>
-            <Link to="/uk/about">
-              <Button variant="outline" size="sm" className="text-sm">
-                Learn More
-              </Button>
-            </Link>
           </motion.div>
 
           {/* Image Section */}
