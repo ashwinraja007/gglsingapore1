@@ -7,8 +7,9 @@ const UKHero = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const sliderImages = [
-    '/oceanf.png',
-    '/hom3.png',
+    '/U1.png',
+    '/U2.png',
+    '/U3.png',
   ];
 
   useEffect(() => {
