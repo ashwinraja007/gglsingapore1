@@ -1,5 +1,10 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Plane, Ship, Truck, Warehouse } from "lucide-react";
+import ScrollToTop from "@/components/common/ScrollToTop";
 
 const ukNavPaths = {
   home: "/uk",
