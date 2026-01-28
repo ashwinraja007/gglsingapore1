@@ -27,7 +27,7 @@ const countries: CountryData[] = [
   { country: "CHINA", company: "HAIXUN", website: "https://www.haixun.co", priority: 6, flag: "/china.svg" },
   { country: "AUSTRALIA", company: "GGL", website: "https://www.gglaustralia.com", priority: 7, flag: "/au.svg" },
   { country: "INDIA", company: "GGL", website: "https://gglindia.com", priority: 8, flag: "/in.svg" },
-  { country: "PAKISTAN", company: "GC", website: "https://www.globalconsol.com/pakistan/home", priority: 11, flag: "/pk.svg" },
+  { country: "PAKISTAN", company: "GGL", website: "https://www.ggl.sg/pakistan", priority: 11, flag: "/pk.svg" },
   { country: "BANGLADESH", company: "GGL", website: "https://www.ggl.sg/bangladesh", priority: 9, flag: "/bd.svg" },
   { country: "SRI LANKA", company: "GC", website: "https://www.globalconsol.com/sri-lanka/home", priority: 10, flag: "/lk.svg" },
   { country: "QATAR", company: "ONE", website: "https://oneglobalqatar.com/", priority: 12, flag: "/qa.svg" },
