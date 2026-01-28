@@ -110,6 +110,26 @@ const countries = [
       },
     ],
   }, {
+  code: "pk",
+  name: "Pakistan",
+  lat: 24.8608,
+  lng: 67.0097,
+  cities: [{
+    name: "Karachi",
+    lat: 24.8608,
+    lng: 67.0097,
+    address: "Suite No.301, 3rd Floor, Fortune Center, Shahrah-e-Faisal, Block 6, PECHS, Karachi, Pakistan",
+    contacts: ["+92-300-8282511", "+92-21-34302281-5"],
+    email: "info.pk@globalconsol.com"
+  }, {
+    name: "Lahore",
+    lat: 31.5204,
+    lng: 74.3487,
+    address: "Office # 301, 3rd Floor, Gulberg Arcade Main Market, Gulberg 2, Lahore, Pakistan",
+    contacts: ["+92 42-35782306/07/08"],
+    email: "info.pk@globalconsol.com"
+  }]
+}, {
   code: "cn",
   name: "China",
     lat: 22.54262,
