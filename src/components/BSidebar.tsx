@@ -215,19 +215,6 @@ const countries = [
     email: "info@globalconsol.com"
   }]
 }, {
-  code: "sg",
-  name: "Singapore",
-  lat: 1.3521,
-  lng: 103.8198,
-  cities: [{
-    name: "Singapore",
-    lat: 1.3521,
-    lng: 103.8198,
-    address: "Blk 511 Kampong Bahru Road, #03-01 Keppel Distripark, Singapore - 099447",
-    contacts: ["+ 65 69084188"],
-    email: "june@ggl.sg"
-  }]
-},{
   code: "ae",
   name: "United Arab Emirates (UAE)",
     lat: 25.2048,
