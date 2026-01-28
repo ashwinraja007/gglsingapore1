@@ -25,7 +25,7 @@ const PakistanAbout = () => {
         <section className="relative py-20 text-white px-6 mt-16 overflow-hidden">
           <div className="absolute inset-0">
             <img
-              src="/oceanf.png"
+              src="/Pabout.png"
               alt="Pakistan logistics"
               className="w-full h-full object-cover scale-105"
             />
