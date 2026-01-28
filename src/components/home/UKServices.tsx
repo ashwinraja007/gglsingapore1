@@ -64,42 +64,42 @@ const EnhancedServiceCard = ({
 export const PServices = () => {
   const services = [
     {
-      image: "/hom1.png",
+      image: "/us1.png",
       title: "Ocean Freight",
       description: "At GGL, we specialize in providing comprehensive ocean freight solutions that cater to the diverse needs of our clients. Whether you're shipping large volumes or smaller consignments, our services are designed to ensure efficiency, reliability, and cost-effectiveness",
       icon: <Anchor />,
       link: "/uk/services/ocean-freight"
     },
     {
-      image: "/hom4.png",
+      image: "/us2.png",
       title: "LCL Consolidation",
       description: "We collect your goods from your location and prepare them for consolidation. This includes proper labelling, packaging, and documentation to ensure smooth transit.",
       icon: <Warehouse />,
       link: "/uk/services/lcl-consolidation"
     },
     {
-      image: "/hom3.png",
+      image: "/us3.png",
       title: "Transportation And Distribution",
       description: "At GGL, we understand that efficient transportation and distribution are the backbone of a seamless supply chain. Our dedicated fleet and robust infrastructure ensure that your goods reach their destination on time, every time.",
       icon: <Truck />,
       link: "/uk/services/transportation"
     },
     {
-      image: "/warehosing.png",
+      image: "/us4.png",
       title: "Warehousing",
       description: "At GGL, we offer comprehensive warehousing and third-party logistics (3PL) solutions designed to streamline your supply chain operations. Our services are tailored to meet the diverse needs of businesses, ensuring efficiency, reliability, and scalability.",
       icon: <Warehouse />,
       link: "/uk/services/warehousing"
     },
     {
-      image: "/aircargo1.png",
+      image: "/us5.png",
       title: "Air Freight",
       description: "At GGL, we offer a comprehensive range of air freight services designed to meet all your shipping needs. Our expert air freight teams provide seamless air import, export, and express options, all on a convenient door-to-door basis.",
       icon: <Plane />,
       link: "/uk/services/air-freight"
     },
     {
-      image: "/cargoh1.png",
+      image: "/us6.png",
       title: "Project Cargo",
       description: "At GGL, we specialize in managing project cargo—the transportation of large, heavy, high-value, or complex pieces of equipment and materials essential to major infrastructure, engineering, or industrial projects.",
       icon: <Warehouse />,
