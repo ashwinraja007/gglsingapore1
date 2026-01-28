@@ -7,8 +7,9 @@ const Hero = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const sliderImages = [
-    '/oceanf.png',
-    '/hom3.png',
+    '/P1.png',
+    '/P2.png',
+    '/P3.png',
   ];
 
   useEffect(() => {
