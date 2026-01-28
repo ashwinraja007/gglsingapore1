@@ -11,103 +11,123 @@ interface SidebarProps {
   onClose: () => void;
 }
 
-const countries = [{
-    name: "Kochi",
-    lat: 9.9323,
-    lng: 76.2996,
-    address: "CC 59/801A Elizabeth Memorial Building, Thevara Ferry Jn, Cochin 682013 , Kerala.",
-    contacts: ["+91 484 4019192 / 93"],
-    email: "info.india@ggl.sg"
-  },{
-    name: "Mumbai",
-    lat: 19.01123,
-    lng: 73.03715,
-    address: "803 / 804, Shelton Cubix, Plot No. 87, Sector-15,CBD Belapur, Navi Mumbai, Maharastra - 400614.",
-    contacts: ["022-35131688 / 35113475 / 35082586"],
-    email: "info.india@ggl.sg"
-  }, {
-    name: "Mumbai-Andheri",
-    lat: 19.11303, 
-    lng: 72.86848,
-    address: "503, Midas, Sahar Plaza Complex,Sir M.V Road,Andheri East, Mumbai 400059",
-    contacts: ["+91 8879756838"],
-    email: "info.india@ggl.sg"
-  }, {
-    name: "Ludhiana",
-    lat: 30.89135,
-    lng: 75.93255,
-    address: "No. 7A, G K Estate,Hari Nagar, Mundian Kalan,Chandigarh Road,Ludhiana, Punjab – 141015",
-    contacts: ["+91 62845 49881"],
-    email: "navjot.kohli@ggl.sg"
-  },{
-    name: "Delhi",
-    lat: 28.62748,
-    lng: 77.2221,
-    address: "903, Surya Kiran Building K.G Marg,Connaught Place New Delhi - 110001",
-    contacts: ["+91 11 493224477 / 48 /49"],
-    email: "info.india@ggl.sg"
-  }, {
-    name: "Bangalore",
-    lat: 13.01855,
-    lng: 77.64191,
-    address: "3C-964 IIIrd Cross Street,HRBR LAYOUT 1st Block,Kalayan Nagar Bannaswadi,Bengaluru - 560043.",
-    contacts: ["+91 9841676259"],
-    email: "info.india@ggl.sg"
-  }, {
-    name: "Kolkata",
-    lat: 22.5769, 
-    lng: 88.4341,
-    address: "Merlin Matrix, 3rd floor, Room No. 303 10,D. N. BLOCK, SECTOR - V SALT LAKE CITY, Kolkata – 700091",
-    contacts: ["+91 33 46025458 / 59 / 60/ 61"],
-    email: "info.india@ggl.sg"
-  }]
-}, {
-  code: "my",
-  name: "Malaysia",
-  lat: 1.4720,
-  lng: 103.9027,
-  cities: [{
-    name: "PASIRGUDANG",
-    lat: 1.4720,
+const countries = [
+  {
+    code: "in",
+    name: "India",
+    lat: 20.5937,
+    lng: 78.9629,
+    cities: [
+      {
+        name: "Kochi",
+        lat: 9.9323,
+        lng: 76.2996,
+        address:
+          "CC 59/801A Elizabeth Memorial Building, Thevara Ferry Jn, Cochin 682013, Kerala.",
+        contacts: ["+91 484 4019192 / 93"],
+        email: "info.india@ggl.sg",
+      },
+      {
+        name: "Mumbai",
+        lat: 19.01123,
+        lng: 73.03715,
+        address:
+          "803 / 804, Shelton Cubix, Plot No. 87, Sector-15, CBD Belapur, Navi Mumbai, Maharashtra - 400614.",
+        contacts: ["022-35131688 / 35113475 / 35082586"],
+        email: "info.india@ggl.sg",
+      },
+      {
+        name: "Mumbai-Andheri",
+        lat: 19.11303,
+        lng: 72.86848,
+        address:
+          "503, Midas, Sahar Plaza Complex, Sir M.V Road, Andheri East, Mumbai 400059",
+        contacts: ["+91 8879756838"],
+        email: "info.india@ggl.sg",
+      },
+      {
+        name: "Ludhiana",
+        lat: 30.89135,
+        lng: 75.93255,
+        address:
+          "No. 7A, G K Estate, Hari Nagar, Mundian Kalan, Chandigarh Road, Ludhiana, Punjab – 141015",
+        contacts: ["+91 62845 49881"],
+        email: "navjot.kohli@ggl.sg",
+      },
+      {
+        name: "Delhi",
+        lat: 28.62748,
+        lng: 77.2221,
+        address:
+          "903, Surya Kiran Building, K.G Marg, Connaught Place, New Delhi - 110001",
+        contacts: ["+91 11 49322447"],
+        email: "info.india@ggl.sg",
+      },
+      {
+        name: "Bangalore",
+        lat: 13.01855,
+        lng: 77.64191,
+        address:
+          "3C-964 IIIrd Cross Street, HRBR Layout 1st Block, Kalyan Nagar, Bengaluru - 560043",
+        contacts: ["+91 9841676259"],
+        email: "info.india@ggl.sg",
+      },
+      {
+        name: "Kolkata",
+        lat: 22.5769,
+        lng: 88.4341,
+        address:
+          "Merlin Matrix, 3rd Floor, Room 303, DN Block, Sector V, Salt Lake City, Kolkata – 700091",
+        contacts: ["+91 33 46025458"],
+        email: "info.india@ggl.sg",
+      },
+    ],
+  },
+
+  {
+    code: "my",
+    name: "Malaysia",
+    lat: 1.472,
     lng: 103.9027,
-    address: "Unit 20-03A, Level 20 Menara Zurich, 15 Jalan Dato Abdullah Tahir, 80300 Johor Bahru",
-    contacts: ["+603-3319 2778 / 74 / 75, 79"],
-    email: "info@oecl.sg"
-  }, {
-    name: "PORTKLANG",
-    lat: 3.0038,
-    lng: 101.3929,
-    address: "MTBBT 2, 3A-5, Jalan Batu Nilam 16, The Landmark (Behind AEON Mall), Bandar Bukit Tinggi 2, 41200, Klang, Selangor D.E",
-    contacts: ["+603 - 3319 2778 / 74 / 75"],
-    email: "info@oecl.sg"
-  }]
-}, {
-  code: "cn",
-  name: "China",
-    lat: 22.54262,
-    lng: 114.11696,
-  cities: [{
-    name: "China",
-    lat: 22.54262,
-    lng: 114.11696,
-    address: "13C02, Block A, Zhaoxin Huijin Plaza 3085 Shennan East Road, Luohu, Shenzhen.",
-    contacts: ["+86 75582222447"],
-    email: "helen@haixun.co"
-  }]
-}, {
-  code: "sg",
-  name: "Singapore",
-  lat: 1.3521,
-  lng: 103.8198,
-  cities: [{
+    cities: [
+      {
+        name: "PASIRGUDANG",
+        lat: 1.472,
+        lng: 103.9027,
+        address:
+          "Unit 20-03A, Level 20 Menara Zurich, 15 Jalan Dato Abdullah Tahir, 80300 Johor Bahru",
+        contacts: ["+603-3319 2778"],
+        email: "info@oecl.sg",
+      },
+      {
+        name: "PORTKLANG",
+        lat: 3.0038,
+        lng: 101.3929,
+        address:
+          "MTBBT 2, 3A-5, Jalan Batu Nilam 16, Bandar Bukit Tinggi 2, Klang",
+        contacts: ["+603-3319 2778"],
+        email: "info@oecl.sg",
+      },
+    ],
+  },
+
+  {
+    code: "sg",
     name: "Singapore",
     lat: 1.3521,
     lng: 103.8198,
-    address: "Blk 511 Kampong Bahru Road, #03-01 Keppel Distripark, Singapore - 099447",
-    contacts: ["+ 65 69084188"],
-    email: "june@ggl.sg"
-  }]
-}, {
+    cities: [
+      {
+        name: "Singapore",
+        lat: 1.3521,
+        lng: 103.8198,
+        address:
+          "Blk 511 Kampong Bahru Road, #03-01 Keppel Distripark, Singapore - 099447",
+        contacts: ["+65 69084188"],
+        email: "june@ggl.sg",
+      },
+    ],
+  }, {
   code: "id",
   name: "Indonesia",
     lat: -6.2088,
