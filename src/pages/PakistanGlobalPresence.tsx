@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import MapContainer from '@/components/MapContainer';
-import Sidebar from '@/components/Sidebar';
+import PSidebar from '@/components/PSidebar';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { motion } from 'framer-motion';
 import { Map, Menu } from 'lucide-react';
@@ -72,7 +72,7 @@ const PakistanGlobalPresence = () => {
             transition={{ type: 'spring', stiffness: 300, damping: 30 }} 
             className={`transition-all duration-300 ease-in-out ${isMobile ? 'w-full pt-12' : 'w-[35%]'}`}
           >
-            <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+            <PSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
           </motion.div>
         )}
 
