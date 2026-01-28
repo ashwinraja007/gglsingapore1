@@ -167,17 +167,17 @@ const countries = [{
     email: "info@globalconsol.com"
   }]
 }, {
-  code: "bd",
-  name: "Bangladesh",
-    lat: 23.8103,
-    lng: 90.4125,
+  code: "sg",
+  name: "Singapore",
+  lat: 1.3521,
+  lng: 103.8198,
   cities: [{
-    name: "Dhaka",
-    lat: 23.8103,
-    lng: 90.4125,
-    address: "ID #9-N (New), 9-M(Old-N), 9th floor, Tower 1, Police Plaza Concord No.2, Road # 144, Gulshan Model Town, Dhaka 1215, Bangladesh",
-    contacts: ["+880 1716 620989"],
-    email: "info@globalconsol.com"
+    name: "Singapore",
+    lat: 1.3521,
+    lng: 103.8198,
+    address: "Blk 511 Kampong Bahru Road, #03-01 Keppel Distripark, Singapore - 099447",
+    contacts: ["+ 65 69084188"],
+    email: "june@ggl.sg"
   }]
 },{
   code: "ae",
