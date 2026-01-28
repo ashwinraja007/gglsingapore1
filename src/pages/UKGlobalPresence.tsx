@@ -72,7 +72,7 @@ const PakistanGlobalPresence = () => {
             transition={{ type: 'spring', stiffness: 300, damping: 30 }} 
             className={`transition-all duration-300 ease-in-out ${isMobile ? 'w-full pt-12' : 'w-[35%]'}`}
           >
-            <PSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+            <USidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
           </motion.div>
         )}
 
