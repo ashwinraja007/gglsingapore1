@@ -40,6 +40,13 @@ import UKServices from "./pages/UKServices";
 import UKGlobalPresence from "./pages/UKGlobalPresence";
 import UKCareers from "./pages/UKCareers";
 
+import MalaysiaHome from "./pages/MalaysiaHome";
+import MalaysiaContact from "./pages/MalaysiaContact";
+import MalaysiaAbout from "./pages/MalaysiaAbout";
+import MalaysiaServices from "./pages/MalaysiaServices";
+import MalaysiaGlobalPresence from "./pages/MalaysiaGlobalPresence";
+import MalaysiaCareers from "./pages/MalaysiaCareers";
+
 import CustomsClearance from "./pages/services/CustomsClearance";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import GlobalPresence from "./pages/GlobalPresence";
@@ -128,6 +135,25 @@ function App() {
             <Route path="/uk/services/project-cargo" element={<ProjectCargo />} />
             <Route path="/uk/services/customs-clearance" element={<CustomsClearance />} />
             <Route path="/uk/services/warehousing" element={<Warehousing />} />
+
+            {/* Malaysia Routes */}
+            <Route path="/malaysia" element={<MalaysiaHome />} />
+            <Route path="/malaysia/home" element={<MalaysiaHome />} />
+            <Route path="/malaysia/about" element={<MalaysiaAbout />} />
+            <Route path="/malaysia/services" element={<MalaysiaServices />} />
+            <Route path="/malaysia/contact" element={<MalaysiaContact />} />
+            <Route path="/malaysia/global-presence" element={<MalaysiaGlobalPresence />} />
+            <Route path="/malaysia/careers" element={<MalaysiaCareers />} />
+
+            {/* Malaysia Service Routes */}
+            <Route path="/malaysia/services/transportation" element={<Transportation />} />
+            <Route path="/malaysia/services/liquid-transportation" element={<LiquidTransportation />} />
+            <Route path="/malaysia/services/air-freight" element={<AirFreight />} />
+            <Route path="/malaysia/services/ocean-freight" element={<OceanFreight />} />
+            <Route path="/malaysia/services/lcl-consolidation" element={<LCLConsolidation />} />
+            <Route path="/malaysia/services/project-cargo" element={<ProjectCargo />} />
+            <Route path="/malaysia/services/customs-clearance" element={<CustomsClearance />} />
+            <Route path="/malaysia/services/warehousing" element={<Warehousing />} />
 
              <Route path="/admin" element={<AdminDashboard />} />
             {/* Service specific pages */}
