@@ -8,13 +8,10 @@ import {
   Linkedin,
 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { useCountryNavigation } from "@/hooks/useCountryNavigation";
 
 export const Footer = () => {
-  const location = useLocation();
-  const isBangladesh = location.pathname.startsWith("/bangladesh");
-  const isPakistan = location.pathname.startsWith("/pakistan");
-  const isUK = location.pathname.startsWith("/uk");
-  const isMalaysia = location.pathname.startsWith("/malaysia");
+  const { isBangladesh, isPakistan, isUK, isMalaysia, navPaths } = useCountryNavigation();
 
   const footerAnimation = {
     hidden: {
@@ -32,49 +29,14 @@ export const Footer = () => {
   };
 
   // Navigation links: switch to Bangladesh routes on Bangladesh pages
-  const navigationLinks = isPakistan
-    ? [
-        { name: "Home", path: "/pakistan" },
-        { name: "About", path: "/pakistan/about" },
-        { name: "Services", path: "/pakistan/services" },
-        { name: "Careers", path: "/pakistan/careers" },
-        { name: "Global Presence", path: "/pakistan/global-presence" },
-        { name: "Contact Us", path: "/pakistan/contact" },
-      ]
-    : isUK
-    ? [
-        { name: "Home", path: "/uk" },
-        { name: "About", path: "/uk/about" },
-        { name: "Services", path: "/uk/services" },
-        { name: "Careers", path: "/uk/careers" },
-        { name: "Global Presence", path: "/uk/global-presence" },
-        { name: "Contact Us", path: "/uk/contact" },
-      ]
-    : isMalaysia
-    ? [
-        { name: "Home", path: "/malaysia" },
-        { name: "About", path: "/malaysia/about" },
-        { name: "Services", path: "/malaysia/services" },
-        { name: "Careers", path: "/malaysia/careers" },
-        { name: "Global Presence", path: "/malaysia/global-presence" },
-        { name: "Contact Us", path: "/malaysia/contact" },
-      ]
-    : isBangladesh
-    ? [
-        { name: "Home", path: "/bangladesh" },
-        { name: "About", path: "/bangladesh/about" },
-        { name: "Services", path: "/bangladesh/services" },
-        { name: "Global Presence", path: "/bangladesh/global-presence" },
-        { name: "Contact Us", path: "/bangladesh/contact" },
-      ]
-    : [
-        { name: "Home", path: "/" },
-        { name: "About", path: "/about" },
-        { name: "Services", path: "/services" },
-        { name: "Contact Us", path: "/contact" },
-        { name: "Privacy Policy", path: "/privacy-policy" },
-        { name: "Terms And Conditions", path: "/terms-and-conditions" },
-      ];
+  const navigationLinks = [
+    { name: "Home", path: navPaths.home },
+    { name: "About", path: navPaths.about },
+    { name: "Services", path: navPaths.services },
+    { name: "Careers", path: navPaths.careers },
+    { name: "Global Presence", path: navPaths.globalPresence },
+    { name: "Contact Us", path: navPaths.contact },
+  ];
 
   // Contact details: Singapore default, Bangladesh for /bangladesh/*
   const singaporeContact = {

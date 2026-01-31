@@ -5,6 +5,8 @@ import CountrySelector from "../common/CountrySelector";
 import BCountrySelector from "../common/BCountrySelector"; // <- BD selector
 import PCountrySelector from "../common/PCountrySelector"; // <- PK selector
 import UKCountrySelector from "../common/UKCountrySelector"; // <- UK selector
+import { useCountryNavigation } from "@/hooks/useCountryNavigation";
+import MCountrySelector from "../common/CountrySelector"; // Fallback for Malaysia if specific one doesn't exist yet
 
 interface NavPaths {
   home: string;
@@ -18,25 +20,14 @@ interface NavPaths {
 export const Header = ({ navPaths }: { navPaths?: NavPaths }) => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { isBangladesh, isPakistan, isUK, isMalaysia, navPaths: autoNavPaths } = useCountryNavigation();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isInfoOpen, setIsInfoOpen] = useState(false);
   const infoRef = useRef<HTMLDivElement | null>(null);
 
-  // AUTO DETECT REGION MODE
-  const isBangladesh = location.pathname.startsWith("/bangladesh");
-  const isPakistan = location.pathname.startsWith("/pakistan");
-  const isUK = location.pathname.startsWith("/uk");
-
-  const paths: NavPaths = navPaths || {
-    home: isBangladesh ? "/bangladesh" : isPakistan ? "/pakistan" : isUK ? "/uk" : "/",
-    about: isBangladesh ? "/bangladesh/about" : isPakistan ? "/pakistan/about" : isUK ? "/uk/about" : "/about",
-    services: isBangladesh ? "/bangladesh/services" : isPakistan ? "/pakistan/services" : isUK ? "/uk/services" : "/services",
-    careers: isBangladesh ? "/bangladesh/careers" : isPakistan ? "/pakistan/careers" : isUK ? "/uk/careers" : "/careers",
-    contact: isBangladesh ? "/bangladesh/contact" : isPakistan ? "/pakistan/contact" : isUK ? "/uk/contact" : "/contact",
-    globalPresence: isBangladesh ? "/bangladesh/global-presence" : isPakistan ? "/pakistan/global-presence" : isUK ? "/uk/global-presence" : "/global-presence",
-  };
+  const paths: NavPaths = navPaths || autoNavPaths;
 
   // Sticky Header Scroll
   useEffect(() => {
@@ -194,6 +185,8 @@ export const Header = ({ navPaths }: { navPaths?: NavPaths }) => {
               <PCountrySelector />
             ) : isUK ? (
               <UKCountrySelector />
+            ) : isMalaysia ? (
+              <MCountrySelector /> 
             ) : (
               <CountrySelector />
             )}
@@ -246,6 +239,8 @@ export const Header = ({ navPaths }: { navPaths?: NavPaths }) => {
               <PCountrySelector />
             ) : isUK ? (
               <UKCountrySelector />
+            ) : isMalaysia ? (
+              <MCountrySelector />
             ) : (
               <CountrySelector />
             )}
