@@ -14,6 +14,7 @@ export const Footer = () => {
   const isBangladesh = location.pathname.startsWith("/bangladesh");
   const isPakistan = location.pathname.startsWith("/pakistan");
   const isUK = location.pathname.startsWith("/uk");
+  const isMalaysia = location.pathname.startsWith("/malaysia");
 
   const footerAnimation = {
     hidden: {
@@ -48,6 +49,15 @@ export const Footer = () => {
         { name: "Careers", path: "/uk/careers" },
         { name: "Global Presence", path: "/uk/global-presence" },
         { name: "Contact Us", path: "/uk/contact" },
+      ]
+    : isMalaysia
+    ? [
+        { name: "Home", path: "/malaysia" },
+        { name: "About", path: "/malaysia/about" },
+        { name: "Services", path: "/malaysia/services" },
+        { name: "Careers", path: "/malaysia/careers" },
+        { name: "Global Presence", path: "/malaysia/global-presence" },
+        { name: "Contact Us", path: "/malaysia/contact" },
       ]
     : isBangladesh
     ? [
@@ -104,6 +114,20 @@ Singapore - 099447`,
     title: "GGL (UK) Ltd.",
     address: "167-169 Great Portland Street 5th Floor, London W1W 5PF, United Kingdom",
     phone: "+44 (0) 203 393 9508",
+  };
+
+  const portKlangContact = {
+    title: "GGL (Malaysia) - Port Klang",
+    address: "MTBBT 2, 3A-5, Jalan Batu Nilam 16, The Landmark (Behind AEON Mall), Bandar Bukit Tinggi 2, 41200 Klang, Selangor D.E",
+    phone: "+603 - 3319 2778 / 74 / 75",
+    email: "jayesh@ggl.sg",
+  };
+
+  const pasirGudangContact = {
+    title: "GGL (Malaysia) - Pasir Gudang",
+    address: "Unit 20-03A, Level 20 Menara Zurich, 15 Jalan Dato Abdullah Tahir, 80300 Johor Bahru",
+    phone: "603-3319 2778 / 74 / 75, 79",
+    email: "jayesh@ggl.sg",
   };
 
   const contact = isBangladesh ? bangladeshContact : isUK ? ukContact : singaporeContact;
@@ -263,6 +287,65 @@ Singapore - 099447`,
                       className="text-brand-gold flex-shrink-0"
                     />
                     <a href={`mailto:${lahoreContact.email}`} className="hover:text-brand-gold transition-colors">{lahoreContact.email}</a>
+                  </div>
+                </div>
+              </div>
+            ) : isMalaysia ? (
+              <div className="space-y-6">
+                {/* Port Klang Office */}
+                <div className="space-y-3 text-gray-600">
+                  <div className="flex items-start gap-2">
+                    <MapPin
+                      size={18}
+                      className="text-brand-gold mt-1 flex-shrink-0"
+                    />
+                    <p className="whitespace-pre-line">
+                      {portKlangContact.title}
+                      {"\n"}
+                      {portKlangContact.address}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Phone
+                      size={18}
+                      className="text-brand-gold flex-shrink-0"
+                    />
+                    <p>{portKlangContact.phone}</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Mail
+                      size={18}
+                      className="text-brand-gold flex-shrink-0"
+                    />
+                    <a href={`mailto:${portKlangContact.email}`} className="hover:text-brand-gold transition-colors">{portKlangContact.email}</a>
+                  </div>
+                </div>
+                {/* Pasir Gudang Office */}
+                <div className="space-y-3 text-gray-600">
+                  <div className="flex items-start gap-2">
+                    <MapPin
+                      size={18}
+                      className="text-brand-gold mt-1 flex-shrink-0"
+                    />
+                    <p className="whitespace-pre-line">
+                      {pasirGudangContact.title}
+                      {"\n"}
+                      {pasirGudangContact.address}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Phone
+                      size={18}
+                      className="text-brand-gold flex-shrink-0"
+                    />
+                    <p>{pasirGudangContact.phone}</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Mail
+                      size={18}
+                      className="text-brand-gold flex-shrink-0"
+                    />
+                    <a href={`mailto:${pasirGudangContact.email}`} className="hover:text-brand-gold transition-colors">{pasirGudangContact.email}</a>
                   </div>
                 </div>
               </div>
