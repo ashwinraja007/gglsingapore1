@@ -5,7 +5,10 @@ import { motion } from 'framer-motion';
 import { Plane, Clock, Globe, Headset } from "lucide-react";
 import { Link } from 'react-router-dom';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { useCountryNavigation } from "@/hooks/useCountryNavigation";
+
 const AirFreight = () => {
+  const { navPaths } = useCountryNavigation();
   return <div className="min-h-screen flex flex-col">
       <Header />
       
@@ -48,7 +51,7 @@ const AirFreight = () => {
                 duration: 0.5,
                 delay: 0.2
               }}>
-                  <Link to="/contact" className="px-6 py-3 bg-brand-gold hover:bg-amber-400 text-brand-navy font-medium rounded-md shadow-md transition-all">
+                  <Link to={navPaths.contact} className="px-6 py-3 bg-brand-gold hover:bg-amber-400 text-brand-navy font-medium rounded-md shadow-md transition-all">
                     Get a Quote
                   </Link>
                 </motion.div>
@@ -142,7 +145,7 @@ const AirFreight = () => {
               <p className="mb-6 text-blue-50">
                 Contact our team today for tailored air freight solutions.
               </p>
-              <Link to="/contact" className="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors">
+              <Link to={navPaths.contact} className="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors">
                 Get a Quote
               </Link>
             </motion.div>

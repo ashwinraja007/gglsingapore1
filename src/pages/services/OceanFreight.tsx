@@ -4,8 +4,10 @@ import { Footer } from "@/components/layout/Footer";
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { useCountryNavigation } from "@/hooks/useCountryNavigation";
 
 const OceanFreight = () => {
+  const { navPaths } = useCountryNavigation();
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -39,7 +41,7 @@ const OceanFreight = () => {
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
                   <Link
-                    to="/contact"
+                    to={navPaths.contact}
                     className="px-6 py-3 bg-brand-gold hover:bg-amber-400 text-brand-navy font-medium rounded-md shadow-md transition-all"
                   >
                     Get a Quote
@@ -103,7 +105,7 @@ const OceanFreight = () => {
                 Contact our team today for tailored ocean freight solutions.
               </p>
               <Link
-                to="/contact"
+                to={navPaths.contact}
                 className="inline-block bg-white text-brand-navy px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors"
               >
                 Get a Quote

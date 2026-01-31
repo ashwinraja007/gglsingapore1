@@ -4,6 +4,8 @@ import { Footer } from "@/components/layout/Footer";
 import { motion } from 'framer-motion';
 import { Droplets, Truck, BarChart, ShieldCheck } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { useCountryNavigation } from "@/hooks/useCountryNavigation";
+import { Link } from 'react-router-dom';
 
 interface LiquidTransportationProps {
   title?: string;
@@ -12,6 +14,7 @@ interface LiquidTransportationProps {
 const LiquidTransportation: React.FC<LiquidTransportationProps> = ({
   title = "Liquid Transportation"
 }) => {
+  const { navPaths } = useCountryNavigation();
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -43,9 +46,9 @@ const LiquidTransportation: React.FC<LiquidTransportationProps> = ({
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  <a href="/contact" className="px-6 py-3 bg-brand-gold hover:bg-amber-400 text-brand-navy font-medium rounded-md shadow-md transition-all inline-block">
+                  <Link to={navPaths.contact} className="px-6 py-3 bg-brand-gold hover:bg-amber-400 text-brand-navy font-medium rounded-md shadow-md transition-all inline-block">
                     Get in Touch
-                  </a>
+                  </Link>
                 </motion.div>
               </div>
               <div className="md:w-1/2">
@@ -136,9 +139,9 @@ const LiquidTransportation: React.FC<LiquidTransportationProps> = ({
               <p className="mb-6 text-green-50">
                 Contact our specialists today for tailored transportation solutions.
               </p>
-              <a href="/contact" className="inline-block bg-white text-brand-navy px-6 py-3 rounded-lg font-medium hover:bg-green-50 transition-colors">
+              <Link to={navPaths.contact} className="inline-block bg-white text-brand-navy px-6 py-3 rounded-lg font-medium hover:bg-green-50 transition-colors">
                 Get a Quote
-              </a>
+              </Link>
             </motion.div>
           </div>
         </section>

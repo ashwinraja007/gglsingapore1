@@ -4,7 +4,10 @@ import { Footer } from "@/components/layout/Footer";
 import { motion } from 'framer-motion';
 import { FileCheck, ShieldCheck, Lightbulb, Globe } from "lucide-react";
 import { Link } from 'react-router-dom';
+import { useCountryNavigation } from "@/hooks/useCountryNavigation";
+
 const CustomsClearance = () => {
+  const { navPaths } = useCountryNavigation();
   return <div className="min-h-screen flex flex-col">
       <Header />
       
@@ -47,7 +50,7 @@ const CustomsClearance = () => {
                 duration: 0.5,
                 delay: 0.2
               }}>
-                  <Link to="/contact" className="px-6 py-3 bg-brand-gold hover:bg-amber-400 text-brand-navy font-medium rounded-md shadow-md transition-all">
+                  <Link to={navPaths.contact} className="px-6 py-3 bg-brand-gold hover:bg-amber-400 text-brand-navy font-medium rounded-md shadow-md transition-all">
                     Get a Quote
                   </Link>
                 </motion.div>
@@ -227,7 +230,7 @@ const CustomsClearance = () => {
               <p className="mb-6 text-blue-50">
                 Contact our customs experts today for seamless border crossings.
               </p>
-              <Link to="/contact" className="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors">
+              <Link to={navPaths.contact} className="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors">
                 Get a Quote
               </Link>
             </motion.div>
