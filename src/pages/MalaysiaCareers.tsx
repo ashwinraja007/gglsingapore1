@@ -6,17 +6,11 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Users, TrendingUp, Heart, Globe, Award, Target } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useCountryNavigation } from "@/hooks/useCountryNavigation";
 
-const malaysiaNavPaths = {
-  home: "/malaysia",
-  about: "/malaysia/about",
-  services: "/malaysia/services",
-  careers: "/malaysia/careers",
-  contact: "/malaysia/contact",
-  globalPresence: "/malaysia/global-presence",
-};
 
 const MalaysiaCareers = () => {
+  const { navPaths } = useCountryNavigation();
   const benefits = [{
     icon: <Users className="h-6 w-6 text-brand-gold" />,
     title: "Collaborative Culture",
@@ -45,7 +39,7 @@ const MalaysiaCareers = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header navPaths={malaysiaNavPaths} />
+      <Header navPaths={navPaths} />
 
       <main className="flex-grow pt-20">
         {/* Hero Section */}

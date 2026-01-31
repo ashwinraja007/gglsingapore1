@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Helmet } from "react-helmet";
+import { useCountryNavigation } from "@/hooks/useCountryNavigation";
 interface Section {
   title: string;
   content?: string;
@@ -13,6 +14,7 @@ interface Subsection {
   content: string;
 }
 const PrivacyPolicyPage: React.FC = () => {
+  const { navPaths } = useCountryNavigation();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     // Simulate page loading effect
@@ -267,7 +269,7 @@ const PrivacyPolicyPage: React.FC = () => {
               If you have any questions about this Privacy Policy or our data practices, 
               please don't hesitate to contact us.
             </p>
-            <Link to="/contact" className="inline-block bg-brand-navy text-white px-6 py-3 rounded-lg font-medium  transition-colors">
+            <Link to={navPaths.contact} className="inline-block bg-brand-navy text-white px-6 py-3 rounded-lg font-medium  transition-colors">
                 Get a Quote
               </Link>
           </div>

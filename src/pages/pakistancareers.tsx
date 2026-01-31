@@ -5,17 +5,11 @@ import { motion } from 'framer-motion';
 import { Users, TrendingUp, Heart, Globe, Award, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useCountryNavigation } from "@/hooks/useCountryNavigation";
 
-const pakistanNavPaths = {
-  home: "/pakistan",
-  about: "/pakistan/about",
-  services: "/pakistan/services",
-  careers: "/pakistan/careers",
-  contact: "/pakistan/contact",
-  globalPresence: "/pakistan/global-presence",
-};
 
 const PakistanCareers = () => {
+  const { navPaths } = useCountryNavigation();
   const benefits = [{
     icon: <Users className="h-6 w-6 text-brand-gold" />,
     title: "Collaborative Culture",
@@ -44,7 +38,7 @@ const PakistanCareers = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header navPaths={pakistanNavPaths} />
+      <Header navPaths={navPaths} />
 
       <main className="flex-grow pt-20">
         {/* Hero Section */}
