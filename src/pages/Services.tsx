@@ -7,6 +7,7 @@ import { Plane, Ship, FileText, Droplets, Truck, Warehouse } from "lucide-react"
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
+import { useCountryNavigation } from "@/hooks/useCountryNavigation";
 
 // Scroll to Top on Route Change
 const ScrollToTop = () => {
@@ -128,6 +129,7 @@ const ServiceDetailCard = ({
 };
 const Services = () => {
   const isMobile = useIsMobile();
+  const { navPaths } = useCountryNavigation();
   const services = [
     {
       id: 1,
@@ -135,7 +137,7 @@ const Services = () => {
       title: "Air Freight",
       image: "/cargoplane3.png",
       description: "At GGL, we offer a comprehensive range of air freight solutions tailored to meet your time-sensitive and high-priority shipping needs.",
-      link: "/services/air-freight"
+      link: `${navPaths.services}/air-freight`
     },
     {
       id: 2,
@@ -143,7 +145,7 @@ const Services = () => {
       title: "Ocean Freight",
       image: "/ships2.png",
       description: "At GGL, our dedicated Ocean Freight Department specializes in comprehensive freight management services for both Less-than-Container Load (LCL) and Full Container Load (FCL) shipments.",
-      link: "/services/ocean-freight"
+      link: `${navPaths.services}/ocean-freight`
     },
     {
       id: 3,
@@ -151,7 +153,7 @@ const Services = () => {
       title: "Transportation",
       image: "/trucks.png",
       description: "GGL proudly operates a dedicated fleet of vehicles designed to guarantee timely and efficient domestic distribution and delivery services.",
-      link: "/services/transportation"
+      link: `${navPaths.services}/transportation`
     },
     {
       id: 4,
@@ -159,7 +161,7 @@ const Services = () => {
       title: "Warehousing",
       image: "/warehouse2.png",
       description: "GGL is a leading supply chain solutions provider in Singapore, offering end-to- end logistics services tailored to a wide range of industries.",
-      link: "/services/warehousing"
+      link: `${navPaths.services}/warehousing`
     },
     {
       id: 5,
@@ -167,7 +169,7 @@ const Services = () => {
       title: "LCL Consolidation",
       image: "/lcl.png",
       description: "GGL is a LCL Consolidator with global presence covering North America, UK, Middle East, Indian Sub Continent, South East Asia and Far East. Our LCL Groupage services is backed by very efficient customer support at competitive prices.",
-      link: "/services/lcl-consolidation"
+      link: `${navPaths.services}/lcl-consolidation`
     },
     {
       id: 6,
@@ -175,7 +177,7 @@ const Services = () => {
       title: "Project Cargo",
       image: "/projectcargo3.png",
       description: "We specialize in delivering end-to-end logistics solutions for complex, heavy, and oversized shipments—commonly known as project cargo.",
-      link: "/services/project-cargo"
+      link: `${navPaths.services}/project-cargo`
     }
   ];
   const featuredServices = services.slice(0, 3);
@@ -304,7 +306,7 @@ const Services = () => {
             </div>
 
             <div className="text-center mt-10">
-              <Link to="/contact">
+              <Link to={navPaths.contact}>
                 <Button variant="gold" size="lg" className="shadow-md">
                   Request a Quote
                 </Button>

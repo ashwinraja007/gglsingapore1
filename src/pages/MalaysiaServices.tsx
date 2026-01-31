@@ -5,15 +5,9 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Plane, Ship, Truck, Warehouse } from "lucide-react";
 import ScrollToTop from "@/components/common/ScrollToTop";
+import { useCountryNavigation } from "@/hooks/useCountryNavigation";
+import { Button } from "@/components/ui/button";
 
-const malaysiaNavPaths = {
-  home: "/malaysia",
-  about: "/malaysia/about",
-  services: "/malaysia/services",
-  careers: "/malaysia/careers",
-  contact: "/malaysia/contact",
-  globalPresence: "/malaysia/global-presence",
-};
 
 const ServiceCard = ({ icon, title, description, image, link, id }: any) => {
   const getServiceImage = () => {
@@ -65,19 +59,20 @@ const ServiceCard = ({ icon, title, description, image, link, id }: any) => {
 };
 
 const MalaysiaServices = () => {
+  const { navPaths } = useCountryNavigation();
   const services = [
-    { id: 1, htmlId: "ocean-freight", icon: <Ship className="w-5 h-5" />, title: "Ocean Freight", image: "/us1.png", description: "At GGL, our dedicated Ocean Freight Department specializes in comprehensive freight management services for both Less-than-Container Load (LCL) and Full Container Load (FCL) shipments.", link: "/malaysia/services/ocean-freight" },
-    { id: 2, htmlId: "lcl-consolidation", icon: <Warehouse className="w-5 h-5" />, title: "LCL Consolidation", image: "/us5.png", description: "We collect your goods from your location and prepare them for consolidation. This includes proper labelling, packaging, and documentation to ensure smooth transit.", link: "/malaysia/services/lcl-consolidation" },
-    { id: 3, htmlId: "transportation", icon: <Truck className="w-5 h-5" />, title: "Transportation", image: "/us3.png", description: "Efficient transportation and distribution are the backbone of a seamless supply chain. Our fleet and infrastructure ensure on-time delivery every time.", link: "/malaysia/services/transportation" },
-    { id: 4, htmlId: "warehousing", icon: <Warehouse className="w-5 h-5" />, title: "Warehousing", image: "/us4.png", description: "We offer full-service warehousing and third-party logistics (3PL) to streamline your supply chain with flexible, reliable, and scalable solutions.", link: "/malaysia/services/warehousing" },
-    { id: 5, htmlId: "air-freight", icon: <Plane className="w-5 h-5" />, title: "Air Freight", image: "/us2.png", description: "Our air freight services provide fast, reliable, and flexible global shipping — including import/export, express, and door-to-door solutions.", link: "/malaysia/services/air-freight" },
-    { id: 6, htmlId: "project-cargo", icon: <Warehouse className="w-5 h-5" />, title: "Project Cargo", image: "/us6.png", description: "We specialize in delivering end-to-end logistics for heavy, oversized, and time-critical shipments, ensuring efficiency and safety.", link: "/malaysia/services/project-cargo" }
+    { id: 1, htmlId: "ocean-freight", icon: <Ship className="w-5 h-5" />, title: "Ocean Freight", image: "/us1.png", description: "At GGL, our dedicated Ocean Freight Department specializes in comprehensive freight management services for both Less-than-Container Load (LCL) and Full Container Load (FCL) shipments.", link: `${navPaths.services}/ocean-freight` },
+    { id: 2, htmlId: "lcl-consolidation", icon: <Warehouse className="w-5 h-5" />, title: "LCL Consolidation", image: "/us5.png", description: "We collect your goods from your location and prepare them for consolidation. This includes proper labelling, packaging, and documentation to ensure smooth transit.", link: `${navPaths.services}/lcl-consolidation` },
+    { id: 3, htmlId: "transportation", icon: <Truck className="w-5 h-5" />, title: "Transportation", image: "/us3.png", description: "Efficient transportation and distribution are the backbone of a seamless supply chain. Our fleet and infrastructure ensure on-time delivery every time.", link: `${navPaths.services}/transportation` },
+    { id: 4, htmlId: "warehousing", icon: <Warehouse className="w-5 h-5" />, title: "Warehousing", image: "/us4.png", description: "We offer full-service warehousing and third-party logistics (3PL) to streamline your supply chain with flexible, reliable, and scalable solutions.", link: `${navPaths.services}/warehousing` },
+    { id: 5, htmlId: "air-freight", icon: <Plane className="w-5 h-5" />, title: "Air Freight", image: "/us2.png", description: "Our air freight services provide fast, reliable, and flexible global shipping — including import/export, express, and door-to-door solutions.", link: `${navPaths.services}/air-freight` },
+    { id: 6, htmlId: "project-cargo", icon: <Warehouse className="w-5 h-5" />, title: "Project Cargo", image: "/us6.png", description: "We specialize in delivering end-to-end logistics for heavy, oversized, and time-critical shipments, ensuring efficiency and safety.", link: `${navPaths.services}/project-cargo` }
   ];
 
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      <Header navPaths={malaysiaNavPaths} />
+      <Header navPaths={navPaths} />
       <main className="flex-grow pt-16 md:pt-20">
         <section className="bg-gradient-to-r from-gray-900 to-brand-navy text-white relative overflow-hidden">
           <div className="absolute inset-0 z-0">
@@ -119,6 +114,14 @@ const MalaysiaServices = () => {
               {services.map(service => (
                 <ServiceCard key={service.id} {...service} id={service.htmlId} />
               ))}
+            </div>
+
+            <div className="text-center mt-16">
+              <Link to={navPaths.contact}>
+                <Button variant="gold" size="lg" className="shadow-md">
+                  Request a Quote
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

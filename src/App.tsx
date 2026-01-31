@@ -10,7 +10,6 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import TermsOfUse from "./pages/TermsOfUse";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Transportation from "./pages/services/Transportation";
 import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
 import ServiceDetail from "./pages/ServiceDetail";
