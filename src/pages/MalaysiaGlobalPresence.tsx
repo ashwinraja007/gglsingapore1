@@ -1,26 +1,94 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import MapContainer from '@/components/MapContainer';
 import MSidebar from '@/components/MSidebar';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { motion } from 'framer-motion';
+import { Map, Menu } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+
+const malaysiaNavPaths = {
+  home: "/malaysia",
+  about: "/malaysia/about",
+  services: "/malaysia/services",
+  careers: "/malaysia/careers",
+  contact: "/malaysia/contact",
+  globalPresence: "/malaysia/global-presence",
+};
 
 const MalaysiaGlobalPresence = () => {
+  const isMobile = useIsMobile();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [showMap, setShowMap] = useState(true);
+
+  useEffect(() => {
+    if (isMobile) {
+      setShowMap(false);
+      setIsSidebarOpen(true);
+    } else {
+      setShowMap(true);
+      setIsSidebarOpen(true);
+    }
+  }, [isMobile]);
+
+  const toggleView = () => {
+    setShowMap(!showMap);
+  };
+
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main className="pt-24 pb-12">
-        <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-bold text-center mb-8">Global Presence</h1>
-          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-            From our hubs in Malaysia, we connect you to GGL's extensive global network, 
-            ensuring your cargo reaches any corner of the world.
-          </p>
-          
-          <div className="grid lg:grid-cols-3 gap-8">
-             <div className="lg:col-span-1"><MSidebar isOpen={true} onClose={() => {}} /></div>
-             <div className="lg:col-span-2 bg-gray-100 rounded-xl min-h-[500px] flex items-center justify-center text-gray-500">Global Map Visualization</div>
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-amber-50/30 to-white">
+      <Header navPaths={malaysiaNavPaths} />
+      
+      <motion.div 
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        transition={{ duration: 0.5 }} 
+        className="flex flex-1 relative overflow-hidden mx-0 my-[80px]"
+      >
+        {isMobile && (
+          <div className="fixed top-20 left-0 right-0 z-30 bg-gradient-to-r from-amber-500 to-amber-400 p-3 text-white text-center shadow-md">
+            <h1 className="text-lg font-bold">Global Presence</h1>
           </div>
-        </div>
-      </main>
+        )}
+        
+        {(!isMobile || (isMobile && showMap)) && (
+          <motion.main 
+            initial={isMobile ? { x: '100%' } : { opacity: 0 }} 
+            animate={isMobile ? { x: 0 } : { opacity: 1 }} 
+            exit={isMobile ? { x: '100%' } : { opacity: 0 }} 
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }} 
+            className={`transition-all duration-300 ease-in-out ${isMobile ? 'w-full' : 'w-[60%]'}`}
+          >
+            <MapContainer />
+          </motion.main>
+        )}
+        
+        {(!isMobile || (isMobile && !showMap)) && (
+          <motion.div 
+            initial={isMobile ? { x: '-100%' } : { opacity: 0 }} 
+            animate={isMobile ? { x: 0 } : { opacity: 1 }} 
+            exit={isMobile ? { x: '-100%' } : { opacity: 0 }} 
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }} 
+            className={`transition-all duration-300 ease-in-out ${isMobile ? 'w-full pt-12' : 'w-[35%]'}`}
+          >
+            <MSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+          </motion.div>
+        )}
+
+        {isMobile && (
+          <div className="fixed bottom-4 right-4 z-50 flex gap-2">
+            <Button
+              onClick={toggleView}
+              className="rounded-full shadow-lg bg-brand-navy text-white hover:bg-brand-gold hover:text-brand-navy transition-colors"
+              size="icon"
+            >
+              {showMap ? <Menu size={24} /> : <Map size={24} />}
+            </Button>
+          </div>
+        )}
+      </motion.div>
+      
       <Footer />
     </div>
   );
