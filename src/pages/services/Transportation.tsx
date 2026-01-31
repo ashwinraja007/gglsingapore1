@@ -1,121 +1,122 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
-import { useCountryNavigation } from '@/hooks/useCountryNavigation';
-import { Button } from '@/components/ui/button';
-import { ArrowLeft, CheckCircle2 } from 'lucide-react';
+import React from 'react';
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { motion } from 'framer-motion';
-
+import { Ship, Package, Box, Globe, FileCheck, Anchor, Container, MapPin, Timer, Gauge } from "lucide-react";
+import { Link } from 'react-router-dom';
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 const Transportation = () => {
-  const { navPaths } = useCountryNavigation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  const service = {
-    title: "Transportation",
-    description: "Efficient domestic distribution and delivery services.",
-    longDescription: "GGL proudly operates a dedicated fleet of vehicles designed to guarantee timely and efficient domestic distribution and delivery services. Our ground transportation network ensures your goods reach their final destination safely and on schedule.",
-    features: ["Nationwide Coverage", "GPS Tracking", "Temperature Controlled", "Last Mile Delivery"],
-    image: "/trucks.png"
-  };
-
-  return (
-    <div className="min-h-screen flex flex-col">
-      <Header navPaths={navPaths} />
+  return <div className="min-h-screen flex flex-col">
+      <Header />
       
-      <main className="flex-grow pt-20">
-        <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0">
-            <img 
-              src={service.image} 
-              alt={service.title} 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-brand-navy/80 mix-blend-multiply" />
-          </div>
-          <div className="container mx-auto px-4 relative z-10 text-center text-white">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                {service.title}
-              </h1>
-              <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-                {service.description}
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        <section className="py-16">
+      <main className="flex-grow pt-24">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-12 md:py-16">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <Link 
-                to={navPaths.services} 
-                className="inline-flex items-center text-brand-navy hover:text-brand-gold mb-8 transition-colors"
-              >
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Services
-              </Link>
-
-              <div className="grid md:grid-cols-3 gap-12">
-                <div className="md:col-span-2">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <h2 className="text-3xl font-bold text-brand-navy mb-6">Overview</h2>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                      {service.longDescription}
-                    </p>
-
-                    <h3 className="text-2xl font-bold text-brand-navy mb-4">Key Features</h3>
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      {service.features.map((feature, index) => (
-                        <div key={index} className="flex items-center gap-3 bg-gray-50 p-4 rounded-lg">
-                          <CheckCircle2 className="w-5 h-5 text-brand-gold flex-shrink-0" />
-                          <span className="font-medium text-gray-800">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                </div>
-
-                <div className="md:col-span-1">
-                  <motion.div 
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="bg-gray-50 p-6 rounded-xl border border-gray-100 sticky top-24"
-                  >
-                    <h3 className="text-xl font-bold text-brand-navy mb-4">Ready to ship?</h3>
-                    <p className="text-gray-600 mb-6">
-                      Contact our team today for a customized quote tailored to your specific needs.
-                    </p>
-                    <Link to={navPaths.contact}>
-                      <Button className="w-full bg-brand-navy hover:bg-brand-gold hover:text-brand-navy transition-colors">
-                        Get a Quote
-                      </Button>
-                    </Link>
-                  </motion.div>
-                </div>
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="md:w-1/2">
+                <motion.h1 initial={{
+                opacity: 0,
+                y: 20
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.5
+              }} className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                  Transportation Solutions
+                </motion.h1>
+                <motion.p initial={{
+                opacity: 0,
+                y: 20
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.5,
+                delay: 0.1
+              }} className="text-lg text-gray-700 mb-6">
+                  Reliable domestic and international transportation services
+                </motion.p>
+                <motion.div initial={{
+                opacity: 0,
+                y: 20
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.5,
+                delay: 0.2
+              }}>
+                  <Link to="/contact" className="px-6 py-3 bg-brand-gold hover:bg-amber-400 text-brand-navy font-medium rounded-md shadow-md transition-all">
+                    Get a Quote
+                  </Link>
+                </motion.div>
+              </div>
+              <div className="md:w-1/2">
+                <motion.div initial={{
+                opacity: 0,
+                scale: 0.95
+              }} animate={{
+                opacity: 1,
+                scale: 1
+              }} transition={{
+                duration: 0.5
+              }} className="rounded-xl overflow-hidden shadow-xl">
+                  <AspectRatio ratio={16 / 9}>
+                    <img alt="Transportation Service" className="w-full h-full object-cover" src="/trucks.png" />
+                  </AspectRatio>
+                </motion.div>
               </div>
             </div>
           </div>
         </section>
+        
+        {/* Main Content */}
+        <section className="py-12 md:py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-gray-800">
+                Comprehensive Transportation Services
+              </h2>
+              <div className="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
+              <p className="text-gray-700 mb-6 text-justify">GGL boasts a dedicated fleet of vehicles to ensure timely domestic distribution and deliveries. Our efficient operational infrastructure provides our clients with high productivity, frequent services, and fast, reliable distribution operations. GGL is committed to delivering excellence in every aspect of transportation and distribution, making us the dependable choice for your logistics needs.</p>
+              <p className="text-gray-700 mb-6 text-justify">GGL boasts a dedicated fleet of vehicles to ensure timely domestic distribution and deliveries. Our efficient operational infrastructure provides our clients with high productivity, frequent services, and fast, reliable distribution operations. GGL is committed to delivering excellence in every aspect of transportation and distribution, making us the dependable choice for your logistics needs.</p>
+              <p className="text-gray-700 mb-6 text-justify">GGL boasts a dedicated fleet of vehicles to ensure timely domestic distribution and deliveries. Our efficient operational infrastructure provides our clients with high productivity, frequent services, and fast, reliable distribution operations. GGL is committed to delivering excellence in every aspect of transportation and distribution, making us the dependable choice for your logistics needs.</p>
+              <p className="text-gray-700 mb-6 text-justify">GGL boasts a dedicated fleet of vehicles to ensure timely domestic distribution and deliveries. Our efficient operational infrastructure provides our clients with high productivity, frequent services, and fast, reliable distribution operations. GGL is committed to delivering excellence in every aspect of transportation and distribution, making us the dependable choice for your logistics needs.</p>
+            </div>
+            
+            {/* Transportation Services */}
+            
+            
+            {/* Features Grid */}
+            
+            
+            {/* CTA Section */}
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.5
+          }} viewport={{
+            once: true
+          }} className="bg-gradient-to-r from-brand-navy to-blue-700 rounded-xl text-white p-8 text-center">
+              <h3 className="text-2xl font-bold mb-4 text-slate-50">Ready to Transport Your Cargo?</h3>
+              <p className="mb-6 text-blue-50">
+                Contact our team today for reliable transportation solutions.
+              </p>
+              <Link to="/contact" className="inline-block bg-white text-brand-navy px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors">
+                Get a Quote
+              </Link>
+            </motion.div>
+          </div>
+        </section>
       </main>
-
+      
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Transportation;
