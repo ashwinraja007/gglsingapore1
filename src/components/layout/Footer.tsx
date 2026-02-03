@@ -51,7 +51,7 @@ Singapore - 099447`,
   const karachiContact = {
     title: "GGL (Pakistan) - Karachi",
     address:
-      "Suite No.301, 3rd Floor, Fortune Center, Shahrah-e-Faisal, Block 6, PECHS, Karachi, Pakistan",
+      "Suite No. 507 & 508, 5th Floor Fortune Center, Block-6, P.E.C.H.S, Shahrah-e-Faisal, Karachi, Pakistan.",
     phone:
       "+92 21 34542881 / +92 21 34542882 / +92 21 34542883 / +92 21 34542884",
     email: "info.pk@ggl.sg",
