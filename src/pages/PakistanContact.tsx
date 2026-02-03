@@ -46,6 +46,13 @@ const PakistanContact = () => {
                 </span>
               </div>
 
+                <div className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-brand-navy" />
+                <span className="font-medium">
+                 info.pk@ggl.sg
+                </span>
+              </div>
+
 
             </div>
 
