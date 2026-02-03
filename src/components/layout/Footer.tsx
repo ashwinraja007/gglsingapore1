@@ -60,22 +60,15 @@ Singapore - 099447`,
     title: "GGL (Pakistan) - Karachi",
     address:
       "Suite No.301, 3rd Floor, Fortune Center, Shahrah-e-Faisal, Block 6, PECHS, Karachi, Pakistan",
-    phone: "+92-300-8282511 / +92-21-34302281-5",
-    email: "khalid.pk@globalconsol.com",
-  };
-
-  const lahoreContact = {
-    title: "GGL (Pakistan) - Lahore",
-    address:
-      "Office # 301, 3rd Floor, Gulberg Arcade Main Market, Gulberg 2, Lahore, Pakistan",
-    phone: "+92 42-35782306/07/08",
-    email: "shazia.pklhe@globalconsol.com",
+    phone: "+92 21 34542881/ +92 21 34542882/ +92 21 34542883/ +92 21 34542884",
+    email: "info.pk@ggl.sg",
   };
 
   const ukContact = {
     title: "GGL (UK) Ltd.",
     address: "167-169 Great Portland Street 5th Floor, London W1W 5PF, United Kingdom",
-    phone: "+44 (0) 203 393 9508",
+    phone: "+44(0)7305 856 612",
+    email: "Sukant@ggl.sg",
   };
 
   const portKlangContact = {
