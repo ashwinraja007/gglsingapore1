@@ -217,34 +217,7 @@ Singapore - 099447`,
                   </div>
                 </div>
                 {/* Lahore Office */}
-                <div className="space-y-3 text-gray-600">
-                  <div className="flex items-start gap-2">
-                    <MapPin
-                      size={18}
-                      className="text-brand-gold mt-1 flex-shrink-0"
-                    />
-                    <p className="whitespace-pre-line">
-                      {lahoreContact.title}
-                      {"\n"}
-                      {lahoreContact.address}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Phone
-                      size={18}
-                      className="text-brand-gold flex-shrink-0"
-                    />
-                    <p>{lahoreContact.phone}</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Mail
-                      size={18}
-                      className="text-brand-gold flex-shrink-0"
-                    />
-                    <a href={`mailto:${lahoreContact.email}`} className="hover:text-brand-gold transition-colors">{lahoreContact.email}</a>
-                  </div>
-                </div>
-              </div>
+                
             ) : isMalaysia ? (
               <div className="space-y-6">
                 {/* Port Klang Office */}
