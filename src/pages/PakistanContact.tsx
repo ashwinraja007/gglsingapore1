@@ -34,8 +34,7 @@ const PakistanContact = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-0.5 text-brand-navy" />
                 <p>
-                  Suite No.301, 3rd Floor, Fortune Center, Shahrah-e-Faisal,
-                  Block 6, PECHS, Karachi, Pakistan
+                Suite No. 507 & 508, 5th Floor Fortune Center, Block-6, P.E.C.H.S, Shahrah-e-Faisal, Karachi, Pakistan.
                 </p>
               </div>
 
