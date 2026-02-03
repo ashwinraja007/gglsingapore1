@@ -60,7 +60,7 @@ Singapore - 099447`,
   const ukContact = {
     title: "GGL (UK) Ltd.",
     address:
-      "167-169 Great Portland Street 5th Floor, London W1W 5PF, United Kingdom",
+      "15 Woodlands Park Villas, North Gosforth , NE136PR , Newcastle Upon Tyne, United Kingdom.",
     phone: "+44(0)7305 856 612",
     email: "Sukant@ggl.sg",
   };
