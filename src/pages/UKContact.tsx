@@ -26,7 +26,7 @@ const UKContact = () => {
                 <MapPin className="text-brand-gold w-6 h-6 mt-1" />
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Address</h3>
-                  <p className="text-gray-600">167-169 Great Portland Street 5th Floor,<br/>London W1W 5PF, United Kingdom</p>
+                  <p className="text-gray-600">15 Woodlands Park Villas, North Gosforth , NE136PR , Newcastle Upon Tyne, United Kingdom.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
