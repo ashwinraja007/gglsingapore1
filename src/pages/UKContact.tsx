@@ -33,7 +33,7 @@ const UKContact = () => {
                 <Phone className="text-brand-gold w-6 h-6 mt-1" />
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Phone</h3>
-                  <p className="text-gray-600">+44 (0) 203 393 9508</p>
+                  <p className="text-gray-600">+44(0)7305 856 612</p>
                 </div>
               </div>
             </div>
