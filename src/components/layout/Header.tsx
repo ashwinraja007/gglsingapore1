@@ -7,7 +7,6 @@ import PCountrySelector from "../common/PCountrySelector"; // <- PK selector
 import UKCountrySelector from "../common/UKCountrySelector";
 import MCountrySelector from "../common/MCountrySelector";// <- UK selector
 import { useCountryNavigation } from "@/hooks/useCountryNavigation";
-import MCountrySelector from "../common/CountrySelector"; // Fallback for Malaysia if specific one doesn't exist yet
 
 interface NavPaths {
   home: string;
