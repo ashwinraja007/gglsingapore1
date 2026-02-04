@@ -4,7 +4,8 @@ import { Menu, X, Linkedin, Facebook } from "lucide-react";
 import CountrySelector from "../common/CountrySelector";
 import BCountrySelector from "../common/BCountrySelector"; // <- BD selector
 import PCountrySelector from "../common/PCountrySelector"; // <- PK selector
-import UKCountrySelector from "../common/UKCountrySelector"; // <- UK selector
+import UKCountrySelector from "../common/UKCountrySelector";
+import MCountrySelector from "../common/MCountrySelector";// <- UK selector
 import { useCountryNavigation } from "@/hooks/useCountryNavigation";
 import MCountrySelector from "../common/CountrySelector"; // Fallback for Malaysia if specific one doesn't exist yet
 
