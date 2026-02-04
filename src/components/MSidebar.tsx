@@ -67,24 +67,16 @@ const countries = [{
     email: "info.india@ggl.sg"
   }]
 }, {
-  code: "my",
-  name: "Malaysia",
-  lat: 3.0038,
-  lng: 101.3929,
+  code: "gb",
+  name: "United Kingdom (UK)",
+    lat: 51.5074,
+    lng: -0.1278,
   cities: [{
-    name: "Port Klang",
-    lat: 3.0038,
-    lng: 101.3929,
-    address: "MTBBT 2, 3A-5, Jalan Batu Nilam 16, The Landmark (Behind AEON Mall), Bandar Bukit Tinggi 2, 41200 Klang, Selangor D.E",
-    contacts: ["+603 - 3319 2778 / 74 / 75"],
-    email: "jayesh@ggl.sg"
-  }, {
-    name: "Pasir Gudang",
-    lat: 1.4720,
-    lng: 103.9027,
-    address: "Unit 20-03A, Level 20 Menara Zurich, 15 Jalan Dato Abdullah Tahir, 80300 Johor Bahru",
-    contacts: ["603-3319 2778 / 74 / 75, 79"],
-    email: "jayesh@ggl.sg"
+    name: "London",
+    lat: 51.5074,
+    lng: -0.1278,
+    address: "167-169 Great Portland Street 5th Floor, London W1W 5PF, United Kingdom",
+    contacts: ["+44 (0) 203 393 9508"]
   }]
 }, {
   code: "ae",
