@@ -12,12 +12,12 @@ import { Button } from "@/components/ui/button";
 const ServiceCard = ({ icon, title, description, image, link, id }: any) => {
   const getServiceImage = () => {
     switch (title) {
-      case "Air Freight": return "/us2.png";
-      case "Ocean Freight": return "/us1.png";
-      case "LCL Consolidation": return "/us5.png";
-      case "Project Cargo": return "/us6.png";
-      case "Transportation": return "/us3.png";
-      case "Warehousing": return "/us4.png";
+      case "Air Freight": return "/mair.png";
+      case "Ocean Freight": return "/mocean.png";
+      case "LCL Consolidation": return "/mlcl.png";
+      case "Project Cargo": return "/mproject.png";
+      case "Transportation": return "/mproject.png";
+      case "Warehousing": return "/mwarehousing.png";
       default: return image;
     }
   };
@@ -61,12 +61,12 @@ const ServiceCard = ({ icon, title, description, image, link, id }: any) => {
 const MalaysiaServices = () => {
   const { navPaths } = useCountryNavigation();
   const services = [
-    { id: 1, htmlId: "ocean-freight", icon: <Ship className="w-5 h-5" />, title: "Ocean Freight", image: "/us1.png", description: "At GGL, our dedicated Ocean Freight Department specializes in comprehensive freight management services for both Less-than-Container Load (LCL) and Full Container Load (FCL) shipments.", link: `${navPaths.services}/ocean-freight` },
-    { id: 2, htmlId: "lcl-consolidation", icon: <Warehouse className="w-5 h-5" />, title: "LCL Consolidation", image: "/us5.png", description: "We collect your goods from your location and prepare them for consolidation. This includes proper labelling, packaging, and documentation to ensure smooth transit.", link: `${navPaths.services}/lcl-consolidation` },
-    { id: 3, htmlId: "transportation", icon: <Truck className="w-5 h-5" />, title: "Transportation", image: "/us3.png", description: "Efficient transportation and distribution are the backbone of a seamless supply chain. Our fleet and infrastructure ensure on-time delivery every time.", link: `${navPaths.services}/transportation` },
-    { id: 4, htmlId: "warehousing", icon: <Warehouse className="w-5 h-5" />, title: "Warehousing", image: "/us4.png", description: "We offer full-service warehousing and third-party logistics (3PL) to streamline your supply chain with flexible, reliable, and scalable solutions.", link: `${navPaths.services}/warehousing` },
-    { id: 5, htmlId: "air-freight", icon: <Plane className="w-5 h-5" />, title: "Air Freight", image: "/us2.png", description: "Our air freight services provide fast, reliable, and flexible global shipping — including import/export, express, and door-to-door solutions.", link: `${navPaths.services}/air-freight` },
-    { id: 6, htmlId: "project-cargo", icon: <Warehouse className="w-5 h-5" />, title: "Project Cargo", image: "/us6.png", description: "We specialize in delivering end-to-end logistics for heavy, oversized, and time-critical shipments, ensuring efficiency and safety.", link: `${navPaths.services}/project-cargo` }
+    { id: 1, htmlId: "ocean-freight", icon: <Ship className="w-5 h-5" />, title: "Ocean Freight", image: "/mocean.png", description: "At GGL, our dedicated Ocean Freight Department specializes in comprehensive freight management services for both Less-than-Container Load (LCL) and Full Container Load (FCL) shipments.", link: `${navPaths.services}/ocean-freight` },
+    { id: 2, htmlId: "lcl-consolidation", icon: <Warehouse className="w-5 h-5" />, title: "LCL Consolidation", image: "/mlcl.png", description: "We collect your goods from your location and prepare them for consolidation. This includes proper labelling, packaging, and documentation to ensure smooth transit.", link: `${navPaths.services}/lcl-consolidation` },
+    { id: 3, htmlId: "transportation", icon: <Truck className="w-5 h-5" />, title: "Transportation", image: "/mtransport.png", description: "Efficient transportation and distribution are the backbone of a seamless supply chain. Our fleet and infrastructure ensure on-time delivery every time.", link: `${navPaths.services}/transportation` },
+    { id: 4, htmlId: "warehousing", icon: <Warehouse className="w-5 h-5" />, title: "Warehousing", image: "/mwarehousing.png", description: "We offer full-service warehousing and third-party logistics (3PL) to streamline your supply chain with flexible, reliable, and scalable solutions.", link: `${navPaths.services}/warehousing` },
+    { id: 5, htmlId: "air-freight", icon: <Plane className="w-5 h-5" />, title: "Air Freight", image: "/mair.png", description: "Our air freight services provide fast, reliable, and flexible global shipping — including import/export, express, and door-to-door solutions.", link: `${navPaths.services}/air-freight` },
+    { id: 6, htmlId: "project-cargo", icon: <Warehouse className="w-5 h-5" />, title: "Project Cargo", image: "/mproject.png", description: "We specialize in delivering end-to-end logistics for heavy, oversized, and time-critical shipments, ensuring efficiency and safety.", link: `${navPaths.services}/project-cargo` }
   ];
 
   return (
