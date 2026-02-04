@@ -85,7 +85,7 @@ export const PServices = () => {
       link: "/malaysia/services/transportation"
     },
     {
-      image: "/mwarehousing.png",
+      image: "/mwarehouse.png",
       title: "Warehousing",
       description: "At GGL, we offer comprehensive warehousing and third-party logistics (3PL) solutions designed to streamline your supply chain operations. Our services are tailored to meet the diverse needs of businesses, ensuring efficiency, reliability, and scalability.",
       icon: <Warehouse />,
