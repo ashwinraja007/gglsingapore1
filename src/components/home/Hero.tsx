@@ -39,7 +39,7 @@ const Hero = () => {
   const portalLinks: PortalLink[] = [
     {
       icon: <Users className="w-4 h-4 sm:w-5 sm:h-5" />,
-      title: "Consolmate",
+      title: "Customer Portal",
       description: "Access shipping dashboard",
       url: isBangladesh
         ? "https://consolmate.com/auth/login/15" // Bangladesh
