@@ -26,7 +26,7 @@ const Hero = () => {
   const portalLinks = [
     {
       icon: <Users className="w-4 h-4 sm:w-5 sm:h-5" />,
-      title: 'Consolmate',
+      title: 'Customer Portal',
       description: 'Access shipping dashboard',
       url: 'https://consolmate.com/auth/login/3',
       external: true,
